@@ -1,25 +1,21 @@
-package com.mc3699.entity.swarmCod;// Made with Blockbench 4.12.2
+package com.mc3699.codmod.entity.swarmCod;// Made with Blockbench 4.12.2
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 
 
-import com.mc3699.client.EntityAnimations;
+import com.mc3699.codmod.client.EntityAnimations;
 import com.mc3699.codmod.Codmod;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.animation.AnimationDefinition;
 import net.minecraft.client.animation.KeyframeAnimations;
-import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
-import net.minecraft.network.protocol.game.ClientboundMoveEntityPacket;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.Entity;
 import org.joml.Vector3f;
-import org.joml.Vector3i;
 
 public class SwarmCodEntityModel extends HierarchicalModel<SwarmCodEntity> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor

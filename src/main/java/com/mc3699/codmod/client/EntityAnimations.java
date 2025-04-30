@@ -1,4 +1,4 @@
-package com.mc3699.client;// Save this class in your mod and generate all required imports
+package com.mc3699.codmod.client;// Save this class in your mod and generate all required imports
 
 import net.minecraft.client.animation.AnimationChannel;
 import net.minecraft.client.animation.AnimationDefinition;

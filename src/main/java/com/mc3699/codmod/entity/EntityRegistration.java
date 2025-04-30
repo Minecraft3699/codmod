@@ -1,14 +1,14 @@
-package com.mc3699.entity;
+package com.mc3699.codmod.entity;
 
 import com.mc3699.codmod.Codmod;
-import com.mc3699.entity.swarmCod.SwarmCodEntity;
+import com.mc3699.codmod.entity.swarmCod.SwarmCodEntity;
+import com.mc3699.codmod.entity.vay.VayEntity;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.level.Level;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 import java.util.function.Supplier;
 
@@ -20,6 +20,11 @@ public class EntityRegistration {
             ENTITIES.register("swarm_cod", () ->
                     EntityType.Builder.of(SwarmCodEntity::new, MobCategory.MONSTER)
                             .sized(1f,1f).build("swarm_cod"));
+
+    public static final Supplier<EntityType<VayEntity>> VAY =
+            ENTITIES.register("vay", () ->
+                    EntityType.Builder.of((EntityType<VayEntity> entityType, Level level) -> new VayEntity(level), MobCategory.MONSTER)
+                            .sized(0.5f,1.8f).build("vay"));
 
     public static void register(IEventBus eventBus)
     {

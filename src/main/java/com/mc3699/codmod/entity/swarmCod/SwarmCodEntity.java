@@ -1,12 +1,10 @@
-package com.mc3699.entity.swarmCod;
+package com.mc3699.codmod.entity.swarmCod;
 
-import com.mc3699.entity.EntityRegistration;
+import com.mc3699.codmod.entity.EntityRegistration;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
@@ -24,6 +22,17 @@ public class SwarmCodEntity extends Mob {
                 .add(Attributes.MAX_HEALTH, 10f)
                 .add(Attributes.MOVEMENT_SPEED, 10f)
                 .add(Attributes.ATTACK_DAMAGE, 6f);
+    }
+
+    @Override
+    protected void positionRider(Entity passenger, MoveFunction callback) {
+        if (!this.isRemoved()) {
+            Vec3 offset = new Vec3(0.0, 0.5, 0.2); // X, Y, Z offset
+            Vec3 riderPos = this.position()
+                    .add(offset.x, this.getBbHeight() + offset.y, offset.z)
+                    .add(new Vec3(0.25, -1.5, offset.z-0.5).yRot((float) Math.toRadians(-this.getYRot())));
+            callback.accept(passenger, riderPos.x, riderPos.y, riderPos.z);
+        }
     }
 
     @Override

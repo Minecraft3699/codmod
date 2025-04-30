@@ -1,41 +1,31 @@
 package com.mc3699.codmod;
 
-import com.mc3699.entity.EntityRegistration;
+import com.mc3699.codmod.block.BlockRegistration;
+import com.mc3699.codmod.entity.EntityRegistration;
+import com.mc3699.codmod.event.CodEvent;
+import com.mc3699.codmod.event.VayChat;
+import com.mc3699.codmod.event.VayEvent;
+import com.mc3699.codmod.item.ItemRegistration;
 import com.mojang.logging.LogUtils;
+import dev.wendigodrip.thebrokenscript.api.registry.RegistryWrapper;
 import net.minecraft.client.Minecraft;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.entity.animal.Cod;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
-import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredItem;
-import net.neoforged.neoforge.registries.DeferredRegister;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(Codmod.MODID)
 public class Codmod {
+    public static final RegistryWrapper TBSREGISTER = new RegistryWrapper(Codmod.MODID);
     // Define mod id in a common place for everything to reference
     public static final String MODID = "codmod";
     // Directly reference a slf4j logger
@@ -52,6 +42,13 @@ public class Codmod {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
         EntityRegistration.register(modEventBus);
+        BlockRegistration.register(modEventBus);
+        ItemRegistration.register(modEventBus);
+
+        TBSREGISTER.event("vay", VayEvent::new);
+        TBSREGISTER.event("cod", CodEvent::new);
+        TBSREGISTER.chatResponse("vay_response", VayChat::new);
+        TBSREGISTER.setup(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

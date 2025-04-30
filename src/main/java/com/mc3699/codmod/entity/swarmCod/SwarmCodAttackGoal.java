@@ -1,6 +1,5 @@
-package com.mc3699.entity.swarmCod;
+package com.mc3699.codmod.entity.swarmCod;
 
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;

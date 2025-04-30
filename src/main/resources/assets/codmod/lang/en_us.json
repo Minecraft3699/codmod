@@ -1,5 +1,3 @@
 {
-  "itemGroup.codmod": "Example Mod Tab",
-  "block.codmod.example_block": "Example Block",
-  "item.codmod.example_item": "Example Item"
+  "entity.codmod.vay": "im_vay"
 }
