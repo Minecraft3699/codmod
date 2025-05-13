@@ -25,9 +25,6 @@ public class VayEntity extends PathfinderMob {
     private boolean triggered = false;
     private Player triggerPlayer;
     private int lookTimer = 10;
-    private int chatCooldown = 0;
-    private int despawnTimer = 3600;
-    private int maxCopperRadius = 5;
 
     public VayEntity(Level level) {
         super(EntityRegistration.VAY.get(), level);
@@ -70,10 +67,13 @@ public class VayEntity extends PathfinderMob {
         super.registerGoals();
     }
 
-    public void spreadBlock(ServerLevel level, BlockPos pos, int radius, float chance, Block spreadBlock)
-    {
+    public void spreadBlock(ServerLevel level, BlockPos pos, int radius, float chance, Block spreadBlock) {
+        // Iterate over blocks in a spherical shell at the specified radius
         for (BlockPos targetPos : BlockPos.betweenClosed(pos.offset(-radius, -radius, -radius), pos.offset(radius, radius, radius))) {
-            if (random.nextFloat() < chance) {
+            // Calculate Manhattan distance to check if the position is on the ring
+            int distance = Math.abs(targetPos.getX() - pos.getX()) + Math.abs(targetPos.getY() - pos.getY()) + Math.abs(targetPos.getZ() - pos.getZ());
+            // Only place blocks at the exact radius (Manhattan distance)
+            if (distance == radius && random.nextFloat() < chance) {
                 BlockState targetState = level.getBlockState(targetPos);
                 if (targetState.is(BlockTags.SCULK_REPLACEABLE)) {
                     level.setBlock(targetPos, spreadBlock.defaultBlockState(), 3);
@@ -86,7 +86,7 @@ public class VayEntity extends PathfinderMob {
     public void onRemovedFromLevel() {
         if(triggerPlayer != null)
         {
-            triggerPlayer.sendSystemMessage(Component.literal("im_vay left the game").setStyle(Style.EMPTY.withColor(0xFFFF55)));
+            triggerPlayer.sendSystemMessage(Component.translatable("chat.codmod.vay_leave").setStyle(Style.EMPTY.withColor(0xFFFF55)));
         }
         super.onRemovedFromLevel();
     }
@@ -97,45 +97,34 @@ public class VayEntity extends PathfinderMob {
         if(this.level() instanceof ServerLevel serverLevel && !isAggressive())
         {
 
-            if(!this.triggered)
-            {
-                for(Player player : serverLevel.players())
-                {
-                    if(isPlayerLookingAt(player, this))
-                    {
-                        if(chatCooldown < 1)
-                        {
-                            player.sendSystemMessage(Component.literal("<im_vay> I KNOW YOU SEE ME"));
-                            chatCooldown = 40;
-                        }
+            if(!this.triggered) {
+                for (Player player : serverLevel.players()) {
+                    if (isPlayerLookingAt(player, this)) {
+                        if (this.tickCount % 2 == 0) {
 
-                        if(this.tickCount % 4 == 0)
-                        {
-                            spreadBlock(serverLevel, this.getOnPos(), 3, 0.3f, Blocks.COPPER_BLOCK);
-                            spreadBlock(serverLevel, this.getOnPos(), 4, 0.1f, Blocks.WEATHERED_COPPER);
-                            spreadBlock(serverLevel, this.getOnPos(), 5, 0.1f, Blocks.OXIDIZED_COPPER);
-                            spreadBlock(serverLevel, this.getOnPos(), 3, 0.6f, BlockRegistration.MOLTEN_COPPER.get());
+                            for(int i = 0; i < 5; i++)
+                            {
+                                spreadBlock(serverLevel, this.getOnPos(), i, 0.3f, Blocks.COPPER_BLOCK);
+                                spreadBlock(serverLevel, this.getOnPos(), i, 0.1f, Blocks.WEATHERED_COPPER);
+                                spreadBlock(serverLevel, this.getOnPos(), i, 0.3f, Blocks.OXIDIZED_COPPER);
+                                spreadBlock(serverLevel, this.getOnPos(), i, 0.6f, BlockRegistration.MOLTEN_COPPER.get());
+                                spreadBlock(serverLevel, this.getOnPos(), i, 0.9f, BlockRegistration.MOLTEN_COPPER.get());
+                            }
+
+
                         }
-                    } else {
-                        lookTimer = 10;
+                        lookTimer--;
+                        if(lookTimer < 1)
+                        {
+                            triggered = true;
+                            triggerPlayer = player;
+                            facePlayer(triggerPlayer);
+                            setTarget(triggerPlayer);
+                            setAggressive(true);
+                        }
                     }
-                    if(lookTimer < 1)
-                    {
-                        this.facePlayer(player);
-                        this.setAggressive(true);
-                        triggerPlayer = player;
-                        this.triggered = true;
-                    }
-                }
-            } else {
-                despawnTimer--;
-                chatCooldown--;
-                if(despawnTimer < 1 || !triggerPlayer.isAlive())
-                {
-                    this.remove(RemovalReason.DISCARDED);
                 }
             }
-
 
         }
     }

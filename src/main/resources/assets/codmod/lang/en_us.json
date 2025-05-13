@@ -1,3 +1,9 @@
 {
-  "entity.codmod.vay": "im_vay"
+  "chat.codmod.vay_join": "Ζεστός Χαλκός joined the game",
+  "chat.codmod.vay_leave": "Ζεστός Χαλκός left the game",
+  "chat.codmod.vay_threat": "<Ζεστός Χαλκός> I KNOW YOU SEE ME",
+  "entity.codmod.vay": "Ζεστός Χαλκός",
+  "item.codmod.null_cod": "Null Cod",
+  "item.codmod.cod_rod": "Cod Rod",
+  "item.codmod.null_dried_kelp": "Null Dried Kelp"
 }

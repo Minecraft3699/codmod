@@ -1,5 +1,6 @@
 package com.mc3699.codmod;
 
+import com.mc3699.codmod.block.BlockEntityRegistration;
 import com.mc3699.codmod.block.BlockRegistration;
 import com.mc3699.codmod.entity.EntityRegistration;
 import com.mc3699.codmod.event.CodEvent;
@@ -44,6 +45,7 @@ public class Codmod {
         EntityRegistration.register(modEventBus);
         BlockRegistration.register(modEventBus);
         ItemRegistration.register(modEventBus);
+        BlockEntityRegistration.register(modEventBus);
 
         TBSREGISTER.event("vay", VayEvent::new);
         TBSREGISTER.event("cod", CodEvent::new);

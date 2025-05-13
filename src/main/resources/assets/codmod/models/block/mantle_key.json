@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "top": "codmod:block/mantle_key_side",
+    "front": "codmod:block/mantle_key_front",
+    "side": "codmod:block/mantle_key_side"
+  }
+}

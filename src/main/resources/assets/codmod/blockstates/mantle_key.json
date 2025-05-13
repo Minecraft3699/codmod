@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": {"model": "codmod:block/mantle_key"},
+    "facing=east": {"model": "codmod:block/mantle_key", "y": 90},
+    "facing=south": {"model": "codmod:block/mantle_key", "y": 180},
+    "facing=west": {"model": "codmod:block/mantle_key", "y": 270}
+  }
+}

@@ -21,7 +21,7 @@ public class VayEvent extends BaseEvent {
 
     private void spawnVay(ServerPlayer player, ServerLevel serverLevel, int radius)
     {
-        player.sendSystemMessage(Component.literal("im_vay joined the game").setStyle(Style.EMPTY.withColor(0xFFFF55)));
+        player.sendSystemMessage(Component.translatable("chat.codmod.vay_join").setStyle(Style.EMPTY.withColor(0xFFFF55)));
         RandomSource random = serverLevel.random;
         double angle = random.nextDouble() * 2 * Math.PI;
         double distance = random.nextDouble() * radius;
