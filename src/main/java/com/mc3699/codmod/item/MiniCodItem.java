@@ -25,20 +25,15 @@ public class MiniCodItem extends Item {
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand usedHand) {
         if(!level.isClientSide())
         {
-
             for(int i = 0; i < 10; i++ ) {
-                SmallFireball projectile = new SmallFireball(EntityType.SMALL_FIREBALL, level);
+                Arrow projectile = new Arrow(EntityType.ARROW, level);
                 Vec3 eyePos = player.getEyePosition();
                 Vec3 lookVec = player.getViewVector(1.0F).normalize().scale(1.5);
                 projectile.setPos(eyePos.x + lookVec.x, eyePos.y + lookVec.y, eyePos.z + lookVec.z);
-                projectile.shootFromRotation(player, player.getXRot(), player.getYRot(), 1f, 1 + random.nextFloat(-0.9f,0.9f) , 0);
+                projectile.shootFromRotation(player, player.getXRot(), player.getYRot(), 1f, 3 + random.nextFloat() , 0);
                 level.addFreshEntity(projectile);
             }
-
         }
-
-
-
         return InteractionResultHolder.fail(player.getItemInHand(usedHand));
     }
 }

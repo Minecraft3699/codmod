@@ -1,0 +1,13 @@
+{
+  "vertex": "codmod:distortion_vertex",
+  "fragment": "codmod:distortion_fragment",
+  "definitions": ["DISTORTION_ENABLED"],
+  "blend": {
+    "func": "add",
+    "srcrgb": "src_alpha",
+    "dstrgb": "one_minus_src_alpha"
+  },
+  "samplers": {
+    "DiffuseSampler0": "minecraft:main"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "stages": [
+    {
+      "type": "veil:blit",
+      "shader": "codmod:distortion_shader",
+      "in": "minecraft:main",
+      "out": "distorted_buffer"
+    },
+    {
+      "type": "veil:blit",
+      "shader": "codmod:pass_through_shader",
+      "in": "distorted_buffer",
+      "out": "minecraft:main"
+    }
+  ]
+}

@@ -27,7 +27,7 @@ public class SwarmCodEntity extends Mob {
     @Override
     protected void positionRider(Entity passenger, MoveFunction callback) {
         if (!this.isRemoved()) {
-            Vec3 offset = new Vec3(0.0, 0.5, 0.2); // X, Y, Z offset
+            Vec3 offset = new Vec3(0.0, 0.5, 0.2);
             Vec3 riderPos = this.position()
                     .add(offset.x, this.getBbHeight() + offset.y, offset.z)
                     .add(new Vec3(0.25, -1.5, offset.z-0.5).yRot((float) Math.toRadians(-this.getYRot())));

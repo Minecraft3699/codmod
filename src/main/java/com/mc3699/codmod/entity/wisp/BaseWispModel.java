@@ -1,14 +1,10 @@
-package com.mc3699.codmod.entity.yellowWisp;// Made with Blockbench 4.12.2
+package com.mc3699.codmod.entity.wisp;// Made with Blockbench 4.12.2
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 
 
 import com.mc3699.codmod.Codmod;
 import com.mc3699.codmod.client.EntityAnimations;
-import com.mc3699.codmod.entity.swarmCod.SwarmCodEntity;
-import com.mc3699.codmod.entity.yellowWisp.YellowWispEntity;
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.animation.AnimationDefinition;
 import net.minecraft.client.animation.KeyframeAnimations;
 import net.minecraft.client.model.HierarchicalModel;
@@ -17,17 +13,16 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.Entity;
 import org.joml.Vector3f;
 
-public class YellowWispModel extends HierarchicalModel<YellowWispEntity> {
+public class BaseWispModel extends HierarchicalModel<BaseWispEntity> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(Codmod.MODID, "yellow_wisp"), "main");
 	private final ModelPart body;
 	private final ModelPart base;
 	private final ModelPart outer;
 
-	public YellowWispModel(ModelPart root) {
+	public BaseWispModel(ModelPart root) {
 		this.body = root.getChild("body");
 		this.base = this.body.getChild("base");
 		this.outer = this.body.getChild("outer");
@@ -51,16 +46,16 @@ public class YellowWispModel extends HierarchicalModel<YellowWispEntity> {
 		return body;
 	}
 
-	private void animate(YellowWispEntity entity, AnimationDefinition animation, float time, float scale)
+	private void animate(BaseWispEntity entity, AnimationDefinition animation, float time, float scale)
 	{
 		KeyframeAnimations.animate(this, animation, (long) (time * 1000L), scale, new Vector3f(0,0,0));
 	}
 
 	@Override
-	public void setupAnim(YellowWispEntity yellowWispEntity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
+	public void setupAnim(BaseWispEntity baseWispEntity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
 		this.root().getAllParts().forEach(ModelPart::resetPose);
 		this.root().xRot = 0;
 		float animTime = animationProgress / 20;
-		animate(yellowWispEntity, EntityAnimations.YELLOW_WISP_MAIN, animTime, 1f);
+		animate(baseWispEntity, EntityAnimations.WISP_MAIN, animTime, 1f);
 	}
 }

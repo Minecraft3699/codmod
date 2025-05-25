@@ -5,5 +5,7 @@
   "entity.codmod.vay": "Ζεστός Χαλκός",
   "item.codmod.null_cod": "Null Cod",
   "item.codmod.cod_rod": "Cod Rod",
-  "item.codmod.null_dried_kelp": "Null Dried Kelp"
+  "item.codmod.null_dried_kelp": "Null Dried Kelp",
+  "entity.codmod.trial_trader": "Trial Trader",
+  "entity.codmod.swarm_cod": "Swarm Cod"
 }

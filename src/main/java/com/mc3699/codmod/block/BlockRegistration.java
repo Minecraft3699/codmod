@@ -31,6 +31,11 @@ public class BlockRegistration {
             ()-> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.TINTED_GLASS))
     );
 
+    public static final DeferredBlock<Block> COD_BLOCK  = BLOCKS.register(
+            "codblock",
+            ()-> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE))
+    );
+
     public static final DeferredBlock<MantleKeyBlock> MANTLE_KEY =
             BLOCKS.register("mantle_key", () -> new MantleKeyBlock(BlockBehaviour.Properties.of()));
 

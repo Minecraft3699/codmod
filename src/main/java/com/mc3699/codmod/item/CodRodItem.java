@@ -21,10 +21,11 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 
 import java.util.List;
+import java.util.Random;
 
-public class CodRodItem extends SwordItem {
+public class CodRodItem extends MaceItem {
     public CodRodItem() {
-        super(Tiers.NETHERITE, new Properties(), new Tool(List.of(Tool.Rule.minesAndDrops(List.of(Blocks.COBWEB), 15.0F), Tool.Rule.overrideSpeed(BlockTags.SWORD_EFFICIENT, 1.5F)), 1.0F, 2));
+        super(new Properties().rarity(Rarity.EPIC).durability(100));
     }
 
 
@@ -46,7 +47,7 @@ public class CodRodItem extends SwordItem {
 
             for(int i = 0; i < 8; i++)
             {
-                Cod cod = new Cod(EntityType.COD, serverLevel);
+                Entity cod = new Cod(EntityType.COD, serverLevel);
                 cod.setPos(codSpawnPos);
                 int randomVelX = serverLevel.random.nextInt(-4,4);
                 int randomVelZ = serverLevel.random.nextInt(-4,4);
@@ -57,8 +58,6 @@ public class CodRodItem extends SwordItem {
                 cod.setDeltaMovement(randomVelX*0.1,randomHeight*0.05,randomVelZ*0.1);
                 serverLevel.addFreshEntity(cod);
             }
-
-
         }
         return true;
     }

@@ -45,7 +45,7 @@ public class VayEvent extends BaseEvent {
         if(level instanceof ServerLevel serverLevel)
         {
             serverLevel.players().forEach(player -> {
-                spawnVay(player, serverLevel, 20);
+                spawnVay(player, serverLevel, 50);
             });
         }
     }

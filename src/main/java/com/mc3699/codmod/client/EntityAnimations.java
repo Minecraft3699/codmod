@@ -107,7 +107,7 @@ public class EntityAnimations {
 		))
 		.build();
 
-	public static final AnimationDefinition YELLOW_WISP_MAIN = AnimationDefinition.Builder.withLength(1.0F).looping()
+	public static final AnimationDefinition WISP_MAIN = AnimationDefinition.Builder.withLength(1.0F).looping()
 			.addAnimation("body", new AnimationChannel(AnimationChannel.Targets.POSITION,
 					new Keyframe(0.0F, KeyframeAnimations.posVec(0.0F, 0.0F, 0.0F), AnimationChannel.Interpolations.LINEAR),
 					new Keyframe(0.5F, KeyframeAnimations.posVec(0.0F, 2.0F, 0.0F), AnimationChannel.Interpolations.LINEAR),

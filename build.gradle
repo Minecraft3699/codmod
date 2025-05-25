@@ -13,11 +13,22 @@ repositories {
     maven {
         url "https://maven.stardustmodding.org/hidden-snapshots"
     }
-    maven { url "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/" }
+
+    maven {
+        name = 'GeckoLib'
+        url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+        content {
+            includeGroup("software.bernie.geckolib")
+        }
+    }
+
     maven { url "https://maven.fzzyhmstrs.me/" }
     maven { url "https://thedarkcolour.github.io/KotlinForForge/" }
     maven { url "https://api.modrinth.com/maven" }
     maven { url "https://maven.blamejared.com" }
+    maven {
+        url = "https://mvn.devos.one/snapshots"
+    }
 }
 
 base {
@@ -110,12 +121,18 @@ dependencies {
     // compileOnly "mezz.jei:jei-${mc_version}-forge-api:${jei_version}"
     // runtimeOnly "mezz.jei:jei-${mc_version}-forge:${jei_version}"
 
-    implementation ("dev.wendigodrip:thebrokenscript:1.9.8+mc1.21.1-beta.1-SNAPSHOT")
+    implementation ("dev.wendigodrip:thebrokenscript:1.9.9-beta.1+mc1.21.1-build.124")
 
     implementation("foundry.veil:veil-neoforge-${project.minecraft_version}:${project.veil_version}") {
         exclude group: "maven.modrinth"
         exclude group: "me.fallenbreath"
     }
+
+    implementation(jarJar("com.tterrag.registrate:Registrate:MC1.21-1.3.0+67"))
+    implementation 'thedarkcolour:kotlinforforge-neoforge:5.8.0'
+    implementation "me.fzzyhmstrs:fzzy_config:0.6.9+1.21+neoforge"
+    implementation "software.bernie.geckolib:geckolib-neoforge-${minecraft_version}:4.7.3"
+
 
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
