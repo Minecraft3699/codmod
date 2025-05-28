@@ -36,6 +36,9 @@ public class ItemRegistration {
     public static final Supplier<Item> NULL_DRIED_KELP = ITEMS.register("null_dried_kelp",
             () -> new Item(new Item.Properties().food(Foods.DRIED_KELP)));
 
+    public static final Supplier<Item> APPLICATION = ITEMS.register("application", () ->
+            new Item(new Item.Properties()));
+
     public static void register(IEventBus eventBus)
     {
         ITEMS.register(eventBus);

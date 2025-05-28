@@ -2,26 +2,12 @@ package com.mc3699.codmod;
 
 import com.mc3699.codmod.block.BlockEntityRegistration;
 import com.mc3699.codmod.block.BlockRegistration;
+import com.mc3699.codmod.effect.EffectRegistration;
 import com.mc3699.codmod.entity.EntityRegistration;
-import com.mc3699.codmod.event.CodEvent;
-import com.mc3699.codmod.event.VayChat;
-import com.mc3699.codmod.event.VayEvent;
+import com.mc3699.codmod.event.*;
 import com.mc3699.codmod.item.ItemRegistration;
-import com.mojang.blaze3d.vertex.DefaultVertexFormat;
-import com.mojang.blaze3d.vertex.VertexFormat;
+import com.mc3699.codmod.sound.SoundRegistration;
 import com.mojang.logging.LogUtils;
-import dev.wendigodrip.thebrokenscript.TBSDatagen;
-import dev.wendigodrip.thebrokenscript.api.registry.RegistryWrapper;
-import dev.wendigodrip.thebrokenscript.registry.TBSEvents;
-import foundry.veil.api.client.render.VeilRenderSystem;
-import foundry.veil.api.client.render.shader.program.ShaderProgram;
-import foundry.veil.api.event.VeilPostProcessingEvent;
-import foundry.veil.api.event.VeilRenderLevelStageEvent;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.RenderStateShard;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.animal.Cod;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -30,7 +16,6 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.neoforged.neoforge.client.event.ClientTickEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import org.slf4j.Logger;
@@ -55,12 +40,21 @@ public class Codmod {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         CodRegistrate.INSTANCE.event("vay_event", VayEvent::new).register();
         CodRegistrate.INSTANCE.event("cod_event", CodEvent::new).register();
+        CodRegistrate.INSTANCE.event("darkener_event", DarkenerEvent::new).register();
+        CodRegistrate.INSTANCE.event("firelight_event", FireLightEvent::new).register();
+        CodRegistrate.INSTANCE.event("bad_sun",BadSunEvent::new).register();
+
         CodRegistrate.INSTANCE.chatResponse("vay_response", VayChat::new).register();
+
+
+
         NeoForge.EVENT_BUS.register(this);
         EntityRegistration.register(modEventBus);
         BlockRegistration.register(modEventBus);
         ItemRegistration.register(modEventBus);
         BlockEntityRegistration.register(modEventBus);
+        EffectRegistration.register(modEventBus);
+        SoundRegistration.register(modEventBus);
 
     }
 
@@ -71,8 +65,7 @@ public class Codmod {
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
-        // Do something when the server starts
-        LOGGER.info("HELLO from server starting");
+        LOGGER.info("Starting Codmod, I like cod cod cod cod cod cod cod cod COD MOD IS LOADING!!! THIS IS CODMOD!!! THIS LINE IS COD MOD!!! COD MOD LOADING RIGHT NOW!!!!!!! COD MOD YEAHHHHHHHHHHHHHHHHH");
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent

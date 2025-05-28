@@ -18,6 +18,13 @@ public class NetworkEvents {
                 CameraRotationPayload.CODEC,
                 CameraRotationPayload::handle
         );
+
+        registrar.playToClient(
+                FoliageColorPayload.TYPE,
+                FoliageColorPayload.CODEC,
+                FoliageColorPayload::handle
+        );
+
     }
 
 }

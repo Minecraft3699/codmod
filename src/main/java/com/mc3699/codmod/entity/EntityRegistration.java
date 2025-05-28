@@ -1,7 +1,9 @@
 package com.mc3699.codmod.entity;
 
 import com.mc3699.codmod.Codmod;
+import com.mc3699.codmod.entity.applicant.ApplicantEntity;
 import com.mc3699.codmod.entity.darkener.DarkenerEntity;
+import com.mc3699.codmod.entity.firelight.FirelightEntity;
 import com.mc3699.codmod.entity.swarmCod.SwarmCodEntity;
 import com.mc3699.codmod.entity.trialTrader.TrialTraderEntity;
 import com.mc3699.codmod.entity.vay.VayEntity;
@@ -39,6 +41,16 @@ public class EntityRegistration {
             ENTITIES.register("darkener", () ->
                     EntityType.Builder.of((EntityType<DarkenerEntity> entityType, Level level) -> new DarkenerEntity(level), MobCategory.MISC)
                             .sized(0.5f,1.8f).build("darkener"));
+
+    public static final Supplier<EntityType<FirelightEntity>> FIRELIGHT =
+            ENTITIES.register("firelight", () ->
+                    EntityType.Builder.of((EntityType<FirelightEntity> entityType, Level level) -> new FirelightEntity(level), MobCategory.MISC)
+                            .sized(0.5f,1.8f).build("firelight"));
+
+    public static final Supplier<EntityType<ApplicantEntity>> APPLICANT =
+            ENTITIES.register("applicant", () ->
+                    EntityType.Builder.of((EntityType<ApplicantEntity> entityType, Level level) -> new ApplicantEntity(level), MobCategory.MISC)
+                            .sized(0.5f,1.8f).build("applicant"));
 
     public static final Supplier<EntityType<YellowWispEntity>> YELLOW_WISP =
             ENTITIES.register("yellow_wisp", () ->

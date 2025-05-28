@@ -1,41 +1,38 @@
-package com.mc3699.codmod.entity.darkener;
+package com.mc3699.codmod.entity.firelight;
 
 import com.mc3699.codmod.Codmod;
-import com.mojang.blaze3d.systems.RenderSystem;
+import com.mc3699.codmod.entity.darkener.DarkenerEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.mojang.math.Axis;
 import net.minecraft.client.model.PlayerModel;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.resources.ResourceLocation;
 
 import java.util.Random;
 
-public class DarkenerEntityRenderer extends LivingEntityRenderer<DarkenerEntity, PlayerModel<DarkenerEntity>> {
+public class FireLightEntityRenderer extends LivingEntityRenderer<FirelightEntity, PlayerModel<FirelightEntity>> {
     Random random = new Random();
 
-    public DarkenerEntityRenderer(EntityRendererProvider.Context context) {
+    public FireLightEntityRenderer(EntityRendererProvider.Context context) {
         super(context, new PlayerModel<>(context.bakeLayer(ModelLayers.PLAYER), false), 0.25f);
     }
 
     @Override
-    public ResourceLocation getTextureLocation(DarkenerEntity darkenerEntity) {
-        return ResourceLocation.fromNamespaceAndPath(Codmod.MODID, "textures/entity/darkener.png");
+    public ResourceLocation getTextureLocation(FirelightEntity darkenerEntity) {
+        return ResourceLocation.fromNamespaceAndPath(Codmod.MODID, "textures/entity/firelight.png");
     }
 
     @Override
-    protected boolean shouldShowName(DarkenerEntity entity) {
+    protected boolean shouldShowName(FirelightEntity entity) {
         return false;
     }
 
     @Override
-    public void render(DarkenerEntity entity, float entityYaw, float partialTicks, PoseStack poseStack, MultiBufferSource buffer, int packedLight) {
+    public void render(FirelightEntity entity, float entityYaw, float partialTicks, PoseStack poseStack, MultiBufferSource buffer, int packedLight) {
 
-        if(entity.tickCount % 5 == 0)
+        if(entity.tickCount % 2 == 0)
         {
             poseStack.pushPose();
             float glitchBounds = 0.25f;

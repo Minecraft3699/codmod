@@ -1,6 +1,8 @@
-package com.mc3699.codmod.entity.darkener;
+package com.mc3699.codmod.entity.firelight;
 
 import com.mc3699.codmod.entity.EntityRegistration;
+import com.mc3699.codmod.entity.darkener.AttackPlayerInLightGoal;
+import com.mc3699.codmod.entity.darkener.DestroyLightsGoal;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -9,18 +11,16 @@ import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.level.Level;
 
-public class DarkenerEntity extends PathfinderMob {
+public class FirelightEntity extends PathfinderMob {
 
-    public DarkenerEntity(Level level) {
-        super(EntityRegistration.DARKENER.get(), level);
+    public FirelightEntity(Level level) {
+        super(EntityRegistration.FIRELIGHT.get(), level);
     }
 
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new FloatGoal(this));
-        this.goalSelector.addGoal(1, new AttackPlayerInLightGoal(this, 1.8f));
-        this.goalSelector.addGoal(2, new DestroyLightsGoal(this, 1.25f, 16));
-        this.goalSelector.addGoal(8, new WaterAvoidingRandomStrollGoal(this, 1));
+        this.goalSelector.addGoal(1, new AttackOrDisappearGoal(this,level(),25,2,0.4f));
     }
 
     public static AttributeSupplier.Builder createAttributes()

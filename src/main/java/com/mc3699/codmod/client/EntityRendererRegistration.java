@@ -4,7 +4,9 @@ import com.mc3699.codmod.Codmod;
 import com.mc3699.codmod.block.BlockEntityRegistration;
 import com.mc3699.codmod.block.mantleKey.MantleKeyBlockEntityRender;
 import com.mc3699.codmod.entity.EntityRegistration;
+import com.mc3699.codmod.entity.applicant.ApplicantEntityRenderer;
 import com.mc3699.codmod.entity.darkener.DarkenerEntityRenderer;
+import com.mc3699.codmod.entity.firelight.FireLightEntityRenderer;
 import com.mc3699.codmod.entity.swarmCod.SwarmCodEntityModel;
 import com.mc3699.codmod.entity.swarmCod.SwarmCodEntityRenderer;
 import com.mc3699.codmod.entity.trialTrader.TrialTraderEntityRenderer;
@@ -29,6 +31,8 @@ public class EntityRendererRegistration {
         event.registerEntityRenderer(EntityRegistration.YELLOW_WISP.get(), DistortedWispEntityRenderer::new);
         event.registerEntityRenderer(EntityRegistration.RED_WISP.get(), BaseWispEntityRenderer::new);
         event.registerEntityRenderer(EntityRegistration.DARKENER.get(), DarkenerEntityRenderer::new);
+        event.registerEntityRenderer(EntityRegistration.FIRELIGHT.get(), FireLightEntityRenderer::new);
+        event.registerEntityRenderer(EntityRegistration.APPLICANT.get(), ApplicantEntityRenderer::new);
         event.registerBlockEntityRenderer(BlockEntityRegistration.MANTLE_KEY.get(), MantleKeyBlockEntityRender::new);
     }
 

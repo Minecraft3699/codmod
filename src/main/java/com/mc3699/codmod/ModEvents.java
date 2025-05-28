@@ -1,7 +1,9 @@
 package com.mc3699.codmod;
 
 import com.mc3699.codmod.entity.EntityRegistration;
+import com.mc3699.codmod.entity.applicant.ApplicantEntity;
 import com.mc3699.codmod.entity.darkener.DarkenerEntity;
+import com.mc3699.codmod.entity.firelight.FirelightEntity;
 import com.mc3699.codmod.entity.swarmCod.SwarmCodEntity;
 import com.mc3699.codmod.entity.trialTrader.TrialTraderEntity;
 import com.mc3699.codmod.entity.vay.VayEntity;
@@ -22,6 +24,8 @@ public class ModEvents {
         event.put(EntityRegistration.YELLOW_WISP.get(), YellowWispEntity.createAttributes().build());
         event.put(EntityRegistration.RED_WISP.get(), YellowWispEntity.createAttributes().build());
         event.put(EntityRegistration.DARKENER.get(), DarkenerEntity.createAttributes().build());
+        event.put(EntityRegistration.FIRELIGHT.get(), FirelightEntity.createAttributes().build());
+        event.put(EntityRegistration.APPLICANT.get(), ApplicantEntity.createAttributes().build());
     }
 
 }
