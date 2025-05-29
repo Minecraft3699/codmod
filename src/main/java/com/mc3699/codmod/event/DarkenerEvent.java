@@ -47,7 +47,7 @@ public class DarkenerEvent extends BaseEvent {
         {
             serverLevel.players().forEach(player -> {
                 RandomSource random = serverLevel.random;
-                if(random.nextInt(0,10) > 8)
+                if(random.nextInt(0,10) > 2)
                 {
                     spawnDarkener(player, serverLevel, 50);
                 }

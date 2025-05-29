@@ -39,6 +39,9 @@ public class ItemRegistration {
     public static final Supplier<Item> APPLICATION = ITEMS.register("application", () ->
             new Item(new Item.Properties()));
 
+    public static final Supplier<Item> INTEGRITY_COOKIE = ITEMS.register("integrity_cookie",
+            IntegrityCookieItem::new);
+
     public static void register(IEventBus eventBus)
     {
         ITEMS.register(eventBus);

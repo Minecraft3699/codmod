@@ -6,11 +6,13 @@
   "item.codmod.null_cod": "Null Cod",
   "item.codmod.cod_rod": "Cod Rod",
   "item.codmod.null_dried_kelp": "Null Dried Kelp",
+  "item.codmod.integrity_cookie": "§4Integrity §0Cookie",
   "entity.codmod.trial_trader": "Trial Trader",
   "entity.codmod.swarm_cod": "Swarm Cod",
   "entity.codmod.firelight": "Fir§keLi§fght34§k52§f3",
   "entity.codmod.darkener": "§kheywhyyoulookatcodmodsourcecode?",
   "effect.codmod.heart_corruption": "ERR.EFFECT_TYPE=NULL",
   "sound.codmod.bad_sun_siren": "Ominous Siren Sounds",
-  "death.attack.bad_sun": "%1$s saw the light"
+  "death.attack.bad_sun": "%1$s saw the light",
+  "death.attack.job_application": "%1$s was forced to get a job"
 }

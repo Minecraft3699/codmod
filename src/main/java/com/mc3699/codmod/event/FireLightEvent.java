@@ -43,7 +43,7 @@ public class FireLightEvent extends BaseEvent {
         {
             serverLevel.players().forEach(player -> {
                 RandomSource random = serverLevel.random;
-                if(random.nextInt(0,10) > 8)
+                if(random.nextInt(0,10) > 2)
                 {
                     spawnFireLight(player, serverLevel, 50);
                 }

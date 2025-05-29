@@ -1,8 +1,11 @@
 package com.mc3699.codmod.network;
 
 import com.mc3699.codmod.Codmod;
+import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
+import net.minecraft.server.level.ServerPlayer;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.network.PacketDistributor;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 
@@ -27,4 +30,15 @@ public class NetworkEvents {
 
     }
 
+    public static void sendToServer(CustomPacketPayload payload) {
+        PacketDistributor.sendToServer(payload);
+    }
+
+    public static void sendToClient(ServerPlayer player, CustomPacketPayload payload) {
+        PacketDistributor.sendToPlayer(player, payload);
+    }
+
+    public static void sendToAllClients(CustomPacketPayload payload) {
+        PacketDistributor.sendToAllPlayers(payload);
+    }
 }

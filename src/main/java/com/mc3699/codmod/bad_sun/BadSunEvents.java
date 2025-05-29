@@ -9,6 +9,7 @@ import com.mojang.realmsclient.dto.RealmsNews;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
@@ -23,6 +24,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.tick.ServerTickEvent;
 import net.neoforged.neoforge.network.PacketDistributor;
 import org.lwjgl.system.Platform;
@@ -39,8 +41,6 @@ public class BadSunEvents {
     private static Random random = new Random();
     private static long tickCount = 0;
     public static boolean isBadSunDay = false;
-    private static boolean checkHasRun = false;
-    private static boolean hasSirenPlayed = false;
 
     private static boolean isInSun(ServerPlayer player)
     {
@@ -49,6 +49,22 @@ public class BadSunEvents {
         if(!player.level().isDay()) return false;
         BlockPos pos = BlockPos.containing(player.position().add(0,1,0));
         return player.level().canSeeSky(pos);
+    }
+
+    @SubscribeEvent
+    public static void playerJoin(PlayerEvent.PlayerLoggedInEvent event)
+    {
+        if(isBadSunDay && event.getEntity() instanceof ServerPlayer serverPlayer)
+        {
+            PacketDistributor.sendToPlayer(serverPlayer, new FoliageColorPayload(0xECD38A, false));
+        }
+    }
+
+    @SubscribeEvent
+    public static void playerLeave(PlayerEvent.PlayerLoggedOutEvent event)
+    {
+        ColorManager.resetFoliageColor();
+        ColorManager.resetGrassColor();
     }
 
     @SubscribeEvent
@@ -62,11 +78,10 @@ public class BadSunEvents {
         if(overworld.isNight() && isBadSunDay)
         {
             isBadSunDay = false;
-            checkHasRun = false;
             PacketDistributor.sendToAllPlayers(new FoliageColorPayload(0, true));
         }
 
-        if(tickCount % 10 == 0 && isBadSunDay)
+        if(tickCount % 20 == 0 && isBadSunDay)
         {
             for(ServerPlayer player : players)
             {
@@ -77,17 +92,20 @@ public class BadSunEvents {
                             player.level().registryAccess().lookupOrThrow(Registries.DAMAGE_TYPE).getOrThrow(BAD_SUN)
                     );
 
-                    player.hurt(badSunDamage, 4);
-                    ItemStack fleshItem = new ItemStack(Items.ROTTEN_FLESH, 1);
-                    ItemEntity fleshEntity = new ItemEntity(player.level(), player.getX(), player.getY(), player.getZ(), fleshItem);
-                    fleshEntity.setPickUpDelay(20);
+                    if(!player.isCreative())
+                    {
+                        player.hurt(badSunDamage, 2);
+                        ItemStack fleshItem = new ItemStack(Items.ROTTEN_FLESH, 1);
+                        ItemEntity fleshEntity = new ItemEntity(player.level(), player.getX(), player.getY(), player.getZ(), fleshItem);
+                        fleshEntity.setPickUpDelay(20);
 
-                    float fleshEjectionRange = 0.2f;
-                    float randX = random.nextFloat(-fleshEjectionRange, fleshEjectionRange);
-                    float randY = random.nextFloat(0, fleshEjectionRange);
-                    float randZ = random.nextFloat(-fleshEjectionRange, fleshEjectionRange);
-                    player.level().addFreshEntity(fleshEntity);
-                    fleshEntity.setDeltaMovement(randX,randY,randZ);
+                        float fleshEjectionRange = 0.2f;
+                        float randX = random.nextFloat(-fleshEjectionRange, fleshEjectionRange);
+                        float randY = random.nextFloat(0, fleshEjectionRange);
+                        float randZ = random.nextFloat(-fleshEjectionRange, fleshEjectionRange);
+                        player.level().addFreshEntity(fleshEntity);
+                        fleshEntity.setDeltaMovement(randX,randY,randZ);
+                    }
                 }
             }
         }

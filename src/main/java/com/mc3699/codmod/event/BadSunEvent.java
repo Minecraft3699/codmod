@@ -17,7 +17,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class BadSunEvent extends BaseEvent {
     public BadSunEvent() {
-        super(1);
+        super(0);
     }
 
     @Override
@@ -38,11 +38,6 @@ public class BadSunEvent extends BaseEvent {
                 BadSunEvents.isBadSunDay = true;
             });
         }
-
-    }
-
-    public void sendDelayedMessage(String message, int delay)
-    {
 
     }
 }
