@@ -68,18 +68,17 @@ public class TrialTraderEntity extends PathfinderMob {
         level().playSound(null, blockPosition(), SoundEvents.GENERIC_EXPLODE.value(), SoundSource.HOSTILE);
     }
 
-    // Method to add a repair task
     public void addRepairTask(BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, Player player) {
         repairTasks.add(new RepairTask(pos, state, blockEntity, player));
     }
 
-    // Getter for repair tasks (used by the goal)
     public List<RepairTask> getRepairTasks() {
         return repairTasks;
     }
 
     @Override
     public void tick() {
+        //TODO
         // trial / bad omen check every second
         if(tickCount % 20 == 0)
         {

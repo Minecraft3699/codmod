@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "codmod:block/uav_controller" }
+  }
+}

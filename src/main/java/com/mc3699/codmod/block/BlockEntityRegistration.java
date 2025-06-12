@@ -1,8 +1,11 @@
 package com.mc3699.codmod.block;
 
 import com.mc3699.codmod.Codmod;
+import com.mc3699.codmod.block.launchpad.LaunchPadBlockEntity;
 import com.mc3699.codmod.block.mantleKey.MantleKeyBlock;
 import com.mc3699.codmod.block.mantleKey.MantleKeyBlockEntity;
+import com.mc3699.codmod.block.radar.RadarBlockEntity;
+import com.mc3699.codmod.block.uavController.UAVControllerBlockEntity;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.util.datafix.DataFixTypes;
 import net.minecraft.world.level.Level;
@@ -26,6 +29,33 @@ public class BlockEntityRegistration {
             () -> new BlockEntityType<>(
                     MantleKeyBlockEntity::new,
                     Set.of(BlockRegistration.MANTLE_KEY.get()),
+                    null
+            )
+    );
+
+    public static final Supplier<BlockEntityType<LaunchPadBlockEntity>> LAUNCH_PAD = BLOCK_ENTITIES.register(
+            "launch_pad",
+            () -> new BlockEntityType<>(
+                    LaunchPadBlockEntity::new,
+                    Set.of(BlockRegistration.LAUNCH_PAD.get()),
+                    null
+            )
+    );
+
+    public static final Supplier<BlockEntityType<RadarBlockEntity>> RADAR = BLOCK_ENTITIES.register(
+            "radar",
+            () -> new BlockEntityType<>(
+                    RadarBlockEntity::new,
+                    Set.of(BlockRegistration.RADAR.get()),
+                    null
+            )
+    );
+
+    public static final Supplier<BlockEntityType<UAVControllerBlockEntity>> UAV_CONTROLLER = BLOCK_ENTITIES.register(
+            "uav_controller",
+            () -> new BlockEntityType<>(
+                    UAVControllerBlockEntity::new,
+                    Set.of(BlockRegistration.UAV_CONTROLLER.get()),
                     null
             )
     );

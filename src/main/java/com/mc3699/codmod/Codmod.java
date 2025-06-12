@@ -2,12 +2,16 @@ package com.mc3699.codmod;
 
 import com.mc3699.codmod.block.BlockEntityRegistration;
 import com.mc3699.codmod.block.BlockRegistration;
+import com.mc3699.codmod.creativetab.CodmodCreativeTab;
 import com.mc3699.codmod.effect.EffectRegistration;
 import com.mc3699.codmod.entity.EntityRegistration;
 import com.mc3699.codmod.event.*;
 import com.mc3699.codmod.item.ItemRegistration;
 import com.mc3699.codmod.sound.SoundRegistration;
 import com.mojang.logging.LogUtils;
+import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.TicketType;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -27,6 +31,10 @@ public class Codmod {
     public static final String MODID = "codmod";
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
+
+    public static final TicketType<BlockPos> UAV_TICKET = TicketType.create(
+            "uav_ticket", BlockPos::compareTo
+    );
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
@@ -55,6 +63,7 @@ public class Codmod {
         BlockEntityRegistration.register(modEventBus);
         EffectRegistration.register(modEventBus);
         SoundRegistration.register(modEventBus);
+        CodmodCreativeTab.register(modEventBus);
 
     }
 

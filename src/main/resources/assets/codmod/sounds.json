@@ -4,5 +4,23 @@
     "sounds": [
       "codmod:bad_sun_siren"
     ]
+  },
+  "missile_launch": {
+    "subtitle": "sound.codmod.missile_launch",
+    "sounds": [
+      "codmod:missile_launch"
+    ]
+  },
+  "missile_entry": {
+    "subtitle": "sound.codmod.missile_entry",
+    "sounds": [
+      "codmod:missile_entry"
+    ]
+  },
+  "anything": {
+    "subtitle": "sound.codmod.anything",
+    "sounds": [
+      "codmod:anything"
+    ]
   }
 }

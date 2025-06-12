@@ -1,0 +1,4 @@
+// 1.21.1	2025-06-11T16:46:35.331500862	Loot Tables
+a9da05e08f5812d095796207976136fbbf554cdd data/codmod/loot_table/blocks/molten_copper.json
+68b7bb52e40c06901542a889e6289b4c8f080b0f data/codmod/loot_table/blocks/radar.json
+2e5b20da17c4ffe5868dd6ed285e84ed5268a2cd data/codmod/loot_table/blocks/uav_controller.json

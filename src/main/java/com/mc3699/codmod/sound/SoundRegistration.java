@@ -17,6 +17,9 @@ public class SoundRegistration {
 
 
     public static final Supplier<SoundEvent> BAD_SUN_SIREN = registerSoundEvent("bad_sun_siren");
+    public static final Supplier<SoundEvent> MISSILE_ENTRY = registerSoundEvent("missile_entry");
+    public static final Supplier<SoundEvent> MISSILE_LAUNCH = registerSoundEvent("missile_launch");
+    public static final Supplier<SoundEvent> ANYTHING = registerSoundEvent("anything");
 
 
 

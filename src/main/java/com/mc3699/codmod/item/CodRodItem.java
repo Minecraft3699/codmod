@@ -4,7 +4,9 @@ import com.mc3699.codmod.entity.EntityRegistration;
 import com.mc3699.codmod.entity.swarmCod.SwarmCodEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
@@ -35,9 +37,10 @@ public class CodRodItem extends MaceItem {
         {
             Vec3 codSpawnPos = entity.getPosition(0);
 
-            if(entity instanceof Player)
+            if(entity instanceof ServerPlayer hitPlayer)
             {
                 entity.kill();
+                //hitPlayer.connection.disconnect(Component.literal("Whatever reason you want blah blah blah"));
             } else {
                 entity.remove(Entity.RemovalReason.DISCARDED);
             }

@@ -1,8 +1,12 @@
 package com.mc3699.codmod.block;
 
 import com.mc3699.codmod.Codmod;
+import com.mc3699.codmod.block.launchpad.LaunchPadBlock;
 import com.mc3699.codmod.block.mantleKey.MantleKeyBlock;
+import com.mc3699.codmod.block.radar.RadarBlock;
+import com.mc3699.codmod.block.uavController.UAVControllerBlock;
 import com.mc3699.codmod.item.ItemRegistration;
+import net.minecraft.advancements.critereon.UsedTotemTrigger;
 import net.minecraft.world.entity.animal.Cod;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -31,9 +35,19 @@ public class BlockRegistration {
             ()-> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.TINTED_GLASS))
     );
 
-    public static final DeferredBlock<Block> COD_BLOCK  = BLOCKS.register(
-            "codblock",
-            ()-> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE))
+    public static final DeferredBlock<Block> RADAR  = BLOCKS.register(
+            "radar",
+            RadarBlock::new
+    );
+
+    public static final DeferredBlock<LaunchPadBlock> LAUNCH_PAD = BLOCKS.register(
+            "launch_pad",
+            LaunchPadBlock::new
+    );
+
+    public static final DeferredBlock<UAVControllerBlock> UAV_CONTROLLER = BLOCKS.register(
+            "uav_controller",
+            UAVControllerBlock::new
     );
 
     public static final DeferredBlock<MantleKeyBlock> MANTLE_KEY =

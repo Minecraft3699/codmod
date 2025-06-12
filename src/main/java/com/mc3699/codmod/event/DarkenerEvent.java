@@ -10,6 +10,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.item.ProjectileWeaponItem;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
@@ -18,27 +19,36 @@ import java.util.Random;
 
 public class DarkenerEvent extends BaseEvent {
     public DarkenerEvent() {
-        super(4);
+        super(1);
     }
 
-    private void spawnDarkener(ServerPlayer player, ServerLevel serverLevel, int radius)
-    {
+    private void spawnDarkener(ServerPlayer player, ServerLevel serverLevel, int radius) {
         RandomSource random = serverLevel.random;
-        double angle = random.nextDouble() * 2 * Math.PI;
-        double distance = random.nextDouble() * radius;
-        double x = player.getX() + Math.cos(angle) * distance;
-        double z = player.getZ() + Math.sin(angle) * distance;
-        double y = player.getY();
-        BlockPos pos = new BlockPos((int)x, (int)y, (int)z);
-        while (!serverLevel.getBlockState(pos.below()).isSolid() && pos.getY() > serverLevel.getMinBuildHeight()) {
-            pos = pos.below();
+        int maxAttempts = 20; // Number of position attempts
+
+        for (int attempt = 0; attempt < maxAttempts; attempt++) {
+            // Random position in a sphere around the player
+            double theta = random.nextDouble() * 2 * Math.PI;
+            double phi = Math.acos(2 * random.nextDouble() - 1);
+            double distance = random.nextDouble() * radius;
+            double x = player.getX() + distance * Math.sin(phi) * Math.cos(theta);
+            double y = player.getY() + (random.nextDouble() - 0.5) * radius; // Vertical spread
+            double z = player.getZ() + distance * Math.sin(phi) * Math.sin(theta);
+
+            // Clamp Y to below 64
+            y = Math.max(serverLevel.getMinBuildHeight() + 2, Math.min(63, y));
+            BlockPos pos = new BlockPos((int)x, (int)y, (int)z);
+
+            // Check for air block and no skylight
+            if (serverLevel.getBlockState(pos).isAir() && !serverLevel.canSeeSky(pos)) {
+                // Spawn entity
+                DarkenerEntity darkenerEntity = new DarkenerEntity(serverLevel);
+                darkenerEntity.setPos(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5);
+                if (serverLevel.addFreshEntity(darkenerEntity)) {
+                    return; // Success
+                }
+            }
         }
-        while (serverLevel.getBlockState(pos).isSolid() && pos.getY() < serverLevel.getMaxBuildHeight()) {
-            pos = pos.above();
-        }
-        DarkenerEntity darkenerEntity = new DarkenerEntity(serverLevel);
-        darkenerEntity.setPos(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5);
-        serverLevel.addFreshEntity(darkenerEntity);
     }
 
     @Override
@@ -47,9 +57,11 @@ public class DarkenerEvent extends BaseEvent {
         {
             serverLevel.players().forEach(player -> {
                 RandomSource random = serverLevel.random;
-                if(random.nextInt(0,10) > 2)
+                if(random.nextInt(0,10) > 8)
                 {
-                    spawnDarkener(player, serverLevel, 50);
+                    serverLevel.getSunAngle(0);
+                    spawnDarkener(player, serverLevel, 10);
+                    return;
                 }
             });
         }

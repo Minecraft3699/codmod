@@ -3,11 +3,16 @@ package com.mc3699.codmod.client;
 import com.mc3699.codmod.Codmod;
 import com.mc3699.codmod.bad_sun.ColorCommand;
 import com.mc3699.codmod.entity.wisp.BaseWispEntityRenderer;
+import com.mc3699.codmod.item.ItemRegistration;
+import com.mc3699.codmod.item.detector.DetectorItemRenderer;
+import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
+import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
+import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
 
 @EventBusSubscriber(value = Dist.CLIENT, modid = Codmod.MODID)
@@ -24,5 +29,7 @@ public class ClientEvents {
     {
         ColorCommand.register(event.getDispatcher());
     }
+
+
 
 }
