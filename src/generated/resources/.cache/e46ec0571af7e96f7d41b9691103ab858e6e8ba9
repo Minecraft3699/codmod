@@ -1,3 +1,4 @@
-// 1.21.1	2025-06-11T09:15:41.074215806	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Sound Definitions, Jukebox Songs, Custom Tags]
-b921f8c32c0e0e8ecaed12413de677b951ad0c15 assets/codmod/lang/en_ud.json
-6e54928fce5c06942aeeeb5d2e827c4a0cf8d003 assets/codmod/lang/en_us.json
+// 1.21.1	2025-06-12T16:03:59.0619645	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Sound Definitions, Jukebox Songs, Custom Tags]
+5e129677a700f85482dd865d37d9118854170035 assets/codmod/lang/en_ud.json
+cba16946ec79a6140d7a51bed313667a959c9450 assets/codmod/lang/en_us.json
+b54f0e0f1f30a5ca02cb10b02f9b0a8f06f499fe assets/codmod/sounds.json

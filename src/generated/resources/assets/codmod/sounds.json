@@ -1,0 +1,26 @@
+{
+  "anything": {
+    "sounds": [
+      "codmod:anything"
+    ],
+    "subtitle": "subtitles.codmod.anything"
+  },
+  "bad_sun_siren": {
+    "sounds": [
+      "codmod:bad_sun_siren"
+    ],
+    "subtitle": "subtitles.codmod.bad_sun_siren"
+  },
+  "missile_entry": {
+    "sounds": [
+      "codmod:missile_entry"
+    ],
+    "subtitle": "subtitles.codmod.missile_entry"
+  },
+  "missile_launch": {
+    "sounds": [
+      "codmod:missile_launch"
+    ],
+    "subtitle": "subtitles.codmod.missile_launch"
+  }
+}
