@@ -1,30 +1,23 @@
 package com.mc3699.codmod.client;
 
 import com.mc3699.codmod.Codmod;
-import com.mc3699.codmod.effect.EffectRegistration;
+import com.mc3699.codmod.registry.CodMobEffects;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.particle.SpriteSet;
-import net.minecraft.client.renderer.texture.atlas.SpriteSource;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.client.event.RegisterGuiLayersEvent;
-import net.neoforged.neoforge.client.event.RegisterNamedRenderTypesEvent;
 import net.neoforged.neoforge.client.event.RenderGuiLayerEvent;
-import net.neoforged.neoforge.client.gui.GuiLayerManager;
 import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
-import org.lwjgl.system.Platform;
 
 import java.util.Random;
 
-@EventBusSubscriber(modid = Codmod.MODID, value = Dist.CLIENT)
+@EventBusSubscriber(modid = Codmod.MOD_ID, value = Dist.CLIENT)
 public class ClientGUIEvents {
 
-    private static final ResourceLocation CORRUPTED_HEART = ResourceLocation.fromNamespaceAndPath(Codmod.MODID, "textures/gui/corrupt_full.png");
+    private static final ResourceLocation CORRUPTED_HEART = ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "textures/gui/corrupt_full.png");
     private static final ResourceLocation VANILLA_HEART = ResourceLocation.fromNamespaceAndPath("minecraft","textures/gui/sprites/hud/heart/full.png");
     private static Random random = new Random();
 
@@ -35,7 +28,7 @@ public class ClientGUIEvents {
         if(event.getName().equals(VanillaGuiLayers.PLAYER_HEALTH))
         {
             Player player = Minecraft.getInstance().player;
-            if(player != null && player.hasEffect(EffectRegistration.HEART_CORRUPTION))
+            if(player != null && player.hasEffect(CodMobEffects.HEART_CORRUPTION))
             {
                 event.setCanceled(true);
                 renderCustomHearts(event.getGuiGraphics(), player);

@@ -1,6 +1,6 @@
 package com.mc3699.codmod.block.mantleKey;
 
-import com.mc3699.codmod.block.BlockEntityRegistration;
+import com.mc3699.codmod.registry.CodBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
@@ -8,26 +8,19 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
-import net.minecraft.network.protocol.game.ClientboundBlockUpdatePacket;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.RedStoneWireBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityTicker;
-import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraft.world.level.block.entity.TickingBlockEntity;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.Properties;
 
 public class MantleKeyBlockEntity extends BlockEntity {
 
     private int beamLength = 1;
 
     public MantleKeyBlockEntity(BlockPos pos, BlockState blockState) {
-        super(BlockEntityRegistration.MANTLE_KEY.get(), pos, blockState);
+        super(CodBlockEntities.MANTLE_KEY.get(), pos, blockState);
     }
 
     public void setBeamLength(int beamLen) {

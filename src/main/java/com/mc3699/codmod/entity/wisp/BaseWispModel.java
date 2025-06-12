@@ -17,7 +17,7 @@ import org.joml.Vector3f;
 
 public class BaseWispModel extends HierarchicalModel<BaseWispEntity> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
-	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(Codmod.MODID, "yellow_wisp"), "main");
+	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "yellow_wisp"), "main");
 	private final ModelPart body;
 	private final ModelPart base;
 	private final ModelPart outer;

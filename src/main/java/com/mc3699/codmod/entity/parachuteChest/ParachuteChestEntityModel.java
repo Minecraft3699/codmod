@@ -16,7 +16,7 @@ import net.minecraft.resources.ResourceLocation;
 
 public class ParachuteChestEntityModel extends HierarchicalModel<ParachuteChestEntity> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
-	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(Codmod.MODID, "parachute_chest"), "main");
+	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "parachute_chest"), "main");
 	private ModelPart chest;
 	private ModelPart bb_main;
 

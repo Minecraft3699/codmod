@@ -19,7 +19,7 @@ import org.joml.Vector3f;
 
 public class SwarmCodEntityModel extends HierarchicalModel<SwarmCodEntity> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
-	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(Codmod.MODID, "swarm_cod"), "main");
+	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "swarm_cod"), "main");
 	private final ModelPart body;
 	private final ModelPart head;
 	private final ModelPart leftFin;

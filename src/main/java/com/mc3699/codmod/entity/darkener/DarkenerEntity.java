@@ -1,6 +1,6 @@
 package com.mc3699.codmod.entity.darkener;
 
-import com.mc3699.codmod.entity.EntityRegistration;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -13,8 +13,8 @@ public class DarkenerEntity extends PathfinderMob {
 
     private final int DESPAWN_TIME = 6000;
 
-    public DarkenerEntity(Level level) {
-        super(EntityRegistration.DARKENER.get(), level);
+    public DarkenerEntity(EntityType<DarkenerEntity> type, Level level) {
+        super(type, level);
     }
 
     @Override
@@ -25,8 +25,7 @@ public class DarkenerEntity extends PathfinderMob {
         this.goalSelector.addGoal(8, new WaterAvoidingRandomStrollGoal(this, 1));
     }
 
-    public static AttributeSupplier.Builder createAttributes()
-    {
+    public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 80f)
                 .add(Attributes.MOVEMENT_SPEED, 0.3f)
@@ -37,8 +36,8 @@ public class DarkenerEntity extends PathfinderMob {
     @Override
     public void tick() {
         super.tick();
-        if(tickCount > DESPAWN_TIME)
-        {
+
+        if (tickCount > DESPAWN_TIME) {
             discard();
         }
     }

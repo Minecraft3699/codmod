@@ -3,22 +3,15 @@ package com.mc3699.codmod.entity.wisp.wispTypes;
 import com.mc3699.codmod.Codmod;
 import com.mc3699.codmod.entity.wisp.BaseWispEntity;
 import com.mc3699.codmod.entity.wisp.BaseWispModel;
-import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import foundry.veil.api.client.render.VeilRenderSystem;
 import foundry.veil.api.client.render.light.PointLight;
-import foundry.veil.api.client.render.shader.program.ShaderProgram;
-import foundry.veil.api.event.VeilPostProcessingEvent;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.blockentity.BeaconRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.animal.Cod;
-import org.lwjgl.opengl.GL11;
 
 import java.util.Map;
 import java.util.WeakHashMap;
@@ -26,7 +19,7 @@ import java.util.WeakHashMap;
 public class DistortedWispEntityRenderer extends MobRenderer<BaseWispEntity, BaseWispModel> {
 
     private static Map<BaseWispEntity, PointLight> entityPointLightMap = new WeakHashMap<>();
-    private static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(Codmod.MODID, "textures/entity/base_wisp.png");
+    private static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "textures/entity/base_wisp.png");
 
     public DistortedWispEntityRenderer(EntityRendererProvider.Context context) {
         super(context, new BaseWispModel(context.bakeLayer(BaseWispModel.LAYER_LOCATION)), 0.0f);

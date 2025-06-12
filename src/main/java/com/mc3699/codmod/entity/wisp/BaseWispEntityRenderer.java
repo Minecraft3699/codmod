@@ -6,10 +6,8 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import foundry.veil.api.client.render.VeilRenderSystem;
 import foundry.veil.api.client.render.light.PointLight;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 
 import java.util.Map;
@@ -18,7 +16,7 @@ import java.util.WeakHashMap;
 public class BaseWispEntityRenderer extends MobRenderer<BaseWispEntity, BaseWispModel> {
 
     private static Map<BaseWispEntity, PointLight> entityPointLightMap = new WeakHashMap<>();
-    private static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(Codmod.MODID, "textures/entity/base_wisp.png");
+    private static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "textures/entity/base_wisp.png");
 
     public BaseWispEntityRenderer(EntityRendererProvider.Context context) {
         super(context, new BaseWispModel(context.bakeLayer(BaseWispModel.LAYER_LOCATION)), 0.0f);

@@ -16,7 +16,7 @@ public class TrialTraderEntityRenderer extends LivingEntityRenderer<TrialTraderE
 
     @Override
     public ResourceLocation getTextureLocation(TrialTraderEntity trialTraderEntity) {
-        return ResourceLocation.fromNamespaceAndPath(Codmod.MODID, "textures/entity/trial_trader_passive.png");
+        return ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "textures/entity/trial_trader_passive.png");
     }
 
     @Override

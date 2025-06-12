@@ -1,23 +1,18 @@
 package com.mc3699.codmod.entity.applicant;
 
 import com.mc3699.codmod.Codmod;
-import com.mc3699.codmod.item.ItemRegistration;
+import com.mc3699.codmod.registry.CodItems;
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.ItemRenderer;
-import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.resources.model.BakedModel;
-import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 
 import java.util.Random;
 
@@ -32,7 +27,7 @@ public class ApplicantEntityRenderer extends EntityRenderer<ApplicantEntity> {
 
     @Override
     public ResourceLocation getTextureLocation(ApplicantEntity applicantEntity) {
-        return ResourceLocation.fromNamespaceAndPath(Codmod.MODID, "textures/item/application.png");
+        return ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "textures/item/application.png");
     }
 
 
@@ -44,7 +39,7 @@ public class ApplicantEntityRenderer extends EntityRenderer<ApplicantEntity> {
         poseStack.scale(10,12,10);
         poseStack.mulPose(entityRenderDispatcher.cameraOrientation());
 
-        ItemStack stackItem = new ItemStack(ItemRegistration.APPLICATION.get());
+        ItemStack stackItem = new ItemStack(CodItems.APPLICATION.get());
         BakedModel model = itemRenderer.getModel(stackItem, entity.level(), null, 0);
         itemRenderer.render(stackItem, ItemDisplayContext.GROUND, false, poseStack, bufferSource, LightTexture.FULL_BRIGHT, OverlayTexture.NO_OVERLAY, model);
 

@@ -8,7 +8,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.network.handling.IPayloadContext;
 
 public record CameraRotationPayload(float yaw, float pitch) implements CustomPacketPayload {
-    public static final ResourceLocation ID = ResourceLocation.fromNamespaceAndPath(Codmod.MODID, "camera_rotation");
+    public static final ResourceLocation ID = ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "camera_rotation");
     public static final Type<CameraRotationPayload> TYPE = new Type<>(ID);
 
     @Override

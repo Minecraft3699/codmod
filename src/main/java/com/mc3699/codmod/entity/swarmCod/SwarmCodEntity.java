@@ -1,6 +1,6 @@
 package com.mc3699.codmod.entity.swarmCod;
 
-import com.mc3699.codmod.entity.EntityRegistration;
+import com.mc3699.codmod.registry.CodEntities;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -12,7 +12,7 @@ import java.util.function.Predicate;
 
 public class SwarmCodEntity extends Mob {
     public SwarmCodEntity(EntityType<? extends Mob> type, Level level) {
-        super(EntityRegistration.SWARM_COD.get(), level);
+        super(CodEntities.SWARM_COD.get(), level);
         this.moveControl = new SwarmCodMoveControl(this);
     }
 

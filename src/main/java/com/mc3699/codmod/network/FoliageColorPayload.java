@@ -10,10 +10,8 @@ import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.network.handling.IPayloadContext;
 
-import java.awt.*;
-
 public record FoliageColorPayload(int color, boolean reset) implements CustomPacketPayload {
-    public static final ResourceLocation ID = ResourceLocation.fromNamespaceAndPath(Codmod.MODID, "foliage_color");
+    public static final ResourceLocation ID = ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "foliage_color");
     public static final Type<FoliageColorPayload> TYPE = new Type<>(ID);
     public static final StreamCodec<RegistryFriendlyByteBuf, FoliageColorPayload> CODEC =
             StreamCodec.composite(

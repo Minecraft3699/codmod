@@ -1,34 +1,28 @@
-package com.mc3699.codmod.block;
+package com.mc3699.codmod.registry;
 
 import com.mc3699.codmod.Codmod;
 import com.mc3699.codmod.block.launchpad.LaunchPadBlockEntity;
-import com.mc3699.codmod.block.mantleKey.MantleKeyBlock;
 import com.mc3699.codmod.block.mantleKey.MantleKeyBlockEntity;
 import com.mc3699.codmod.block.radar.RadarBlockEntity;
 import com.mc3699.codmod.block.uavController.UAVControllerBlockEntity;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.util.datafix.DataFixTypes;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraft.world.level.block.entity.TickingBlockEntity;
-import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.Set;
 import java.util.function.Supplier;
 
-public class BlockEntityRegistration {
+public class CodBlockEntities {
 
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
-            DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, Codmod.MODID);
+            DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, Codmod.MOD_ID);
 
     public static final Supplier<BlockEntityType<MantleKeyBlockEntity>> MANTLE_KEY = BLOCK_ENTITIES.register(
             "mantle_key",
             () -> new BlockEntityType<>(
                     MantleKeyBlockEntity::new,
-                    Set.of(BlockRegistration.MANTLE_KEY.get()),
+                    Set.of(CodBlocks.MANTLE_KEY.get()),
                     null
             )
     );
@@ -37,7 +31,7 @@ public class BlockEntityRegistration {
             "launch_pad",
             () -> new BlockEntityType<>(
                     LaunchPadBlockEntity::new,
-                    Set.of(BlockRegistration.LAUNCH_PAD.get()),
+                    Set.of(CodBlocks.LAUNCH_PAD.get()),
                     null
             )
     );
@@ -46,7 +40,7 @@ public class BlockEntityRegistration {
             "radar",
             () -> new BlockEntityType<>(
                     RadarBlockEntity::new,
-                    Set.of(BlockRegistration.RADAR.get()),
+                    Set.of(CodBlocks.RADAR.get()),
                     null
             )
     );
@@ -55,7 +49,7 @@ public class BlockEntityRegistration {
             "uav_controller",
             () -> new BlockEntityType<>(
                     UAVControllerBlockEntity::new,
-                    Set.of(BlockRegistration.UAV_CONTROLLER.get()),
+                    Set.of(CodBlocks.UAV_CONTROLLER.get()),
                     null
             )
     );

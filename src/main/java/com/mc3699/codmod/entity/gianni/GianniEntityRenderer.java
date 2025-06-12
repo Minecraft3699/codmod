@@ -1,8 +1,7 @@
 package com.mc3699.codmod.entity.gianni;
 
 import com.mc3699.codmod.Codmod;
-import com.mc3699.codmod.entity.applicant.ApplicantEntity;
-import com.mc3699.codmod.item.ItemRegistration;
+import com.mc3699.codmod.registry.CodItems;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -28,7 +27,7 @@ public class GianniEntityRenderer extends EntityRenderer<GianniEntity> {
 
     @Override
     public ResourceLocation getTextureLocation(GianniEntity gianniEntity) {
-        return ResourceLocation.fromNamespaceAndPath(Codmod.MODID, "textures/item/gianni.png");
+        return ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "textures/item/gianni.png");
     }
 
 
@@ -41,7 +40,7 @@ public class GianniEntityRenderer extends EntityRenderer<GianniEntity> {
         poseStack.scale(6,6,6);
         poseStack.mulPose(entityRenderDispatcher.cameraOrientation());
 
-        ItemStack stackItem = new ItemStack(ItemRegistration.GIANNI.get());
+        ItemStack stackItem = new ItemStack(CodItems.GIANNI.get());
         BakedModel model = itemRenderer.getModel(stackItem, entity.level(), null, 0);
         itemRenderer.render(stackItem, ItemDisplayContext.GROUND, false, poseStack, bufferSource, LightTexture.FULL_BRIGHT, OverlayTexture.NO_OVERLAY, model);
 

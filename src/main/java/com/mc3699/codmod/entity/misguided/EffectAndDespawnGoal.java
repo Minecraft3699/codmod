@@ -1,6 +1,6 @@
 package com.mc3699.codmod.entity.misguided;
 
-import com.mc3699.codmod.effect.EffectRegistration;
+import com.mc3699.codmod.registry.CodMobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -36,7 +36,7 @@ public class EffectAndDespawnGoal extends Goal {
         if (this.target != null) {
             this.entity.getNavigation().moveTo(this.target, 1.1);
             if (this.entity.distanceTo(this.target) <= 1.5) {
-                target.addEffect(new MobEffectInstance(EffectRegistration.HEART_CORRUPTION, 240, 5));
+                target.addEffect(new MobEffectInstance(CodMobEffects.HEART_CORRUPTION, 240, 5));
                 target.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 240, 5));
                 this.entity.remove(Entity.RemovalReason.DISCARDED);
             }

@@ -1,6 +1,6 @@
 package com.mc3699.codmod.block.uavController;
 
-import com.mc3699.codmod.block.BlockEntityRegistration;
+import com.mc3699.codmod.registry.CodBlockEntities;
 import com.mc3699.codmod.entity.uav.UAVEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
@@ -16,7 +16,7 @@ public class UAVControllerBlockEntity extends BlockEntity {
     private UUID uavUUID = null;
 
     public UAVControllerBlockEntity(BlockPos pos, BlockState blockState) {
-        super(BlockEntityRegistration.UAV_CONTROLLER.get(), pos, blockState);
+        super(CodBlockEntities.UAV_CONTROLLER.get(), pos, blockState);
     }
 
     public UUID getUavUUID() {

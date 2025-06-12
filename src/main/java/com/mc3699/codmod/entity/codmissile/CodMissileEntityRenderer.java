@@ -41,6 +41,6 @@ public class CodMissileEntityRenderer extends EntityRenderer<CodMissileEntity> {
 
     @Override
     public ResourceLocation getTextureLocation(CodMissileEntity codMissileEntity) {
-        return ResourceLocation.fromNamespaceAndPath(Codmod.MODID, "textures/entity/codmissile.png");
+        return ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "textures/entity/codmissile.png");
     }
 }

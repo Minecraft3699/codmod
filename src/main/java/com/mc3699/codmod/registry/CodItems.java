@@ -1,6 +1,10 @@
-package com.mc3699.codmod.item;
+package com.mc3699.codmod.registry;
 
 import com.mc3699.codmod.Codmod;
+import com.mc3699.codmod.item.CodRodItem;
+import com.mc3699.codmod.item.IntegrityCookieItem;
+import com.mc3699.codmod.item.MiniCodItem;
+import com.mc3699.codmod.item.UAVItem;
 import com.mc3699.codmod.item.detector.DetectorItem;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.food.Foods;
@@ -12,11 +16,11 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
 
-import static com.mc3699.codmod.block.BlockRegistration.BLOCKS;
+import static com.mc3699.codmod.registry.CodBlocks.BLOCKS;
 
-public class ItemRegistration {
+public class CodItems {
 
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.createItems(Codmod.MODID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.createItems(Codmod.MOD_ID);
 
     public static final Supplier<Item> COD_ROD = ITEMS.register("cod_rod", CodRodItem::new);
 

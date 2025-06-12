@@ -1,7 +1,5 @@
 package com.mc3699.codmod.entity.ariral;
 import com.mc3699.codmod.Codmod;
-import com.mojang.blaze3d.platform.GlStateManager;
-import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
@@ -28,7 +26,7 @@ public class AriralEntityRenderer extends LivingEntityRenderer<AriralEntity, Pla
 
         float limbSwing = entity.walkAnimation.position(partialTicks);
         float limbSwingAmount = entity.walkAnimation.speed(partialTicks);
-        VertexConsumer transparentBuffer = buffer.getBuffer(RenderType.entityTranslucentCull(ResourceLocation.fromNamespaceAndPath(Codmod.MODID, "textures/entity/ariral.png")));
+        VertexConsumer transparentBuffer = buffer.getBuffer(RenderType.entityTranslucentCull(ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "textures/entity/ariral.png")));
 
         model.setupAnim(entity, limbSwing,limbSwingAmount,entity.tickCount, entityYaw, entity.yHeadRot);
         model.renderToBuffer(poseStack, transparentBuffer,packedLight, OverlayTexture.NO_OVERLAY);
@@ -42,6 +40,6 @@ public class AriralEntityRenderer extends LivingEntityRenderer<AriralEntity, Pla
 
     @Override
     public ResourceLocation getTextureLocation(AriralEntity ariralEntity) {
-        return ResourceLocation.fromNamespaceAndPath(Codmod.MODID, "textures/entity/ariral.png");
+        return ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "textures/entity/ariral.png");
     }
 }

@@ -1,7 +1,7 @@
 package com.mc3699.codmod.entity.uav;
 
 import com.mc3699.codmod.Codmod;
-import com.mc3699.codmod.item.ItemRegistration;
+import com.mc3699.codmod.registry.CodItems;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import net.minecraft.client.renderer.LightTexture;
@@ -15,7 +15,6 @@ import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.phys.Vec3;
 
 public class UAVEntityRenderer extends EntityRenderer<UAVEntity> {
     private final ItemRenderer itemRenderer;
@@ -31,7 +30,7 @@ public class UAVEntityRenderer extends EntityRenderer<UAVEntity> {
 
     @Override
     public void render(UAVEntity entity, float entityYaw, float partialTick, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
-        ItemStack stackItem = new ItemStack(ItemRegistration.UAV.get());
+        ItemStack stackItem = new ItemStack(CodItems.UAV.get());
         poseStack.pushPose();
         poseStack.scale(3, 3, 3);
 
@@ -44,6 +43,6 @@ public class UAVEntityRenderer extends EntityRenderer<UAVEntity> {
 
     @Override
     public ResourceLocation getTextureLocation(UAVEntity uavEntity) {
-        return ResourceLocation.fromNamespaceAndPath(Codmod.MODID, "textures/item/uav.png");
+        return ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "textures/item/uav.png");
     }
 }

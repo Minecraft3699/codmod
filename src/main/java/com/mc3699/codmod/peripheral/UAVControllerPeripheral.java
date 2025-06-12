@@ -2,27 +2,20 @@ package com.mc3699.codmod.peripheral;
 
 import com.mc3699.codmod.block.uavController.UAVControllerBlockEntity;
 import com.mc3699.codmod.entity.uav.UAVEntity;
+import com.mc3699.codmod.registry.CodEntities;
 import dan200.computercraft.api.lua.LuaFunction;
 import dan200.computercraft.api.peripheral.IPeripheral;
+import dev.wendigodrip.thebrokenscript.api.ext.EntityTypeExt;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.Arrow;
-import net.minecraft.world.level.ClipContext;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
-import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import org.jspecify.annotations.Nullable;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 public class UAVControllerPeripheral implements IPeripheral {
     private final UAVControllerBlockEntity blockEntity;
@@ -49,10 +42,12 @@ public class UAVControllerPeripheral implements IPeripheral {
             }
 
             BlockPos pos = blockEntity.getBlockPos().above();
-            UAVEntity uav = new UAVEntity(serverLevel);
-            uav.setPos(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5);
+            UAVEntity uav = EntityTypeExt.INSTANCE.trySummonTyped(
+                    CodEntities.UAV.get(),
+                    serverLevel,
+                    pos.getCenter().add(0.5, 0, 0.5)
+            );
             uav.setLinkedController(pos);
-            serverLevel.addFreshEntity(uav);
             blockEntity.setUavUUID(uav.getUUID());
             blockEntity.setChanged();
             return true;
@@ -116,8 +111,12 @@ public class UAVControllerPeripheral implements IPeripheral {
             if (uav != null) {
                 Vec3 uavPos = uav.getPosition(0);
                 AABB aabb = new AABB(
-                        uavPos.x - radius, uavPos.y - radius, uavPos.z - radius,
-                        uavPos.x + radius, uavPos.y + radius, uavPos.z + radius
+                        uavPos.x - radius,
+                        uavPos.y - radius,
+                        uavPos.z - radius,
+                        uavPos.x + radius,
+                        uavPos.y + radius,
+                        uavPos.z + radius
                 );
                 List<Entity> entities = serverLevel.getEntities((Entity) null, aabb, entity -> entity != uav);
                 int index = 0;

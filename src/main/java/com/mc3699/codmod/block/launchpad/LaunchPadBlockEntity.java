@@ -1,20 +1,12 @@
 package com.mc3699.codmod.block.launchpad;
 
-import com.mc3699.codmod.block.BlockEntityRegistration;
+import com.mc3699.codmod.registry.CodBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.MenuProvider;
-import net.minecraft.world.SimpleContainer;
-import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.items.ItemStackHandler;
-import org.jetbrains.annotations.Nullable;
 
 public class LaunchPadBlockEntity extends BlockEntity {
 
@@ -33,7 +25,7 @@ public class LaunchPadBlockEntity extends BlockEntity {
     };
 
     public LaunchPadBlockEntity(BlockPos pos, BlockState blockState) {
-        super(BlockEntityRegistration.LAUNCH_PAD.get(), pos, blockState);
+        super(CodBlockEntities.LAUNCH_PAD.get(), pos, blockState);
     }
 
     public ItemStackHandler getItems()

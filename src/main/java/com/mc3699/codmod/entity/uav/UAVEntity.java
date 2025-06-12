@@ -1,6 +1,5 @@
 package com.mc3699.codmod.entity.uav;
 
-import com.mc3699.codmod.entity.EntityRegistration;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -19,10 +18,22 @@ import net.minecraft.world.phys.Vec3;
 public class UAVEntity extends Entity {
     private BlockPos linkedController = BlockPos.ZERO;
     private Vec3 targetPos = null;
-    private static final EntityDataAccessor<Float> ALTITUDE = SynchedEntityData.defineId(UAVEntity.class, EntityDataSerializers.FLOAT);
-    private static final EntityDataAccessor<Float> SPEED = SynchedEntityData.defineId(UAVEntity.class, EntityDataSerializers.FLOAT);
-    private static final EntityDataAccessor<Float> CIRCLE_RADIUS = SynchedEntityData.defineId(UAVEntity.class, EntityDataSerializers.FLOAT);
-    private static final EntityDataAccessor<Boolean> TERRAIN_FOLLOWING = SynchedEntityData.defineId(UAVEntity.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Float> ALTITUDE = SynchedEntityData.defineId(
+            UAVEntity.class,
+            EntityDataSerializers.FLOAT
+    );
+    private static final EntityDataAccessor<Float> SPEED = SynchedEntityData.defineId(
+            UAVEntity.class,
+            EntityDataSerializers.FLOAT
+    );
+    private static final EntityDataAccessor<Float> CIRCLE_RADIUS = SynchedEntityData.defineId(
+            UAVEntity.class,
+            EntityDataSerializers.FLOAT
+    );
+    private static final EntityDataAccessor<Boolean> TERRAIN_FOLLOWING = SynchedEntityData.defineId(
+            UAVEntity.class,
+            EntityDataSerializers.BOOLEAN
+    );
     private static final float DEFAULT_ALTITUDE = 50.0f;
     private static final float DEFAULT_SPEED = 1.0f;
     private static final float DEFAULT_CIRCLE_RADIUS = 50.0f;
@@ -31,8 +42,8 @@ public class UAVEntity extends Entity {
     private float targetPitch = 0.0f;
     private ChunkPos[] previousChunks = null;
 
-    public UAVEntity(Level level) {
-        super(EntityRegistration.UAV.get(), level);
+    public UAVEntity(EntityType<UAVEntity> type, Level level) {
+        super(type, level);
         this.entityData.set(ALTITUDE, DEFAULT_ALTITUDE);
         this.entityData.set(SPEED, DEFAULT_SPEED);
         this.entityData.set(CIRCLE_RADIUS, DEFAULT_CIRCLE_RADIUS);
@@ -47,7 +58,8 @@ public class UAVEntity extends Entity {
     public boolean isAtTarget(int threshold) {
         if (targetPos == null) return false;
         Vec3 currentPos = position();
-        double horizontalDistance = Math.sqrt(Math.pow(currentPos.x - targetPos.x, 2) + Math.pow(currentPos.z - targetPos.z, 2));
+        double horizontalDistance = Math.sqrt(Math.pow(currentPos.x - targetPos.x, 2) +
+                                              Math.pow(currentPos.z - targetPos.z, 2));
         return horizontalDistance < threshold;
     }
 
@@ -113,7 +125,8 @@ public class UAVEntity extends Entity {
             float speed = entityData.get(SPEED);
             if (!isCircling) {
                 Vec3 direction = targetPos.subtract(currentPos).normalize();
-                double horizontalDistance = Math.sqrt(Math.pow(currentPos.x - targetPos.x, 2) + Math.pow(currentPos.z - targetPos.z, 2));
+                double horizontalDistance = Math.sqrt(Math.pow(currentPos.x - targetPos.x, 2) +
+                                                      Math.pow(currentPos.z - targetPos.z, 2));
 
                 if (horizontalDistance > 0.5) {
                     Vec3 motion = direction.scale(speed);
@@ -122,7 +135,8 @@ public class UAVEntity extends Entity {
                     double targetY;
                     if (entityData.get(TERRAIN_FOLLOWING)) {
                         BlockPos groundPos = new BlockPos((int) position().x, (int) position().y, (int) position().z);
-                        int groundY = level().getHeightmapPos(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, groundPos).getY();
+                        int groundY = level().getHeightmapPos(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, groundPos)
+                                .getY();
                         targetY = groundY + entityData.get(ALTITUDE);
                     } else {
                         targetY = targetPos.y; // Maintain fixed altitude relative to target Y
@@ -167,7 +181,17 @@ public class UAVEntity extends Entity {
         }
 
         if (level() instanceof ServerLevel serverLevel) {
-            serverLevel.sendParticles(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE, position().x, position().y + 0.75f, position().z, 20, 0, 0, 0, 0);
+            serverLevel.sendParticles(
+                    ParticleTypes.CAMPFIRE_SIGNAL_SMOKE,
+                    position().x,
+                    position().y + 0.75f,
+                    position().z,
+                    20,
+                    0,
+                    0,
+                    0,
+                    0
+            );
         }
         super.tick();
     }
@@ -220,7 +244,11 @@ public class UAVEntity extends Entity {
         entityData.set(CIRCLE_RADIUS, compoundTag.getFloat("circleRadius"));
         entityData.set(TERRAIN_FOLLOWING, compoundTag.getBoolean("terrainFollowing"));
         if (compoundTag.contains("targetX")) {
-            targetPos = new Vec3(compoundTag.getDouble("targetX"), compoundTag.getDouble("targetY"), compoundTag.getDouble("targetZ"));
+            targetPos = new Vec3(
+                    compoundTag.getDouble("targetX"),
+                    compoundTag.getDouble("targetY"),
+                    compoundTag.getDouble("targetZ")
+            );
         }
         isCircling = compoundTag.getBoolean("isCircling");
     }

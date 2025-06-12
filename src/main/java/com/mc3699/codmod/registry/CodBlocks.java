@@ -1,29 +1,20 @@
-package com.mc3699.codmod.block;
+package com.mc3699.codmod.registry;
 
 import com.mc3699.codmod.Codmod;
 import com.mc3699.codmod.block.launchpad.LaunchPadBlock;
 import com.mc3699.codmod.block.mantleKey.MantleKeyBlock;
 import com.mc3699.codmod.block.radar.RadarBlock;
 import com.mc3699.codmod.block.uavController.UAVControllerBlock;
-import com.mc3699.codmod.item.ItemRegistration;
-import net.minecraft.advancements.critereon.UsedTotemTrigger;
-import net.minecraft.world.entity.animal.Cod;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.MagmaBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import net.neoforged.neoforge.server.command.ModIdArgument;
 
-import java.util.function.Supplier;
+public class CodBlocks {
 
-public class BlockRegistration {
-
-    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(Codmod.MODID);
+    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(Codmod.MOD_ID);
 
     public static final DeferredBlock<Block> MOLTEN_COPPER = BLOCKS.register(
             "molten_copper",

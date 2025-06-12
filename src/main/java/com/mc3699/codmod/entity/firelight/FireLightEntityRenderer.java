@@ -1,7 +1,6 @@
 package com.mc3699.codmod.entity.firelight;
 
 import com.mc3699.codmod.Codmod;
-import com.mc3699.codmod.entity.darkener.DarkenerEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.model.PlayerModel;
 import net.minecraft.client.model.geom.ModelLayers;
@@ -21,7 +20,7 @@ public class FireLightEntityRenderer extends LivingEntityRenderer<FirelightEntit
 
     @Override
     public ResourceLocation getTextureLocation(FirelightEntity darkenerEntity) {
-        return ResourceLocation.fromNamespaceAndPath(Codmod.MODID, "textures/entity/firelight.png");
+        return ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "textures/entity/firelight.png");
     }
 
     @Override

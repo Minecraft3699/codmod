@@ -1,6 +1,6 @@
 package com.mc3699.codmod.entity.misguided;
 
-import com.mc3699.codmod.entity.EntityRegistration;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -11,15 +11,12 @@ import net.neoforged.neoforge.common.damagesource.DamageContainer;
 
 public class MisguidedEntity extends Mob {
 
-    public MisguidedEntity(Level level) {
-        super(EntityRegistration.MISGUIDED.get(), level);
+    public MisguidedEntity(EntityType<MisguidedEntity> type, Level level) {
+        super(type, level);
     }
 
-
-
     public enum Mode {
-        PASSIVE,
-        AGGRESSIVE
+        PASSIVE, AGGRESSIVE
     }
 
     public void setMode(Mode mode) {
@@ -33,8 +30,7 @@ public class MisguidedEntity extends Mob {
     @Override
     public void onAddedToLevel() {
         super.onAddedToLevel();
-        if(this.getY() < 60)
-        {
+        if (this.getY() < 60) {
             this.setMode(Mode.AGGRESSIVE);
             this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, false));
         }

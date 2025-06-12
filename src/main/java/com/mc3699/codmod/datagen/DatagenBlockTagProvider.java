@@ -1,6 +1,6 @@
 package com.mc3699.codmod.datagen;
 
-import com.mc3699.codmod.block.BlockRegistration;
+import com.mc3699.codmod.registry.CodBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -18,9 +18,9 @@ public class DatagenBlockTagProvider extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(BlockRegistration.MOLTEN_COPPER.get())
-                .add(BlockRegistration.RADAR.get())
-                .add(BlockRegistration.UAV_CONTROLLER.get())
+                .add(CodBlocks.MOLTEN_COPPER.get())
+                .add(CodBlocks.RADAR.get())
+                .add(CodBlocks.UAV_CONTROLLER.get())
         ;
     }
 

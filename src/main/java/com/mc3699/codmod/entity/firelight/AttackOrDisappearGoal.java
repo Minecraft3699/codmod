@@ -1,6 +1,6 @@
 package com.mc3699.codmod.entity.firelight;
 
-import com.mc3699.codmod.effect.EffectRegistration;
+import com.mc3699.codmod.registry.CodMobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.goal.Goal;
@@ -62,8 +62,8 @@ public class AttackOrDisappearGoal extends Goal {
                     entity.getNavigation().moveTo(target, attackSpeed);
                     if (entity.distanceToSqr(target) < 2.0) {
                         entity.doHurtTarget(target);
-                        target.removeEffect(EffectRegistration.HEART_CORRUPTION);
-                        target.addEffect(new MobEffectInstance(EffectRegistration.HEART_CORRUPTION, MobEffectInstance.INFINITE_DURATION, random.nextInt(1,10)));
+                        target.removeEffect(CodMobEffects.HEART_CORRUPTION);
+                        target.addEffect(new MobEffectInstance(CodMobEffects.HEART_CORRUPTION, MobEffectInstance.INFINITE_DURATION, random.nextInt(1,10)));
                     }
                     attacking = true;
                 }

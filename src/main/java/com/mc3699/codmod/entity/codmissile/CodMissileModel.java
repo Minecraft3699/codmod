@@ -4,10 +4,6 @@ package com.mc3699.codmod.entity.codmissile;// Made with Blockbench 4.12.4
 
 
 import com.mc3699.codmod.Codmod;
-import com.mc3699.codmod.entity.codmissile.CodMissileEntity;
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
@@ -18,7 +14,7 @@ import net.minecraft.world.entity.Entity;
 
 public class CodMissileModel<T extends Entity> extends HierarchicalModel<CodMissileEntity> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
-	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(Codmod.MODID, "cod_missile"), "main");
+	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "cod_missile"), "main");
 	private final ModelPart bodyRoot;
 
 	public CodMissileModel(ModelPart root) {

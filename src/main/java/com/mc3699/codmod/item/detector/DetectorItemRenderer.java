@@ -1,33 +1,18 @@
 package com.mc3699.codmod.item.detector;
 
-import com.mc3699.codmod.Codmod;
-import com.mc3699.codmod.item.ItemRegistration;
+import com.mc3699.codmod.registry.CodItems;
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.block.model.BakedQuad;
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderDispatcher;
 import net.minecraft.client.renderer.entity.ItemRenderer;
-import net.minecraft.client.resources.model.BakedModel;
-import net.minecraft.client.resources.model.ModelResourceLocation;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.Mth;
-import net.minecraft.util.RandomSource;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.phys.Vec3;
 import org.joml.Matrix4f;
-
-import java.util.Random;
 
 public class DetectorItemRenderer extends BlockEntityWithoutLevelRenderer {
     public static final DetectorItemRenderer INSTANCE = new DetectorItemRenderer();
@@ -57,7 +42,7 @@ public class DetectorItemRenderer extends BlockEntityWithoutLevelRenderer {
         }
 
         ItemRenderer itemRenderer = Minecraft.getInstance().getItemRenderer();
-        itemRenderer.renderStatic(new ItemStack(ItemRegistration.BROKEN_DETECTOR.get(), 1), displayContext, packedLight, packedOverlay,
+        itemRenderer.renderStatic(new ItemStack(CodItems.BROKEN_DETECTOR.get(), 1), displayContext, packedLight, packedOverlay,
                 poseStack, buffer, null, 0);
 
         poseStack.translate(-0.7, 0.92, 0.075);

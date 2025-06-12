@@ -1,14 +1,10 @@
 package com.mc3699.codmod.entity.darkener;
 
 import com.mc3699.codmod.Codmod;
-import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.mojang.math.Axis;
 import net.minecraft.client.model.PlayerModel;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.resources.ResourceLocation;
@@ -24,7 +20,7 @@ public class DarkenerEntityRenderer extends LivingEntityRenderer<DarkenerEntity,
 
     @Override
     public ResourceLocation getTextureLocation(DarkenerEntity darkenerEntity) {
-        return ResourceLocation.fromNamespaceAndPath(Codmod.MODID, "textures/entity/darkener.png");
+        return ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "textures/entity/darkener.png");
     }
 
     @Override

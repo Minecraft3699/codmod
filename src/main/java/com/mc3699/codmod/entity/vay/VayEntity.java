@@ -1,14 +1,16 @@
 package com.mc3699.codmod.entity.vay;
 
-import com.mc3699.codmod.block.BlockRegistration;
-import com.mc3699.codmod.entity.EntityRegistration;
+import com.mc3699.codmod.registry.CodBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
@@ -26,12 +28,11 @@ public class VayEntity extends PathfinderMob {
     private Player triggerPlayer;
     private int lookTimer = 10;
 
-    public VayEntity(Level level) {
-        super(EntityRegistration.VAY.get(), level);
+    public VayEntity(EntityType<VayEntity> type, Level level) {
+        super(type, level);
     }
 
-    public static AttributeSupplier.Builder createAttributes()
-    {
+    public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 20f)
                 .add(Attributes.MOVEMENT_SPEED, 0.3f)
@@ -69,9 +70,14 @@ public class VayEntity extends PathfinderMob {
 
     public void spreadBlock(ServerLevel level, BlockPos pos, int radius, float chance, Block spreadBlock) {
         // Iterate over blocks in a spherical shell at the specified radius
-        for (BlockPos targetPos : BlockPos.betweenClosed(pos.offset(-radius, -radius, -radius), pos.offset(radius, radius, radius))) {
+        for (BlockPos targetPos : BlockPos.betweenClosed(
+                pos.offset(-radius, -radius, -radius),
+                pos.offset(radius, radius, radius)
+        )) {
             // Calculate Manhattan distance to check if the position is on the ring
-            int distance = Math.abs(targetPos.getX() - pos.getX()) + Math.abs(targetPos.getY() - pos.getY()) + Math.abs(targetPos.getZ() - pos.getZ());
+            int distance = Math.abs(targetPos.getX() - pos.getX()) +
+                           Math.abs(targetPos.getY() - pos.getY()) +
+                           Math.abs(targetPos.getZ() - pos.getZ());
             // Only place blocks at the exact radius (Manhattan distance)
             if (distance == radius && random.nextFloat() < chance) {
                 BlockState targetState = level.getBlockState(targetPos);
@@ -84,9 +90,9 @@ public class VayEntity extends PathfinderMob {
 
     @Override
     public void onRemovedFromLevel() {
-        if(triggerPlayer != null)
-        {
-            triggerPlayer.sendSystemMessage(Component.translatable("chat.codmod.vay_leave").setStyle(Style.EMPTY.withColor(0xFFFF55)));
+        if (triggerPlayer != null) {
+            triggerPlayer.sendSystemMessage(Component.translatable("chat.codmod.vay_leave")
+                    .setStyle(Style.EMPTY.withColor(0xFFFF55)));
         }
         super.onRemovedFromLevel();
     }
@@ -94,28 +100,25 @@ public class VayEntity extends PathfinderMob {
     @Override
     public void tick() {
         super.tick();
-        if(this.level() instanceof ServerLevel serverLevel && !isAggressive())
-        {
+        if (this.level() instanceof ServerLevel serverLevel && !isAggressive()) {
 
-            if(!this.triggered) {
+            if (!this.triggered) {
                 for (Player player : serverLevel.players()) {
                     if (isPlayerLookingAt(player, this)) {
                         if (this.tickCount % 2 == 0) {
 
-                            for(int i = 0; i < 5; i++)
-                            {
+                            for (int i = 0; i < 5; i++) {
                                 spreadBlock(serverLevel, this.getOnPos(), i, 0.3f, Blocks.COPPER_BLOCK);
                                 spreadBlock(serverLevel, this.getOnPos(), i, 0.1f, Blocks.WEATHERED_COPPER);
                                 spreadBlock(serverLevel, this.getOnPos(), i, 0.3f, Blocks.OXIDIZED_COPPER);
-                                spreadBlock(serverLevel, this.getOnPos(), i, 0.6f, BlockRegistration.MOLTEN_COPPER.get());
-                                spreadBlock(serverLevel, this.getOnPos(), i, 0.9f, BlockRegistration.MOLTEN_COPPER.get());
+                                spreadBlock(serverLevel, this.getOnPos(), i, 0.6f, CodBlocks.MOLTEN_COPPER.get());
+                                spreadBlock(serverLevel, this.getOnPos(), i, 0.9f, CodBlocks.MOLTEN_COPPER.get());
                             }
 
 
                         }
                         lookTimer--;
-                        if(lookTimer < 1)
-                        {
+                        if (lookTimer < 1) {
                             triggered = true;
                             triggerPlayer = player;
                             facePlayer(triggerPlayer);
