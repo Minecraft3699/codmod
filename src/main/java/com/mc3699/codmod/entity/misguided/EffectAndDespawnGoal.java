@@ -38,7 +38,7 @@ public class EffectAndDespawnGoal extends Goal {
             if (this.entity.distanceTo(this.target) <= 1.5) {
                 target.addEffect(new MobEffectInstance(EffectRegistration.HEART_CORRUPTION, 240, 5));
                 target.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 240, 5));
-                this.entity.remove(Entity.RemovalReason.DISCARDED); // Despawn after attacking
+                this.entity.remove(Entity.RemovalReason.DISCARDED);
             }
         }
     }

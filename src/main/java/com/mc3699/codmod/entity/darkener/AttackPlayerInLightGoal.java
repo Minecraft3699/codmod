@@ -58,21 +58,16 @@ public class AttackPlayerInLightGoal extends Goal {
         if (target != null) {
             entity.getLookControl().setLookAt(target, 10.0F, entity.getMaxHeadXRot());
             entity.getNavigation().moveTo(target, speed);
-
-            // Check if player is above and place dirt block to climb
             if (target.getY() > entity.getY() + 1.5) {
                 BlockPos entityPos = entity.blockPosition();
                 BlockPos belowPos = entityPos.below();
                 BlockState belowState = level.getBlockState(belowPos);
                 entity.getJumpControl().jump();
-                // Place dirt if the block below is replaceable and entity is on ground
                 if ((belowState.isAir() || belowState.canBeReplaced())) {
                     level.setBlock(belowPos, Blocks.DIRT.defaultBlockState(), 3);
-                    entity.getJumpControl().jump(); // Trigger jump after placing block
+                    entity.getJumpControl().jump();
                 }
             }
-
-            // Attack if within 2 blocks
             if (entity.distanceToSqr(target) <= 4.0) {
                 entity.doHurtTarget(target);
             }

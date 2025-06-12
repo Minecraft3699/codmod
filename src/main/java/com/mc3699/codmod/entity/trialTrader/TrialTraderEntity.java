@@ -78,7 +78,7 @@ public class TrialTraderEntity extends PathfinderMob {
 
     @Override
     public void tick() {
-        //TODO
+        //TODO trading
         // trial / bad omen check every second
         if(tickCount % 20 == 0)
         {

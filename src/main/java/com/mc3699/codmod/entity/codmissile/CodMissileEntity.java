@@ -64,7 +64,8 @@ public class CodMissileEntity extends Entity {
         if (level() instanceof ServerLevel serverLevel) {
             phaseTime++;
             switch (phase) {
-                case 0: // Pre-launch
+                // start launch / countdown phase
+                case 0:
                     serverLevel.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, position().x, position().y, position().z, 10, 0,-0.1,0, 0.01);
                     serverLevel.sendParticles(ParticleTypes.WHITE_SMOKE, position().x, position().y, position().z, 20, 0,-0.1,0, 0.02);
                     serverLevel.sendParticles(ParticleTypes.FLAME, position().x, position().y, position().z, 50, 0,-0.1,0, 0.02);
@@ -72,11 +73,11 @@ public class CodMissileEntity extends Entity {
                     if (phaseTime > LAUNCH_TIMER) {
                         phase = 1;
                         phaseTime = 0;
-                        // Set ascent velocity once
                         setDeltaMovement(0, ASCENT_SPEED, 0);
                     }
                     break;
-                case 1: // Ascent
+                    //fly to worldheight
+                case 1:
                     if(phaseTime == 2)
                     {
                         serverLevel.playSound(null, BlockPos.containing(position()), SoundRegistration.MISSILE_LAUNCH.get(), SoundSource.PLAYERS, 100, 1);
@@ -89,16 +90,18 @@ public class CodMissileEntity extends Entity {
                     if (getY() >= 320) {
                         phase = 2;
                         phaseTime = 0;
-                        setDeltaMovement(0, 0, 0); // Stop movement
+                        setDeltaMovement(0, 0, 0);
                     }
                     break;
-                case 2: // Positioning
+                    // teleport (honeslty can probably go in case 3 but idc)
+                case 2:
                     setPos(targetX+0.5, 320, targetZ+0.5);
                     phase = 3;
                     phaseTime = 0;
                     setDeltaMovement(0, TERMINAL_SPEED, 0);
                     break;
-                case 3: // Descent
+                    // re-entry
+                case 3:
                     if(phaseTime == 2)
                     {
                         serverLevel.playSound(null, BlockPos.containing(position()), SoundRegistration.MISSILE_LAUNCH.get(), SoundSource.PLAYERS, 100, 1);
@@ -106,7 +109,7 @@ public class CodMissileEntity extends Entity {
                     serverLevel.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, position().x, position().y, position().z, 100, 0,2,0, 0.3);
                     move(MoverType.SELF, getDeltaMovement());
 
-                    // Skip hitting ground for parachute chest entityy to spawn in
+                    // bandaid fix for parachute chest drop lol
                     if(function.equals("delivery"))
                     {
                         performFunction(serverLevel, function,"");
