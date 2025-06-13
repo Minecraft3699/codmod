@@ -10,14 +10,4 @@ public class DetectorItem extends Item {
     public DetectorItem() {
         super(new Properties());
     }
-
-    @Override
-    public void initializeClient(Consumer<IClientItemExtensions> consumer) {
-        consumer.accept(new IClientItemExtensions() {
-            @Override
-            public BlockEntityWithoutLevelRenderer getCustomRenderer() {
-                return DetectorItemRenderer.INSTANCE;
-            }
-        });
-    }
 }
