@@ -25,8 +25,8 @@ import java.util.Random;
 
 @EventBusSubscriber(modid = Codmod.MOD_ID, bus = EventBusSubscriber.Bus.GAME)
 public class BadSunEvents {
-    public static boolean isBadSunDay = false;
     private static final Random random = new Random();
+    public static boolean isBadSunDay = false;
     private static long tickCount = 0;
 
     private static boolean isInSun(ServerPlayer player) {

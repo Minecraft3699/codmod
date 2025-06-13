@@ -100,10 +100,6 @@ public class CodRodItem extends MaceItem {
 
     @Override
     public boolean mineBlock(ItemStack stack, Level level, BlockState state, BlockPos pos, LivingEntity miningEntity) {
-        if (miningEntity instanceof Player player && player.isCreative()) {
-            return false;
-        } else {
-            return true;
-        }
+        return !(miningEntity instanceof Player player) || !player.isCreative();
     }
 }

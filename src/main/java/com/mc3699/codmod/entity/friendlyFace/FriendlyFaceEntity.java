@@ -18,8 +18,11 @@ import org.apache.logging.log4j.Logger;
 
 public class FriendlyFaceEntity extends PathfinderMob {
     private static final Logger LOGGER = LogManager.getLogger();
+    private final ResourceLocation nullParticleID = ResourceLocation.fromNamespaceAndPath(
+            "thebrokenscript",
+            "null_particle"
+    );
     public int chaseTime = 200;
-    private final ResourceLocation nullParticleID = ResourceLocation.fromNamespaceAndPath("thebrokenscript", "null_particle");
     ParticleType<?> nullParticle = BuiltInRegistries.PARTICLE_TYPE.get(nullParticleID);
 
     public FriendlyFaceEntity(EntityType<FriendlyFaceEntity> type, Level level) {

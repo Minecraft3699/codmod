@@ -15,12 +15,14 @@ public class ClientItemRendererEvents {
 
     @SubscribeEvent
     public static void registerClientExtensions(RegisterClientExtensionsEvent event) {
-       event.registerItem(new IClientItemExtensions() {
-            @Override
-            public BlockEntityWithoutLevelRenderer getCustomRenderer() {
-                return DetectorItemRenderer.INSTANCE;
-            }
-        }, CodItems.DETECTOR.get());
+        event.registerItem(
+                new IClientItemExtensions() {
+                    @Override
+                    public BlockEntityWithoutLevelRenderer getCustomRenderer() {
+                        return DetectorItemRenderer.INSTANCE;
+                    }
+                }, CodItems.DETECTOR.get()
+        );
     }
 
 }

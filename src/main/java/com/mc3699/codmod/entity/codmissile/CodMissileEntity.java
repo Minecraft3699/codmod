@@ -30,12 +30,12 @@ public class CodMissileEntity extends Entity {
     private static final int LAUNCH_TIMER = 60;
     private static final double ASCENT_SPEED = 1.5;
     private static final double TERMINAL_SPEED = -2.0;
+    private final ItemStackHandler items;
     private double targetX, targetY, targetZ;
     private int phaseTime;
     private int phase;
     private String function;
     private String argument;
-    private final ItemStackHandler items;
 
     public CodMissileEntity(
             EntityType<CodMissileEntity> type,

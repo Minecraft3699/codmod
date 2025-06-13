@@ -20,7 +20,9 @@ public class CodBlockEntities {
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
-    }    public static final Supplier<BlockEntityType<MantleKeyBlockEntity>> MANTLE_KEY = BLOCK_ENTITIES.register(
+    }
+
+    public static final Supplier<BlockEntityType<MantleKeyBlockEntity>> MANTLE_KEY = BLOCK_ENTITIES.register(
             "mantle_key",
             () -> new BlockEntityType<>(
                     MantleKeyBlockEntity::new,

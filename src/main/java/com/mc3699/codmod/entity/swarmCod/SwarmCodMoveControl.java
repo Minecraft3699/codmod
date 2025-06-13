@@ -11,9 +11,9 @@ import net.minecraft.world.phys.Vec3;
 import java.util.Random;
 
 public class SwarmCodMoveControl extends MoveControl {
+    private final Random random = new Random();
     private float yRot;
     private int jumpDelay;
-    private final Random random = new Random();
 
     public SwarmCodMoveControl(Mob mob) {
         super(mob);

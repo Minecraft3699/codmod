@@ -29,13 +29,6 @@ public class CodEntities {
             )
             .properties((it) -> it.sized(0.5f, 0.5f))
             .lang("Ζεστός Χαλκός")
-            .register();    public static final EntityEntry<SwarmCodEntity> SWARM_COD = CodRegistrate.INSTANCE.entity(
-                    "swarm_cod",
-                    SwarmCodEntity::new,
-                    MobCategory.MONSTER
-            )
-            .properties((it) -> it.sized(1f, 1f))
-            .lang("Swarm Cod")
             .register();
     public static final EntityEntry<TrialTraderEntity> TRIAL_TRADER = CodRegistrate.INSTANCE.entity(
                     "trial_trader",
@@ -44,6 +37,13 @@ public class CodEntities {
             )
             .properties((it) -> it.sized(0.5f, 1.8f))
             .lang("Trial Trader")
+            .register();    public static final EntityEntry<SwarmCodEntity> SWARM_COD = CodRegistrate.INSTANCE.entity(
+                    "swarm_cod",
+                    SwarmCodEntity::new,
+                    MobCategory.MONSTER
+            )
+            .properties((it) -> it.sized(1f, 1f))
+            .lang("Swarm Cod")
             .register();
     public static final EntityEntry<DarkenerEntity> DARKENER = CodRegistrate.INSTANCE.entity(
                     "darkener",
@@ -137,6 +137,8 @@ public class CodEntities {
     public static void register() {
         // Hooray! Force Java to load the class!
     }
+
+
 
 
 }
