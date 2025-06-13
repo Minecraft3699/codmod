@@ -3,7 +3,6 @@ package com.mc3699.codmod.registry;
 import com.mc3699.codmod.Codmod;
 import com.mc3699.codmod.item.CodRodItem;
 import com.mc3699.codmod.item.MiniCodItem;
-import com.mc3699.codmod.item.detector.DetectorItem;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.food.Foods;
@@ -70,7 +69,7 @@ public class CodItems {
 
     public static final Supplier<Item> UAV = ITEMS.register("uav", () -> new Item(new Item.Properties()));
 
-    public static final Supplier<Item> DETECTOR = ITEMS.register("detector", DetectorItem::new);
+    public static final Supplier<Item> DETECTOR = ITEMS.register("detector", () -> new Item(new Item.Properties()));
 
     public static final Supplier<Item> BROKEN_DETECTOR = ITEMS.register(
             "broken_detector",
