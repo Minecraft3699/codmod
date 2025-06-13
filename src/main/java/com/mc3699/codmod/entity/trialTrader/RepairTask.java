@@ -7,4 +7,5 @@ import net.minecraft.world.level.block.state.BlockState;
 
 import javax.annotation.Nullable;
 
-public record RepairTask(BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, Player breaker) {}
+public record RepairTask(BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, Player breaker) {
+}

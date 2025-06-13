@@ -16,8 +16,6 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.phys.Vec3;
 
 public class UAVEntity extends Entity {
-    private BlockPos linkedController = BlockPos.ZERO;
-    private Vec3 targetPos = null;
     private static final EntityDataAccessor<Float> ALTITUDE = SynchedEntityData.defineId(
             UAVEntity.class,
             EntityDataSerializers.FLOAT
@@ -38,6 +36,8 @@ public class UAVEntity extends Entity {
     private static final float DEFAULT_SPEED = 1.0f;
     private static final float DEFAULT_CIRCLE_RADIUS = 50.0f;
     private static final float ALTITUDE_SMOOTHING = 0.0125f;
+    private BlockPos linkedController = BlockPos.ZERO;
+    private Vec3 targetPos = null;
     private boolean isCircling = false;
     private float targetPitch = 0.0f;
     private ChunkPos[] previousChunks = null;
@@ -53,6 +53,10 @@ public class UAVEntity extends Entity {
 
     public boolean isCircling() {
         return this.isCircling;
+    }
+
+    public void setCircling(boolean circling) {
+        isCircling = circling;
     }
 
     public boolean isAtTarget(int threshold) {
@@ -80,16 +84,12 @@ public class UAVEntity extends Entity {
         this.entityData.set(CIRCLE_RADIUS, radius);
     }
 
-    public void setCircling(boolean circling) {
-        isCircling = circling;
+    public boolean isTerrainFollowing() {
+        return this.entityData.get(TERRAIN_FOLLOWING);
     }
 
     public void setTerrainFollowing(boolean enabled) {
         this.entityData.set(TERRAIN_FOLLOWING, enabled);
-    }
-
-    public boolean isTerrainFollowing() {
-        return this.entityData.get(TERRAIN_FOLLOWING);
     }
 
     @Override

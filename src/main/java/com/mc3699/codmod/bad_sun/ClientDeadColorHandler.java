@@ -13,15 +13,18 @@ import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 public class ClientDeadColorHandler {
 
     @SubscribeEvent
-    public static void registerColorHandler(RegisterColorHandlersEvent.Block event)
-    {
+    public static void registerColorHandler(RegisterColorHandlersEvent.Block event) {
         BlockColors colors = event.getBlockColors();
-        colors.register((state, world, pos, tintIndex) ->
-                        state.getBlock() instanceof LeavesBlock ? ColorManager.getFoliageColor(state, world, pos, tintIndex) : ColorManager.getGrassColor(state, world, pos, tintIndex),
+        colors.register(
+                (state, world, pos, tintIndex) ->
+                        state.getBlock() instanceof LeavesBlock ?
+                        ColorManager.getFoliageColor(state, world, pos, tintIndex) :
+                        ColorManager.getGrassColor(state, world, pos, tintIndex),
                 Blocks.GRASS_BLOCK, Blocks.GRASS_BLOCK, Blocks.FERN,
                 Blocks.OAK_LEAVES, Blocks.BIRCH_LEAVES, Blocks.SPRUCE_LEAVES,
                 Blocks.JUNGLE_LEAVES, Blocks.ACACIA_LEAVES, Blocks.DARK_OAK_LEAVES,
-                Blocks.TALL_GRASS, Blocks.SHORT_GRASS);
+                Blocks.TALL_GRASS, Blocks.SHORT_GRASS
+        );
     }
 
 }

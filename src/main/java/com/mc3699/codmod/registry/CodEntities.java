@@ -22,15 +22,6 @@ import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.items.ItemStackHandler;
 
 public class CodEntities {
-    public static final EntityEntry<SwarmCodEntity> SWARM_COD = CodRegistrate.INSTANCE.entity(
-                    "swarm_cod",
-                    SwarmCodEntity::new,
-                    MobCategory.MONSTER
-            )
-            .properties((it) -> it.sized(1f, 1f))
-            .lang("Swarm Cod")
-            .register();
-
     public static final EntityEntry<VayEntity> VAY = CodRegistrate.INSTANCE.entity(
                     "vay",
                     VayEntity::new,
@@ -38,8 +29,14 @@ public class CodEntities {
             )
             .properties((it) -> it.sized(0.5f, 0.5f))
             .lang("Ζεστός Χαλκός")
+            .register();    public static final EntityEntry<SwarmCodEntity> SWARM_COD = CodRegistrate.INSTANCE.entity(
+                    "swarm_cod",
+                    SwarmCodEntity::new,
+                    MobCategory.MONSTER
+            )
+            .properties((it) -> it.sized(1f, 1f))
+            .lang("Swarm Cod")
             .register();
-
     public static final EntityEntry<TrialTraderEntity> TRIAL_TRADER = CodRegistrate.INSTANCE.entity(
                     "trial_trader",
                     TrialTraderEntity::new,
@@ -48,7 +45,6 @@ public class CodEntities {
             .properties((it) -> it.sized(0.5f, 1.8f))
             .lang("Trial Trader")
             .register();
-
     public static final EntityEntry<DarkenerEntity> DARKENER = CodRegistrate.INSTANCE.entity(
                     "darkener",
                     DarkenerEntity::new,
@@ -57,7 +53,6 @@ public class CodEntities {
             .properties((it) -> it.sized(0.5f, 1.8f))
             .lang("§kheywhyyoulookatcodmodsource?")
             .register();
-
     public static final EntityEntry<FriendlyFaceEntity> FRIENDLY_FACE = CodRegistrate.INSTANCE.entity(
                     "friendlyface",
                     FriendlyFaceEntity::new,
@@ -65,7 +60,6 @@ public class CodEntities {
             )
             .properties((it) -> it.sized(0.5f, 1.8f))
             .register();
-
     public static final EntityEntry<FirelightEntity> FIRELIGHT = CodRegistrate.INSTANCE.entity(
                     "firelight",
                     FirelightEntity::new,
@@ -74,19 +68,16 @@ public class CodEntities {
             .properties((it) -> it.sized(0.5f, 1.8f))
             .lang("Fir§keLi§fght34§k52§f3")
             .register();
-
     public static final EntityEntry<AriralEntity> ARIRAL = CodRegistrate.INSTANCE.entity(
             "ariral",
             AriralEntity::new,
             MobCategory.MONSTER
     ).properties((it) -> it.sized(0.5f, 1.8f)).register();
-
     public static final EntityEntry<ApplicantEntity> APPLICANT = CodRegistrate.INSTANCE.entity(
             "applicant",
             ApplicantEntity::new,
             MobCategory.MONSTER
     ).properties((it) -> it.sized(0.5f, 1.8f)).register();
-
     public static final EntityEntry<GianniEntity> GIANNI = CodRegistrate.INSTANCE.entity(
                     "gianni",
                     GianniEntity::new,
@@ -95,13 +86,11 @@ public class CodEntities {
             .properties((it) -> it.sized(0.5f, 1.8f))
             .lang("Gianni")
             .register();
-
     public static final EntityEntry<MisguidedEntity> MISGUIDED = CodRegistrate.INSTANCE.entity(
             "misguided",
             MisguidedEntity::new,
             MobCategory.MONSTER
     ).properties((it) -> it.sized(0.5f, 1.8f)).register();
-
     public static final EntityEntry<YellowWispEntity> YELLOW_WISP = CodRegistrate.INSTANCE.entity(
                     "yellow_wisp",
                     YellowWispEntity::new,
@@ -109,13 +98,11 @@ public class CodEntities {
             )
             .properties((it) -> it.sized(0.25f, 2f))
             .register();
-
     public static final EntityEntry<RedWispEntity> RED_WISP = CodRegistrate.INSTANCE.entity(
             "red_wisp",
             RedWispEntity::new,
             MobCategory.MONSTER
     ).properties((it) -> it.sized(0.25f, 2f)).register();
-
     public static final EntityEntry<CodMissileEntity> COD_MISSILE = CodRegistrate.INSTANCE.entity(
             "cod_missile",
             (EntityType<CodMissileEntity> ty, Level lvl) -> new CodMissileEntity(
@@ -130,7 +117,6 @@ public class CodEntities {
             ),
             MobCategory.MONSTER
     ).properties((it) -> it.sized(0.5f, 2f).clientTrackingRange(256).updateInterval(1)).register();
-
     public static final EntityEntry<ParachuteChestEntity> PARACHUTE_CHEST = CodRegistrate.INSTANCE.entity(
             "parachute_chest",
             (EntityType<ParachuteChestEntity> ty, Level lvl) -> new ParachuteChestEntity(
@@ -140,7 +126,6 @@ public class CodEntities {
             ),
             MobCategory.MONSTER
     ).properties((it) -> it.sized(1f, 2f).clientTrackingRange(256).updateInterval(1)).register();
-
     public static final EntityEntry<UAVEntity> UAV = CodRegistrate.INSTANCE.entity(
                     "uav",
                     UAVEntity::new,
@@ -152,4 +137,6 @@ public class CodEntities {
     public static void register() {
         // Hooray! Force Java to load the class!
     }
+
+
 }

@@ -11,20 +11,28 @@ import net.neoforged.neoforge.common.damagesource.DamageContainer;
 
 public class MisguidedEntity extends Mob {
 
+    private static final int DESPAWN_TIME = 3 * 60 * 20;
+    private Mode currentMode;
+    private int despawnTimer;
+
     public MisguidedEntity(EntityType<MisguidedEntity> type, Level level) {
         super(type, level);
     }
 
-    public enum Mode {
-        PASSIVE, AGGRESSIVE
-    }
-
-    public void setMode(Mode mode) {
-        this.currentMode = mode;
+    public static AttributeSupplier.Builder createAttributes() {
+        return Mob.createMobAttributes()
+                .add(Attributes.MAX_HEALTH, 22f)
+                .add(Attributes.MOVEMENT_SPEED, 0.3f)
+                .add(Attributes.ATTACK_DAMAGE, 5f)
+                .add(Attributes.FOLLOW_RANGE, 48);
     }
 
     public Mode getMode() {
         return this.currentMode;
+    }
+
+    public void setMode(Mode mode) {
+        this.currentMode = mode;
     }
 
     @Override
@@ -35,11 +43,6 @@ public class MisguidedEntity extends Mob {
             this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, false));
         }
     }
-
-    private Mode currentMode;
-    private int despawnTimer;
-    private static final int DESPAWN_TIME = 3 * 60 * 20;
-
 
     @Override
     public void tick() {
@@ -61,12 +64,8 @@ public class MisguidedEntity extends Mob {
         }
     }
 
-    public static AttributeSupplier.Builder createAttributes() {
-        return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 22f)
-                .add(Attributes.MOVEMENT_SPEED, 0.3f)
-                .add(Attributes.ATTACK_DAMAGE, 5f)
-                .add(Attributes.FOLLOW_RANGE, 48);
+    public enum Mode {
+        PASSIVE, AGGRESSIVE
     }
 
 

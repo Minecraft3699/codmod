@@ -33,7 +33,8 @@ public class AttackPlayerInLightGoal extends Goal {
             return false;
         }
         BlockPos targetPos = target.blockPosition();
-        return level.getBrightness(LightLayer.BLOCK, targetPos) > 4 || level.getBrightness(LightLayer.SKY, targetPos) > 4;
+        return level.getBrightness(LightLayer.BLOCK, targetPos) > 4 ||
+               level.getBrightness(LightLayer.SKY, targetPos) > 4;
     }
 
     @Override
@@ -50,7 +51,8 @@ public class AttackPlayerInLightGoal extends Goal {
             return false;
         }
         BlockPos targetPos = target.blockPosition();
-        return level.getBrightness(LightLayer.BLOCK, targetPos) > 4 || level.getBrightness(LightLayer.SKY, targetPos) > 4;
+        return level.getBrightness(LightLayer.BLOCK, targetPos) > 4 ||
+               level.getBrightness(LightLayer.SKY, targetPos) > 4;
     }
 
     @Override

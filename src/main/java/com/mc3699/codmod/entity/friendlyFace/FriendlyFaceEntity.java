@@ -1,6 +1,5 @@
 package com.mc3699.codmod.entity.friendlyFace;
 
-import com.mc3699.codmod.registry.CodEntities;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -20,11 +19,19 @@ import org.apache.logging.log4j.Logger;
 public class FriendlyFaceEntity extends PathfinderMob {
     private static final Logger LOGGER = LogManager.getLogger();
     public int chaseTime = 200;
-    private ResourceLocation nullParticleID = ResourceLocation.fromNamespaceAndPath("thebrokenscript", "null_particle");
+    private final ResourceLocation nullParticleID = ResourceLocation.fromNamespaceAndPath("thebrokenscript", "null_particle");
     ParticleType<?> nullParticle = BuiltInRegistries.PARTICLE_TYPE.get(nullParticleID);
 
     public FriendlyFaceEntity(EntityType<FriendlyFaceEntity> type, Level level) {
         super(type, level);
+    }
+
+    public static AttributeSupplier.Builder createAttributes() {
+        return Mob.createMobAttributes()
+                .add(Attributes.MAX_HEALTH, 22f)
+                .add(Attributes.MOVEMENT_SPEED, 0.3f)
+                .add(Attributes.ATTACK_DAMAGE, 3f)
+                .add(Attributes.FOLLOW_RANGE, 48);
     }
 
     @Override
@@ -38,14 +45,6 @@ public class FriendlyFaceEntity extends PathfinderMob {
         this.goalSelector.addGoal(1, new AttackForTimeGoal(this, this.level(), 16, 2));
         this.goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, 1));
         super.registerGoals();
-    }
-
-    public static AttributeSupplier.Builder createAttributes() {
-        return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 22f)
-                .add(Attributes.MOVEMENT_SPEED, 0.3f)
-                .add(Attributes.ATTACK_DAMAGE, 3f)
-                .add(Attributes.FOLLOW_RANGE, 48);
     }
 
     @Override

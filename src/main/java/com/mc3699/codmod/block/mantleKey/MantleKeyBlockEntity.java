@@ -23,30 +23,16 @@ public class MantleKeyBlockEntity extends BlockEntity {
         super(CodBlockEntities.MANTLE_KEY.get(), pos, blockState);
     }
 
-    public void setBeamLength(int beamLen) {
-        this.beamLength = beamLen;
-        level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
-        setChanged();
-    }
-
-    public int getBeamLength() {
-        return this.beamLength;
-    }
-
-    public static void applyRedstone(ServerLevel level, BlockPos startPos, Direction facing, int range)
-    {
+    public static void applyRedstone(ServerLevel level, BlockPos startPos, Direction facing, int range) {
         BlockPos pos = startPos;
-        for(int i = 0; i < range; i++)
-        {
+        for (int i = 0; i < range; i++) {
             pos = pos.offset(facing.getNormal());
-            if(!level.isLoaded(pos))
-            {
+            if (!level.isLoaded(pos)) {
                 return;
             }
 
             BlockState state = level.getBlockState(pos);
-            if(state.hasProperty(RedStoneWireBlock.POWER))
-            {
+            if (state.hasProperty(RedStoneWireBlock.POWER)) {
                 BlockState newState = state.setValue(RedStoneWireBlock.POWER, 15);
                 level.setBlock(pos, newState, 3);
             }
@@ -57,17 +43,29 @@ public class MantleKeyBlockEntity extends BlockEntity {
         MantleKeyBlockEntity blockEntity = (MantleKeyBlockEntity) level.getBlockEntity(blockPos);
 
 
-        if(level instanceof ServerLevel serverLevel)
-        {
-            applyRedstone(serverLevel, blockPos, blockState.getValue(MantleKeyBlock.FACING), blockEntity.getBeamLength());
-            if(blockEntity.getBeamLength() <= 64)
-            {
+        if (level instanceof ServerLevel serverLevel) {
+            applyRedstone(
+                    serverLevel,
+                    blockPos,
+                    blockState.getValue(MantleKeyBlock.FACING),
+                    blockEntity.getBeamLength()
+            );
+            if (blockEntity.getBeamLength() <= 64) {
                 blockEntity.setBeamLength(blockEntity.getBeamLength() + 1);
             }
         }
 
     }
 
+    public int getBeamLength() {
+        return this.beamLength;
+    }
+
+    public void setBeamLength(int beamLen) {
+        this.beamLength = beamLen;
+        level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
+        setChanged();
+    }
 
     @Override
     protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {

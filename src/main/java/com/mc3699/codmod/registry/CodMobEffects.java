@@ -15,7 +15,8 @@ public class CodMobEffects {
             Codmod.MOD_ID
     );
 
-    public static final DeferredHolder<MobEffect, HeartCorruptionEffect> HEART_CORRUPTION = MOB_EFFECTS.register("heart_corruption",
+    public static final DeferredHolder<MobEffect, HeartCorruptionEffect> HEART_CORRUPTION = MOB_EFFECTS.register(
+            "heart_corruption",
             HeartCorruptionEffect::new
     );
 

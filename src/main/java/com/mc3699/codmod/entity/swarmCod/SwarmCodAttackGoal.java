@@ -15,8 +15,7 @@ public class SwarmCodAttackGoal extends Goal {
     private LivingEntity target;
     private int attackTime;
 
-    public SwarmCodAttackGoal(SwarmCodEntity mob)
-    {
+    public SwarmCodAttackGoal(SwarmCodEntity mob) {
         this.mob = mob;
         this.setFlags(EnumSet.of(Flag.MOVE, Flag.LOOK));
     }
@@ -24,7 +23,9 @@ public class SwarmCodAttackGoal extends Goal {
     @Override
     public boolean canUse() {
         this.target = this.mob.getTarget();
-        return this.target != null && this.target.isAlive() && this.mob.distanceToSqr(this.target) < 128.0; // Within 8 block
+        return this.target != null &&
+               this.target.isAlive() &&
+               this.mob.distanceToSqr(this.target) < 128.0; // Within 8 block
     }
 
     @Override
@@ -49,9 +50,21 @@ public class SwarmCodAttackGoal extends Goal {
 
             // Attack if close enough
             if (this.mob.distanceToSqr(this.target) < 3.0) {
-                this.mob.level().playSound(null, this.mob.getX(), this.mob.getY(), this.mob.getZ(), SoundEvents.PHANTOM_BITE, SoundSource.HOSTILE, 1.0f, 1.0f);
-                this.target.hurt(this.mob.level().damageSources().mobAttack(this.mob),
-                        (float) this.mob.getAttributeValue(Attributes.ATTACK_DAMAGE));
+                this.mob.level()
+                        .playSound(
+                                null,
+                                this.mob.getX(),
+                                this.mob.getY(),
+                                this.mob.getZ(),
+                                SoundEvents.PHANTOM_BITE,
+                                SoundSource.HOSTILE,
+                                1.0f,
+                                1.0f
+                        );
+                this.target.hurt(
+                        this.mob.level().damageSources().mobAttack(this.mob),
+                        (float) this.mob.getAttributeValue(Attributes.ATTACK_DAMAGE)
+                );
                 this.attackTime = 0;
             }
         }

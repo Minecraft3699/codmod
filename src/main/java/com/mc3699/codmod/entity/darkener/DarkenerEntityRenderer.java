@@ -29,16 +29,22 @@ public class DarkenerEntityRenderer extends LivingEntityRenderer<DarkenerEntity,
     }
 
     @Override
-    public void render(DarkenerEntity entity, float entityYaw, float partialTicks, PoseStack poseStack, MultiBufferSource buffer, int packedLight) {
+    public void render(
+            DarkenerEntity entity,
+            float entityYaw,
+            float partialTicks,
+            PoseStack poseStack,
+            MultiBufferSource buffer,
+            int packedLight
+    ) {
 
-        if(entity.tickCount % 5 == 0)
-        {
+        if (entity.tickCount % 5 == 0) {
             poseStack.pushPose();
             float glitchBounds = 0.25f;
             float randX = random.nextFloat(-glitchBounds, glitchBounds);
             float randY = random.nextFloat(-glitchBounds, glitchBounds);
             float randZ = random.nextFloat(-glitchBounds, glitchBounds);
-            poseStack.translate(randX,randY,randZ);
+            poseStack.translate(randX, randY, randZ);
             super.render(entity, entityYaw, partialTicks, poseStack, buffer, packedLight);
             poseStack.popPose();
         } else {

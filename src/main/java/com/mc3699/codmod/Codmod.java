@@ -43,6 +43,10 @@ public class Codmod {
         CodLang.register();
     }
 
+    public static ResourceLocation id(String id) {
+        return ResourceLocation.fromNamespaceAndPath(MOD_ID, id);
+    }
+
     @SubscribeEvent
     public void onServerTick(ServerTickEvent.Post event) {
         SERVER_QUEUE.tick();
@@ -52,9 +56,5 @@ public class Codmod {
     public void onServerStarting(ServerStartingEvent event) {
         LOGGER.info(
                 "Starting Codmod, I like cod cod cod cod cod cod cod cod COD MOD IS LOADING!!! THIS IS CODMOD!!! THIS LINE IS COD MOD!!! COD MOD LOADING RIGHT NOW!!!!!!! COD MOD YEAHHHHHHHHHHHHHHHHH");
-    }
-
-    public static ResourceLocation id(String id) {
-        return ResourceLocation.fromNamespaceAndPath(MOD_ID, id);
     }
 }

@@ -13,15 +13,23 @@ import net.minecraft.util.Mth;
 
 public class CodMissileEntityRenderer extends EntityRenderer<CodMissileEntity> {
     private final CodMissileModel model;
+
     public CodMissileEntityRenderer(EntityRendererProvider.Context context) {
         super(context);
         this.model = new CodMissileModel(context.bakeLayer(CodMissileModel.LAYER_LOCATION));
     }
 
     @Override
-    public void render(CodMissileEntity entity, float entityYaw, float partialTick, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
+    public void render(
+            CodMissileEntity entity,
+            float entityYaw,
+            float partialTick,
+            PoseStack poseStack,
+            MultiBufferSource bufferSource,
+            int packedLight
+    ) {
         poseStack.pushPose();
-        poseStack.translate(0,3.7,0);
+        poseStack.translate(0, 3.7, 0);
 
         double x = Mth.lerp(partialTick, entity.xOld, entity.getX());
         double y = Mth.lerp(partialTick, entity.yOld, entity.getY());
@@ -33,9 +41,14 @@ public class CodMissileEntityRenderer extends EntityRenderer<CodMissileEntity> {
         poseStack.mulPose(Axis.XP.rotationDegrees(entity.getXRot()));
 
 
-        poseStack.scale(2.5f,2.5f,2.5f);
+        poseStack.scale(2.5f, 2.5f, 2.5f);
 
-        model.renderToBuffer(poseStack, bufferSource.getBuffer(RenderType.entityCutout(getTextureLocation(entity))), packedLight,OverlayTexture.NO_OVERLAY);
+        model.renderToBuffer(
+                poseStack,
+                bufferSource.getBuffer(RenderType.entityCutout(getTextureLocation(entity))),
+                packedLight,
+                OverlayTexture.NO_OVERLAY
+        );
         poseStack.popPose();
     }
 

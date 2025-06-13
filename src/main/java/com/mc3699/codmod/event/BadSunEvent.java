@@ -5,7 +5,6 @@ import com.mc3699.codmod.bad_sun.BadSunEvents;
 import com.mc3699.codmod.network.FoliageColorPayload;
 import com.mc3699.codmod.registry.CodSounds;
 import dev.wendigodrip.thebrokenscript.api.event.BaseEvent;
-import dev.wendigodrip.thebrokenscript.api.ext.PlayerExt;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;

@@ -15,6 +15,6 @@ public class RadarBlock extends Block implements EntityBlock {
 
     @Override
     public @Nullable BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
-        return new RadarBlockEntity(blockPos,blockState);
+        return new RadarBlockEntity(blockPos, blockState);
     }
 }

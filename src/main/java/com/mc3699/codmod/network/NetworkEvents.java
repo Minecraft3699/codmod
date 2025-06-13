@@ -13,8 +13,7 @@ import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 public class NetworkEvents {
 
     @SubscribeEvent
-    public static void registerPayloads(RegisterPayloadHandlersEvent event)
-    {
+    public static void registerPayloads(RegisterPayloadHandlersEvent event) {
         PayloadRegistrar registrar = event.registrar("1.0");
         registrar.playToClient(
                 CameraRotationPayload.TYPE,

@@ -1,12 +1,8 @@
 package com.mc3699.codmod.entity.trialTrader;
 
-import com.mc3699.codmod.network.CameraRotationPayload;
-import com.mojang.brigadier.CommandDispatcher;
 import net.minecraft.network.chat.Component;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
-import net.neoforged.neoforge.network.PacketDistributor;
 
 import java.util.List;
 
@@ -17,14 +13,12 @@ public class TrialTraderAttackGoal extends Goal {
     int chatDelay = defaultChatDelay;
 
 
-    private void sendChat(String message)
-    {
-        entity.getTarget().sendSystemMessage(Component.literal(message));
+    public TrialTraderAttackGoal(TrialTraderEntity entity) {
+        this.entity = entity;
     }
 
-    public TrialTraderAttackGoal(TrialTraderEntity entity)
-    {
-        this.entity = entity;
+    private void sendChat(String message) {
+        entity.getTarget().sendSystemMessage(Component.literal(message));
     }
 
     @Override
@@ -51,8 +45,7 @@ public class TrialTraderAttackGoal extends Goal {
     @Override
     public void tick() {
         // handle chat
-        if(chatDelay > 0)
-        {
+        if (chatDelay > 0) {
             chatDelay--;
         } else {
             sendChat(lines.get(0));

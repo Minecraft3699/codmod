@@ -1,8 +1,9 @@
 package com.mc3699.codmod.entity.trialTrader;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.level.Level;
-import net.minecraft.core.BlockPos;
+
 import java.util.EnumSet;
 import java.util.List;
 
@@ -44,8 +45,7 @@ public class RepairGoal extends Goal {
                 // Repair the block if it’s still air
                 if (level.getBlockState(pos).isAir()) {
                     level.setBlock(pos, currentTask.state(), 3);
-                    if(currentTask.blockEntity() != null)
-                    {
+                    if (currentTask.blockEntity() != null) {
                         level.setBlockEntity(currentTask.blockEntity());
                     }
                     entity.getRepairTasks().remove(currentTask);

@@ -75,9 +75,7 @@ public class UAVControllerPeripheral implements IPeripheral {
         if (blockEntity.getLevel() instanceof ServerLevel serverLevel) {
             UAVEntity uav = blockEntity.getUAVEntity(serverLevel);
             if (uav != null) {
-                if (uav.isAtTarget(threshold)) {
-                    return true;
-                }
+                return uav.isAtTarget(threshold);
             }
             return false;
         }

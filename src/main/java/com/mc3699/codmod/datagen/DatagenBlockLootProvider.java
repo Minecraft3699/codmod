@@ -26,9 +26,9 @@ public class DatagenBlockLootProvider extends BlockLootSubProvider {
     @Override
     protected Iterable<Block> getKnownBlocks() {
         List<Block> blocks = List.of(
-            CodBlocks.MOLTEN_COPPER.get(),
-            CodBlocks.UAV_CONTROLLER.get(),
-            CodBlocks.RADAR.get()
+                CodBlocks.MOLTEN_COPPER.get(),
+                CodBlocks.UAV_CONTROLLER.get(),
+                CodBlocks.RADAR.get()
         );
         return blocks;
     }

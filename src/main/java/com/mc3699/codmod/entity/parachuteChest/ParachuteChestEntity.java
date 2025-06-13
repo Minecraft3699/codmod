@@ -18,7 +18,7 @@ import net.neoforged.neoforge.items.ItemStackHandler;
 
 public class ParachuteChestEntity extends Entity {
 
-    private ItemStackHandler items;
+    private final ItemStackHandler items;
 
     public ParachuteChestEntity(EntityType<ParachuteChestEntity> type, Level level, ItemStackHandler items) {
         super(type, level);

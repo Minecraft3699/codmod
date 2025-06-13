@@ -17,19 +17,22 @@ import java.util.Random;
 @EventBusSubscriber(modid = Codmod.MOD_ID, value = Dist.CLIENT)
 public class ClientGUIEvents {
 
-    private static final ResourceLocation CORRUPTED_HEART = ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "textures/gui/corrupt_full.png");
-    private static final ResourceLocation VANILLA_HEART = ResourceLocation.fromNamespaceAndPath("minecraft","textures/gui/sprites/hud/heart/full.png");
-    private static Random random = new Random();
+    private static final ResourceLocation CORRUPTED_HEART = ResourceLocation.fromNamespaceAndPath(
+            Codmod.MOD_ID,
+            "textures/gui/corrupt_full.png"
+    );
+    private static final ResourceLocation VANILLA_HEART = ResourceLocation.fromNamespaceAndPath(
+            "minecraft",
+            "textures/gui/sprites/hud/heart/full.png"
+    );
+    private static final Random random = new Random();
 
 
     @SubscribeEvent
-    public static void onRenderGUI(RenderGuiLayerEvent.Pre event)
-    {
-        if(event.getName().equals(VanillaGuiLayers.PLAYER_HEALTH))
-        {
+    public static void onRenderGUI(RenderGuiLayerEvent.Pre event) {
+        if (event.getName().equals(VanillaGuiLayers.PLAYER_HEALTH)) {
             Player player = Minecraft.getInstance().player;
-            if(player != null && player.hasEffect(CodMobEffects.HEART_CORRUPTION))
-            {
+            if (player != null && player.hasEffect(CodMobEffects.HEART_CORRUPTION)) {
                 event.setCanceled(true);
                 renderCustomHearts(event.getGuiGraphics(), player);
             }
@@ -46,15 +49,15 @@ public class ClientGUIEvents {
 
         for (int i = 0; i < corruptedHearts; i++) {
 
-            int randX = random.nextInt(-5,5);
-            int randY = random.nextInt(-5,5);
+            int randX = random.nextInt(-5, 5);
+            int randY = random.nextInt(-5, 5);
 
-            guiGraphics.blit(CORRUPTED_HEART, x + (i * 8) + randX , y + randY, 0, 0, 9, 9, 9, 9);
+            guiGraphics.blit(CORRUPTED_HEART, x + (i * 8) + randX, y + randY, 0, 0, 9, 9, 9, 9);
         }
 
         for (int i = corruptedHearts; i < health / 2; i++) {
-            int randX = random.nextInt(-5,5);
-            int randY = random.nextInt(-5,5);
+            int randX = random.nextInt(-5, 5);
+            int randY = random.nextInt(-5, 5);
             guiGraphics.blitSprite(VANILLA_HEART, x + (i * 8) + randX, y + randY, 9, 9);
         }
     }

@@ -6,9 +6,7 @@ import com.mc3699.codmod.entity.wisp.BaseWispEntityRenderer;
 import com.mojang.blaze3d.vertex.PoseStack;
 import dev.wendigodrip.thebrokenscript.api.util.Boxes;
 import foundry.veil.api.client.render.MatrixStack;
-import foundry.veil.api.client.util.DebugRenderHelper;
 import foundry.veil.api.event.VeilRenderLevelStageEvent;
-import foundry.veil.platform.VeilEventPlatform;
 import net.minecraft.client.Camera;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
@@ -16,7 +14,6 @@ import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.renderer.LevelRenderer;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.culling.Frustum;
 import net.minecraft.client.renderer.debug.DebugRenderer;
 import net.minecraft.util.Mth;
@@ -27,12 +24,15 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import org.joml.Matrix4fc;
-import org.joml.Vector3f;
 
 import java.util.Objects;
 
 @EventBusSubscriber(value = Dist.CLIENT, modid = Codmod.MOD_ID)
 public class ClientEvents {
+    static {
+        register();
+    }
+
     @SubscribeEvent
     public static void onClientTickEnd(ClientTickEvent.Post event) {
         BaseWispEntityRenderer.cleanup();
@@ -41,10 +41,6 @@ public class ClientEvents {
     @SubscribeEvent
     public static void registerCommands(RegisterCommandsEvent event) {
         ColorCommand.register(event.getDispatcher());
-    }
-
-    static {
-        register();
     }
 
     public static void register() {

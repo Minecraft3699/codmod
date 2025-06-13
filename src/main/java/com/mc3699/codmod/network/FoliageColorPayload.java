@@ -13,28 +13,26 @@ import net.neoforged.neoforge.network.handling.IPayloadContext;
 public record FoliageColorPayload(int color, boolean reset) implements CustomPacketPayload {
     public static final ResourceLocation ID = ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "foliage_color");
     public static final Type<FoliageColorPayload> TYPE = new Type<>(ID);
-    public static final StreamCodec<RegistryFriendlyByteBuf, FoliageColorPayload> CODEC =
-            StreamCodec.composite(
-                    ByteBufCodecs.INT, FoliageColorPayload::color,
-                    ByteBufCodecs.BOOL, FoliageColorPayload::reset,
-                    FoliageColorPayload::new
-            );
+    public static final StreamCodec<RegistryFriendlyByteBuf, FoliageColorPayload> CODEC = StreamCodec.composite(
+            ByteBufCodecs.INT,
+            FoliageColorPayload::color,
+            ByteBufCodecs.BOOL,
+            FoliageColorPayload::reset,
+            FoliageColorPayload::new
+    );
 
 
-    static void handle(FoliageColorPayload payload, IPayloadContext context)
-    {
-        context.enqueueWork(()->
-        {
-            if(payload.reset())
-            {
+    static void handle(FoliageColorPayload payload, IPayloadContext context) {
+        context.enqueueWork(() -> {
+            if (payload.reset()) {
                 ColorManager.resetFoliageColor();
                 ColorManager.resetGrassColor();
             } else {
                 ColorManager.setFoliageColor(payload.color());
                 ColorManager.setGrassColor(payload.color());
             }
-            Minecraft.getInstance().execute(() ->
-                    Minecraft.getInstance().levelRenderer.allChanged());
+
+            Minecraft.getInstance().execute(() -> Minecraft.getInstance().levelRenderer.allChanged());
         });
     }
 

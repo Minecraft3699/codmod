@@ -1,4 +1,5 @@
 package com.mc3699.codmod.entity.ariral;
+
 import com.mc3699.codmod.Codmod;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -18,18 +19,28 @@ public class AriralEntityRenderer extends LivingEntityRenderer<AriralEntity, Pla
     }
 
     @Override
-    public void render(AriralEntity entity, float entityYaw, float partialTicks, PoseStack poseStack, MultiBufferSource buffer, int packedLight) {
+    public void render(
+            AriralEntity entity,
+            float entityYaw,
+            float partialTicks,
+            PoseStack poseStack,
+            MultiBufferSource buffer,
+            int packedLight
+    ) {
         poseStack.pushPose();
-        poseStack.translate(0,3,0);
+        poseStack.translate(0, 3, 0);
         poseStack.mulPose(Axis.ZP.rotationDegrees(180));
-        poseStack.scale(2f,2f,2f);
+        poseStack.scale(2f, 2f, 2f);
 
         float limbSwing = entity.walkAnimation.position(partialTicks);
         float limbSwingAmount = entity.walkAnimation.speed(partialTicks);
-        VertexConsumer transparentBuffer = buffer.getBuffer(RenderType.entityTranslucentCull(ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "textures/entity/ariral.png")));
+        VertexConsumer transparentBuffer = buffer.getBuffer(RenderType.entityTranslucentCull(ResourceLocation.fromNamespaceAndPath(
+                Codmod.MOD_ID,
+                "textures/entity/ariral.png"
+        )));
 
-        model.setupAnim(entity, limbSwing,limbSwingAmount,entity.tickCount, entityYaw, entity.yHeadRot);
-        model.renderToBuffer(poseStack, transparentBuffer,packedLight, OverlayTexture.NO_OVERLAY);
+        model.setupAnim(entity, limbSwing, limbSwingAmount, entity.tickCount, entityYaw, entity.yHeadRot);
+        model.renderToBuffer(poseStack, transparentBuffer, packedLight, OverlayTexture.NO_OVERLAY);
         poseStack.popPose();
     }
 

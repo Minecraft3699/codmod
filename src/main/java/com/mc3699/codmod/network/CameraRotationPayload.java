@@ -10,12 +10,6 @@ import net.neoforged.neoforge.network.handling.IPayloadContext;
 public record CameraRotationPayload(float yaw, float pitch) implements CustomPacketPayload {
     public static final ResourceLocation ID = ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "camera_rotation");
     public static final Type<CameraRotationPayload> TYPE = new Type<>(ID);
-
-    @Override
-    public Type<? extends CustomPacketPayload> type() {
-        return TYPE;
-    }
-
     public static final StreamCodec<FriendlyByteBuf, CameraRotationPayload> CODEC = StreamCodec.of(
             (buf, packet) -> {
                 buf.writeFloat(packet.yaw);
@@ -24,8 +18,12 @@ public record CameraRotationPayload(float yaw, float pitch) implements CustomPac
             buf -> new CameraRotationPayload(buf.readFloat(), buf.readFloat())
     );
 
-
     public static void handle(CameraRotationPayload payload, IPayloadContext context) {
         //context.enqueueWork(() -> ClientCamControl.startRotation(payload.yaw, payload.pitch));
+    }
+
+    @Override
+    public Type<? extends CustomPacketPayload> type() {
+        return TYPE;
     }
 }

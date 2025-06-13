@@ -1,7 +1,7 @@
 package com.mc3699.codmod.block.uavController;
 
-import com.mc3699.codmod.registry.CodBlockEntities;
 import com.mc3699.codmod.entity.uav.UAVEntity;
+import com.mc3699.codmod.registry.CodBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
@@ -23,23 +23,20 @@ public class UAVControllerBlockEntity extends BlockEntity {
         return uavUUID;
     }
 
-    public UAVEntity getUAVEntity(ServerLevel serverLevel)
-    {
-        if(uavUUID != null)
-        {
+    public void setUavUUID(UUID uavUUID) {
+        this.uavUUID = uavUUID;
+    }
+
+    public UAVEntity getUAVEntity(ServerLevel serverLevel) {
+        if (uavUUID != null) {
             return (UAVEntity) serverLevel.getEntity(uavUUID);
         }
         return null;
     }
 
-    public void setUavUUID(UUID uavUUID) {
-        this.uavUUID = uavUUID;
-    }
-
     @Override
     protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
-        if(uavUUID != null)
-        {
+        if (uavUUID != null) {
             tag.putUUID("linked", uavUUID);
         }
         super.saveAdditional(tag, registries);
@@ -47,8 +44,7 @@ public class UAVControllerBlockEntity extends BlockEntity {
 
     @Override
     protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
-        if(tag.contains("linked"))
-        {
+        if (tag.contains("linked")) {
             uavUUID = tag.getUUID("linked");
         }
         super.loadAdditional(tag, registries);

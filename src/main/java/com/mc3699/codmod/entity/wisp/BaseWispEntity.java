@@ -1,28 +1,27 @@
 package com.mc3699.codmod.entity.wisp;
 
-import foundry.veil.api.client.render.VeilRenderSystem;
-import foundry.veil.api.client.render.light.PointLight;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleType;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.OpenDoorGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
-import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.Level;
-import org.joml.Vector3d;
 
 import java.util.List;
 
 public abstract class BaseWispEntity extends PathfinderMob {
-    private int color;
     private final List<ParticleType<?>> particleTypes;
+    private int color;
 
-    protected BaseWispEntity(EntityType<? extends PathfinderMob> type, Level level, int color, List<ParticleType<?>> particleTypes) {
+    protected BaseWispEntity(
+            EntityType<? extends PathfinderMob> type,
+            Level level,
+            int color,
+            List<ParticleType<?>> particleTypes
+    ) {
         super(type, level);
         this.color = color;
         this.particleTypes = particleTypes;
@@ -35,8 +34,7 @@ public abstract class BaseWispEntity extends PathfinderMob {
     @Override
     public void tick() {
         super.tick();
-        if(this.level().isClientSide())
-        {
+        if (this.level().isClientSide()) {
             //spawnParticles();
             //spawnParticles();
         }

@@ -9,7 +9,6 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.Vec3;
-import org.joml.Vector3d;
 import org.jspecify.annotations.Nullable;
 
 import java.util.HashMap;
@@ -37,8 +36,7 @@ public class RadarPeripheral implements IPeripheral {
         Map<String, Object> result = new HashMap<>();
         if (blockEntity.getLevel() instanceof ServerLevel serverLevel) {
             for (Player player : serverLevel.getServer().getPlayerList().getPlayers()) {
-                if(player.level().dimension() == blockEntity.getLevel().dimension())
-                {
+                if (player.level().dimension() == blockEntity.getLevel().dimension()) {
                     Vec3 pos = player.position();
                     Map<String, Double> coords = new HashMap<>();
                     coords.put("x", pos.x);
@@ -59,7 +57,8 @@ public class RadarPeripheral implements IPeripheral {
             if (entityType != null) {
                 int index = 1;
                 for (Entity entity : serverLevel.getEntities().getAll()) {
-                    if (entity.getType() == entityType && entity.level().dimension() == blockEntity.getLevel().dimension()) {
+                    if (entity.getType() == entityType &&
+                        entity.level().dimension() == blockEntity.getLevel().dimension()) {
                         Vec3 pos = entity.position();
                         Map<String, Double> coords = new HashMap<>();
                         coords.put("x", pos.x);

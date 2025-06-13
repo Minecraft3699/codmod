@@ -37,8 +37,8 @@ public class CodRodItem extends MaceItem {
                     .lookupOrThrow(Registries.DAMAGE_TYPE)
                     .getOrThrow(CodDamageTypes.COD_ROD));
 
-            if (entity instanceof ServerPlayer hitPlayer) {
-                entity.hurt(dam, 1000f);
+            if (entity instanceof ServerPlayer ent) {
+                ent.hurt(dam, 100f);
                 //hitPlayer.connection.disconnect(Component.literal("Whatever reason you want blah blah blah"));
             } else {
                 entity.remove(Entity.RemovalReason.DISCARDED);
@@ -100,10 +100,6 @@ public class CodRodItem extends MaceItem {
 
     @Override
     public boolean mineBlock(ItemStack stack, Level level, BlockState state, BlockPos pos, LivingEntity miningEntity) {
-        if (miningEntity instanceof Player player && player.isCreative()) {
-            return false;
-        } else {
-            return true;
-        }
+        return !(miningEntity instanceof Player player) || !player.isCreative();
     }
 }

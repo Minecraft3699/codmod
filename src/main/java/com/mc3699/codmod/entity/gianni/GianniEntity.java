@@ -17,6 +17,13 @@ public class GianniEntity extends PathfinderMob {
         super(type, level);
     }
 
+    public static AttributeSupplier.Builder createAttributes() {
+        return Mob.createMobAttributes()
+                .add(Attributes.MAX_HEALTH, 200f)
+                .add(Attributes.MOVEMENT_SPEED, 0.3f)
+                .add(Attributes.ATTACK_DAMAGE, 8f)
+                .add(Attributes.FOLLOW_RANGE, 48);
+    }
 
     @Override
     protected void registerGoals() {
@@ -24,13 +31,5 @@ public class GianniEntity extends PathfinderMob {
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 2, true));
         this.goalSelector.addGoal(2, new OpenDoorGoal(this, false));
-    }
-
-    public static AttributeSupplier.Builder createAttributes() {
-        return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 200f)
-                .add(Attributes.MOVEMENT_SPEED, 0.3f)
-                .add(Attributes.ATTACK_DAMAGE, 8f)
-                .add(Attributes.FOLLOW_RANGE, 48);
     }
 }

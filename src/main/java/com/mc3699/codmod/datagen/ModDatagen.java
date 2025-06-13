@@ -22,9 +22,15 @@ public class ModDatagen {
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
-        generator.addProvider(event.includeServer(), new DatagenBlockTagProvider(packOutput,lookupProvider, Codmod.MOD_ID, existingFileHelper));
+        generator.addProvider(
+                event.includeServer(),
+                new DatagenBlockTagProvider(packOutput, lookupProvider, Codmod.MOD_ID, existingFileHelper)
+        );
         generator.addProvider(event.includeServer(), new DatagenLootTableProvider(packOutput, lookupProvider));
-        generator.addProvider(event.includeClient(), new DatagenItemModelProvider(packOutput, Codmod.MOD_ID, existingFileHelper));
+        generator.addProvider(
+                event.includeClient(),
+                new DatagenItemModelProvider(packOutput, Codmod.MOD_ID, existingFileHelper)
+        );
     }
 
 }

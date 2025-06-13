@@ -1,6 +1,5 @@
 package com.mc3699.codmod.entity.friendlyFace;
 
-import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.player.Player;
@@ -13,8 +12,8 @@ public class AttackForTimeGoal extends Goal {
     private final Level level;
     private final double approachDistance;
     private final double attackSpeed;
-    private Player target;
     private final Random random;
+    private Player target;
 
     public AttackForTimeGoal(FriendlyFaceEntity entity, Level level, double approachDistance, double attackSpeed) {
         this.entity = entity;

@@ -39,7 +39,7 @@ public class ColorManager {
         useCustomFoliage = false;
     }
 
-    public static void resetGrassColor () {
+    public static void resetGrassColor() {
         useCustomGrass = false;
     }
 }

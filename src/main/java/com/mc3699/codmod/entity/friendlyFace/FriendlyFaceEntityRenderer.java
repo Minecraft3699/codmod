@@ -14,6 +14,6 @@ public class FriendlyFaceEntityRenderer extends MobRenderer<FriendlyFaceEntity, 
 
     @Override
     public ResourceLocation getTextureLocation(FriendlyFaceEntity friendlyFaceEntity) {
-        return ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID,"textures/entity/friendlyface.png");
+        return ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "textures/entity/friendlyface.png");
     }
 }

@@ -5,7 +5,6 @@ import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -13,10 +12,13 @@ import org.spongepowered.asm.mixin.injection.At;
 
 @Mixin(LivingEntity.class)
 public abstract class TridentMixin {
+    @Shadow protected int autoSpinAttackTicks;
+
     @Shadow
     protected abstract float getWaterSlowDown();
-    @Shadow protected int autoSpinAttackTicks;
-    @Shadow protected abstract boolean isAffectedByFluids();
+
+    @Shadow
+    protected abstract boolean isAffectedByFluids();
 
     @WrapOperation(
             method = "travel",
@@ -25,7 +27,13 @@ public abstract class TridentMixin {
                     target = "Lnet/minecraft/world/phys/Vec3;multiply(DDD)Lnet/minecraft/world/phys/Vec3;"
             )
     )
-    private Vec3 riptideFix_travel(Vec3 instance, double factorX, double factorY, double factorZ, Operation<Vec3> original) {
+    private Vec3 riptideFix_travel(
+            Vec3 instance,
+            double factorX,
+            double factorY,
+            double factorZ,
+            Operation<Vec3> original
+    ) {
         LivingEntity entity = (LivingEntity) (Object) this;
         if (!entity.isInWater() || !isAffectedByFluids()) {
             return original.call(instance, factorX, factorY, factorZ);

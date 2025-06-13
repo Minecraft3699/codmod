@@ -12,9 +12,9 @@ import java.util.EnumSet;
 public class DestroyLightsGoal extends Goal {
     private final PathfinderMob entity;
     private final Level level;
-    private BlockPos targetPos;
     private final double speed;
     private final int range;
+    private BlockPos targetPos;
 
     public DestroyLightsGoal(PathfinderMob entity, double speed, int range) {
         this.entity = entity;
@@ -35,7 +35,13 @@ public class DestroyLightsGoal extends Goal {
     @Override
     public void start() {
         if (targetPos != null) {
-            Path path = entity.getNavigation().createPath(targetPos.getX() + 0.5, targetPos.getY() + 0.5, targetPos.getZ() + 0.5, 2); // Reduced accuracy
+            Path path = entity.getNavigation()
+                    .createPath(
+                            targetPos.getX() + 0.5,
+                            targetPos.getY() + 0.5,
+                            targetPos.getZ() + 0.5,
+                            2
+                    ); // Reduced accuracy
             entity.getNavigation().moveTo(path, speed);
         }
     }
@@ -44,7 +50,9 @@ public class DestroyLightsGoal extends Goal {
     public boolean canContinueToUse() {
         if (targetPos == null) return false;
         BlockState state = level.getBlockState(targetPos);
-        return !entity.getNavigation().isDone() && state.getLightEmission(level, targetPos) > 0 && isBlockReachable(targetPos);
+        return !entity.getNavigation().isDone() &&
+               state.getLightEmission(level, targetPos) > 0 &&
+               isBlockReachable(targetPos);
     }
 
     @Override
@@ -57,13 +65,20 @@ public class DestroyLightsGoal extends Goal {
                     10.0F,
                     entity.getMaxHeadXRot()
             );
-            if (entity.distanceToSqr(targetPos.getX() + 0.5, targetPos.getY() + 0.5, targetPos.getZ() + 0.5) <= 25.0) { // 5 blocks range
+            if (entity.distanceToSqr(targetPos.getX() + 0.5, targetPos.getY() + 0.5, targetPos.getZ() + 0.5) <=
+                25.0) { // 5 blocks range
                 level.destroyBlock(targetPos, true, entity);
                 targetPos = null;
                 entity.getNavigation().stop();
             } else {
                 if (entity.getNavigation().isDone()) {
-                    Path path = entity.getNavigation().createPath(targetPos.getX() + 0.5, targetPos.getY() + 0.5, targetPos.getZ() + 0.5, 2); // Reduced accuracy
+                    Path path = entity.getNavigation()
+                            .createPath(
+                                    targetPos.getX() + 0.5,
+                                    targetPos.getY() + 0.5,
+                                    targetPos.getZ() + 0.5,
+                                    2
+                            ); // Reduced accuracy
                     entity.getNavigation().moveTo(path, speed);
                 }
             }
@@ -102,7 +117,8 @@ public class DestroyLightsGoal extends Goal {
     }
 
     private boolean isBlockReachable(BlockPos pos) {
-        Path path = entity.getNavigation().createPath(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, 2); // Reduced accuracy
+        Path path = entity.getNavigation()
+                .createPath(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, 2); // Reduced accuracy
         return path != null && path.canReach();
     }
 

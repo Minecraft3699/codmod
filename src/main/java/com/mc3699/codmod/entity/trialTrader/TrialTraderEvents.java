@@ -18,17 +18,19 @@ import java.util.List;
 public class TrialTraderEvents {
 
     @SubscribeEvent
-    public static void onBlockBreak(BlockEvent.BreakEvent event)
-    {
-        if(event.getLevel() instanceof ServerLevel serverLevel)
-        {
+    public static void onBlockBreak(BlockEvent.BreakEvent event) {
+        if (event.getLevel() instanceof ServerLevel serverLevel) {
             BlockState brokenBlock = event.getState();
 
-            if(brokenBlock.is(Tags.Blocks.STORAGE_BLOCKS_COPPER) || brokenBlock.is(Blocks.TRIAL_SPAWNER) || brokenBlock.is(Blocks.VAULT))
-            {
+            if (brokenBlock.is(Tags.Blocks.STORAGE_BLOCKS_COPPER) ||
+                brokenBlock.is(Blocks.TRIAL_SPAWNER) ||
+                brokenBlock.is(Blocks.VAULT)) {
                 BlockPos breakPos = event.getPos();
                 BlockEntity blockEntity = event.getLevel().getBlockEntity(breakPos);
-                List<TrialTraderEntity> trialTraders = serverLevel.getEntitiesOfClass(TrialTraderEntity.class, new AABB(breakPos).inflate(32));
+                List<TrialTraderEntity> trialTraders = serverLevel.getEntitiesOfClass(
+                        TrialTraderEntity.class,
+                        new AABB(breakPos).inflate(32)
+                );
 
                 TrialTraderEntity closest = null;
                 double minDist = Double.MAX_VALUE;

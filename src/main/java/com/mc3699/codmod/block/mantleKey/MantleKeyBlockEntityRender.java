@@ -11,7 +11,6 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 
-import java.util.Properties;
 import java.util.Random;
 
 public class MantleKeyBlockEntityRender implements BlockEntityRenderer<MantleKeyBlockEntity> {
@@ -24,7 +23,14 @@ public class MantleKeyBlockEntityRender implements BlockEntityRenderer<MantleKey
     }
 
     @Override
-    public void render(MantleKeyBlockEntity mantleKeyBlockEntity, float v, PoseStack poseStack, MultiBufferSource multiBufferSource, int i, int i1) {
+    public void render(
+            MantleKeyBlockEntity mantleKeyBlockEntity,
+            float v,
+            PoseStack poseStack,
+            MultiBufferSource multiBufferSource,
+            int i,
+            int i1
+    ) {
         poseStack.pushPose();
 
         Direction facing = mantleKeyBlockEntity.getBlockState().getValue(MantleKeyBlock.FACING);
@@ -34,14 +40,12 @@ public class MantleKeyBlockEntityRender implements BlockEntityRenderer<MantleKey
             poseStack.translate(0, 0, -1);
         }
 
-        if(facing == Direction.SOUTH)
-        {
+        if (facing == Direction.SOUTH) {
             poseStack.mulPose(Axis.YP.rotationDegrees(90));
         }
 
-        if(facing == Direction.EAST)
-        {
-            poseStack.translate(1,0,1);
+        if (facing == Direction.EAST) {
+            poseStack.translate(1, 0, 1);
             poseStack.mulPose(Axis.YP.rotationDegrees(180));
         }
 
@@ -67,11 +71,17 @@ public class MantleKeyBlockEntityRender implements BlockEntityRenderer<MantleKey
         BlockPos pos = blockEntity.getBlockPos();
         return new AABB(
                 pos.getX(), pos.getY(), pos.getZ(),
-                pos.getX()+0.5f, pos.getY()+0.5f, pos.getZ()+0.5f
+                pos.getX() + 0.5f, pos.getY() + 0.5f, pos.getZ() + 0.5f
         ).inflate(1000);
     }
 
-    private void renderBeam(PoseStack poseStack, MultiBufferSource buffer, float tickDelta, long worldTime, int beamLength) {
+    private void renderBeam(
+            PoseStack poseStack,
+            MultiBufferSource buffer,
+            float tickDelta,
+            long worldTime,
+            int beamLength
+    ) {
 
 
 

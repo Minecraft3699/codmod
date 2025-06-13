@@ -18,6 +18,7 @@ import net.minecraft.world.item.ItemStack;
 
 public class UAVEntityRenderer extends EntityRenderer<UAVEntity> {
     private final ItemRenderer itemRenderer;
+
     public UAVEntityRenderer(EntityRendererProvider.Context context) {
         super(context);
         this.itemRenderer = context.getItemRenderer();
@@ -29,14 +30,30 @@ public class UAVEntityRenderer extends EntityRenderer<UAVEntity> {
     }
 
     @Override
-    public void render(UAVEntity entity, float entityYaw, float partialTick, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
+    public void render(
+            UAVEntity entity,
+            float entityYaw,
+            float partialTick,
+            PoseStack poseStack,
+            MultiBufferSource bufferSource,
+            int packedLight
+    ) {
         ItemStack stackItem = new ItemStack(CodItems.UAV.get());
         poseStack.pushPose();
         poseStack.scale(3, 3, 3);
 
-        poseStack.mulPose(Axis.YP.rotationDegrees((entity.getYRot()*-1)-90));
+        poseStack.mulPose(Axis.YP.rotationDegrees((entity.getYRot() * -1) - 90));
         BakedModel model = itemRenderer.getModel(stackItem, entity.level(), null, 0);
-        itemRenderer.render(stackItem, ItemDisplayContext.GROUND, false, poseStack, bufferSource, LightTexture.FULL_BRIGHT, OverlayTexture.NO_OVERLAY, model);
+        itemRenderer.render(
+                stackItem,
+                ItemDisplayContext.GROUND,
+                false,
+                poseStack,
+                bufferSource,
+                LightTexture.FULL_BRIGHT,
+                OverlayTexture.NO_OVERLAY,
+                model
+        );
         poseStack.popPose();
         super.render(entity, entityYaw, partialTick, poseStack, bufferSource, packedLight);
     }

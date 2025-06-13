@@ -11,8 +11,11 @@ import net.minecraft.resources.ResourceLocation;
 
 public class ParachuteChestEntityRenderer extends EntityRenderer<ParachuteChestEntity> {
 
+    private static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(
+            Codmod.MOD_ID,
+            "textures/entity/parachute_chest.png"
+    );
     private final ParachuteChestEntityModel model;
-    private static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "textures/entity/parachute_chest.png");
 
     public ParachuteChestEntityRenderer(EntityRendererProvider.Context context) {
         super(context);
@@ -20,8 +23,20 @@ public class ParachuteChestEntityRenderer extends EntityRenderer<ParachuteChestE
     }
 
     @Override
-    public void render(ParachuteChestEntity entity, float entityYaw, float partialTick, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
-        model.renderToBuffer(poseStack, bufferSource.getBuffer(RenderType.entityCutout(TEXTURE)), packedLight, OverlayTexture.NO_OVERLAY);
+    public void render(
+            ParachuteChestEntity entity,
+            float entityYaw,
+            float partialTick,
+            PoseStack poseStack,
+            MultiBufferSource bufferSource,
+            int packedLight
+    ) {
+        model.renderToBuffer(
+                poseStack,
+                bufferSource.getBuffer(RenderType.entityCutout(TEXTURE)),
+                packedLight,
+                OverlayTexture.NO_OVERLAY
+        );
     }
 
     @Override

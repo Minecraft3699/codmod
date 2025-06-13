@@ -1,7 +1,10 @@
 package com.mc3699.codmod.entity.swarmCod;
 
 import com.mc3699.codmod.registry.CodEntities;
-import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
@@ -16,8 +19,7 @@ public class SwarmCodEntity extends Mob {
         this.moveControl = new SwarmCodMoveControl(this);
     }
 
-    public static AttributeSupplier.Builder createAttributes()
-    {
+    public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 10f)
                 .add(Attributes.MOVEMENT_SPEED, 10f)
@@ -30,16 +32,20 @@ public class SwarmCodEntity extends Mob {
             Vec3 offset = new Vec3(0.0, 0.5, 0.2);
             Vec3 riderPos = this.position()
                     .add(offset.x, this.getBbHeight() + offset.y, offset.z)
-                    .add(new Vec3(0.25, -1.5, offset.z-0.5).yRot((float) Math.toRadians(-this.getYRot())));
+                    .add(new Vec3(0.25, -1.5, offset.z - 0.5).yRot((float) Math.toRadians(-this.getYRot())));
             callback.accept(passenger, riderPos.x, riderPos.y, riderPos.z);
         }
     }
 
     @Override
     protected void registerGoals() {
-        Predicate<LivingEntity> targetPredicate = livingEntity -> livingEntity.isAlive() && !(livingEntity instanceof SwarmCodEntity);
+        Predicate<LivingEntity> targetPredicate = livingEntity -> livingEntity.isAlive() &&
+                                                                  !(livingEntity instanceof SwarmCodEntity);
         this.goalSelector.addGoal(1, new SwarmCodAttackGoal(this));
-        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, false, targetPredicate));
+        this.targetSelector.addGoal(
+                2,
+                new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, false, targetPredicate)
+        );
     }
 
     public Vec3 getMovementDirectionToEntity(LivingEntity target, double speed) {

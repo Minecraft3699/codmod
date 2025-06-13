@@ -17,20 +17,20 @@ public class DarkenerEntity extends PathfinderMob {
         super(type, level);
     }
 
-    @Override
-    protected void registerGoals() {
-        this.goalSelector.addGoal(0, new FloatGoal(this));
-        this.goalSelector.addGoal(1, new AttackPlayerInLightGoal(this, 1.8f));
-        this.goalSelector.addGoal(5, new DestroyLightsGoal(this, 1.25f, 16));
-        this.goalSelector.addGoal(8, new WaterAvoidingRandomStrollGoal(this, 1));
-    }
-
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 80f)
                 .add(Attributes.MOVEMENT_SPEED, 0.3f)
                 .add(Attributes.ATTACK_DAMAGE, 4f)
                 .add(Attributes.FOLLOW_RANGE, 48);
+    }
+
+    @Override
+    protected void registerGoals() {
+        this.goalSelector.addGoal(0, new FloatGoal(this));
+        this.goalSelector.addGoal(1, new AttackPlayerInLightGoal(this, 1.8f));
+        this.goalSelector.addGoal(5, new DestroyLightsGoal(this, 1.25f, 16));
+        this.goalSelector.addGoal(8, new WaterAvoidingRandomStrollGoal(this, 1));
     }
 
     @Override

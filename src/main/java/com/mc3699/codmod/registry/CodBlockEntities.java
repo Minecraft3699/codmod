@@ -18,7 +18,9 @@ public class CodBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
             DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, Codmod.MOD_ID);
 
-    public static final Supplier<BlockEntityType<MantleKeyBlockEntity>> MANTLE_KEY = BLOCK_ENTITIES.register(
+    public static void register(IEventBus eventBus) {
+        BLOCK_ENTITIES.register(eventBus);
+    }    public static final Supplier<BlockEntityType<MantleKeyBlockEntity>> MANTLE_KEY = BLOCK_ENTITIES.register(
             "mantle_key",
             () -> new BlockEntityType<>(
                     MantleKeyBlockEntity::new,
@@ -54,8 +56,5 @@ public class CodBlockEntities {
             )
     );
 
-    public static void register(IEventBus eventBus)
-    {
-        BLOCK_ENTITIES.register(eventBus);
-    }
+
 }

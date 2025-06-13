@@ -14,6 +14,6 @@ public class MisguidedEntityRenderer extends MobRenderer<MisguidedEntity, Player
 
     @Override
     public ResourceLocation getTextureLocation(MisguidedEntity misguidedEntity) {
-        return ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID,"textures/entity/misguided.png");
+        return ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "textures/entity/misguided.png");
     }
 }

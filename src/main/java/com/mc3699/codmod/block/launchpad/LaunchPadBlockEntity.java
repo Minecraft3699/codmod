@@ -11,13 +11,11 @@ import net.neoforged.neoforge.items.ItemStackHandler;
 public class LaunchPadBlockEntity extends BlockEntity {
 
     public static final int SIZE = 27;
-    private ItemStackHandler items = new ItemStackHandler(SIZE)
-    {
+    private ItemStackHandler items = new ItemStackHandler(SIZE) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
-            if(level != null)
-            {
+            if (level != null) {
                 level.invalidateCapabilities(worldPosition);
             }
             super.onContentsChanged(slot);
@@ -28,20 +26,18 @@ public class LaunchPadBlockEntity extends BlockEntity {
         super(CodBlockEntities.LAUNCH_PAD.get(), pos, blockState);
     }
 
-    public ItemStackHandler getItems()
-    {
+    public ItemStackHandler getItems() {
         return items;
     }
 
-    public void clearItems()
-    {
+    public void clearItems() {
         items = new ItemStackHandler(SIZE);
     }
 
     @Override
     protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
         super.saveAdditional(tag, registries);
-        tag.put("inventory",items.serializeNBT(registries));
+        tag.put("inventory", items.serializeNBT(registries));
     }
 
     @Override

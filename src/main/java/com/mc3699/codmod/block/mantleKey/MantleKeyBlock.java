@@ -43,7 +43,11 @@ public class MantleKeyBlock extends HorizontalDirectionalBlock implements Entity
     }
 
     @Override
-    public @Nullable <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType) {
+    public @Nullable <T extends BlockEntity> BlockEntityTicker<T> getTicker(
+            Level level,
+            BlockState state,
+            BlockEntityType<T> blockEntityType
+    ) {
         return MantleKeyBlockEntity::tick;
     }
 
@@ -53,9 +57,14 @@ public class MantleKeyBlock extends HorizontalDirectionalBlock implements Entity
     }
 
     @Override
-    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
-        if(!level.isClientSide())
-        {
+    protected InteractionResult useWithoutItem(
+            BlockState state,
+            Level level,
+            BlockPos pos,
+            Player player,
+            BlockHitResult hitResult
+    ) {
+        if (!level.isClientSide()) {
             MantleKeyBlockEntity blockEntity = (MantleKeyBlockEntity) level.getBlockEntity(pos);
             blockEntity.setBeamLength(blockEntity.getBeamLength() + 1);
         }

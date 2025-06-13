@@ -22,6 +22,13 @@ public class RedWispEntity extends BaseWispEntity {
         super(type, level, 0xFF0000, List.of(ParticleTypes.CRIMSON_SPORE, ParticleTypes.BUBBLE, ParticleTypes.SNEEZE));
     }
 
+    public static AttributeSupplier.Builder createAttributes() {
+        return Mob.createMobAttributes()
+                .add(Attributes.MAX_HEALTH, 10f)
+                .add(Attributes.MOVEMENT_SPEED, 0.5f)
+                .add(Attributes.ATTACK_DAMAGE, 100f);
+    }
+
     @Override
     public void tick() {
         super.tick();
@@ -41,12 +48,5 @@ public class RedWispEntity extends BaseWispEntity {
         }
 
         super.registerGoals();
-    }
-
-    public static AttributeSupplier.Builder createAttributes() {
-        return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 10f)
-                .add(Attributes.MOVEMENT_SPEED, 0.5f)
-                .add(Attributes.ATTACK_DAMAGE, 100f);
     }
 }

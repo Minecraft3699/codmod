@@ -13,7 +13,7 @@ import java.util.Random;
 public class SwarmCodMoveControl extends MoveControl {
     private float yRot;
     private int jumpDelay;
-    private Random random = new Random();
+    private final Random random = new Random();
 
     public SwarmCodMoveControl(Mob mob) {
         super(mob);
@@ -41,13 +41,25 @@ public class SwarmCodMoveControl extends MoveControl {
                     this.mob.setYRot(this.mob.getYRot() + Mth.wrapDegrees(targetYaw - this.mob.getYRot()) * 0.5F);
                 }
 
-                Vec3 dir = ((SwarmCodEntity) this.mob).getMovementDirectionToEntity(target, 0.8 + random.nextFloat(-1,1));
+                Vec3 dir = ((SwarmCodEntity) this.mob).getMovementDirectionToEntity(
+                        target,
+                        0.8 + random.nextFloat(-1, 1)
+                );
                 this.mob.setDeltaMovement(this.mob.getDeltaMovement().add(dir.x, 0.6, dir.z));
-                this.mob.level().playSound(null,this.mob.getX(), this.mob.getY(), this.mob.getZ(), SoundEvents.COD_FLOP, SoundSource.HOSTILE,1.0f,1.0f);
+                this.mob.level()
+                        .playSound(
+                                null,
+                                this.mob.getX(),
+                                this.mob.getY(),
+                                this.mob.getZ(),
+                                SoundEvents.COD_FLOP,
+                                SoundSource.HOSTILE,
+                                1.0f,
+                                1.0f
+                        );
                 this.jumpDelay = this.mob.getRandom().nextInt(10) + 1;
 
-                if(random.nextInt(1,10) > 9)
-                {
+                if (random.nextInt(1, 10) > 9) {
                     mob.level().addFreshEntity(new SwarmCodEntity(null, this.mob.level()));
                 }
             }

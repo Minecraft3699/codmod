@@ -18,7 +18,8 @@ import java.util.Random;
 
 public class GianniEntityRenderer extends EntityRenderer<GianniEntity> {
     private final ItemRenderer itemRenderer;
-    private Random random = new Random();
+    private final Random random = new Random();
+
     public GianniEntityRenderer(EntityRendererProvider.Context context) {
         super(context);
 
@@ -32,17 +33,37 @@ public class GianniEntityRenderer extends EntityRenderer<GianniEntity> {
 
 
     @Override
-    public void render(GianniEntity entity, float entityYaw, float partialTick, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
+    public void render(
+            GianniEntity entity,
+            float entityYaw,
+            float partialTick,
+            PoseStack poseStack,
+            MultiBufferSource bufferSource,
+            int packedLight
+    ) {
         poseStack.pushPose();
         float glitchBounds = 0.05f;
-        poseStack.translate(random.nextFloat(-glitchBounds,glitchBounds),1.5,0 + random.nextFloat(-glitchBounds,glitchBounds));
-        poseStack.translate(0,-0.5f,0);
-        poseStack.scale(6,6,6);
+        poseStack.translate(
+                random.nextFloat(-glitchBounds, glitchBounds),
+                1.5,
+                0 + random.nextFloat(-glitchBounds, glitchBounds)
+        );
+        poseStack.translate(0, -0.5f, 0);
+        poseStack.scale(6, 6, 6);
         poseStack.mulPose(entityRenderDispatcher.cameraOrientation());
 
         ItemStack stackItem = new ItemStack(CodItems.GIANNI.get());
         BakedModel model = itemRenderer.getModel(stackItem, entity.level(), null, 0);
-        itemRenderer.render(stackItem, ItemDisplayContext.GROUND, false, poseStack, bufferSource, LightTexture.FULL_BRIGHT, OverlayTexture.NO_OVERLAY, model);
+        itemRenderer.render(
+                stackItem,
+                ItemDisplayContext.GROUND,
+                false,
+                poseStack,
+                bufferSource,
+                LightTexture.FULL_BRIGHT,
+                OverlayTexture.NO_OVERLAY,
+                model
+        );
 
         poseStack.popPose();
 

@@ -7,7 +7,10 @@ import net.minecraft.resources.ResourceLocation;
 
 public class SwarmCodEntityRenderer extends MobRenderer<SwarmCodEntity, SwarmCodEntityModel> {
 
-    private static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "textures/entity/swarm_cod.png");
+    private static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(
+            Codmod.MOD_ID,
+            "textures/entity/swarm_cod.png"
+    );
 
     public SwarmCodEntityRenderer(EntityRendererProvider.Context context) {
         super(context, new SwarmCodEntityModel(context.bakeLayer(SwarmCodEntityModel.LAYER_LOCATION)), 0.01f);

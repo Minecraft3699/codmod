@@ -11,7 +11,12 @@ import org.jetbrains.annotations.Nullable;
 import java.util.concurrent.CompletableFuture;
 
 public class DatagenBlockTagProvider extends BlockTagsProvider {
-    public DatagenBlockTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, String modId, @Nullable ExistingFileHelper existingFileHelper) {
+    public DatagenBlockTagProvider(
+            PackOutput output,
+            CompletableFuture<HolderLookup.Provider> lookupProvider,
+            String modId,
+            @Nullable ExistingFileHelper existingFileHelper
+    ) {
         super(output, lookupProvider, modId, existingFileHelper);
     }
 

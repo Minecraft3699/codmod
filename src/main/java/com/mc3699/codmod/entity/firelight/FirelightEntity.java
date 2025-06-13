@@ -14,18 +14,18 @@ public class FirelightEntity extends PathfinderMob {
         super(type, level);
     }
 
-    @Override
-    protected void registerGoals() {
-        this.goalSelector.addGoal(0, new FloatGoal(this));
-        this.goalSelector.addGoal(1, new AttackOrDisappearGoal(this, level(), 25, 2, 0.4f));
-    }
-
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 80f)
                 .add(Attributes.MOVEMENT_SPEED, 0.3f)
                 .add(Attributes.ATTACK_DAMAGE, 4f)
                 .add(Attributes.FOLLOW_RANGE, 48);
+    }
+
+    @Override
+    protected void registerGoals() {
+        this.goalSelector.addGoal(0, new FloatGoal(this));
+        this.goalSelector.addGoal(1, new AttackOrDisappearGoal(this, level(), 25, 2, 0.4f));
     }
 
 

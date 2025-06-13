@@ -12,6 +12,8 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.ClipContext;
+import net.minecraft.world.phys.HitResult;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
@@ -23,16 +25,24 @@ import java.util.Random;
 
 @EventBusSubscriber(modid = Codmod.MOD_ID, bus = EventBusSubscriber.Bus.GAME)
 public class BadSunEvents {
-    private static Random random = new Random();
-    private static long tickCount = 0;
     public static boolean isBadSunDay = false;
+    private static final Random random = new Random();
+    private static long tickCount = 0;
 
     private static boolean isInSun(ServerPlayer player) {
         MinecraftServer server = player.getServer();
         if (server == null) return false;
         if (!player.level().isDay()) return false;
         BlockPos pos = BlockPos.containing(player.position().add(0, 1, 0));
-        return player.level().canSeeSky(pos);
+        ServerLevel level = player.serverLevel();
+
+        return level.canSeeSky(pos) && level.clip(new ClipContext(
+                player.position(),
+                player.position().add(0, 300, 0),
+                ClipContext.Block.VISUAL,
+                ClipContext.Fluid.NONE,
+                player
+        )).getType() == HitResult.Type.MISS;
     }
 
     @SubscribeEvent

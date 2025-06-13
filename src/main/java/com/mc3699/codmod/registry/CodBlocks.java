@@ -18,15 +18,15 @@ public class CodBlocks {
 
     public static final DeferredBlock<Block> MOLTEN_COPPER = BLOCKS.register(
             "molten_copper",
-            ()-> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.MAGMA_BLOCK))
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.MAGMA_BLOCK))
     );
 
-    public static final DeferredBlock<Block> DELL_SERVER  = BLOCKS.register(
+    public static final DeferredBlock<Block> DELL_SERVER = BLOCKS.register(
             "dell_server",
-            ()-> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.TINTED_GLASS))
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.TINTED_GLASS))
     );
 
-    public static final DeferredBlock<Block> RADAR  = BLOCKS.register(
+    public static final DeferredBlock<Block> RADAR = BLOCKS.register(
             "radar",
             RadarBlock::new
     );
@@ -44,8 +44,7 @@ public class CodBlocks {
     public static final DeferredBlock<MantleKeyBlock> MANTLE_KEY =
             BLOCKS.register("mantle_key", () -> new MantleKeyBlock(BlockBehaviour.Properties.of()));
 
-    public static void register(IEventBus eventBus)
-    {
+    public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }
 

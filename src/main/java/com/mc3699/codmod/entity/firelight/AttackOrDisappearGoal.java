@@ -18,13 +18,18 @@ public class AttackOrDisappearGoal extends Goal {
     private final double approachDistance;
     private final double attackSpeed;
     private final float disappearChance;
-    private Player target;
     private final Random random;
+    private final UUID firelightUUID = UUID.fromString("494de44d-eee2-4e82-8b11-5cd7997976e8");
+    private Player target;
     private boolean attacking = false;
 
-    private final UUID firelightUUID = UUID.fromString("494de44d-eee2-4e82-8b11-5cd7997976e8");
-
-    public AttackOrDisappearGoal(PathfinderMob entity, Level level, double approachDistance, double attackSpeed, float disappearChance) {
+    public AttackOrDisappearGoal(
+            PathfinderMob entity,
+            Level level,
+            double approachDistance,
+            double attackSpeed,
+            float disappearChance
+    ) {
         this.entity = entity;
         this.level = level;
         this.approachDistance = approachDistance;
@@ -63,7 +68,11 @@ public class AttackOrDisappearGoal extends Goal {
                     if (entity.distanceToSqr(target) < 2.0) {
                         entity.doHurtTarget(target);
                         target.removeEffect(CodMobEffects.HEART_CORRUPTION);
-                        target.addEffect(new MobEffectInstance(CodMobEffects.HEART_CORRUPTION, MobEffectInstance.INFINITE_DURATION, random.nextInt(1,10)));
+                        target.addEffect(new MobEffectInstance(
+                                CodMobEffects.HEART_CORRUPTION,
+                                MobEffectInstance.INFINITE_DURATION,
+                                random.nextInt(1, 10)
+                        ));
                     }
                     attacking = true;
                 }

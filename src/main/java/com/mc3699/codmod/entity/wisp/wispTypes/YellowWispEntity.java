@@ -21,6 +21,12 @@ public class YellowWispEntity extends BaseWispEntity {
         super(type, level, 0xFFFF00, List.of(ParticleTypes.SMALL_FLAME, ParticleTypes.CRIMSON_SPORE));
     }
 
+    public static AttributeSupplier.Builder createAttributes() {
+        return Mob.createMobAttributes()
+                .add(Attributes.MAX_HEALTH, 10f)
+                .add(Attributes.MOVEMENT_SPEED, 0.5f)
+                .add(Attributes.ATTACK_DAMAGE, 100f);
+    }
 
     @Override
     protected void registerGoals() {
@@ -31,13 +37,5 @@ public class YellowWispEntity extends BaseWispEntity {
         }
 
         super.registerGoals();
-    }
-
-
-    public static AttributeSupplier.Builder createAttributes() {
-        return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 10f)
-                .add(Attributes.MOVEMENT_SPEED, 0.5f)
-                .add(Attributes.ATTACK_DAMAGE, 100f);
     }
 }

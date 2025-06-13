@@ -15,44 +15,14 @@ import java.util.WeakHashMap;
 
 public class BaseWispEntityRenderer extends MobRenderer<BaseWispEntity, BaseWispModel> {
 
-    private static Map<BaseWispEntity, PointLight> entityPointLightMap = new WeakHashMap<>();
-    private static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "textures/entity/base_wisp.png");
+    private static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(
+            Codmod.MOD_ID,
+            "textures/entity/base_wisp.png"
+    );
+    private static final Map<BaseWispEntity, PointLight> entityPointLightMap = new WeakHashMap<>();
 
     public BaseWispEntityRenderer(EntityRendererProvider.Context context) {
         super(context, new BaseWispModel(context.bakeLayer(BaseWispModel.LAYER_LOCATION)), 0.0f);
-    }
-
-    @Override
-    public void render(BaseWispEntity entity, float entityYaw, float partialTicks, PoseStack poseStack, MultiBufferSource buffer, int packedLight) {
-
-
-        PointLight pointLight = entityPointLightMap.computeIfAbsent(entity, e -> {
-           PointLight newLight = new PointLight();
-            VeilRenderSystem.renderer().getLightRenderer().addLight(newLight);
-            return newLight;
-        });
-
-
-        pointLight.setPosition(entity.getX(), entity.getY()+0.8, entity.getZ());
-        pointLight.setRadius(10);
-        int color = entity.getColor();
-        pointLight.setColor(color);
-        pointLight.setBrightness(3f);
-        pointLight.markDirty();
-
-        poseStack.pushPose();
-        poseStack.translate(0,2f,0);
-        model.setupAnim(entity, 0, 0, entity.tickCount + partialTicks, entityYaw, 0);
-        //model.renderToBuffer(poseStack, buffer.getBuffer(RenderType.BEACON_BEAM.apply(TEXTURE, true)), packedLight, OverlayTexture.NO_OVERLAY);
-        super.render(entity, entityYaw, partialTicks, poseStack, buffer, packedLight);
-        RenderSystem.setShaderColor(
-                ((color >> 16) & 0xFF) / 255.0F,
-                ((color >> 8) & 0xFF) / 255.0F,
-                (color & 0xFF) / 255.0F,
-                1.0F
-        );
-        poseStack.popPose();
-        RenderSystem.setShaderColor(1,1,1,1);
     }
 
     public static void cleanup() {
@@ -63,6 +33,48 @@ public class BaseWispEntityRenderer extends MobRenderer<BaseWispEntity, BaseWisp
             }
             return false;
         });
+    }
+
+    @Override
+    public void render(
+            BaseWispEntity entity,
+            float entityYaw,
+            float partialTicks,
+            PoseStack poseStack,
+            MultiBufferSource buffer,
+            int packedLight
+    ) {
+
+
+        PointLight pointLight = entityPointLightMap.computeIfAbsent(
+                entity, e -> {
+                    PointLight newLight = new PointLight();
+                    VeilRenderSystem.renderer().getLightRenderer().addLight(newLight);
+                    return newLight;
+                }
+        );
+
+
+        pointLight.setPosition(entity.getX(), entity.getY() + 0.8, entity.getZ());
+        pointLight.setRadius(10);
+        int color = entity.getColor();
+        pointLight.setColor(color);
+        pointLight.setBrightness(3f);
+        pointLight.markDirty();
+
+        poseStack.pushPose();
+        poseStack.translate(0, 2f, 0);
+        model.setupAnim(entity, 0, 0, entity.tickCount + partialTicks, entityYaw, 0);
+        //model.renderToBuffer(poseStack, buffer.getBuffer(RenderType.BEACON_BEAM.apply(TEXTURE, true)), packedLight, OverlayTexture.NO_OVERLAY);
+        super.render(entity, entityYaw, partialTicks, poseStack, buffer, packedLight);
+        RenderSystem.setShaderColor(
+                ((color >> 16) & 0xFF) / 255.0F,
+                ((color >> 8) & 0xFF) / 255.0F,
+                (color & 0xFF) / 255.0F,
+                1.0F
+        );
+        poseStack.popPose();
+        RenderSystem.setShaderColor(1, 1, 1, 1);
     }
 
     @Override
