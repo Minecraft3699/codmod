@@ -21,5 +21,6 @@ public class CodLang {
         CodRegistrate.INSTANCE.addRawLang("item.codmod.shrimp", "Shrimp");
         CodRegistrate.INSTANCE.addRawLang("item.codmod.application", "Job Application");
         CodRegistrate.INSTANCE.addRawLang("item.codmod.realcod", "Real Cod");
+        CodRegistrate.INSTANCE.addRawLang("block.codmod.stable_disruption","Stabilized Disruption");
     }
 }

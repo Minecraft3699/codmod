@@ -15,6 +15,7 @@ public class DatagenItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         basicItem(CodItems.GIANNI.get());
         simpleBlockItem(CodBlocks.RADAR.get());
+        simpleBlockItem(CodBlocks.STABLE_DISRUPTION.get());
         simpleBlockItem(CodBlocks.MOLTEN_COPPER.get());
         simpleBlockItem(CodBlocks.UAV_CONTROLLER.get());
     }

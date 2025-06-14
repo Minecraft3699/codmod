@@ -41,6 +41,11 @@ public class CodBlocks {
             UAVControllerBlock::new
     );
 
+    public static final DeferredBlock<Block> STABLE_DISRUPTION = BLOCKS.register(
+            "stable_disruption",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).noCollission())
+    );
+
     public static final DeferredBlock<MantleKeyBlock> MANTLE_KEY =
             BLOCKS.register("mantle_key", () -> new MantleKeyBlock(BlockBehaviour.Properties.of()));
 

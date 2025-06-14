@@ -6,6 +6,7 @@ import com.mc3699.codmod.entity.darkener.DarkenerEntity;
 import com.mc3699.codmod.entity.firelight.FirelightEntity;
 import com.mc3699.codmod.entity.friendlyFace.FriendlyFaceEntity;
 import com.mc3699.codmod.entity.gianni.GianniEntity;
+import com.mc3699.codmod.entity.misguided.MisguidedEntity;
 import com.mc3699.codmod.entity.swarmCod.SwarmCodEntity;
 import com.mc3699.codmod.entity.trialTrader.TrialTraderEntity;
 import com.mc3699.codmod.entity.vay.VayEntity;
@@ -30,5 +31,6 @@ public class ModEvents {
         event.put(CodEntities.ARIRAL.get(), AriralEntity.createAttributes().build());
         event.put(CodEntities.FRIENDLY_FACE.get(), FriendlyFaceEntity.createAttributes().build());
         event.put(CodEntities.GIANNI.get(), GianniEntity.createAttributes().build());
+        event.put(CodEntities.MISGUIDED.get(), MisguidedEntity.createAttributes().build());
     }
 }

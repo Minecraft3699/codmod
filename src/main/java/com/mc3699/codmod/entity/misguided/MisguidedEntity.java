@@ -1,15 +1,17 @@
 package com.mc3699.codmod.entity.misguided;
 
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.Mob;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.goal.FloatGoal;
+import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.common.damagesource.DamageContainer;
 
-public class MisguidedEntity extends Mob {
+public class MisguidedEntity extends PathfinderMob {
 
     private static final int DESPAWN_TIME = 3 * 60 * 20;
     private Mode currentMode;
@@ -36,6 +38,13 @@ public class MisguidedEntity extends Mob {
     }
 
     @Override
+    protected void registerGoals() {
+        this.goalSelector.addGoal(0, new FloatGoal(this));
+        this.goalSelector.addGoal(1, new EffectAndDespawnGoal(this));
+        this.goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, 1));
+    }
+
+    @Override
     public void onAddedToLevel() {
         super.onAddedToLevel();
         if (this.getY() < 60) {
@@ -50,18 +59,19 @@ public class MisguidedEntity extends Mob {
         if (this.currentMode == Mode.PASSIVE) {
             this.despawnTimer--;
             if (this.despawnTimer <= 0) {
-                this.remove(RemovalReason.DISCARDED); // Despawn after time is up
+                this.remove(RemovalReason.DISCARDED);
             }
         }
     }
 
     @Override
     public void onDamageTaken(DamageContainer damageContainer) {
-        super.onDamageTaken(damageContainer);
-        if (this.currentMode == Mode.PASSIVE && damageContainer.getSource().getEntity() instanceof Player player) {
+        if(damageContainer.getSource().getEntity() instanceof LivingEntity target)
+        {
             this.currentMode = Mode.AGGRESSIVE;
-            this.setTarget(player);
+            this.setTarget(target);
         }
+        super.onDamageTaken(damageContainer);
     }
 
     public enum Mode {

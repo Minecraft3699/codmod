@@ -34,7 +34,7 @@ public class EffectAndDespawnGoal extends Goal {
     public void tick() {
         super.tick();
         if (this.target != null) {
-            this.entity.getNavigation().moveTo(this.target, 1.1);
+            this.entity.getNavigation().moveTo(this.target, 2);
             if (this.entity.distanceTo(this.target) <= 1.5) {
                 target.addEffect(new MobEffectInstance(CodMobEffects.HEART_CORRUPTION, 240, 5));
                 target.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 240, 5));

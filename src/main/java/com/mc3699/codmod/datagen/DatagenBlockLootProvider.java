@@ -19,6 +19,7 @@ public class DatagenBlockLootProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
         dropSelf(CodBlocks.MOLTEN_COPPER.get());
+        dropSelf(CodBlocks.STABLE_DISRUPTION.get());
         dropOther(CodBlocks.UAV_CONTROLLER.get(), Items.COD);
         dropOther(CodBlocks.RADAR.get(), Items.COD);
     }
@@ -28,7 +29,8 @@ public class DatagenBlockLootProvider extends BlockLootSubProvider {
         List<Block> blocks = List.of(
                 CodBlocks.MOLTEN_COPPER.get(),
                 CodBlocks.UAV_CONTROLLER.get(),
-                CodBlocks.RADAR.get()
+                CodBlocks.RADAR.get(),
+                CodBlocks.STABLE_DISRUPTION.get()
         );
         return blocks;
     }
