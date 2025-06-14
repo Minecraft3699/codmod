@@ -17,28 +17,52 @@ public class CodCreativeTabs {
     );
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> CODMOD_TAB =
-            TABS.register(
-                    "codmod_tab", () -> CreativeModeTab.builder()
-                            .title(Component.translatable("itemGroup.codmod"))
-                            .icon(() -> new ItemStack(CodItems.NULL_COD.get()))
-                            .displayItems(
-                                    (itemDisplayParameters, output) ->
-                                    {
+        TABS.register(
+        "codmod_tab", () -> CreativeModeTab.builder()
+                .title(Component.translatable("itemGroup.codmod"))
+                .icon(() -> new ItemStack(CodItems.NULL_COD.get()))
+                .displayItems(
+                    (itemDisplayParameters, output) ->
+                    {
+                        output.accept(CodItems.COD_ROD.get());
+                        output.accept(CodItems.APPLICATION.get());
+                        output.accept(CodItems.NULL_COD.get());
+                        output.accept(CodItems.NULL_CHICKEN.get());
+                        output.accept(CodItems.NULL_DRIED_KELP.get());
+                        output.accept(CodItems.INTEGRITY_COOKIE.get());
+                        output.accept(CodItems.REAL_COD.get());
+                        output.accept(CodBlocks.RADAR.asItem());
+                        output.accept(CodBlocks.UAV_CONTROLLER.asItem());
+                    }
+                )
+        .build()
+        );
 
-                                        output.accept(CodItems.COD_ROD.get());
-                                        output.accept(CodItems.APPLICATION.get());
-                                        output.accept(CodItems.NULL_COD.get());
-                                        output.accept(CodItems.NULL_CHICKEN.get());
-                                        output.accept(CodItems.NULL_DRIED_KELP.get());
-                                        output.accept(CodItems.INTEGRITY_COOKIE.get());
-                                        output.accept(CodItems.REAL_COD.get());
-                                        output.accept(CodBlocks.RADAR.asItem());
-                                        output.accept(CodBlocks.UAV_CONTROLLER.asItem());
-
-                                    }
-                            )
-                            .build()
-            );
+    public static final DeferredHolder<CreativeModeTab,CreativeModeTab> VOTV_FOODS =
+            TABS.register("votv_food_tab", () -> CreativeModeTab.builder()
+                    .title(Component.translatable("itemGroup.votv_food"))
+                    .icon(() -> new ItemStack(CodItems.MRE.get()))
+                    .displayItems(
+                            ((itemDisplayParameters, output) -> {
+                                output.accept(CodItems.BANANA.get());
+                                output.accept(CodItems.BAGUETTE.get());
+                                output.accept(CodItems.BUN.get());
+                                output.accept(CodItems.CAKE.get());
+                                output.accept(CodItems.CHEESE.get());
+                                output.accept(CodItems.CHOCOLATE.get());
+                                output.accept(CodItems.CHICKEN_NUGGET.get());
+                                output.accept(CodItems.CUCUMBER.get());
+                                output.accept(CodItems.FOOD_BOX.get());
+                                output.accept(CodItems.LEMON.get());
+                                output.accept(CodItems.MANGO.get());
+                                output.accept(CodItems.MRE.get());
+                                output.accept(CodItems.ORANGE.get());
+                                output.accept(CodItems.PIZZA.get());
+                                output.accept(CodItems.TACO.get());
+                                output.accept(CodItems.TOMATO.get());
+                            })
+                    )
+                    .build());
 
     public static void register(IEventBus eventBus) {
         TABS.register(eventBus);
