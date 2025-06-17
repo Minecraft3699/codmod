@@ -1,6 +1,7 @@
-package com.mc3699.codmod.bad_sun;
+package com.mc3699.codmod.handlers;
 
 import com.mc3699.codmod.Codmod;
+import com.mc3699.codmod.colors.ColorManager;
 import com.mc3699.codmod.network.FoliageColorPayload;
 import com.mc3699.codmod.registry.CodDamageTypes;
 import net.minecraft.core.BlockPos;
@@ -31,14 +32,16 @@ public class BadSunEvents {
 
     private static boolean isInSun(ServerPlayer player) {
         MinecraftServer server = player.getServer();
+
         if (server == null) return false;
         if (!player.level().isDay()) return false;
+
         BlockPos pos = BlockPos.containing(player.position().add(0, 1, 0));
         ServerLevel level = player.serverLevel();
 
         return level.canSeeSky(pos) && level.clip(new ClipContext(
                 player.position(),
-                player.position().add(0, 300, 0),
+                player.position().add(0, 500, 0),
                 ClipContext.Block.VISUAL,
                 ClipContext.Fluid.NONE,
                 player

@@ -1,4 +1,4 @@
-package com.mc3699.codmod.event;
+package com.mc3699.codmod.responses;
 
 import com.mc3699.codmod.entity.vay.VayEntity;
 import com.mc3699.codmod.registry.CodEntities;

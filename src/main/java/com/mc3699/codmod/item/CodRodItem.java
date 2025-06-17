@@ -16,14 +16,13 @@ import net.minecraft.world.entity.animal.Cod;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.MaceItem;
-import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 
 public class CodRodItem extends MaceItem {
-    public CodRodItem() {
-        super(new Properties().rarity(Rarity.EPIC).durability(100));
+    public CodRodItem(Properties props) {
+        super(props);
     }
 
 

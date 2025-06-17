@@ -1,4 +1,4 @@
-// 1.21.1	2025-06-16T18:42:45.357069907	Item Models: codmod
+// 1.21.1	2025-06-17T12:45:21.7526447	Item Models: codmod
 edec564687d664c872b4b5954bb6f93d21b600ac assets/codmod/models/item/baguette.json
 cf5971eee1e19d4e345f0a3a747360599a1e49f3 assets/codmod/models/item/banana.json
 cc9b9372c61007d19849b9df3679962ef7a59c4f assets/codmod/models/item/bun.json
@@ -11,7 +11,6 @@ d9245f2c93b2c033b9795bcd17e99f1d2d8dfa02 assets/codmod/models/item/chocolate.jso
 7e0ebdc85d1a797880e76d993e4afdd2005b5220 assets/codmod/models/item/gianni.json
 b87a293f16add306a0b7e71e214f73539b391f64 assets/codmod/models/item/lemon.json
 c8f83909d48ecdcc55c3f8aaab19515353a6f32e assets/codmod/models/item/mango.json
-e15dabe9c37b81495f623d8d061e1c9faa3bf66a assets/codmod/models/item/maxwell.json
 10b39df2677ce7c5241cc3712aad22f15b1151fe assets/codmod/models/item/molten_copper.json
 e6cbc649d4aa532d09f6013b9921a8e9bd8c5686 assets/codmod/models/item/mre.json
 e8ef7dfdd002475385f067636d56cf8c0f617fe5 assets/codmod/models/item/orange.json

@@ -1,7 +1,7 @@
 package com.mc3699.codmod.event;
 
 import com.mc3699.codmod.Codmod;
-import com.mc3699.codmod.bad_sun.BadSunEvents;
+import com.mc3699.codmod.handlers.BadSunEvents;
 import com.mc3699.codmod.network.FoliageColorPayload;
 import com.mc3699.codmod.registry.CodSounds;
 import dev.wendigodrip.thebrokenscript.api.event.BaseEvent;

@@ -1,16 +1,22 @@
 package com.mc3699.codmod;
 
+import com.mc3699.codmod.commands.ColorCommand;
+import com.mc3699.codmod.data.CodData;
 import com.mc3699.codmod.event.*;
 import com.mc3699.codmod.registry.*;
+import com.mc3699.codmod.responses.VayChat;
 import com.mojang.logging.LogUtils;
 import dev.wendigodrip.thebrokenscript.api.queue.WorkQueue;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.util.thread.SidedThreadGroups;
 import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.RegisterCommandsEvent;
+import net.neoforged.neoforge.event.level.LevelEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.neoforged.neoforge.event.tick.ServerTickEvent;
 import org.slf4j.Logger;
@@ -53,8 +59,20 @@ public class Codmod {
     }
 
     @SubscribeEvent
+    public void registerCommands(RegisterCommandsEvent event) {
+        ColorCommand.register(event.getDispatcher());
+    }
+
+    @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
         LOGGER.info(
                 "Starting Codmod, I like cod cod cod cod cod cod cod cod COD MOD IS LOADING!!! THIS IS CODMOD!!! THIS LINE IS COD MOD!!! COD MOD LOADING RIGHT NOW!!!!!!! COD MOD YEAHHHHHHHHHHHHHHHHH");
+    }
+
+    @SubscribeEvent
+    public void onLoadLevel(LevelEvent.Load event) {
+        if (!(event.getLevel() instanceof ServerLevel level)) return;
+
+        level.getServer().overworld().getDataStorage().computeIfAbsent(CodData.FACTORY, "cod");
     }
 }

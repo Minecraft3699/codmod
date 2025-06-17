@@ -1,7 +1,7 @@
 package com.mc3699.codmod.network;
 
 import com.mc3699.codmod.Codmod;
-import com.mc3699.codmod.bad_sun.ColorManager;
+import com.mc3699.codmod.colors.ColorManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.ByteBufCodecs;

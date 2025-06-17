@@ -1,7 +1,6 @@
 package com.mc3699.codmod.client;
 
 import com.mc3699.codmod.Codmod;
-import com.mc3699.codmod.bad_sun.ColorCommand;
 import com.mc3699.codmod.entity.wisp.BaseWispEntityRenderer;
 import com.mojang.blaze3d.vertex.PoseStack;
 import dev.wendigodrip.thebrokenscript.api.util.Boxes;
@@ -22,7 +21,6 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
-import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import org.joml.Matrix4fc;
 
 import java.util.Objects;
@@ -36,11 +34,6 @@ public class ClientEvents {
     @SubscribeEvent
     public static void onClientTickEnd(ClientTickEvent.Post event) {
         BaseWispEntityRenderer.cleanup();
-    }
-
-    @SubscribeEvent
-    public static void registerCommands(RegisterCommandsEvent event) {
-        ColorCommand.register(event.getDispatcher());
     }
 
     public static void register() {

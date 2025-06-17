@@ -15,7 +15,6 @@ public class CodLang {
         CodRegistrate.INSTANCE.addRawLang("block.codmod.radar", "Radar");
         CodRegistrate.INSTANCE.addRawLang("block.codmod.uav_controller", "UAV Controller");
         CodRegistrate.INSTANCE.addRawLang("item.codmod.null_cod", "Null Cod");
-        CodRegistrate.INSTANCE.addRawLang("item.codmod.cod_rod", "Cod Rod");
         CodRegistrate.INSTANCE.addRawLang("item.codmod.null_dried_kelp", "Null Dried Kelp");
         CodRegistrate.INSTANCE.addRawLang("item.codmod.null_chicken", "Null Chicken");
         CodRegistrate.INSTANCE.addRawLang("item.codmod.integrity_cookie", "§4Integrity §0Cookie");
@@ -23,7 +22,6 @@ public class CodLang {
         CodRegistrate.INSTANCE.addRawLang("item.codmod.application", "Job Application");
         CodRegistrate.INSTANCE.addRawLang("item.codmod.realcod", "Real Cod");
         CodRegistrate.INSTANCE.addRawLang("block.codmod.stable_disruption","Stabilized Disruption");
-        CodRegistrate.INSTANCE.addRawLang("item.codmod.maxwell","Maxwell");
 
         // VOTV Foods
         CodRegistrate.INSTANCE.addRawLang("item.codmod.baguette","Baguette");

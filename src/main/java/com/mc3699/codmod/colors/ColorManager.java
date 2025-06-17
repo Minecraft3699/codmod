@@ -1,9 +1,11 @@
-package com.mc3699.codmod.bad_sun;
+package com.mc3699.codmod.colors;
 
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 
 public class ColorManager {
     private static int foliageColor = 0x48B518; // Fallback color
@@ -21,17 +23,21 @@ public class ColorManager {
         useCustomGrass = true;
     }
 
+    @OnlyIn(Dist.CLIENT)
     public static int getFoliageColor(BlockState state, BlockAndTintGetter world, BlockPos pos, int tintIndex) {
         if (useCustomFoliage || world == null || pos == null) {
             return foliageColor;
         }
+
         return BiomeColors.getAverageFoliageColor(world, pos); // Vanilla biome-based color
     }
 
+    @OnlyIn(Dist.CLIENT)
     public static int getGrassColor(BlockState state, BlockAndTintGetter world, BlockPos pos, int tintIndex) {
         if (useCustomGrass || world == null || pos == null) {
             return grassColor;
         }
+
         return BiomeColors.getAverageGrassColor(world, pos); // Vanilla biome-based color
     }
 

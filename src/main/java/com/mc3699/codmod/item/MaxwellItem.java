@@ -19,8 +19,8 @@ import net.minecraft.world.phys.Vec3;
 
 public class MaxwellItem extends Item {
 
-    public MaxwellItem() {
-        super(new Properties().durability(100));
+    public MaxwellItem(Properties props) {
+        super(props);
     }
 
     @Override
@@ -51,6 +51,7 @@ public class MaxwellItem extends Item {
 
     private void explode(ServerLevel serverLevel, Vec3 pos) {
         Vec3 codSpawnPos = pos.add(0, 1, 0);
+
         serverLevel.playSound(
                 null,
                 BlockPos.containing(codSpawnPos),

@@ -1,6 +1,7 @@
-package com.mc3699.codmod.bad_sun;
+package com.mc3699.codmod.client;
 
 import com.mc3699.codmod.Codmod;
+import com.mc3699.codmod.colors.ColorManager;
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LeavesBlock;
