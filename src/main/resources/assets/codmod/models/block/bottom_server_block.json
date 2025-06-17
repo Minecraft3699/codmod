@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "up": "codmod:block/server-back",
+    "down": "codmod:block/server-back",
+    "north": "codmod:block/server-bottom-front",
+    "south": "codmod:block/server-back",
+    "east": "codmod:block/server-bottom-side",
+    "west": "codmod:block/server-bottom-side"
+  }
+}

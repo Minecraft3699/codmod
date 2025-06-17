@@ -3,6 +3,7 @@
     "codmod:molten_copper",
     "codmod:radar",
     "codmod:uav_controller",
-    "codmod:stable_disruption"
+    "codmod:stable_disruption",
+    "codmod:server"
   ]
 }

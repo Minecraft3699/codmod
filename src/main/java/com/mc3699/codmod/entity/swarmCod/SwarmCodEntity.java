@@ -1,19 +1,18 @@
 package com.mc3699.codmod.entity.swarmCod;
 
 import com.mc3699.codmod.registry.CodEntities;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.goal.FloatGoal;
+import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
 import java.util.function.Predicate;
 
-public class SwarmCodEntity extends Mob {
+public class SwarmCodEntity extends PathfinderMob {
     public SwarmCodEntity(EntityType<? extends Mob> type, Level level) {
         super(CodEntities.SWARM_COD.get(), level);
         this.moveControl = new SwarmCodMoveControl(this);
@@ -41,6 +40,8 @@ public class SwarmCodEntity extends Mob {
     protected void registerGoals() {
         Predicate<LivingEntity> targetPredicate = livingEntity -> livingEntity.isAlive() &&
                                                                   !(livingEntity instanceof SwarmCodEntity);
+        this.goalSelector.addGoal(0, new FloatGoal(this));
+        this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 1));
         this.goalSelector.addGoal(1, new SwarmCodAttackGoal(this));
         this.targetSelector.addGoal(
                 2,

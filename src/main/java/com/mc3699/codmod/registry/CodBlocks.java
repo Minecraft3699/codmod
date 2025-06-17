@@ -4,6 +4,7 @@ import com.mc3699.codmod.Codmod;
 import com.mc3699.codmod.block.launchpad.LaunchPadBlock;
 import com.mc3699.codmod.block.mantleKey.MantleKeyBlock;
 import com.mc3699.codmod.block.radar.RadarBlock;
+import com.mc3699.codmod.block.server.ServerBlock;
 import com.mc3699.codmod.block.uavController.UAVControllerBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -44,6 +45,11 @@ public class CodBlocks {
     public static final DeferredBlock<Block> STABLE_DISRUPTION = BLOCKS.register(
             "stable_disruption",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).noCollission())
+    );
+
+    public static final DeferredBlock<Block> SERVER = BLOCKS.register(
+            "server",
+            ServerBlock::new
     );
 
     public static final DeferredBlock<MantleKeyBlock> MANTLE_KEY =

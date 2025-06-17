@@ -27,6 +27,7 @@ public class DatagenBlockTagProvider extends BlockTagsProvider {
                 .add(CodBlocks.RADAR.get())
                 .add(CodBlocks.UAV_CONTROLLER.get())
                 .add(CodBlocks.STABLE_DISRUPTION.get())
+                .add(CodBlocks.SERVER.get())
         ;
     }
 

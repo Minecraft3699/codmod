@@ -1,9 +1,13 @@
 package com.mc3699.codmod.entity.ariral;
 
 import com.mc3699.codmod.Codmod;
+import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
+import foundry.veil.api.client.render.VeilRenderSystem;
+import foundry.veil.api.client.render.VeilRenderer;
+import foundry.veil.api.client.render.shader.program.ShaderProgram;
 import net.minecraft.client.model.PlayerModel;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -28,19 +32,22 @@ public class AriralEntityRenderer extends LivingEntityRenderer<AriralEntity, Pla
             int packedLight
     ) {
         poseStack.pushPose();
-        poseStack.translate(0, 3, 0);
+        poseStack.translate(0, 4.5, 0);
         poseStack.mulPose(Axis.ZP.rotationDegrees(180));
-        poseStack.scale(2f, 2f, 2f);
+        poseStack.scale(2f, 3f, 2f);
 
         float limbSwing = entity.walkAnimation.position(partialTicks);
         float limbSwingAmount = entity.walkAnimation.speed(partialTicks);
-        VertexConsumer transparentBuffer = buffer.getBuffer(RenderType.entityTranslucentCull(ResourceLocation.fromNamespaceAndPath(
+        VertexConsumer transparentBuffer = buffer.getBuffer(RenderType.entityTranslucent(ResourceLocation.fromNamespaceAndPath(
                 Codmod.MOD_ID,
                 "textures/entity/ariral.png"
         )));
 
+
+        RenderSystem.setShaderColor(1,1,1,0.1f);
         model.setupAnim(entity, limbSwing, limbSwingAmount, entity.tickCount, entityYaw, entity.yHeadRot);
         model.renderToBuffer(poseStack, transparentBuffer, packedLight, OverlayTexture.NO_OVERLAY);
+        RenderSystem.setShaderColor(1,1,1,1);
         poseStack.popPose();
     }
 

@@ -2,6 +2,7 @@ package com.mc3699.codmod.registry;
 
 import com.mc3699.codmod.Codmod;
 import com.mc3699.codmod.item.CodRodItem;
+import com.mc3699.codmod.item.MaxwellItem;
 import com.mc3699.codmod.item.MiniCodItem;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.food.FoodProperties;
@@ -78,6 +79,8 @@ public class CodItems {
     );
 
     public static final Supplier<Item> GIANNI = ITEMS.register("gianni", () -> new Item(new Item.Properties()));
+
+    public static final Supplier<Item> MAXWELL = ITEMS.register("maxwell", MaxwellItem::new);
 
     // VOTV Foods
 

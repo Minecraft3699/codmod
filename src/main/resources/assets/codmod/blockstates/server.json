@@ -1,0 +1,24 @@
+{
+  "variants": {
+
+    "online=true,is_top=false,facing=north": {"model": "codmod:block/bottom_server_block"},
+    "online=true,is_top=false,facing=east": {"model": "codmod:block/bottom_server_block", "y": 90},
+    "online=true,is_top=false,facing=south": {"model": "codmod:block/bottom_server_block", "y": 180},
+    "online=true,is_top=false,facing=west": {"model": "codmod:block/bottom_server_block", "y": 270},
+
+    "online=true,is_top=true,facing=north": {"model": "codmod:block/top_server_block"},
+    "online=true,is_top=true,facing=east": {"model": "codmod:block/top_server_block", "y": 90},
+    "online=true,is_top=true,facing=south": {"model": "codmod:block/top_server_block", "y": 180},
+    "online=true,is_top=true,facing=west": {"model": "codmod:block/top_server_block", "y": 270},
+
+    "online=false,is_top=false,facing=north": {"model": "codmod:block/offline_bottom_server_block"},
+    "online=false,is_top=false,facing=east": {"model": "codmod:block/offline_bottom_server_block", "y": 90},
+    "online=false,is_top=false,facing=south": {"model": "codmod:block/offline_bottom_server_block", "y": 180},
+    "online=false,is_top=false,facing=west": {"model": "codmod:block/offline_bottom_server_block", "y": 270},
+
+    "online=false,is_top=true,facing=north": {"model": "codmod:block/offline_top_server_block"},
+    "online=false,is_top=true,facing=east": {"model": "codmod:block/offline_top_server_block", "y": 90},
+    "online=false,is_top=true,facing=south": {"model": "codmod:block/offline_top_server_block", "y": 180},
+    "online=false,is_top=true,facing=west": {"model": "codmod:block/offline_top_server_block", "y": 270}
+  }
+}
