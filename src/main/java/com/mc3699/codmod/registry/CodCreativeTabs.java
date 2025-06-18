@@ -24,7 +24,6 @@ public class CodCreativeTabs {
                 .displayItems(
                     (itemDisplayParameters, output) ->
                     {
-                        output.accept(CodItems.COD_ROD.get());
                         output.accept(CodItems.APPLICATION.get());
                         output.accept(CodItems.NULL_COD.get());
                         output.accept(CodItems.NULL_CHICKEN.get());
