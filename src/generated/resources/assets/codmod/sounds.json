@@ -11,6 +11,12 @@
     ],
     "subtitle": "subtitles.codmod.bad_sun_siren"
   },
+  "fiddlesticks": {
+    "sounds": [
+      "codmod:fiddlesticks"
+    ],
+    "subtitle": "subtitles.codmod.fiddlesticks"
+  },
   "missile_entry": {
     "sounds": [
       "codmod:missile_entry"

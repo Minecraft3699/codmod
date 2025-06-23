@@ -1,6 +1,7 @@
 package com.mc3699.codmod.datagen;
 
 import com.mc3699.codmod.Codmod;
+import com.mc3699.codmod.entity.codmissile.CodMissileModel;
 import com.mc3699.codmod.registry.CodBlocks;
 import com.mc3699.codmod.registry.CodItems;
 import net.minecraft.data.PackOutput;
@@ -20,6 +21,7 @@ public class DatagenItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         basicItem(CodItems.GIANNI.get());
+        handheldItem(CodItems.CIRCUITS_BANE.get());
 
         simpleBlockItem(CodBlocks.RADAR.get());
         simpleBlockItem(CodBlocks.STABLE_DISRUPTION.get());

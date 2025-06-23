@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "codmod:block/scanning_console"
+    }
+  }
+}

@@ -1,6 +1,24 @@
-// 1.21.1	2025-06-17T12:45:21.7496231	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Sound Definitions, Jukebox Songs, Custom Tags]
-9e614af47c973bec24e92c924aa840ef8a8c447c assets/codmod/lang/en_ud.json
-b642137c910568b12768c972b41bfd6981634a1d assets/codmod/lang/en_us.json
+// 1.21.1	2025-06-19T18:00:27.707967704	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Sound Definitions, Jukebox Songs, Custom Tags]
+253de56bb069fb2e7fb18b2224a5f87ab0c3f218 assets/codmod/blockstates/scanning_console.json
+bcb9195f64c5807cb50e00490839b4989400dc9d assets/codmod/lang/en_ud.json
+b5aba2a5d01d0cf217e93bd4167effbe06bb3120 assets/codmod/lang/en_us.json
+df058a5a8d32e47390f727acd71ebd53eabd4439 assets/codmod/models/block/scanning_console.json
+488335f0103d1c24871d0198430d8a02c91c23d0 assets/codmod/models/item/circuits_bane.json
 517de0ee0b552412e7aee2e38f2fb6a0701f9e72 assets/codmod/models/item/cod_rod.json
 ab00fb55975a2972dc50fd5f1882ebfd3ca97285 assets/codmod/models/item/maxwell.json
-b54f0e0f1f30a5ca02cb10b02f9b0a8f06f499fe assets/codmod/sounds.json
+9a9b2884b4303cffeb80030ad750fb31c75e4891 assets/codmod/sounds.json
+51f8df362e0eb5667bc1e5179c3ae3d31019a801 data/codmod/loot_table/blocks/scanning_console.json
+0863d5c31f299349139391182d84c3f7a831fbfe data/codmod/loot_table/entities/applicant.json
+da1869a3476d25ecb4196486cf06c14714d38c74 data/codmod/loot_table/entities/ariral.json
+6712f35dc4f9877b7d0332834de3b3041eacd523 data/codmod/loot_table/entities/cod_missile.json
+10faa91b1cce0c5c764aa7b28f01c31aa51dbd5b data/codmod/loot_table/entities/darkener.json
+262f80c93ab52c5323dedcba4975214f3110dca8 data/codmod/loot_table/entities/firelight.json
+4100d5d1cfe6527d0978b45bdb9665297a22b130 data/codmod/loot_table/entities/friendlyface.json
+67120b000653b273a796f42da3f60b902c8e32f6 data/codmod/loot_table/entities/gianni.json
+f72dbd2759470e3f3cc4ce8d5be446d07f6593b7 data/codmod/loot_table/entities/misguided.json
+85ad392572e95a0b1fa9abd6a9e50ba505f853f4 data/codmod/loot_table/entities/parachute_chest.json
+0c7fa130b35937a68fae27f55a618d600da32c42 data/codmod/loot_table/entities/red_wisp.json
+6b34e541553b33b6b172b4011faad568c0c6adc8 data/codmod/loot_table/entities/swarm_cod.json
+7660a402f943498162d68b3e60c13ba8436373bc data/codmod/loot_table/entities/uav.json
+19c360314a6404cd7dfab77157985643e29d26be data/codmod/loot_table/entities/vay.json
+5cd8c9b9ae05b05148915b9ef610be0d7c7f8084 data/codmod/loot_table/entities/yellow_wisp.json

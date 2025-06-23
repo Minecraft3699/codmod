@@ -10,6 +10,8 @@ import com.mc3699.codmod.entity.darkener.DarkenerEntityRenderer;
 import com.mc3699.codmod.entity.firelight.FireLightEntityRenderer;
 import com.mc3699.codmod.entity.friendlyFace.FriendlyFaceEntityRenderer;
 import com.mc3699.codmod.entity.gianni.GianniEntityRenderer;
+import com.mc3699.codmod.entity.itemProjectile.ItemProjectileEntity;
+import com.mc3699.codmod.entity.itemProjectile.ItemProjectileRenderer;
 import com.mc3699.codmod.entity.misguided.MisguidedEntityRenderer;
 import com.mc3699.codmod.entity.parachuteChest.ParachuteChestEntityModel;
 import com.mc3699.codmod.entity.parachuteChest.ParachuteChestEntityRenderer;
@@ -48,6 +50,7 @@ public class EntityRendererRegistration {
         event.registerEntityRenderer(CodEntities.MISGUIDED.get(), MisguidedEntityRenderer::new);
         event.registerEntityRenderer(CodEntities.UAV.get(), UAVEntityRenderer::new);
         event.registerEntityRenderer(CodEntities.GIANNI.get(), GianniEntityRenderer::new);
+        event.registerEntityRenderer(CodEntities.ITEM_PROJECTILE.get(), ItemProjectileRenderer::new);
 
         event.registerBlockEntityRenderer(CodBlockEntities.MANTLE_KEY.get(), MantleKeyBlockEntityRender::new);
     }

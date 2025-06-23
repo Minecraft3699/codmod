@@ -1,6 +1,7 @@
 {
   "block.codmod.molten_copper": "Molten Copper",
   "block.codmod.radar": "Radar",
+  "block.codmod.scanning_console": "Scanning Console",
   "block.codmod.stable_disruption": "Stabilized Disruption",
   "block.codmod.uav_controller": "UAV Controller",
   "chat.codmod.vay_join": "Ζεστός Χαλκός joined the game",
@@ -18,6 +19,7 @@
   "entity.codmod.firelight": "Fir§keLi§fght34§k52§f3",
   "entity.codmod.friendlyface": "Friendlyface",
   "entity.codmod.gianni": "Gianni",
+  "entity.codmod.item_projectile": "Item Projectile",
   "entity.codmod.misguided": "Misguided",
   "entity.codmod.parachute_chest": "Parachute Chest",
   "entity.codmod.red_wisp": "Red Wisp",
@@ -40,6 +42,7 @@
   "item.codmod.cheese": "Cheese",
   "item.codmod.chicken_nugget": "Chicken Nugget",
   "item.codmod.chocolate": "Chocolate",
+  "item.codmod.circuits_bane": "Circuit's Bane",
   "item.codmod.cod_rod": "Cod Rod",
   "item.codmod.cucumber": "Cucumber",
   "item.codmod.food_box": "Food Box",
@@ -61,6 +64,7 @@
   "itemGroup.votv_food": "Voices of the Void: Food",
   "subtitles.codmod.anything": "Anything",
   "subtitles.codmod.bad_sun_siren": "Ominous Siren Sounds",
+  "subtitles.codmod.fiddlesticks": "Oh Fiddlesticks, What now?",
   "subtitles.codmod.missile_entry": "Missile Entry",
   "subtitles.codmod.missile_launch": "Missile Launch"
 }

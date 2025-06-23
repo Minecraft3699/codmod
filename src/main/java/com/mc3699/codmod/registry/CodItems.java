@@ -1,6 +1,7 @@
 package com.mc3699.codmod.registry;
 
 import com.mc3699.codmod.Codmod;
+import com.mc3699.codmod.item.CircuitsBaneItem;
 import com.mc3699.codmod.item.CodRodItem;
 import com.mc3699.codmod.item.MaxwellItem;
 import com.mc3699.codmod.item.MiniCodItem;
@@ -11,6 +12,7 @@ import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.Tiers;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -84,6 +86,12 @@ public class CodItems {
 
     public static final ItemEntry<MaxwellItem> MAXWELL = CodRegistrate.INSTANCE.item("maxwell", MaxwellItem::new)
             .properties((p) -> p.durability(100))
+            .register();
+
+    // did I do good this time?
+    public static final ItemEntry<CircuitsBaneItem> CIRCUITS_BANE = CodRegistrate.INSTANCE.item("circuits_bane", CircuitsBaneItem::new)
+            .properties((properties -> properties.durability(256).rarity(Rarity.EPIC)))
+            .lang("Circuit's Bane")
             .register();
 
     // VOTV Foods

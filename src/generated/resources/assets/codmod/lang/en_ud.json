@@ -1,6 +1,7 @@
 {
   "block.codmod.molten_copper": "ɹǝddoƆ uǝʇןoW",
   "block.codmod.radar": "ɹɐpɐᴚ",
+  "block.codmod.scanning_console": "ǝןosuoƆ buıuuɐɔS",
   "block.codmod.stable_disruption": "uoıʇdnɹsıᗡ pǝzıןıqɐʇS",
   "block.codmod.uav_controller": "ɹǝןןoɹʇuoƆ ΛⱯ∩",
   "chat.codmod.vay_join": "ǝɯɐb ǝɥʇ pǝuıoظ ςόκλαΧ ςότσεΖ",
@@ -18,6 +19,7 @@
   "entity.codmod.firelight": "Ɛɟ§ᄅϛʞ§ㄣƐʇɥbɟ§ıꞀǝʞ§ɹıℲ",
   "entity.codmod.friendlyface": "ǝɔɐɟʎןpuǝıɹℲ",
   "entity.codmod.gianni": "ıuuɐı⅁",
+  "entity.codmod.item_projectile": "ǝןıʇɔǝظoɹԀ ɯǝʇI",
   "entity.codmod.misguided": "pǝpınbsıW",
   "entity.codmod.parachute_chest": "ʇsǝɥƆ ǝʇnɥɔɐɹɐԀ",
   "entity.codmod.red_wisp": "dsıM pǝᴚ",
@@ -40,6 +42,7 @@
   "item.codmod.cheese": "ǝsǝǝɥƆ",
   "item.codmod.chicken_nugget": "ʇǝbbnN uǝʞɔıɥƆ",
   "item.codmod.chocolate": "ǝʇɐןoɔoɥƆ",
+  "item.codmod.circuits_bane": "ǝuɐᗺ s,ʇınɔɹıƆ",
   "item.codmod.cod_rod": "poᴚ poƆ",
   "item.codmod.cucumber": "ɹǝqɯnɔnƆ",
   "item.codmod.food_box": "xoᗺ pooℲ",
@@ -61,6 +64,7 @@
   "itemGroup.votv_food": "pooℲ :pıoΛ ǝɥʇ ɟo sǝɔıoΛ",
   "subtitles.codmod.anything": "buıɥʇʎuⱯ",
   "subtitles.codmod.bad_sun_siren": "spunoS uǝɹıS snouıɯO",
+  "subtitles.codmod.fiddlesticks": "¿ʍou ʇɐɥM 'sʞɔıʇsǝןppıℲ ɥO",
   "subtitles.codmod.missile_entry": "ʎɹʇuƎ ǝןıssıW",
   "subtitles.codmod.missile_launch": "ɥɔunɐꞀ ǝןıssıW"
 }

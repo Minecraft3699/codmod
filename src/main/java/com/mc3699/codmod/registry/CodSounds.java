@@ -13,6 +13,9 @@ public class CodSounds {
     public static final RegistryEntry<SoundEvent, SoundEvent> MISSILE_LAUNCH = CodRegistrate.INSTANCE.sound(
             "missile_launch").simple(false).register();
 
+    public static final RegistryEntry<SoundEvent, SoundEvent> FIDDLESTICKS = CodRegistrate.INSTANCE.sound(
+            "fiddlesticks").simple(false).subtitle("Oh Fiddlesticks, What now?").register();
+
     public static final RegistryEntry<SoundEvent, SoundEvent> ANYTHING = CodRegistrate.INSTANCE.sound("anything")
             .simple(false)
             .register();
