@@ -16,6 +16,9 @@ public class CodSounds {
     public static final RegistryEntry<SoundEvent, SoundEvent> FIDDLESTICKS = CodRegistrate.INSTANCE.sound(
             "fiddlesticks").simple(false).subtitle("Oh Fiddlesticks, What now?").register();
 
+    public static final RegistryEntry<SoundEvent, SoundEvent> TRIPMINE = CodRegistrate.INSTANCE.sound(
+            "tripmine").simple(false).subtitle("Subspace Tripmine Explodes").register();
+
     public static final RegistryEntry<SoundEvent, SoundEvent> ANYTHING = CodRegistrate.INSTANCE.sound("anything")
             .simple(false)
             .register();

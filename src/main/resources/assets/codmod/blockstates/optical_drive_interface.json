@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "has_disk=false": { "model": "codmod:block/optical_drive_interface_empty" },
+    "has_disk=true": { "model": "codmod:block/optical_drive_interface_full" }
+  }
+}

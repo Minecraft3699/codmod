@@ -56,6 +56,22 @@ public class UAVControllerPeripheral implements IPeripheral {
     }
 
     @LuaFunction
+    public final boolean destroyUAV()
+    {
+        if(blockEntity.getLevel() instanceof ServerLevel serverLevel)
+        {
+            if(blockEntity.getUAVEntity(serverLevel) == null)
+            {
+                return false;
+            }
+
+            UAVEntity uav = blockEntity.getUAVEntity(serverLevel);
+            uav.discard();
+        }
+        return true;
+    }
+
+    @LuaFunction
     public final boolean setTarget(double x, double y, double z, int altitude, boolean followTerrain) {
         if (blockEntity.getLevel() instanceof ServerLevel serverLevel) {
             UAVEntity uav = blockEntity.getUAVEntity(serverLevel);

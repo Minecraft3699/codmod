@@ -1,10 +1,7 @@
 package com.mc3699.codmod.registry;
 
 import com.mc3699.codmod.Codmod;
-import com.mc3699.codmod.item.CircuitsBaneItem;
-import com.mc3699.codmod.item.CodRodItem;
-import com.mc3699.codmod.item.MaxwellItem;
-import com.mc3699.codmod.item.MiniCodItem;
+import com.mc3699.codmod.item.*;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.food.FoodProperties;
@@ -90,8 +87,23 @@ public class CodItems {
 
     // did I do good this time?
     public static final ItemEntry<CircuitsBaneItem> CIRCUITS_BANE = CodRegistrate.INSTANCE.item("circuits_bane", CircuitsBaneItem::new)
-            .properties((properties -> properties.durability(256).rarity(Rarity.EPIC)))
+            .properties((properties -> properties.durability(1024).rarity(Rarity.EPIC)))
             .lang("Circuit's Bane")
+            .register();
+
+    public static final ItemEntry<ResistorItem> RESISTOR = CodRegistrate.INSTANCE.item("resistor", ResistorItem::new)
+            .properties(properties -> properties.rarity(Rarity.EPIC))
+            .lang("Comically Large Resistor")
+            .register();
+
+    public static final ItemEntry<ShrimpSniperItem> SHRIMP_SNIPER = CodRegistrate.INSTANCE.item("shrimp_sniper", ShrimpSniperItem::new)
+            .properties(properties -> properties)
+            .lang("AWP_Shrimp")
+            .register();
+
+    public static final ItemEntry<OpticalTapeDriveItem> DRIVE  = CodRegistrate.INSTANCE.item("drive", OpticalTapeDriveItem::new)
+            .properties(properties -> properties.stacksTo(1).rarity(Rarity.UNCOMMON))
+            .lang("Optical Tape Drive")
             .register();
 
     // VOTV Foods

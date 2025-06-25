@@ -28,8 +28,8 @@ public class Codmod {
     public static final WorkQueue SERVER_QUEUE = new WorkQueue(SidedThreadGroups.SERVER);
 
     public Codmod(IEventBus modEventBus, ModContainer modContainer) {
+        CodComponents.register(modEventBus);
         CodRegistrate.INSTANCE.registerEventListeners(modEventBus);
-
         CodRegistrate.INSTANCE.event("vay_event", VayEvent::new).register();
         CodRegistrate.INSTANCE.event("cod_event", CodEvent::new).register();
         CodRegistrate.INSTANCE.event("darkener_event", DarkenerEvent::new).register();
@@ -47,6 +47,7 @@ public class Codmod {
         CodSounds.register();
         CodCreativeTabs.register(modEventBus);
         CodLang.register();
+
     }
 
     public static ResourceLocation id(String id) {

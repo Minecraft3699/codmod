@@ -4,8 +4,11 @@ import com.mc3699.codmod.Codmod;
 import com.mc3699.codmod.block.consoles.ScanningConsoleBlock;
 import com.mc3699.codmod.block.launchpad.LaunchPadBlock;
 import com.mc3699.codmod.block.mantleKey.MantleKeyBlock;
+import com.mc3699.codmod.block.opticalDriveInterface.OpticalDriveInterfaceBlock;
+import com.mc3699.codmod.block.opticalDriveInterface.OpticalDriveInterfaceBlockEntity;
 import com.mc3699.codmod.block.radar.RadarBlock;
 import com.mc3699.codmod.block.server.ServerBlock;
+import com.mc3699.codmod.block.subspace_tripmine.SubspaceTripmineBlock;
 import com.mc3699.codmod.block.uavController.UAVControllerBlock;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.world.level.block.Block;
@@ -45,6 +48,10 @@ public class CodBlocks {
 
     public static final DeferredBlock<Block> SERVER = BLOCKS.register("server", ServerBlock::new);
 
+    public static final DeferredBlock<Block> OPTICAL_DRIVE_INTERFACE = BLOCKS.register("optical_drive_interface",
+            () -> new OpticalDriveInterfaceBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
+
+
     public static final DeferredBlock<MantleKeyBlock> MANTLE_KEY = BLOCKS.register(
             "mantle_key",
             () -> new MantleKeyBlock(BlockBehaviour.Properties.of())
@@ -53,6 +60,14 @@ public class CodBlocks {
     public static final BlockEntry<ScanningConsoleBlock> SCANNING_CONSOLE = CodRegistrate.INSTANCE.block("scanning_console",
             ScanningConsoleBlock::new
     ).register();
+
+    public static final BlockEntry<SubspaceTripmineBlock> SUBSPACE_TRIPMINE = CodRegistrate.INSTANCE.block("subspace_tripmine",
+            SubspaceTripmineBlock::new)
+            .properties(properties -> properties.noCollission().noOcclusion())
+            .lang("Subspace Tripmine")
+            .simpleItem()
+            .register();
+
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);

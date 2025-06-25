@@ -3,6 +3,7 @@
   "block.codmod.radar": "ɹɐpɐᴚ",
   "block.codmod.scanning_console": "ǝןosuoƆ buıuuɐɔS",
   "block.codmod.stable_disruption": "uoıʇdnɹsıᗡ pǝzıןıqɐʇS",
+  "block.codmod.subspace_tripmine": "ǝuıɯdıɹ⟘ ǝɔɐdsqnS",
   "block.codmod.uav_controller": "ɹǝןןoɹʇuoƆ ΛⱯ∩",
   "chat.codmod.vay_join": "ǝɯɐb ǝɥʇ pǝuıoظ ςόκλαΧ ςότσεΖ",
   "chat.codmod.vay_leave": "ǝɯɐb ǝɥʇ ʇɟǝן ςόκλαΧ ςότσεΖ",
@@ -11,6 +12,7 @@
   "death.attack.bad_sun": "ʇɥbıן ǝɥʇ oʇuı pǝbbɐɹp sɐʍㄣ§ %1$s",
   "death.attack.cod_rod": "ɯɹɐʍs ǝɥʇ ʎq pǝɯןǝɥʍɹǝʌo sɐʍ %1$s",
   "death.attack.job_application": "qoظ ɐ ʇǝb oʇ pǝɔɹoɟ sɐʍ %1$s",
+  "death.attack.tripmine": "ǝuıɯdıɹ⟘ ǝɔɐdsqnS ɐ ʎq pǝʇɐןnqoqɯoɔsıp sɐʍ %1$s",
   "effect.codmod.heart_corruption": "ꞀꞀ∩N=ƎԀʎ⟘‾⟘ƆƎℲℲƎ˙ᴚᴚƎ",
   "entity.codmod.applicant": "ʇuɐɔıןddⱯ",
   "entity.codmod.ariral": "ןɐɹıɹⱯ",
@@ -45,6 +47,7 @@
   "item.codmod.circuits_bane": "ǝuɐᗺ s,ʇınɔɹıƆ",
   "item.codmod.cod_rod": "poᴚ poƆ",
   "item.codmod.cucumber": "ɹǝqɯnɔnƆ",
+  "item.codmod.drive": "ǝʌıɹᗡ ǝdɐ⟘ ןɐɔıʇdO",
   "item.codmod.food_box": "xoᗺ pooℲ",
   "item.codmod.integrity_cookie": "ǝıʞooƆ0§ ʎʇıɹbǝʇuIㄣ§",
   "item.codmod.lemon": "uoɯǝꞀ",
@@ -57,7 +60,9 @@
   "item.codmod.orange": "ǝbuɐɹO",
   "item.codmod.pizza": "ɐzzıԀ",
   "item.codmod.realcod": "poƆ ןɐǝᴚ",
+  "item.codmod.resistor": "ɹoʇsısǝᴚ ǝbɹɐꞀ ʎןןɐɔıɯoƆ",
   "item.codmod.shrimp": "dɯıɹɥS",
+  "item.codmod.shrimp_sniper": "dɯıɹɥS‾ԀMⱯ",
   "item.codmod.taco": "oɔɐ⟘",
   "item.codmod.tomato": "oʇɐɯo⟘",
   "itemGroup.codmod": "poW poƆ",
@@ -66,5 +71,6 @@
   "subtitles.codmod.bad_sun_siren": "spunoS uǝɹıS snouıɯO",
   "subtitles.codmod.fiddlesticks": "¿ʍou ʇɐɥM 'sʞɔıʇsǝןppıℲ ɥO",
   "subtitles.codmod.missile_entry": "ʎɹʇuƎ ǝןıssıW",
-  "subtitles.codmod.missile_launch": "ɥɔunɐꞀ ǝןıssıW"
+  "subtitles.codmod.missile_launch": "ɥɔunɐꞀ ǝןıssıW",
+  "subtitles.codmod.tripmine": "sǝpoןdxƎ ǝuıɯdıɹ⟘ ǝɔɐdsqnS"
 }

@@ -10,6 +10,7 @@ public class CodLang {
         CodRegistrate.INSTANCE.addRawLang("death.attack.bad_sun", "%1$s §4was dragged into the light");
         CodRegistrate.INSTANCE.addRawLang("death.attack.job_application", "%1$s was forced to get a job");
         CodRegistrate.INSTANCE.addRawLang("death.attack.cod_rod", "%1$s was overwhelmed by the swarm");
+        CodRegistrate.INSTANCE.addRawLang("death.attack.tripmine","%1$s was discombobulated by a Subspace Tripmine");
         CodRegistrate.INSTANCE.addRawLang("effect.codmod.heart_corruption", "ERR.EFFECT_TYPE=NULL");
         CodRegistrate.INSTANCE.addRawLang("block.codmod.molten_copper", "Molten Copper");
         CodRegistrate.INSTANCE.addRawLang("block.codmod.radar", "Radar");

@@ -3,6 +3,7 @@
   "block.codmod.radar": "Radar",
   "block.codmod.scanning_console": "Scanning Console",
   "block.codmod.stable_disruption": "Stabilized Disruption",
+  "block.codmod.subspace_tripmine": "Subspace Tripmine",
   "block.codmod.uav_controller": "UAV Controller",
   "chat.codmod.vay_join": "Ζεστός Χαλκός joined the game",
   "chat.codmod.vay_leave": "Ζεστός Χαλκός left the game",
@@ -11,6 +12,7 @@
   "death.attack.bad_sun": "%1$s §4was dragged into the light",
   "death.attack.cod_rod": "%1$s was overwhelmed by the swarm",
   "death.attack.job_application": "%1$s was forced to get a job",
+  "death.attack.tripmine": "%1$s was discombobulated by a Subspace Tripmine",
   "effect.codmod.heart_corruption": "ERR.EFFECT_TYPE=NULL",
   "entity.codmod.applicant": "Applicant",
   "entity.codmod.ariral": "Ariral",
@@ -45,6 +47,7 @@
   "item.codmod.circuits_bane": "Circuit's Bane",
   "item.codmod.cod_rod": "Cod Rod",
   "item.codmod.cucumber": "Cucumber",
+  "item.codmod.drive": "Optical Tape Drive",
   "item.codmod.food_box": "Food Box",
   "item.codmod.integrity_cookie": "§4Integrity §0Cookie",
   "item.codmod.lemon": "Lemon",
@@ -57,7 +60,9 @@
   "item.codmod.orange": "Orange",
   "item.codmod.pizza": "Pizza",
   "item.codmod.realcod": "Real Cod",
+  "item.codmod.resistor": "Comically Large Resistor",
   "item.codmod.shrimp": "Shrimp",
+  "item.codmod.shrimp_sniper": "AWP_Shrimp",
   "item.codmod.taco": "Taco",
   "item.codmod.tomato": "Tomato",
   "itemGroup.codmod": "Cod Mod",
@@ -66,5 +71,6 @@
   "subtitles.codmod.bad_sun_siren": "Ominous Siren Sounds",
   "subtitles.codmod.fiddlesticks": "Oh Fiddlesticks, What now?",
   "subtitles.codmod.missile_entry": "Missile Entry",
-  "subtitles.codmod.missile_launch": "Missile Launch"
+  "subtitles.codmod.missile_launch": "Missile Launch",
+  "subtitles.codmod.tripmine": "Subspace Tripmine Explodes"
 }

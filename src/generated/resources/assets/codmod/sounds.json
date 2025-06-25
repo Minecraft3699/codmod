@@ -28,5 +28,11 @@
       "codmod:missile_launch"
     ],
     "subtitle": "subtitles.codmod.missile_launch"
+  },
+  "tripmine": {
+    "sounds": [
+      "codmod:tripmine"
+    ],
+    "subtitle": "subtitles.codmod.tripmine"
   }
 }

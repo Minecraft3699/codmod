@@ -4,6 +4,7 @@ import com.mc3699.codmod.Codmod;
 import com.mc3699.codmod.block.consoles.ScanningConsoleBlockEntity;
 import com.mc3699.codmod.block.launchpad.LaunchPadBlockEntity;
 import com.mc3699.codmod.block.mantleKey.MantleKeyBlockEntity;
+import com.mc3699.codmod.block.opticalDriveInterface.OpticalDriveInterfaceBlockEntity;
 import com.mc3699.codmod.block.radar.RadarBlockEntity;
 import com.mc3699.codmod.block.uavController.UAVControllerBlockEntity;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
@@ -44,6 +45,11 @@ public class CodBlockEntities {
     public static final Supplier<BlockEntityType<UAVControllerBlockEntity>> UAV_CONTROLLER = BLOCK_ENTITIES.register(
             "uav_controller",
             () -> new BlockEntityType<>(UAVControllerBlockEntity::new, Set.of(CodBlocks.UAV_CONTROLLER.get()), null)
+    );
+
+    public static final Supplier<BlockEntityType<OpticalDriveInterfaceBlockEntity>> OPTICAL_DRIVE_INTERFACE = BLOCK_ENTITIES.register(
+            "optical_drive_interface",
+            () -> new BlockEntityType<>(OpticalDriveInterfaceBlockEntity::new, Set.of(CodBlocks.OPTICAL_DRIVE_INTERFACE.get()), null)
     );
 
     public static final BlockEntityEntry<ScanningConsoleBlockEntity> SCANNING_CONSOLE = CodRegistrate.INSTANCE.blockEntity("scanning_console",

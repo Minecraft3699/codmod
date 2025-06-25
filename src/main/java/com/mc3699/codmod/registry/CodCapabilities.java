@@ -1,10 +1,15 @@
 package com.mc3699.codmod.registry;
 
 import com.mc3699.codmod.Codmod;
+import com.mc3699.codmod.block.opticalDriveInterface.OpticalDriveInterfaceBlockEntity;
+import com.mc3699.codmod.item.OpticalTapeDriveItem;
 import com.mc3699.codmod.peripheral.LaunchPadPeripheral;
+import com.mc3699.codmod.peripheral.OpticalDriveInterfacePeripheral;
 import com.mc3699.codmod.peripheral.RadarPeripheral;
 import com.mc3699.codmod.peripheral.UAVControllerPeripheral;
+import dan200.computercraft.api.ComputerCraftAPI;
 import dan200.computercraft.api.peripheral.PeripheralCapability;
+import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.capabilities.Capabilities;
@@ -36,6 +41,12 @@ public class CodCapabilities {
                 Capabilities.ItemHandler.BLOCK,
                 CodBlockEntities.LAUNCH_PAD.get(),
                 (blockEntity, dir) -> blockEntity.getItems()
+        );
+
+        event.registerBlockEntity(
+                PeripheralCapability.get(),
+                CodBlockEntities.OPTICAL_DRIVE_INTERFACE.get(),
+                (driveInterface,direction) -> new OpticalDriveInterfacePeripheral(driveInterface)
         );
     }
 }
