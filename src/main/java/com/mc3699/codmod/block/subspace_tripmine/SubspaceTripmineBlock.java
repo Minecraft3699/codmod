@@ -12,6 +12,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -34,6 +35,7 @@ public class SubspaceTripmineBlock extends Block {
     protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
         if(level instanceof ServerLevel serverLevel)
         {
+            spawnParticleSphere(entity, pos, 16);
             serverLevel.playSound(null, pos, CodSounds.TRIPMINE.get(), SoundSource.MASTER, 128,1);
             serverLevel.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
 
@@ -51,11 +53,6 @@ public class SubspaceTripmineBlock extends Block {
                 }
             });
         }
-
-        if(level instanceof ClientLevel clientLevel)
-        {
-            replaceSphere(clientLevel, pos, 16, Blocks.MAGENTA_CONCRETE.defaultBlockState());
-        }
     }
 
     @Override
@@ -68,21 +65,21 @@ public class SubspaceTripmineBlock extends Block {
         return Shapes.box(0.1,0,0.1,0.9,0.8,0.9);
     }
 
-    public void replaceSphere(Level level, BlockPos center, double radius, BlockState newBlock) {
-        int radiusCeil = (int) Math.ceil(radius);
-        for (int x = -radiusCeil; x <= radiusCeil; x++) {
-            for (int y = -radiusCeil; y <= radiusCeil; y++) {
-                for (int z = -radiusCeil; z <= radiusCeil; z++) {
-                    BlockPos pos = center.offset(x, y, z);
-                    if (pos.distSqr(center) <= radius * radius) {
-                        BlockState state = level.getBlockState(pos);
-
-                        level.addParticle(new DustParticleOptions(new Vector3f(1.0F, 0.0F, 1.0F), 3.0F),
-                                pos.getX() + 0.5, pos.getY() + 1/.5, pos.getZ() + 0.5,
-                                0.0, 1.0, 0.0);
-
-                        if (!state.isAir()) {
-                            level.setBlock(pos, newBlock, 3);
+    public void spawnParticleSphere(Entity entity, BlockPos center, double radius) {
+        if (entity.level() instanceof ServerLevel serverLevel) {
+            int radiusCeil = (int) Math.ceil(radius);
+            for (int x = -radiusCeil; x <= radiusCeil; x++) {
+                for (int y = -radiusCeil; y <= radiusCeil; y++) {
+                    for (int z = -radiusCeil; z <= radiusCeil; z++) {
+                        BlockPos pos = center.offset(x, y, z);
+                        if (pos.distSqr(center) <= radius * radius) {
+                            serverLevel.sendParticles(
+                                    new DustParticleOptions(new Vector3f(1.0F, 0.0F, 1.0F), 3.0F),
+                                    pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5,
+                                    1, // Particle count
+                                    0.0, 0.0, 0.0, // Spread
+                                    0.0 // Speed
+                            );
                         }
                     }
                 }

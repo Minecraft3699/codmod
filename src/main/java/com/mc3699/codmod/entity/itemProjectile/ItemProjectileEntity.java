@@ -1,15 +1,19 @@
 package com.mc3699.codmod.entity.itemProjectile;
 
+import com.mc3699.codmod.registry.CodDamageTypes;
 import com.mc3699.codmod.registry.CodEntities;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
@@ -22,19 +26,21 @@ import net.minecraft.world.entity.item.ItemEntity;
 public class ItemProjectileEntity extends AbstractArrow {
     private static final EntityDataAccessor<Integer> BOUNCE_COUNT = SynchedEntityData.defineId(ItemProjectileEntity.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<ItemStack> CARRIED_ITEM = SynchedEntityData.defineId(ItemProjectileEntity.class, EntityDataSerializers.ITEM_STACK);
+    private static final EntityDataAccessor<Integer> DAMAGE = SynchedEntityData.defineId(ItemProjectileEntity.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Boolean> SHOULD_DROP = SynchedEntityData.defineId(ItemProjectileEntity.class, EntityDataSerializers.BOOLEAN);
     private static final int MAX_BOUNCES = 0;
+    private static final double SPEED_THRESHOLD = 0.01;
+    private Vec3 lastPosition;
 
-    public ItemProjectileEntity(EntityType<? extends ItemProjectileEntity> entityType, Level level, ItemStack carriedItem) {
+
+    public ItemProjectileEntity(EntityType<? extends ItemProjectileEntity> entityType, Level level, ItemStack carriedItem, int bounceCount, int damage, boolean dropItem) {
         super(entityType, level);
         this.setCarriedItem(carriedItem.copy());
-        this.getEntityData().set(BOUNCE_COUNT, 0);
-    }
-
-    public ItemProjectileEntity(Level level, Player owner, ItemStack carriedItem) {
-        this(CodEntities.ITEM_PROJECTILE.get(), level, carriedItem);
-        this.setOwner(owner);
-        this.setPos(owner.getEyePosition());
-        this.shootFromRotation(owner, owner.getXRot(), owner.getYRot(), 0.0F, 1.5F, 1.0F);
+        this.getEntityData().set(BOUNCE_COUNT, bounceCount);
+        this.getEntityData().set(DAMAGE, damage);
+        this.getEntityData().set(SHOULD_DROP, dropItem);
+        this.setCustomName(carriedItem.getDisplayName());
+        this.lastPosition = this.position();
     }
 
     @Override
@@ -42,6 +48,8 @@ public class ItemProjectileEntity extends AbstractArrow {
         super.defineSynchedData(builder);
         builder.define(BOUNCE_COUNT, 0);
         builder.define(CARRIED_ITEM, ItemStack.EMPTY);
+        builder.define(DAMAGE, 0);
+        builder.define(SHOULD_DROP, false);
     }
 
     private void setCarriedItem(ItemStack item) {
@@ -73,7 +81,7 @@ public class ItemProjectileEntity extends AbstractArrow {
             } else {
                 ServerLevel serverLevel = (ServerLevel) this.level();
                 ItemStack item = this.getCarriedItem();
-                if (!item.isEmpty()) {
+                if (!item.isEmpty() && this.getEntityData().get(SHOULD_DROP)) {
                     serverLevel.addFreshEntity(new ItemEntity(serverLevel, this.getX(), this.getY(), this.getZ(), item));
                 }
                 this.discard();
@@ -83,12 +91,23 @@ public class ItemProjectileEntity extends AbstractArrow {
 
     @Override
     protected void onHitEntity(EntityHitResult result) {
-        if (!this.level().isClientSide) {
+        if (this.level() instanceof ServerLevel serverLevel) {
             Entity entity = result.getEntity();
+
+            if(getEntityData().get(DAMAGE) > 0)
+            {
+                DamageSource damage = new DamageSource(serverLevel
+                        .registryAccess()
+                        .lookupOrThrow(Registries.DAMAGE_TYPE)
+                        .getOrThrow(CodDamageTypes.ITEM_PROJECTILE), null, this);
+
+                entity.hurt(damage, getEntityData().get(DAMAGE));
+            }
+
             if (entity instanceof Player player && player != this.getOwner()) {
                 if (player instanceof ServerPlayer serverPlayer) {
                     ItemStack item = this.getCarriedItem();
-                    if (!item.isEmpty()) {
+                    if (!item.isEmpty() && this.getEntityData().get(SHOULD_DROP)) {
                         serverPlayer.addItem(item);
                     }
                 }
@@ -99,23 +118,10 @@ public class ItemProjectileEntity extends AbstractArrow {
 
     @Override
     protected boolean canHitEntity(Entity target) {
-        return target instanceof Player && target != this.getOwner() && target.isAlive();
+        return target.isAlive() && !(target instanceof ItemEntity);
     }
 
-    @Override
-    public void tick() {
-        super.tick();
-        if (!this.level().isClientSide && !this.inGround) {
-            if (this.getDeltaMovement().lengthSqr() < 0.0001) {
-                ServerLevel serverLevel = (ServerLevel) this.level();
-                ItemStack item = this.getCarriedItem();
-                if (!item.isEmpty()) {
-                    serverLevel.addFreshEntity(new ItemEntity(serverLevel, this.getX(), this.getY(), this.getZ(), item));
-                }
-                this.discard();
-            }
-        }
-    }
+
 
     @Override
     public void addAdditionalSaveData(CompoundTag compound) {
@@ -124,6 +130,26 @@ public class ItemProjectileEntity extends AbstractArrow {
         ItemStack item = this.getCarriedItem();
         if (!item.isEmpty()) {
             compound.put("CarriedItem", item.save(this.registryAccess()));
+        }
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+        if (!this.level().isClientSide) {
+            Vec3 currentPosition = this.position();
+            double speed = currentPosition.distanceTo(lastPosition);
+            this.lastPosition = currentPosition;
+            if ((this.inGround || speed < SPEED_THRESHOLD) && !this.isNoPhysics() && getEntityData().get(BOUNCE_COUNT) > 0) {
+                if (this.getEntityData().get(SHOULD_DROP)) {
+                    ItemStack item = this.getCarriedItem();
+                    if (!item.isEmpty()) {
+                        ServerLevel serverLevel = (ServerLevel) this.level();
+                        serverLevel.addFreshEntity(new ItemEntity(serverLevel, this.getX(), this.getY(), this.getZ(), item));
+                    }
+                }
+                this.discard();
+            }
         }
     }
 

@@ -11,6 +11,7 @@ public class CodLang {
         CodRegistrate.INSTANCE.addRawLang("death.attack.job_application", "%1$s was forced to get a job");
         CodRegistrate.INSTANCE.addRawLang("death.attack.cod_rod", "%1$s was overwhelmed by the swarm");
         CodRegistrate.INSTANCE.addRawLang("death.attack.tripmine","%1$s was discombobulated by a Subspace Tripmine");
+        CodRegistrate.INSTANCE.addRawLang("death.attack.item_projectile", "%1$s was hit too hard by %2$s");
         CodRegistrate.INSTANCE.addRawLang("effect.codmod.heart_corruption", "ERR.EFFECT_TYPE=NULL");
         CodRegistrate.INSTANCE.addRawLang("block.codmod.molten_copper", "Molten Copper");
         CodRegistrate.INSTANCE.addRawLang("block.codmod.radar", "Radar");
@@ -23,6 +24,7 @@ public class CodLang {
         CodRegistrate.INSTANCE.addRawLang("item.codmod.application", "Job Application");
         CodRegistrate.INSTANCE.addRawLang("item.codmod.realcod", "Real Cod");
         CodRegistrate.INSTANCE.addRawLang("block.codmod.stable_disruption","Stabilized Disruption");
+        CodRegistrate.INSTANCE.addRawLang("item.codmod.minicod","Minicod");
 
         // VOTV Foods
         CodRegistrate.INSTANCE.addRawLang("item.codmod.baguette","Baguette");

@@ -47,6 +47,7 @@ public class Codmod {
         CodSounds.register();
         CodCreativeTabs.register(modEventBus);
         CodLang.register();
+        CodPeripheralUpgradeTypes.register(modEventBus);
 
     }
 

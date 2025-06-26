@@ -2,6 +2,7 @@ package com.mc3699.codmod.registry;
 
 import com.mc3699.codmod.Codmod;
 import com.mc3699.codmod.item.*;
+import com.mc3699.codmod.item.commandModule.CommandModuleItem;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.food.FoodProperties;
@@ -9,7 +10,6 @@ import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
-import net.minecraft.world.item.Tiers;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -104,6 +104,21 @@ public class CodItems {
     public static final ItemEntry<OpticalTapeDriveItem> DRIVE  = CodRegistrate.INSTANCE.item("drive", OpticalTapeDriveItem::new)
             .properties(properties -> properties.stacksTo(1).rarity(Rarity.UNCOMMON))
             .lang("Optical Tape Drive")
+            .register();
+
+    public static final ItemEntry<CommandModuleItem> COMMAND_MODULE = CodRegistrate.INSTANCE.item("command_module", CommandModuleItem::new)
+            .properties(properties -> properties)
+            .lang("Command Module")
+            .register();
+
+    public static final ItemEntry<RoundMealItem> ROUND_MEAL = CodRegistrate.INSTANCE.item("round_meal", RoundMealItem::new)
+            .properties(properties -> properties.food(CodFoods.ROUND_MEAL))
+            .lang("Round Meal")
+            .register();
+
+    public static final ItemEntry<NetworkFuckerItem> NETWORK_FUCKER = CodRegistrate.INSTANCE.item("network_fucker", NetworkFuckerItem::new)
+            .properties(properties -> properties)
+            .lang("Network Fucker 9000")
             .register();
 
     // VOTV Foods

@@ -193,7 +193,10 @@ public class CodEntities {
                     (EntityType<ItemProjectileEntity> ty, Level lvl) -> new ItemProjectileEntity(
                             ty,
                             lvl,
-                            new ItemStack(Items.COD, 1)
+                            new ItemStack(Items.COD, 1),
+                            0,
+                            0,
+                            true
                     ),
                     MobCategory.MISC
             )

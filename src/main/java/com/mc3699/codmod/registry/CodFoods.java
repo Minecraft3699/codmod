@@ -1,5 +1,7 @@
 package com.mc3699.codmod.registry;
 
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ItemStack;
 
@@ -75,4 +77,14 @@ public class CodFoods {
     public static final FoodProperties TOMATO =
             new FoodProperties(4,4, false,
                     0.6f, Optional.of(ItemStack.EMPTY), List.of());
+
+    public static final FoodProperties ROUND_MEAL =
+            new FoodProperties.Builder()
+                    .nutrition(1997)
+                    .saturationModifier(2000f)
+                    .alwaysEdible()
+                    .effect(new MobEffectInstance(MobEffects.SATURATION, 600, 255), 1)
+                    .effect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 600, 255), 1)
+                    .effect(new MobEffectInstance(MobEffects.ABSORPTION, 600, 255), 1)
+                    .build();
 }

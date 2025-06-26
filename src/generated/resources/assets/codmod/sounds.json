@@ -29,6 +29,12 @@
     ],
     "subtitle": "subtitles.codmod.missile_launch"
   },
+  "saul": {
+    "sounds": [
+      "codmod:saul"
+    ],
+    "subtitle": "subtitles.codmod.saul"
+  },
   "tripmine": {
     "sounds": [
       "codmod:tripmine"
