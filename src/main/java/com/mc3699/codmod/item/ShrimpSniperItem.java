@@ -31,7 +31,7 @@ public class ShrimpSniperItem extends Item {
 
     @Override
     public void onUseTick(Level level, LivingEntity livingEntity, ItemStack stack, int remainingUseDuration) {
-        ItemProjectileEntity projectile = new ItemProjectileEntity(CodEntities.ITEM_PROJECTILE.get(), level, new ItemStack(CodItems.SHRIMP.get(), 1), 100, 0, true);
+        ItemProjectileEntity projectile = new ItemProjectileEntity(CodEntities.ITEM_PROJECTILE.get(), level, new ItemStack(CodItems.SHRIMP.get(), 1), 0, 100, true);
         Vec3 eyePos = livingEntity.getEyePosition();
         Vec3 lookVec = livingEntity.getViewVector(1.0F).normalize().scale(0.8);
         projectile.setPos(eyePos.x + lookVec.x, eyePos.y + lookVec.y, eyePos.z + lookVec.z);

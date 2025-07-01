@@ -1,12 +1,21 @@
 package com.mc3699.codmod;
 
 import com.mc3699.codmod.commands.ColorCommand;
+import com.mc3699.codmod.commands.TempBanCommand;
 import com.mc3699.codmod.data.CodData;
 import com.mc3699.codmod.event.*;
+import com.mc3699.codmod.network.APIServer;
 import com.mc3699.codmod.registry.*;
 import com.mc3699.codmod.responses.VayChat;
 import com.mojang.logging.LogUtils;
 import dev.wendigodrip.thebrokenscript.api.queue.WorkQueue;
+import foundry.veil.api.client.render.VeilRenderSystem;
+import foundry.veil.api.client.render.VeilRenderer;
+import foundry.veil.api.client.render.rendertype.VeilRenderType;
+import foundry.veil.api.client.render.rendertype.VeilRenderTypeAccessor;
+import foundry.veil.api.client.render.rendertype.VeilRenderTypeBuilder;
+import net.minecraft.client.renderer.RenderStateShard;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.neoforged.bus.api.IEventBus;
@@ -20,6 +29,8 @@ import net.neoforged.neoforge.event.level.LevelEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.neoforged.neoforge.event.tick.ServerTickEvent;
 import org.slf4j.Logger;
+
+import java.io.IOException;
 
 @Mod(Codmod.MOD_ID)
 public class Codmod {
@@ -63,12 +74,22 @@ public class Codmod {
     @SubscribeEvent
     public void registerCommands(RegisterCommandsEvent event) {
         ColorCommand.register(event.getDispatcher());
+        TempBanCommand.register(event.getDispatcher());
     }
 
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
         LOGGER.info(
-                "Starting Codmod, I like cod cod cod cod cod cod cod cod COD MOD IS LOADING!!! THIS IS CODMOD!!! THIS LINE IS COD MOD!!! COD MOD LOADING RIGHT NOW!!!!!!! COD MOD YEAHHHHHHHHHHHHHHHHH");
+        "Starting Codmod, I like cod cod cod cod cod cod cod cod COD MOD IS LOADING!!! THIS IS CODMOD!!! THIS LINE IS COD MOD!!! COD MOD LOADING RIGHT NOW!!!!!!! COD MOD YEAHHHHHHHHHHHHHHHHH"
+        );
+
+        LOGGER.info("Starting API...");
+        APIServer banAPIServer = new APIServer();
+        try {
+            banAPIServer.startServer(event.getServer());
+        } catch (IOException e) {
+            LOGGER.info("Failed to API");
+        }
     }
 
     @SubscribeEvent

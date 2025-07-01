@@ -2,6 +2,8 @@ package com.mc3699.codmod.registry;
 
 import com.mc3699.codmod.Codmod;
 import com.mc3699.codmod.item.commandModule.CommandModuleUpgrade;
+import com.mc3699.codmod.item.hubModule.HubModuleUpgrade;
+import com.mc3699.codmod.item.inventoryModule.InventoryModuleUpgrade;
 import dan200.computercraft.api.pocket.IPocketUpgrade;
 import dan200.computercraft.api.upgrades.UpgradeType;
 import net.neoforged.bus.api.IEventBus;
@@ -14,6 +16,12 @@ public class CodPeripheralUpgradeTypes {
 
     public static final DeferredHolder<UpgradeType<? extends IPocketUpgrade>, UpgradeType<IPocketUpgrade>> COMMAND_MODULE_UPGRADE =
             UPGRADES.register("command_module", () -> UpgradeType.simple(new CommandModuleUpgrade()));
+
+    public static final DeferredHolder<UpgradeType<? extends IPocketUpgrade>, UpgradeType<IPocketUpgrade>> HUB_MODULE_UPGRADE =
+            UPGRADES.register("hub_module",() -> UpgradeType.simple(new HubModuleUpgrade()));
+
+    public static final DeferredHolder<UpgradeType<? extends IPocketUpgrade>, UpgradeType<IPocketUpgrade>> INVENTORY_MODULE_UPGRADE =
+            UPGRADES.register("inventory_module",() -> UpgradeType.simple(new InventoryModuleUpgrade()));
 
     public static void register(IEventBus eventBus)
     {

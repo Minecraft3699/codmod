@@ -1,4 +1,0 @@
-{
-  "vertex": "codmod:distortion_vertex",
-  "fragment": "codmod:pass_through_fragment"
-}

@@ -27,6 +27,12 @@ public class NetworkEvents {
                 FoliageColorPayload::handle
         );
 
+        registrar.playToServer(
+                MonitorPacket.TYPE,
+                MonitorPacket.CODEC,
+                MonitorPacket::handle
+        );
+
     }
 
     public static void sendToServer(CustomPacketPayload payload) {

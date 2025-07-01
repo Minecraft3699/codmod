@@ -7,6 +7,7 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
 import foundry.veil.api.client.render.VeilRenderSystem;
 import foundry.veil.api.client.render.VeilRenderer;
+import foundry.veil.api.client.render.rendertype.VeilRenderType;
 import foundry.veil.api.client.render.shader.program.ShaderProgram;
 import net.minecraft.client.model.PlayerModel;
 import net.minecraft.client.model.geom.ModelLayers;
@@ -18,6 +19,8 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 
 public class AriralEntityRenderer extends LivingEntityRenderer<AriralEntity, PlayerModel<AriralEntity>> {
+    ResourceLocation RENDER_TYPE = ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID,"ariral");
+
     public AriralEntityRenderer(EntityRendererProvider.Context context) {
         super(context, new PlayerModel<>(context.bakeLayer(ModelLayers.PLAYER), false), 0);
     }
@@ -30,24 +33,28 @@ public class AriralEntityRenderer extends LivingEntityRenderer<AriralEntity, Pla
             PoseStack poseStack,
             MultiBufferSource buffer,
             int packedLight
-    ) {
+    )
+
+    {
+
+        RenderType renderType = VeilRenderType.get(RENDER_TYPE,"codmod:textures/entity/ariral.png");
+
+        if(renderType == null)
+        {
+            return;
+        }
+
         poseStack.pushPose();
-        poseStack.translate(0, 4.5, 0);
+        poseStack.translate(0, 1, 0);
         poseStack.mulPose(Axis.ZP.rotationDegrees(180));
-        poseStack.scale(2f, 3f, 2f);
+        poseStack.scale(1f, 1f, 1f);
 
         float limbSwing = entity.walkAnimation.position(partialTicks);
         float limbSwingAmount = entity.walkAnimation.speed(partialTicks);
-        VertexConsumer transparentBuffer = buffer.getBuffer(RenderType.entityTranslucent(ResourceLocation.fromNamespaceAndPath(
-                Codmod.MOD_ID,
-                "textures/entity/ariral.png"
-        )));
 
-
-        RenderSystem.setShaderColor(1,1,1,0.1f);
+        VertexConsumer transparentBuffer = buffer.getBuffer(renderType);
         model.setupAnim(entity, limbSwing, limbSwingAmount, entity.tickCount, entityYaw, entity.yHeadRot);
-        model.renderToBuffer(poseStack, transparentBuffer, packedLight, OverlayTexture.NO_OVERLAY);
-        RenderSystem.setShaderColor(1,1,1,1);
+        //model.renderToBuffer(poseStack, transparentBuffer, packedLight, OverlayTexture.NO_OVERLAY);
         poseStack.popPose();
     }
 

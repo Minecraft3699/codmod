@@ -3,6 +3,9 @@ package com.mc3699.codmod.registry;
 import com.mc3699.codmod.Codmod;
 import com.mc3699.codmod.item.*;
 import com.mc3699.codmod.item.commandModule.CommandModuleItem;
+import com.mc3699.codmod.item.hubModule.HubModuleItem;
+import com.mc3699.codmod.item.inventoryModule.InventoryModuleItem;
+import com.mc3699.codmod.item.inventoryModule.InventoryModuleUpgrade;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.food.FoodProperties;
@@ -111,6 +114,16 @@ public class CodItems {
             .lang("Command Module")
             .register();
 
+    public static final ItemEntry<HubModuleItem> HUB_MODULE = CodRegistrate.INSTANCE.item("hub_module",HubModuleItem::new)
+            .properties(properties -> properties)
+            .lang("Hub Module")
+            .register();
+
+    public static final ItemEntry<InventoryModuleItem> INVENTORY_MODULE = CodRegistrate.INSTANCE.item("inventory_module", InventoryModuleItem::new)
+            .properties(properties -> properties)
+            .lang("Inventory Module")
+            .register();
+
     public static final ItemEntry<RoundMealItem> ROUND_MEAL = CodRegistrate.INSTANCE.item("round_meal", RoundMealItem::new)
             .properties(properties -> properties.food(CodFoods.ROUND_MEAL))
             .lang("Round Meal")
@@ -119,6 +132,11 @@ public class CodItems {
     public static final ItemEntry<NetworkFuckerItem> NETWORK_FUCKER = CodRegistrate.INSTANCE.item("network_fucker", NetworkFuckerItem::new)
             .properties(properties -> properties)
             .lang("Network Fucker 9000")
+            .register();
+
+    public static final ItemEntry<ContinumSlicerItem> CONTINUM_SLICER = CodRegistrate.INSTANCE.item("scythe", ContinumSlicerItem::new)
+            .properties(properties -> properties)
+            .lang("Continum Slicer")
             .register();
 
     // VOTV Foods

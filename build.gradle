@@ -41,6 +41,7 @@ repositories {
     maven {
         url = "https://mvn.devos.one/snapshots"
     }
+
 }
 
 base {
@@ -147,7 +148,6 @@ dependencies {
     implementation 'thedarkcolour:kotlinforforge-neoforge:5.8.0'
     implementation "me.fzzyhmstrs:fzzy_config:0.6.9+1.21+neoforge"
     implementation "software.bernie.geckolib:geckolib-neoforge-${minecraft_version}:4.7.3"
-
 
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar

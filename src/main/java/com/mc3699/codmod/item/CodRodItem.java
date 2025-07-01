@@ -38,7 +38,6 @@ public class CodRodItem extends MaceItem {
 
             if (entity instanceof ServerPlayer hitPlayer) {
                 entity.hurt(dam, 1000f);
-                //hitPlayer.connection.disconnect(Component.literal("Whatever reason you want blah blah blah"));
             } else {
                 entity.remove(Entity.RemovalReason.DISCARDED);
             }

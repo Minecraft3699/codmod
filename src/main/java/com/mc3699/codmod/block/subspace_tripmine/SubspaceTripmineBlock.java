@@ -35,7 +35,8 @@ public class SubspaceTripmineBlock extends Block {
     protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
         if(level instanceof ServerLevel serverLevel)
         {
-            spawnParticleSphere(entity, pos, 16);
+            // breaks server too much smh
+            //spawnParticleSphere(entity, pos, 16);
             serverLevel.playSound(null, pos, CodSounds.TRIPMINE.get(), SoundSource.MASTER, 128,1);
             serverLevel.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
 

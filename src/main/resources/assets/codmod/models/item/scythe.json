@@ -1,0 +1,101 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"textures": {
+		"0": "codmod:item/scythe",
+		"particle": "codmod:item/scythe"
+	},
+	"elements": [
+		{
+			"name": "Handle",
+			"from": [7.75, 0.25, 7.75],
+			"to": [8.25, 17, 8.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [6.75, 0, 6.75]},
+			"faces": {
+				"north": {"uv": [1, 4, 1.25, 12.5], "texture": "#0"},
+				"east": {"uv": [0, 4, 0.5, 12.5], "texture": "#0"},
+				"south": {"uv": [1.5, 4, 1.75, 12.5], "texture": "#0"},
+				"west": {"uv": [0.5, 4, 1, 12.5], "texture": "#0"},
+				"up": {"uv": [5.75, 1.5, 5.5, 1], "texture": "#0"},
+				"down": {"uv": [5.75, 1.5, 5.5, 2], "texture": "#0"}
+			}
+		},
+		{
+			"name": "Handle2",
+			"from": [7.5, 0, 7.5],
+			"to": [8.5, 0.25, 8.75],
+			"rotation": {"angle": 0, "axis": "y", "origin": [6.75, 0, 6.75]},
+			"faces": {
+				"north": {"uv": [5.5, 2, 6, 2.25], "texture": "#0"},
+				"east": {"uv": [5.5, 0, 6.25, 0.25], "texture": "#0"},
+				"south": {"uv": [5.5, 2.5, 6, 2.75], "texture": "#0"},
+				"west": {"uv": [5.5, 0.5, 6.25, 0.75], "texture": "#0"},
+				"up": {"uv": [5.5, 4.75, 5, 4], "texture": "#0"},
+				"down": {"uv": [5.5, 5, 5, 5.75], "texture": "#0"}
+			}
+		},
+		{
+			"name": "Thing1?",
+			"from": [7.25, 15, 7.25],
+			"to": [8.75, 16.75, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 0, 7.25]},
+			"faces": {
+				"north": {"uv": [4, 4, 4.75, 5], "texture": "#0"},
+				"east": {"uv": [2, 4, 3, 5], "texture": "#0"},
+				"south": {"uv": [2, 5, 2.75, 6], "texture": "#0"},
+				"west": {"uv": [3, 4, 4, 5], "texture": "#0"},
+				"up": {"uv": [3.75, 6, 3, 5], "texture": "#0"},
+				"down": {"uv": [4.75, 5, 4, 6], "texture": "#0"}
+			}
+		},
+		{
+			"name": "Blade?",
+			"from": [8, 13, 0.25],
+			"to": [8, 16.75, 11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 0, 7.25]},
+			"faces": {
+				"north": {"uv": [0, 0, 0, 2], "texture": "#0"},
+				"east": {"uv": [0, 0, 5.5, 2], "texture": "#0"},
+				"south": {"uv": [0, 0, 0, 2], "texture": "#0"},
+				"west": {"uv": [5.5, 0, 0, 2], "texture": "#0"},
+				"up": {"uv": [0, 5.5, 0, 0], "texture": "#0"},
+				"down": {"uv": [0, 0, 0, 5.5], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 6.25, 1.25],
+			"scale": [1.5, 1.5, 1.5]
+		},
+		"thirdperson_lefthand": {
+			"translation": [0, 6.25, 1.25],
+			"scale": [1.5, 1.5, 1.5]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, 0, -50],
+			"translation": [-5, 0, 0],
+			"scale": [1.5, 1.5, 1.5]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, 0, -50],
+			"translation": [-5, 0, 0],
+			"scale": [1.5, 1.5, 1.5]
+		},
+		"gui": {
+			"rotation": [88.22, 39.06, -96.48],
+			"translation": [-1, -2.5, 0]
+		},
+		"fixed": {
+			"rotation": [82.71, -54.27, 84.08]
+		}
+	},
+	"groups": [
+		{
+			"name": "Uhhh, idk... Scythe?",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [0, 1, 2, 3]
+		}
+	]
+}

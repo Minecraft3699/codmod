@@ -32,6 +32,7 @@ public class UAVEntity extends Entity {
             UAVEntity.class,
             EntityDataSerializers.BOOLEAN
     );
+
     private static final float DEFAULT_ALTITUDE = 50.0f;
     private static final float DEFAULT_SPEED = 1.0f;
     private static final float DEFAULT_CIRCLE_RADIUS = 50.0f;
