@@ -1,14 +1,23 @@
 package com.mc3699.codmod.item;
 
+import com.mc3699.codmod.Codmod;
 import foundry.veil.api.client.render.VeilRenderSystem;
 import foundry.veil.api.client.render.VeilRenderer;
 import foundry.veil.api.client.render.light.AreaLight;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.level.Level;
+import org.checkerframework.checker.units.qual.A;
 
 
 public class MiningHeadgearItem extends Item {
@@ -16,11 +25,6 @@ public class MiningHeadgearItem extends Item {
 
     public MiningHeadgearItem(Properties properties) {
         super(properties);
-        light = new AreaLight();
-        light.setAngle(30);
-        light.setDistance(30);
-        light.setColor(0xFF0000);
-        light.setBrightness(10);
     }
 
     @Override
@@ -29,14 +33,23 @@ public class MiningHeadgearItem extends Item {
     }
 
     @Override
+    public ItemAttributeModifiers getDefaultAttributeModifiers(ItemStack stack) {
+        return ItemAttributeModifiers.builder()
+                .add(Attributes.BLOCK_BREAK_SPEED,
+                        new AttributeModifier(ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "mining_gear_bs"),
+                            5, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.HEAD)
+                .add(Attributes.MINING_EFFICIENCY,
+                        new AttributeModifier(ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "mining_gear_me"),
+                                5, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.HEAD)
+                .build();
+    }
+
+    @Override
     public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
 
-        if(slotId == EquipmentSlot.HEAD.getIndex())
+        if(slotId == EquipmentSlot.HEAD.getIndex() && entity instanceof LivingEntity livingEntity)
         {
-            if(level.isClientSide)
-            {
-
-            }
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 10, 1, true, false, false));
         }
 
         super.inventoryTick(stack, level, entity, slotId, isSelected);

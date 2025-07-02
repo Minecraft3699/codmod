@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "up": "codmod:block/john_geometry_top",
+    "down": "codmod:block/john_geometry_side",
+    "north": "codmod:block/john_geometry_front",
+    "south": "codmod:block/john_geometry_side",
+    "east": "codmod:block/john_geometry_side",
+    "west": "codmod:block/john_geometry_side"
+  }
+}

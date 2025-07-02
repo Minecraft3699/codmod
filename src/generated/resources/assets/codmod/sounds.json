@@ -17,6 +17,12 @@
     ],
     "subtitle": "subtitles.codmod.fiddlesticks"
   },
+  "geometry": {
+    "sounds": [
+      "codmod:geometry"
+    ],
+    "subtitle": "subtitles.codmod.geometry"
+  },
   "missile_entry": {
     "sounds": [
       "codmod:missile_entry"

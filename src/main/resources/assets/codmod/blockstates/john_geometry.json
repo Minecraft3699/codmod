@@ -1,0 +1,10 @@
+{
+  "variants": {
+
+    "facing=north": {"model": "codmod:block/john_geometry"},
+    "facing=east": {"model": "codmod:block/john_geometry", "y": 90},
+    "facing=south": {"model": "codmod:block/john_geometry", "y": 180},
+    "facing=west": {"model": "codmod:block/john_geometry", "y": 270}
+
+  }
+}

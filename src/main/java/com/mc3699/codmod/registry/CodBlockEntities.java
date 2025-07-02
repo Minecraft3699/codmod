@@ -2,6 +2,7 @@ package com.mc3699.codmod.registry;
 
 import com.mc3699.codmod.Codmod;
 import com.mc3699.codmod.block.consoles.ScanningConsoleBlockEntity;
+import com.mc3699.codmod.block.johnGeometry.JohnGeometryBlockEntity;
 import com.mc3699.codmod.block.launchpad.LaunchPadBlockEntity;
 import com.mc3699.codmod.block.mantleKey.MantleKeyBlockEntity;
 import com.mc3699.codmod.block.opticalDriveInterface.OpticalDriveInterfaceBlockEntity;
@@ -30,6 +31,11 @@ public class CodBlockEntities {
     public static final Supplier<BlockEntityType<MantleKeyBlockEntity>> MANTLE_KEY = BLOCK_ENTITIES.register(
             "mantle_key",
             () -> new BlockEntityType<>(MantleKeyBlockEntity::new, Set.of(CodBlocks.MANTLE_KEY.get()), null)
+    );
+
+    public static final Supplier<BlockEntityType<JohnGeometryBlockEntity>> JOHN_GEOMETRY = BLOCK_ENTITIES.register(
+            "john_geometry",
+            () -> new BlockEntityType<>(JohnGeometryBlockEntity::new, Set.of(CodBlocks.JOHN_GEOMETRY.get()), null)
     );
 
     public static final Supplier<BlockEntityType<LaunchPadBlockEntity>> LAUNCH_PAD = BLOCK_ENTITIES.register(

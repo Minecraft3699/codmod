@@ -9,7 +9,7 @@ public class CodLang {
         CodRegistrate.INSTANCE.addRawLang("chat.codmod.vay_threat", "<Ζεστός Χαλκός> I KNOW YOU SEE ME");
         CodRegistrate.INSTANCE.addRawLang("death.attack.bad_sun", "%1$s §4was dragged into the light");
         CodRegistrate.INSTANCE.addRawLang("death.attack.job_application", "%1$s was forced to get a job");
-        CodRegistrate.INSTANCE.addRawLang("death.attack.cod_rod", "%1$s was overwhelmed by the swarm");
+        CodRegistrate.INSTANCE.addRawLang("death.attack.cod_rod", "%1$s was ripped to shreds by a bunch of cod");
         CodRegistrate.INSTANCE.addRawLang("death.attack.tripmine","%1$s was discombobulated by a Subspace Tripmine");
         CodRegistrate.INSTANCE.addRawLang("death.attack.item_projectile", "%1$s was hit too hard by %2$s");
         CodRegistrate.INSTANCE.addRawLang("effect.codmod.heart_corruption", "ERR.EFFECT_TYPE=NULL");
@@ -20,6 +20,7 @@ public class CodLang {
         CodRegistrate.INSTANCE.addRawLang("item.codmod.null_dried_kelp", "Null Dried Kelp");
         CodRegistrate.INSTANCE.addRawLang("item.codmod.null_chicken", "Null Chicken");
         CodRegistrate.INSTANCE.addRawLang("item.codmod.integrity_cookie", "§4Integrity §0Cookie");
+        CodRegistrate.INSTANCE.addRawLang("block.codmod.john_geometry","John Geometry");
         CodRegistrate.INSTANCE.addRawLang("item.codmod.shrimp", "Shrimp");
         CodRegistrate.INSTANCE.addRawLang("item.codmod.application", "Job Application");
         CodRegistrate.INSTANCE.addRawLang("item.codmod.realcod", "Real Cod");

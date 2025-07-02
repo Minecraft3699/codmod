@@ -1,6 +1,7 @@
 package com.mc3699.codmod.item;
 
 import dev.wendigodrip.thebrokenscript.api.entity.base.BaseCircuitEntity;
+import net.minecraft.ChatFormatting;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.core.component.DataComponents;
@@ -22,6 +23,13 @@ public class CircuitsBaneItem extends SwordItem {
 
     public CircuitsBaneItem(Properties properties) {
         super(Tiers.NETHERITE, properties);
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+        tooltipComponents.add(Component.literal("Made for ThatAncient2").withStyle(ChatFormatting.GRAY));
+        tooltipComponents.add(Component.literal("Texture by ThatAncient2").withStyle(ChatFormatting.GRAY));
+        super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }
 
     @Override

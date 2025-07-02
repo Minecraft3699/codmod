@@ -46,6 +46,7 @@ public class Codmod {
         CodRegistrate.INSTANCE.event("darkener_event", DarkenerEvent::new).register();
         CodRegistrate.INSTANCE.event("firelight_event", FireLightEvent::new).register();
         CodRegistrate.INSTANCE.event("bad_sun", BadSunEvent::new).register();
+        CodRegistrate.INSTANCE.event("john_geometry",JohnGeometryEvent::new).register();
         CodRegistrate.INSTANCE.chatResponse("vay_response", VayChat::new).register();
 
         NeoForge.EVENT_BUS.register(this);

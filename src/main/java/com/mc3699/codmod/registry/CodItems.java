@@ -136,7 +136,17 @@ public class CodItems {
 
     public static final ItemEntry<ContinumSlicerItem> CONTINUM_SLICER = CodRegistrate.INSTANCE.item("scythe", ContinumSlicerItem::new)
             .properties(properties -> properties)
-            .lang("Continum Slicer")
+            .lang("§4Continum Slicer")
+            .register();
+
+    public static final ItemEntry<MiningHeadgearItem> MINING_HEADGEAR = CodRegistrate.INSTANCE.item("mining_headgear", MiningHeadgearItem::new)
+            .properties(properties -> properties)
+            .lang("Mining Headgear")
+            .register();
+
+    public static final ItemEntry<SoulTakerItem> SOUL_TAKER = CodRegistrate.INSTANCE.item("soul_taker", SoulTakerItem::new)
+            .properties(properties -> properties)
+            .lang("§fSoul §0Taker")
             .register();
 
     // VOTV Foods

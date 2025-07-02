@@ -1,8 +1,8 @@
-// 1.21.1	2025-06-26T07:59:43.254760642	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Sound Definitions, Jukebox Songs, Custom Tags]
+// 1.21.1	2025-07-02T06:51:03.259324735	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Sound Definitions, Jukebox Songs, Custom Tags]
 253de56bb069fb2e7fb18b2224a5f87ab0c3f218 assets/codmod/blockstates/scanning_console.json
 6a2f12ba01d96859ffaa69b548e3f3665bbce99f assets/codmod/blockstates/subspace_tripmine.json
-fb4242ce034da1e61a1580a660d162790e538cc1 assets/codmod/lang/en_ud.json
-3005f9aa2902904f43ffa2510e98b535c5e350d4 assets/codmod/lang/en_us.json
+2eaf07ce088f5d0fef5dc0a12ababda714c73099 assets/codmod/lang/en_ud.json
+3ffabb7aa4a50636609ca3158052ed6e48729318 assets/codmod/lang/en_us.json
 df058a5a8d32e47390f727acd71ebd53eabd4439 assets/codmod/models/block/scanning_console.json
 2449ec45c0f4b76d71d11bcea7929aa6e8d3afda assets/codmod/models/block/subspace_tripmine.json
 488335f0103d1c24871d0198430d8a02c91c23d0 assets/codmod/models/item/circuits_bane.json
@@ -12,13 +12,15 @@ cba0cade4e3eb94d317c29eb61bc289020399b9b assets/codmod/models/item/command_modul
 0801c8f300412067e094c0740b0e45c2cb2ce5c9 assets/codmod/models/item/hub_module.json
 d137e6061e65e0c34d5811c9efc1ed40efd1dfd3 assets/codmod/models/item/inventory_module.json
 ab00fb55975a2972dc50fd5f1882ebfd3ca97285 assets/codmod/models/item/maxwell.json
+b6edf58edd96f6efd122abcaf5528985f7613f9b assets/codmod/models/item/mining_headgear.json
 ff16bb2f158f1b46c5bd074027ebadaf18700a09 assets/codmod/models/item/network_fucker.json
 19b0e54cde96bff0207b5cb2bdd5eb10d417568e assets/codmod/models/item/resistor.json
 11482dff99933134c9c8bec81b30b33a88d567e1 assets/codmod/models/item/round_meal.json
 fe6558c9434fae58f608b8dec37e8bece5ebdc57 assets/codmod/models/item/scythe.json
 2622f9d6eca88ca9e75ccc0a753626cd5018bf26 assets/codmod/models/item/shrimp_sniper.json
+88181fc0fff503394b8b1f339a0155a5edeae585 assets/codmod/models/item/soul_taker.json
 858220b3fd00572e370b53084f0aa440e0b2f48f assets/codmod/models/item/subspace_tripmine.json
-7013cc62af1d231b58b359f2747567a518058776 assets/codmod/sounds.json
+7914f15cea2824a52d94b1b9a16d5e4aa8021e3a assets/codmod/sounds.json
 51f8df362e0eb5667bc1e5179c3ae3d31019a801 data/codmod/loot_table/blocks/scanning_console.json
 ef31591a0779ff1e0562aaaade00880160e50926 data/codmod/loot_table/blocks/subspace_tripmine.json
 0863d5c31f299349139391182d84c3f7a831fbfe data/codmod/loot_table/entities/applicant.json

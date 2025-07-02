@@ -31,7 +31,6 @@ public class APIServer {
         HttpServer httpServer = HttpServer.create(new InetSocketAddress(15017), 0);
 
         BanEndpoint(server, httpServer);
-        MonitorSystem.endpoint(server, httpServer);
 
         httpServer.start();
     }
@@ -60,10 +59,10 @@ public class APIServer {
                 try (OutputStream outputStream = exchange.getResponseBody()) {
                     outputStream.write(jsonBytes);
                 }
-            } catch (Exception e) {
-                e.printStackTrace();
-                exchange.sendResponseHeaders(500, -1);
-            }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    exchange.sendResponseHeaders(500, -1);
+                }
             exchange.close();
         });
     }

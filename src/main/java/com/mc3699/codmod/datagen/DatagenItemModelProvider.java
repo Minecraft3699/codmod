@@ -28,6 +28,8 @@ public class DatagenItemModelProvider extends ItemModelProvider {
         simpleBlockItem(CodBlocks.MOLTEN_COPPER.get());
         simpleBlockItem(CodBlocks.UAV_CONTROLLER.get());
         simpleBlockItem(CodBlocks.SERVER.get());
+        simpleBlockItem(CodBlocks.JOHN_GEOMETRY.get());
+
 
         // VOTV Foods
         basicItem(CodItems.BANANA.get());

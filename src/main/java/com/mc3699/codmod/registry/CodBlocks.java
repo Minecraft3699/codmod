@@ -2,6 +2,7 @@ package com.mc3699.codmod.registry;
 
 import com.mc3699.codmod.Codmod;
 import com.mc3699.codmod.block.consoles.ScanningConsoleBlock;
+import com.mc3699.codmod.block.johnGeometry.JohnGeometryBlock;
 import com.mc3699.codmod.block.launchpad.LaunchPadBlock;
 import com.mc3699.codmod.block.mantleKey.MantleKeyBlock;
 import com.mc3699.codmod.block.opticalDriveInterface.OpticalDriveInterfaceBlock;
@@ -14,6 +15,7 @@ import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -48,6 +50,9 @@ public class CodBlocks {
 
     public static final DeferredBlock<Block> SERVER = BLOCKS.register("server", ServerBlock::new);
 
+    public static final DeferredBlock<Block> JOHN_GEOMETRY = BLOCKS.register("john_geometry", JohnGeometryBlock::new);
+
+
     public static final DeferredBlock<Block> OPTICAL_DRIVE_INTERFACE = BLOCKS.register("optical_drive_interface",
             () -> new OpticalDriveInterfaceBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
 
@@ -67,6 +72,9 @@ public class CodBlocks {
             .lang("Subspace Tripmine")
             .simpleItem()
             .register();
+
+
+
 
 
     public static void register(IEventBus eventBus) {

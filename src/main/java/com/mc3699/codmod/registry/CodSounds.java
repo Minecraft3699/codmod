@@ -26,6 +26,10 @@ public class CodSounds {
             .simple(false)
             .register();
 
+    public static final RegistryEntry<SoundEvent, SoundEvent> GEOMETRY = CodRegistrate.INSTANCE.sound("geometry")
+            .simple(false)
+            .register();
+
     public static void register() {
         // This method just exists so Java will load the class LOL
         // Since it doesn't actually need to "push" anything to the registry manually anymore
