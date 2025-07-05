@@ -1,0 +1,10 @@
+{
+  "type": "codmod:backrooms",
+  "generator": {
+    "type": "codmod:backrooms_generator",
+    "biome_source": {
+      "type": "fixed",
+      "biome": "minecraft:the_void"
+    }
+  }
+}

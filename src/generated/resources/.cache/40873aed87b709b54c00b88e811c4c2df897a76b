@@ -1,2 +1,5 @@
-// 1.21.1	2025-06-16T15:09:32.186359048	Tags for minecraft:block mod id codmod
-2c388f41cdf58e43afa9cb860270dff0b4890ad1 data/minecraft/tags/block/mineable/pickaxe.json
+// 1.21.1	2025-07-03T11:53:39.088146468	Tags for minecraft:block mod id codmod
+2fe053bf27494829cf349d9af1caf838f1837002 data/minecraft/tags/block/mineable/axe.json
+5e7a2d40cd0f15440f80582ace6fb8676771304a data/minecraft/tags/block/mineable/hoe.json
+9f17e855b50449b7a1632bec10e0de390b1d16e5 data/minecraft/tags/block/mineable/pickaxe.json
+91b59f0cd023e26b7cdfb87395892dcc639d55c7 data/minecraft/tags/block/wool.json

@@ -21,7 +21,8 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
-record BanData(String username, String bannedBy, String uuid, String banEnd, String reason) {}
+record BanData(String username, String bannedBy, String uuid, String banStart, String banEnd, String reason) {}
+record PlayerData(String username) {}
 
 public class APIServer {
 
@@ -46,6 +47,7 @@ public class APIServer {
                                 entry.getDisplayName().getString(),
                                 entry.getSource(),
                                 UUID.randomUUID().toString(),
+                                entry.getCreated().toString(),
                                 entry.getExpires() != null ? entry.getExpires().toString() : null,
                                 entry.getReason()
                         ))
@@ -64,6 +66,13 @@ public class APIServer {
                     exchange.sendResponseHeaders(500, -1);
                 }
             exchange.close();
+        });
+    }
+
+    private void PlayerEndpoint(MinecraftServer server, HttpServer httpServer)
+    {
+        httpServer.createContext("/api/players", exchange -> {
+
         });
     }
 

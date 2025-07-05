@@ -28,7 +28,7 @@ public class JohnGeometryEvent extends BaseEvent {
     @Override
     protected void execute(@NotNull ServerLevel serverLevel, @NotNull ServerPlayer serverPlayer, @NotNull Vec3 vec3) {
         serverLevel.players().forEach(victim -> {
-            if(serverLevel.random.nextInt(1,10) == 10)
+            if(serverLevel.random.nextInt(1,10) > 0)
             {
                 placeJohn(serverLevel, victim.getBlockPosBelowThatAffectsMyMovement(), 30);
             }

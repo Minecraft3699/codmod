@@ -4,6 +4,7 @@
     "codmod:radar",
     "codmod:uav_controller",
     "codmod:stable_disruption",
-    "codmod:server"
+    "codmod:server",
+    "codmod:ceiling_light"
   ]
 }

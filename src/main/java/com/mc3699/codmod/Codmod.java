@@ -60,6 +60,7 @@ public class Codmod {
         CodCreativeTabs.register(modEventBus);
         CodLang.register();
         CodPeripheralUpgradeTypes.register(modEventBus);
+        CodGenerators.register(modEventBus);
 
     }
 

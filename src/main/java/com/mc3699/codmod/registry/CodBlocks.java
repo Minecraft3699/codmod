@@ -1,6 +1,7 @@
 package com.mc3699.codmod.registry;
 
 import com.mc3699.codmod.Codmod;
+import com.mc3699.codmod.block.DellServerBlock;
 import com.mc3699.codmod.block.consoles.ScanningConsoleBlock;
 import com.mc3699.codmod.block.johnGeometry.JohnGeometryBlock;
 import com.mc3699.codmod.block.launchpad.LaunchPadBlock;
@@ -30,8 +31,7 @@ public class CodBlocks {
     );
 
     public static final DeferredBlock<Block> DELL_SERVER = BLOCKS.register(
-            "dell_server",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.TINTED_GLASS))
+            "dell_server", DellServerBlock::new
     );
 
     public static final DeferredBlock<Block> RADAR = BLOCKS.register("radar", RadarBlock::new);
@@ -66,11 +66,41 @@ public class CodBlocks {
             ScanningConsoleBlock::new
     ).register();
 
+    public static final BlockEntry<Block> COD_BLOCK = CodRegistrate.INSTANCE.block("cod_block", Block::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.SLIME_BLOCK))
+            .lang("Block of Cod")
+            .simpleItem()
+            .register();
+
     public static final BlockEntry<SubspaceTripmineBlock> SUBSPACE_TRIPMINE = CodRegistrate.INSTANCE.block("subspace_tripmine",
             SubspaceTripmineBlock::new)
             .properties(properties -> properties.noCollission().noOcclusion())
             .lang("Subspace Tripmine")
             .simpleItem()
+            .register();
+
+    public static final BlockEntry<Block> MOIST_CARPET = CodRegistrate.INSTANCE.block("moist_carpet" , Block::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.YELLOW_WOOL))
+            .simpleItem()
+            .lang("Moist Carpet")
+            .register();
+
+    public static final BlockEntry<Block> CEILING_TILE = CodRegistrate.INSTANCE.block("ceiling_tile" , Block::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.SPONGE))
+            .simpleItem()
+            .lang("Ceiling Tile")
+            .register();
+
+    public static final BlockEntry<Block> CEILING_LIGHT = CodRegistrate.INSTANCE.block("ceiling_light" , Block::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.GLOWSTONE))
+            .simpleItem()
+            .lang("Ceiling Light")
+            .register();
+
+    public static final BlockEntry<Block> UGLY_WALLPAPER = CodRegistrate.INSTANCE.block("ugly_wallpaper" , Block::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD))
+            .simpleItem()
+            .lang("Ugly Wallpaper")
             .register();
 
 

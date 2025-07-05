@@ -144,6 +144,11 @@ public class CodItems {
             .lang("Mining Headgear")
             .register();
 
+    public static final ItemEntry<Item> RED = CodRegistrate.INSTANCE.item("red", Item::new)
+            .properties(properties -> properties)
+            .lang("Red")
+            .register();
+
     public static final ItemEntry<SoulTakerItem> SOUL_TAKER = CodRegistrate.INSTANCE.item("soul_taker", SoulTakerItem::new)
             .properties(properties -> properties)
             .lang("§fSoul §0Taker")
