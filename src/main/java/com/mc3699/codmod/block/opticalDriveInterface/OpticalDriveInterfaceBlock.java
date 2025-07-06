@@ -2,7 +2,6 @@ package com.mc3699.codmod.block.opticalDriveInterface;
 
 import com.mc3699.codmod.item.OpticalTapeDriveItem;
 import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
@@ -24,7 +23,7 @@ public class OpticalDriveInterfaceBlock extends Block implements EntityBlock {
 
     public OpticalDriveInterfaceBlock(Properties properties) {
         super(properties);
-        this.registerDefaultState(this.getStateDefinition().any().setValue(HAS_DISK,false));
+        this.registerDefaultState(this.getStateDefinition().any().setValue(HAS_DISK, false));
     }
 
     @Override
@@ -33,7 +32,15 @@ public class OpticalDriveInterfaceBlock extends Block implements EntityBlock {
     }
 
     @Override
-    public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    public ItemInteractionResult useItemOn(
+            ItemStack stack,
+            BlockState state,
+            Level level,
+            BlockPos pos,
+            Player player,
+            InteractionHand hand,
+            BlockHitResult hit
+    ) {
         if (!level.isClientSide) {
             BlockEntity blockEntity = level.getBlockEntity(pos);
             if (blockEntity instanceof OpticalDriveInterfaceBlockEntity drive) {
@@ -51,11 +58,17 @@ public class OpticalDriveInterfaceBlock extends Block implements EntityBlock {
     }
 
     @Override
-    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
+    protected InteractionResult useWithoutItem(
+            BlockState state,
+            Level level,
+            BlockPos pos,
+            Player player,
+            BlockHitResult hitResult
+    ) {
         if (!level.isClientSide) {
             BlockEntity blockEntity = level.getBlockEntity(pos);
             if (blockEntity instanceof OpticalDriveInterfaceBlockEntity drive) {
-                if(!drive.getDisk().isEmpty()) {
+                if (!drive.getDisk().isEmpty()) {
 
                     ItemStack ejectDisk = drive.getDisk().copyAndClear();
                     player.getInventory().add(ejectDisk);

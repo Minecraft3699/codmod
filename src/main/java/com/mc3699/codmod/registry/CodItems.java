@@ -5,7 +5,6 @@ import com.mc3699.codmod.item.*;
 import com.mc3699.codmod.item.commandModule.CommandModuleItem;
 import com.mc3699.codmod.item.hubModule.HubModuleItem;
 import com.mc3699.codmod.item.inventoryModule.InventoryModuleItem;
-import com.mc3699.codmod.item.inventoryModule.InventoryModuleUpgrade;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.food.FoodProperties;
@@ -89,7 +88,10 @@ public class CodItems {
             .register();
 
     // did I do good this time?
-    public static final ItemEntry<CircuitsBaneItem> CIRCUITS_BANE = CodRegistrate.INSTANCE.item("circuits_bane", CircuitsBaneItem::new)
+    public static final ItemEntry<CircuitsBaneItem> CIRCUITS_BANE = CodRegistrate.INSTANCE.item(
+                    "circuits_bane",
+                    CircuitsBaneItem::new
+            )
             .properties((properties -> properties.durability(1024).rarity(Rarity.EPIC)))
             .lang("Circuit's Bane")
             .register();
@@ -99,47 +101,74 @@ public class CodItems {
             .lang("Comically Large Resistor")
             .register();
 
-    public static final ItemEntry<ShrimpSniperItem> SHRIMP_SNIPER = CodRegistrate.INSTANCE.item("shrimp_sniper", ShrimpSniperItem::new)
+    public static final ItemEntry<ShrimpSniperItem> SHRIMP_SNIPER = CodRegistrate.INSTANCE.item(
+                    "shrimp_sniper",
+                    ShrimpSniperItem::new
+            )
             .properties(properties -> properties)
             .lang("AWP_Shrimp")
             .register();
 
-    public static final ItemEntry<OpticalTapeDriveItem> DRIVE  = CodRegistrate.INSTANCE.item("drive", OpticalTapeDriveItem::new)
+    public static final ItemEntry<OpticalTapeDriveItem> DRIVE = CodRegistrate.INSTANCE.item(
+                    "drive",
+                    OpticalTapeDriveItem::new
+            )
             .properties(properties -> properties.stacksTo(1).rarity(Rarity.UNCOMMON))
             .lang("Optical Tape Drive")
             .register();
 
-    public static final ItemEntry<CommandModuleItem> COMMAND_MODULE = CodRegistrate.INSTANCE.item("command_module", CommandModuleItem::new)
+    public static final ItemEntry<CommandModuleItem> COMMAND_MODULE = CodRegistrate.INSTANCE.item(
+                    "command_module",
+                    CommandModuleItem::new
+            )
             .properties(properties -> properties)
             .lang("Command Module")
             .register();
 
-    public static final ItemEntry<HubModuleItem> HUB_MODULE = CodRegistrate.INSTANCE.item("hub_module",HubModuleItem::new)
+    public static final ItemEntry<HubModuleItem> HUB_MODULE = CodRegistrate.INSTANCE.item(
+                    "hub_module",
+                    HubModuleItem::new
+            )
             .properties(properties -> properties)
             .lang("Hub Module")
             .register();
 
-    public static final ItemEntry<InventoryModuleItem> INVENTORY_MODULE = CodRegistrate.INSTANCE.item("inventory_module", InventoryModuleItem::new)
+    public static final ItemEntry<InventoryModuleItem> INVENTORY_MODULE = CodRegistrate.INSTANCE.item(
+                    "inventory_module",
+                    InventoryModuleItem::new
+            )
             .properties(properties -> properties)
             .lang("Inventory Module")
             .register();
 
-    public static final ItemEntry<RoundMealItem> ROUND_MEAL = CodRegistrate.INSTANCE.item("round_meal", RoundMealItem::new)
+    public static final ItemEntry<RoundMealItem> ROUND_MEAL = CodRegistrate.INSTANCE.item(
+                    "round_meal",
+                    RoundMealItem::new
+            )
             .properties(properties -> properties.food(CodFoods.ROUND_MEAL))
             .lang("Round Meal")
             .register();
 
-    public static final ItemEntry<NetworkFuckerItem> NETWORK_FUCKER = CodRegistrate.INSTANCE.item("network_fucker", NetworkFuckerItem::new)
+    public static final ItemEntry<NetworkFuckerItem> NETWORK_FUCKER = CodRegistrate.INSTANCE.item(
+                    "network_fucker",
+                    NetworkFuckerItem::new
+            )
             .properties(properties -> properties)
             .lang("Network Fucker 9000")
             .register();
 
-    public static final ItemEntry<ContinumSlicerItem> CONTINUM_SLICER = CodRegistrate.INSTANCE.item("scythe", ContinumSlicerItem::new)
+    public static final ItemEntry<ContinumSlicerItem> CONTINUM_SLICER = CodRegistrate.INSTANCE.item(
+                    "scythe",
+                    ContinumSlicerItem::new
+            )
             .properties(properties -> properties)
             .lang("§4Continum Slicer")
             .register();
 
-    public static final ItemEntry<MiningHeadgearItem> MINING_HEADGEAR = CodRegistrate.INSTANCE.item("mining_headgear", MiningHeadgearItem::new)
+    public static final ItemEntry<MiningHeadgearItem> MINING_HEADGEAR = CodRegistrate.INSTANCE.item(
+                    "mining_headgear",
+                    MiningHeadgearItem::new
+            )
             .properties(properties -> properties)
             .lang("Mining Headgear")
             .register();
@@ -149,7 +178,10 @@ public class CodItems {
             .lang("Red")
             .register();
 
-    public static final ItemEntry<SoulTakerItem> SOUL_TAKER = CodRegistrate.INSTANCE.item("soul_taker", SoulTakerItem::new)
+    public static final ItemEntry<SoulTakerItem> SOUL_TAKER = CodRegistrate.INSTANCE.item(
+                    "soul_taker",
+                    SoulTakerItem::new
+            )
             .properties(properties -> properties)
             .lang("§fSoul §0Taker")
             .register();

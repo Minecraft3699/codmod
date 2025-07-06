@@ -1,8 +1,8 @@
 package com.mc3699.codmod.entity.itemProjectile;
 
 import com.mc3699.codmod.registry.CodDamageTypes;
-import com.mc3699.codmod.registry.CodEntities;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -11,29 +11,45 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.world.entity.item.ItemEntity;
 
 public class ItemProjectileEntity extends AbstractArrow {
-    private static final EntityDataAccessor<Integer> BOUNCE_COUNT = SynchedEntityData.defineId(ItemProjectileEntity.class, EntityDataSerializers.INT);
-    private static final EntityDataAccessor<ItemStack> CARRIED_ITEM = SynchedEntityData.defineId(ItemProjectileEntity.class, EntityDataSerializers.ITEM_STACK);
-    private static final EntityDataAccessor<Integer> DAMAGE = SynchedEntityData.defineId(ItemProjectileEntity.class, EntityDataSerializers.INT);
-    private static final EntityDataAccessor<Boolean> SHOULD_DROP = SynchedEntityData.defineId(ItemProjectileEntity.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Integer> BOUNCE_COUNT = SynchedEntityData.defineId(
+            ItemProjectileEntity.class,
+            EntityDataSerializers.INT
+    );
+    private static final EntityDataAccessor<ItemStack> CARRIED_ITEM = SynchedEntityData.defineId(
+            ItemProjectileEntity.class,
+            EntityDataSerializers.ITEM_STACK
+    );
+    private static final EntityDataAccessor<Integer> DAMAGE = SynchedEntityData.defineId(
+            ItemProjectileEntity.class,
+            EntityDataSerializers.INT
+    );
+    private static final EntityDataAccessor<Boolean> SHOULD_DROP = SynchedEntityData.defineId(
+            ItemProjectileEntity.class,
+            EntityDataSerializers.BOOLEAN
+    );
     private static final int MAX_BOUNCES = 0;
     private static final double SPEED_THRESHOLD = 0.01;
     private Vec3 lastPosition;
 
 
-    public ItemProjectileEntity(EntityType<? extends ItemProjectileEntity> entityType, Level level, ItemStack carriedItem, int bounceCount, int damage, boolean dropItem) {
+    public ItemProjectileEntity(
+            EntityType<? extends ItemProjectileEntity> entityType,
+            Level level,
+            ItemStack carriedItem,
+            int bounceCount,
+            int damage,
+            boolean dropItem
+    ) {
         super(entityType, level);
         this.setCarriedItem(carriedItem.copy());
         this.getEntityData().set(BOUNCE_COUNT, bounceCount);
@@ -52,12 +68,12 @@ public class ItemProjectileEntity extends AbstractArrow {
         builder.define(SHOULD_DROP, false);
     }
 
-    private void setCarriedItem(ItemStack item) {
-        this.getEntityData().set(CARRIED_ITEM, item.copy());
-    }
-
     public ItemStack getCarriedItem() {
         return this.getEntityData().get(CARRIED_ITEM).copy();
+    }
+
+    private void setCarriedItem(ItemStack item) {
+        this.getEntityData().set(CARRIED_ITEM, item.copy());
     }
 
     @Override
@@ -73,7 +89,11 @@ public class ItemProjectileEntity extends AbstractArrow {
                 this.inGround = false;
                 this.getEntityData().set(BOUNCE_COUNT, currentBounce + 1);
                 Vec3 velocity = this.getDeltaMovement();
-                Vec3 normal = new Vec3(result.getDirection().getNormal().getX(), result.getDirection().getNormal().getY(), result.getDirection().getNormal().getZ());
+                Vec3 normal = new Vec3(
+                        result.getDirection().getNormal().getX(),
+                        result.getDirection().getNormal().getY(),
+                        result.getDirection().getNormal().getZ()
+                );
                 double dot = velocity.dot(normal);
                 Vec3 reflected = velocity.subtract(normal.scale(2.0 * dot));
                 this.setDeltaMovement(reflected);
@@ -82,7 +102,13 @@ public class ItemProjectileEntity extends AbstractArrow {
                 ServerLevel serverLevel = (ServerLevel) this.level();
                 ItemStack item = this.getCarriedItem();
                 if (!item.isEmpty() && this.getEntityData().get(SHOULD_DROP)) {
-                    serverLevel.addFreshEntity(new ItemEntity(serverLevel, this.getX(), this.getY(), this.getZ(), item));
+                    serverLevel.addFreshEntity(new ItemEntity(
+                            serverLevel,
+                            this.getX(),
+                            this.getY(),
+                            this.getZ(),
+                            item
+                    ));
                 }
                 this.discard();
             }
@@ -94,12 +120,13 @@ public class ItemProjectileEntity extends AbstractArrow {
         if (this.level() instanceof ServerLevel serverLevel) {
             Entity entity = result.getEntity();
 
-            if(getEntityData().get(DAMAGE) > 0)
-            {
-                DamageSource damage = new DamageSource(serverLevel
-                        .registryAccess()
-                        .lookupOrThrow(Registries.DAMAGE_TYPE)
-                        .getOrThrow(CodDamageTypes.ITEM_PROJECTILE), null, this);
+            if (getEntityData().get(DAMAGE) > 0) {
+                DamageSource damage = new DamageSource(
+                        serverLevel
+                                .registryAccess()
+                                .lookupOrThrow(Registries.DAMAGE_TYPE)
+                                .getOrThrow(CodDamageTypes.ITEM_PROJECTILE), null, this
+                );
 
                 entity.hurt(damage, getEntityData().get(DAMAGE));
             }
@@ -122,7 +149,6 @@ public class ItemProjectileEntity extends AbstractArrow {
     }
 
 
-
     @Override
     public void addAdditionalSaveData(CompoundTag compound) {
         super.addAdditionalSaveData(compound);
@@ -140,12 +166,20 @@ public class ItemProjectileEntity extends AbstractArrow {
             Vec3 currentPosition = this.position();
             double speed = currentPosition.distanceTo(lastPosition);
             this.lastPosition = currentPosition;
-            if ((this.inGround || speed < SPEED_THRESHOLD) && !this.isNoPhysics() && getEntityData().get(BOUNCE_COUNT) > 0) {
+            if ((this.inGround || speed < SPEED_THRESHOLD) &&
+                !this.isNoPhysics() &&
+                getEntityData().get(BOUNCE_COUNT) > 0) {
                 if (this.getEntityData().get(SHOULD_DROP)) {
                     ItemStack item = this.getCarriedItem();
                     if (!item.isEmpty()) {
                         ServerLevel serverLevel = (ServerLevel) this.level();
-                        serverLevel.addFreshEntity(new ItemEntity(serverLevel, this.getX(), this.getY(), this.getZ(), item));
+                        serverLevel.addFreshEntity(new ItemEntity(
+                                serverLevel,
+                                this.getX(),
+                                this.getY(),
+                                this.getZ(),
+                                item
+                        ));
                     }
                 }
                 this.discard();
@@ -158,7 +192,8 @@ public class ItemProjectileEntity extends AbstractArrow {
         super.readAdditionalSaveData(compound);
         this.getEntityData().set(BOUNCE_COUNT, compound.getInt("BounceCount"));
         if (compound.contains("CarriedItem")) {
-            ItemStack item = ItemStack.parse(this.registryAccess(), compound.getCompound("CarriedItem")).orElse(ItemStack.EMPTY);
+            ItemStack item = ItemStack.parse(this.registryAccess(), compound.getCompound("CarriedItem"))
+                    .orElse(ItemStack.EMPTY);
             this.setCarriedItem(item);
         }
     }

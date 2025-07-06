@@ -9,13 +9,6 @@ import com.mc3699.codmod.registry.*;
 import com.mc3699.codmod.responses.VayChat;
 import com.mojang.logging.LogUtils;
 import dev.wendigodrip.thebrokenscript.api.queue.WorkQueue;
-import foundry.veil.api.client.render.VeilRenderSystem;
-import foundry.veil.api.client.render.VeilRenderer;
-import foundry.veil.api.client.render.rendertype.VeilRenderType;
-import foundry.veil.api.client.render.rendertype.VeilRenderTypeAccessor;
-import foundry.veil.api.client.render.rendertype.VeilRenderTypeBuilder;
-import net.minecraft.client.renderer.RenderStateShard;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.neoforged.bus.api.IEventBus;
@@ -46,7 +39,7 @@ public class Codmod {
         CodRegistrate.INSTANCE.event("darkener_event", DarkenerEvent::new).register();
         CodRegistrate.INSTANCE.event("firelight_event", FireLightEvent::new).register();
         CodRegistrate.INSTANCE.event("bad_sun", BadSunEvent::new).register();
-        CodRegistrate.INSTANCE.event("john_geometry",JohnGeometryEvent::new).register();
+        CodRegistrate.INSTANCE.event("john_geometry", JohnGeometryEvent::new).register();
         CodRegistrate.INSTANCE.chatResponse("vay_response", VayChat::new).register();
 
         NeoForge.EVENT_BUS.register(this);
@@ -82,7 +75,7 @@ public class Codmod {
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
         LOGGER.info(
-        "Starting Codmod, I like cod cod cod cod cod cod cod cod COD MOD IS LOADING!!! THIS IS CODMOD!!! THIS LINE IS COD MOD!!! COD MOD LOADING RIGHT NOW!!!!!!! COD MOD YEAHHHHHHHHHHHHHHHHH"
+                "Starting Codmod, I like cod cod cod cod cod cod cod cod COD MOD IS LOADING!!! THIS IS CODMOD!!! THIS LINE IS COD MOD!!! COD MOD LOADING RIGHT NOW!!!!!!! COD MOD YEAHHHHHHHHHHHHHHHHH"
         );
 
         LOGGER.info("Starting API...");

@@ -8,14 +8,13 @@ import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.phys.Vec3;
 
 public class ItemProjectileRenderer extends EntityRenderer<ItemProjectileEntity> {
-    private ItemRenderer itemRenderer;
+    private final ItemRenderer itemRenderer;
 
     public ItemProjectileRenderer(EntityRendererProvider.Context context) {
         super(context);
@@ -23,7 +22,14 @@ public class ItemProjectileRenderer extends EntityRenderer<ItemProjectileEntity>
     }
 
     @Override
-    public void render(ItemProjectileEntity entity, float entityYaw, float partialTick, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
+    public void render(
+            ItemProjectileEntity entity,
+            float entityYaw,
+            float partialTick,
+            PoseStack poseStack,
+            MultiBufferSource bufferSource,
+            int packedLight
+    ) {
         poseStack.pushPose();
         Vec3 velocity = entity.getDeltaMovement();
         float yaw = (float) (Mth.atan2(velocity.x, velocity.z) * (180.0 / Math.PI));
@@ -33,7 +39,16 @@ public class ItemProjectileRenderer extends EntityRenderer<ItemProjectileEntity>
         poseStack.scale(1f, 1f, 1f);
         poseStack.translate(0.0, 0.2, 0.0);
         ItemStack item = entity.getCarriedItem().isEmpty() ? new ItemStack(Items.COD) : entity.getCarriedItem();
-        itemRenderer.renderStatic(item, ItemDisplayContext.GROUND, packedLight, OverlayTexture.NO_OVERLAY, poseStack, bufferSource, entity.level(), entity.getId());
+        itemRenderer.renderStatic(
+                item,
+                ItemDisplayContext.GROUND,
+                packedLight,
+                OverlayTexture.NO_OVERLAY,
+                poseStack,
+                bufferSource,
+                entity.level(),
+                entity.getId()
+        );
         poseStack.popPose();
         super.render(entity, entityYaw, partialTick, poseStack, bufferSource, packedLight);
     }

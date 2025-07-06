@@ -2,9 +2,7 @@ package com.mc3699.codmod.item;
 
 import com.mc3699.codmod.entity.swarmCod.SwarmCodEntity;
 import com.mc3699.codmod.registry.CodEntities;
-import com.mc3699.codmod.registry.CodSounds;
 import net.minecraft.core.BlockPos;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -25,10 +23,10 @@ public class MaxwellItem extends Item {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand usedHand) {
-        if(level instanceof ServerLevel serverLevel) {
+        if (level instanceof ServerLevel serverLevel) {
 
             ItemStack stack = player.getItemInHand(usedHand);
-            stack.setDamageValue(stack.getDamageValue()+1);
+            stack.setDamageValue(stack.getDamageValue() + 1);
 
             serverLevel.playSound(
                     null,
@@ -36,11 +34,10 @@ public class MaxwellItem extends Item {
                     SoundEvents.CAT_AMBIENT,
                     SoundSource.PLAYERS,
                     16,
-                    1+(stack.getDamageValue())*0.01f
+                    1 + (stack.getDamageValue()) * 0.01f
             );
 
-            if(stack.getDamageValue() == 100)
-            {
+            if (stack.getDamageValue() == 100) {
                 stack.shrink(1);
                 explode(serverLevel, player.position());
             }
@@ -81,24 +78,22 @@ public class MaxwellItem extends Item {
     @Override
     public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
         super.inventoryTick(stack, level, entity, slotId, isSelected);
-        if(level instanceof ServerLevel serverLevel)
-        {
-            if(isSelected) {
+        if (level instanceof ServerLevel serverLevel) {
+            if (isSelected) {
                 if (serverLevel.random.nextInt(1, 100) == 1) {
                     serverLevel.playSound(
-                        null,
-                        BlockPos.containing(entity.position()),
-                        SoundEvents.CAT_PURR,
-                        SoundSource.PLAYERS,
-                        16,
-                        1
+                            null,
+                            BlockPos.containing(entity.position()),
+                            SoundEvents.CAT_PURR,
+                            SoundSource.PLAYERS,
+                            16,
+                            1
                     );
                 }
             }
 
-            if(entity.tickCount % 40 == 0)
-            {
-                stack.setDamageValue(stack.getDamageValue()-1);
+            if (entity.tickCount % 40 == 0) {
+                stack.setDamageValue(stack.getDamageValue() - 1);
             }
 
 

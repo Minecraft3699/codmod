@@ -3,11 +3,7 @@ package com.mc3699.codmod.item;
 import com.mc3699.codmod.Codmod;
 import com.mc3699.codmod.registry.CodTiers;
 import net.minecraft.ChatFormatting;
-import net.minecraft.core.Holder;
 import net.minecraft.core.particles.DustParticleOptions;
-import net.minecraft.core.particles.ParticleOptions;
-import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
@@ -21,15 +17,10 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
-import net.minecraft.world.item.enchantment.EnchantmentInstance;
-import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 import org.joml.Vector3f;
 
@@ -43,11 +34,10 @@ public class ContinumSlicerItem extends SwordItem {
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand usedHand) {
         ItemStack stack = player.getItemInHand(usedHand);
-        if(level instanceof ServerLevel serverLevel)
-        {
+        if (level instanceof ServerLevel serverLevel) {
             double strength = 1.5;
             Vec3 lookVec = player.getLookAngle();
-            player.setDeltaMovement(lookVec.x*strength, lookVec.y*strength,lookVec.z*strength);
+            player.setDeltaMovement(lookVec.x * strength, lookVec.y * strength, lookVec.z * strength);
             player.hurtMarked = true;
             player.getCooldowns().addCooldown(this, 40);
             serverLevel.sendParticles(
@@ -62,7 +52,12 @@ public class ContinumSlicerItem extends SwordItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+    public void appendHoverText(
+            ItemStack stack,
+            TooltipContext context,
+            List<Component> tooltipComponents,
+            TooltipFlag tooltipFlag
+    ) {
         tooltipComponents.add(Component.literal("Made for NahBro2").withStyle(ChatFormatting.GRAY));
         tooltipComponents.add(Component.literal("Model by NahBro2").withStyle(ChatFormatting.GRAY));
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
@@ -71,14 +66,18 @@ public class ContinumSlicerItem extends SwordItem {
     @Override
     public @NotNull ItemAttributeModifiers getDefaultAttributeModifiers(ItemStack stack) {
         return ItemAttributeModifiers.builder()
-            .add(Attributes.ATTACK_SPEED, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "scythe_speed")
-                    ,-2.5, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
-            .build();
+                .add(
+                        Attributes.ATTACK_SPEED, new AttributeModifier(
+                                ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "scythe_speed")
+                                , -2.5, AttributeModifier.Operation.ADD_VALUE
+                        ), EquipmentSlotGroup.MAINHAND
+                )
+                .build();
     }
 
     @Override
     public float getAttackDamageBonus(Entity target, float damage, DamageSource damageSource) {
-        return damage*15;
+        return damage * 15;
     }
 
 

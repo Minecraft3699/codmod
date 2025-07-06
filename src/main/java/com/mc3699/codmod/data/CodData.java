@@ -30,13 +30,6 @@ public class CodData extends SavedData {
                                    new CompoundTag());
     }
 
-    @Override
-    public CompoundTag save(CompoundTag tag, HolderLookup.Provider provider) {
-        tag.put("cod", serialize());
-
-        return tag;
-    }
-
     public static CodData load(CompoundTag tag, HolderLookup.Provider provider) {
         deserialize(tag.contains("cod", Tag.TAG_COMPOUND) ? tag.getCompound("cod") : new CompoundTag());
 
@@ -45,5 +38,12 @@ public class CodData extends SavedData {
 
     public static void forceUpdate() {
         INSTANCE.setDirty();
+    }
+
+    @Override
+    public CompoundTag save(CompoundTag tag, HolderLookup.Provider provider) {
+        tag.put("cod", serialize());
+
+        return tag;
     }
 }

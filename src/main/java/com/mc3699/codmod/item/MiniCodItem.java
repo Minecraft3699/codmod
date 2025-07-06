@@ -5,10 +5,8 @@ import com.mc3699.codmod.registry.CodEntities;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.Arrow;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -40,7 +38,14 @@ public class MiniCodItem extends Item {
 
     @Override
     public void onUseTick(Level level, LivingEntity livingEntity, ItemStack stack, int remainingUseDuration) {
-        ItemProjectileEntity projectile = new ItemProjectileEntity(CodEntities.ITEM_PROJECTILE.get(), level, new ItemStack(Items.COD, 1), 0, 0, true);
+        ItemProjectileEntity projectile = new ItemProjectileEntity(
+                CodEntities.ITEM_PROJECTILE.get(),
+                level,
+                new ItemStack(Items.COD, 1),
+                0,
+                0,
+                true
+        );
         Vec3 eyePos = livingEntity.getEyePosition();
         Vec3 lookVec = livingEntity.getViewVector(1.0F).normalize().scale(1.5);
         projectile.setPos(eyePos.x + lookVec.x, eyePos.y + lookVec.y, eyePos.z + lookVec.z);

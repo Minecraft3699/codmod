@@ -1,18 +1,8 @@
 package com.mc3699.codmod.block.johnGeometry;
 
 import com.mc3699.codmod.registry.CodBlockEntities;
-import com.mc3699.codmod.registry.CodBlocks;
-import com.mc3699.codmod.registry.CodSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.util.RandomSource;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.animal.Cod;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
@@ -26,12 +16,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.phys.AABB;
-import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
-import org.openjdk.nashorn.internal.scripts.JO;
-
-import java.util.List;
 
 public class JohnGeometryBlock extends Block implements EntityBlock {
     public static final DirectionProperty FACING = DirectionProperty.create("facing", Direction.Plane.HORIZONTAL);
@@ -62,12 +47,16 @@ public class JohnGeometryBlock extends Block implements EntityBlock {
 
 
     @Override
-    public @Nullable <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
+    public @Nullable <T extends BlockEntity> BlockEntityTicker<T> getTicker(
+            Level level,
+            BlockState state,
+            BlockEntityType<T> type
+    ) {
         return type == CodBlockEntities.JOHN_GEOMETRY.get() ? JohnGeometryBlockEntity::tick : null;
     }
 
     @Override
     public @Nullable BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
-        return new JohnGeometryBlockEntity(blockPos,blockState);
+        return new JohnGeometryBlockEntity(blockPos, blockState);
     }
 }

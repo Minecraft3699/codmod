@@ -19,7 +19,12 @@ public class RoundMealItem extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+    public void appendHoverText(
+            ItemStack stack,
+            TooltipContext context,
+            List<Component> tooltipComponents,
+            TooltipFlag tooltipFlag
+    ) {
         tooltipComponents.add(Component.literal("ROUND MEAL").withStyle(ChatFormatting.GOLD));
         tooltipComponents.add(Component.literal("MACARONI AND BEEF").withStyle(ChatFormatting.GOLD));
         tooltipComponents.add(Component.literal("Protein BLASTED!").withStyle(ChatFormatting.GOLD));

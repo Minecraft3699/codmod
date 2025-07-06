@@ -1,25 +1,20 @@
 package com.mc3699.codmod.entity.ariral;
 
 import com.mc3699.codmod.Codmod;
-import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
-import foundry.veil.api.client.render.VeilRenderSystem;
-import foundry.veil.api.client.render.VeilRenderer;
 import foundry.veil.api.client.render.rendertype.VeilRenderType;
-import foundry.veil.api.client.render.shader.program.ShaderProgram;
 import net.minecraft.client.model.PlayerModel;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
-import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 
 public class AriralEntityRenderer extends LivingEntityRenderer<AriralEntity, PlayerModel<AriralEntity>> {
-    ResourceLocation RENDER_TYPE = ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID,"ariral");
+    ResourceLocation RENDER_TYPE = ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "ariral");
 
     public AriralEntityRenderer(EntityRendererProvider.Context context) {
         super(context, new PlayerModel<>(context.bakeLayer(ModelLayers.PLAYER), false), 0);
@@ -33,14 +28,11 @@ public class AriralEntityRenderer extends LivingEntityRenderer<AriralEntity, Pla
             PoseStack poseStack,
             MultiBufferSource buffer,
             int packedLight
-    )
+    ) {
 
-    {
+        RenderType renderType = VeilRenderType.get(RENDER_TYPE, "codmod:textures/entity/ariral.png");
 
-        RenderType renderType = VeilRenderType.get(RENDER_TYPE,"codmod:textures/entity/ariral.png");
-
-        if(renderType == null)
-        {
+        if (renderType == null) {
             return;
         }
 

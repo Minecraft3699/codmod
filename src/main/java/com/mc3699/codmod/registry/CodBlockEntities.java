@@ -23,12 +23,14 @@ public class CodBlockEntities {
             Registries.BLOCK_ENTITY_TYPE,
             Codmod.MOD_ID
     );
+    public static final BlockEntityEntry<ScanningConsoleBlockEntity> SCANNING_CONSOLE = CodRegistrate.INSTANCE.blockEntity(
+            "scanning_console",
+            ScanningConsoleBlockEntity::new
+    ).validBlock(CodBlocks.SCANNING_CONSOLE).register();
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
-    }
-
-    public static final Supplier<BlockEntityType<MantleKeyBlockEntity>> MANTLE_KEY = BLOCK_ENTITIES.register(
+    }    public static final Supplier<BlockEntityType<MantleKeyBlockEntity>> MANTLE_KEY = BLOCK_ENTITIES.register(
             "mantle_key",
             () -> new BlockEntityType<>(MantleKeyBlockEntity::new, Set.of(CodBlocks.MANTLE_KEY.get()), null)
     );
@@ -55,10 +57,12 @@ public class CodBlockEntities {
 
     public static final Supplier<BlockEntityType<OpticalDriveInterfaceBlockEntity>> OPTICAL_DRIVE_INTERFACE = BLOCK_ENTITIES.register(
             "optical_drive_interface",
-            () -> new BlockEntityType<>(OpticalDriveInterfaceBlockEntity::new, Set.of(CodBlocks.OPTICAL_DRIVE_INTERFACE.get()), null)
+            () -> new BlockEntityType<>(
+                    OpticalDriveInterfaceBlockEntity::new,
+                    Set.of(CodBlocks.OPTICAL_DRIVE_INTERFACE.get()),
+                    null
+            )
     );
 
-    public static final BlockEntityEntry<ScanningConsoleBlockEntity> SCANNING_CONSOLE = CodRegistrate.INSTANCE.blockEntity("scanning_console",
-            ScanningConsoleBlockEntity::new
-    ).validBlock(CodBlocks.SCANNING_CONSOLE).register();
+
 }

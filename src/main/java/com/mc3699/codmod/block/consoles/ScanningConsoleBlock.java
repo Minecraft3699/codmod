@@ -16,7 +16,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @ParametersAreNonnullByDefault
 public class ScanningConsoleBlock extends BaseConsoleBlock {
     public ScanningConsoleBlock(Properties properties) {
-        super(properties.noOcclusion().lightLevel((state)->5));
+        super(properties.noOcclusion().lightLevel((state) -> 5));
     }
 
     @Override
@@ -26,11 +26,11 @@ public class ScanningConsoleBlock extends BaseConsoleBlock {
 
     @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return Shapes.box(-1,0,0,1,1,1);
+        return Shapes.box(-1, 0, 0, 1, 1, 1);
     }
 
     @Override
     protected VoxelShape getInteractionShape(BlockState state, BlockGetter level, BlockPos pos) {
-        return Shapes.box(-1,0,0,1,1,1);
+        return Shapes.box(-1, 0, 0, 1, 1, 1);
     }
 }

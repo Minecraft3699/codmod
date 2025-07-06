@@ -10,7 +10,7 @@ public class CodLang {
         CodRegistrate.INSTANCE.addRawLang("death.attack.bad_sun", "%1$s §4was dragged into the light");
         CodRegistrate.INSTANCE.addRawLang("death.attack.job_application", "%1$s was forced to get a job");
         CodRegistrate.INSTANCE.addRawLang("death.attack.cod_rod", "%1$s was ripped to shreds by a bunch of cod");
-        CodRegistrate.INSTANCE.addRawLang("death.attack.tripmine","%1$s was discombobulated by a Subspace Tripmine");
+        CodRegistrate.INSTANCE.addRawLang("death.attack.tripmine", "%1$s was discombobulated by a Subspace Tripmine");
         CodRegistrate.INSTANCE.addRawLang("death.attack.item_projectile", "%1$s was hit too hard by %2$s");
         CodRegistrate.INSTANCE.addRawLang("effect.codmod.heart_corruption", "ERR.EFFECT_TYPE=NULL");
         CodRegistrate.INSTANCE.addRawLang("block.codmod.molten_copper", "Molten Copper");
@@ -20,30 +20,30 @@ public class CodLang {
         CodRegistrate.INSTANCE.addRawLang("item.codmod.null_dried_kelp", "Null Dried Kelp");
         CodRegistrate.INSTANCE.addRawLang("item.codmod.null_chicken", "Null Chicken");
         CodRegistrate.INSTANCE.addRawLang("item.codmod.integrity_cookie", "§4Integrity §0Cookie");
-        CodRegistrate.INSTANCE.addRawLang("block.codmod.john_geometry","John Geometry");
+        CodRegistrate.INSTANCE.addRawLang("block.codmod.john_geometry", "John Geometry");
         CodRegistrate.INSTANCE.addRawLang("item.codmod.shrimp", "Shrimp");
         CodRegistrate.INSTANCE.addRawLang("item.codmod.application", "Job Application");
         CodRegistrate.INSTANCE.addRawLang("item.codmod.realcod", "Real Cod");
-        CodRegistrate.INSTANCE.addRawLang("block.codmod.stable_disruption","Stabilized Disruption");
-        CodRegistrate.INSTANCE.addRawLang("item.codmod.minicod","Minicod");
+        CodRegistrate.INSTANCE.addRawLang("block.codmod.stable_disruption", "Stabilized Disruption");
+        CodRegistrate.INSTANCE.addRawLang("item.codmod.minicod", "Minicod");
 
         // VOTV Foods
-        CodRegistrate.INSTANCE.addRawLang("item.codmod.baguette","Baguette");
-        CodRegistrate.INSTANCE.addRawLang("item.codmod.banana","Banana");
-        CodRegistrate.INSTANCE.addRawLang("item.codmod.bun","Bun");
-        CodRegistrate.INSTANCE.addRawLang("item.codmod.burger","Burger");
-        CodRegistrate.INSTANCE.addRawLang("item.codmod.cake","Cake (Not Lie)");
-        CodRegistrate.INSTANCE.addRawLang("item.codmod.cheese","Cheese");
-        CodRegistrate.INSTANCE.addRawLang("item.codmod.chicken_nugget","Chicken Nugget");
-        CodRegistrate.INSTANCE.addRawLang("item.codmod.chocolate","Chocolate");
-        CodRegistrate.INSTANCE.addRawLang("item.codmod.cucumber","Cucumber");
-        CodRegistrate.INSTANCE.addRawLang("item.codmod.food_box","Food Box");
-        CodRegistrate.INSTANCE.addRawLang("item.codmod.lemon","Lemon");
-        CodRegistrate.INSTANCE.addRawLang("item.codmod.mango","Mango");
-        CodRegistrate.INSTANCE.addRawLang("item.codmod.mre","MRE");
-        CodRegistrate.INSTANCE.addRawLang("item.codmod.orange","Orange");
-        CodRegistrate.INSTANCE.addRawLang("item.codmod.pizza","Pizza");
-        CodRegistrate.INSTANCE.addRawLang("item.codmod.taco","Taco");
-        CodRegistrate.INSTANCE.addRawLang("item.codmod.tomato","Tomato");
+        CodRegistrate.INSTANCE.addRawLang("item.codmod.baguette", "Baguette");
+        CodRegistrate.INSTANCE.addRawLang("item.codmod.banana", "Banana");
+        CodRegistrate.INSTANCE.addRawLang("item.codmod.bun", "Bun");
+        CodRegistrate.INSTANCE.addRawLang("item.codmod.burger", "Burger");
+        CodRegistrate.INSTANCE.addRawLang("item.codmod.cake", "Cake (Not Lie)");
+        CodRegistrate.INSTANCE.addRawLang("item.codmod.cheese", "Cheese");
+        CodRegistrate.INSTANCE.addRawLang("item.codmod.chicken_nugget", "Chicken Nugget");
+        CodRegistrate.INSTANCE.addRawLang("item.codmod.chocolate", "Chocolate");
+        CodRegistrate.INSTANCE.addRawLang("item.codmod.cucumber", "Cucumber");
+        CodRegistrate.INSTANCE.addRawLang("item.codmod.food_box", "Food Box");
+        CodRegistrate.INSTANCE.addRawLang("item.codmod.lemon", "Lemon");
+        CodRegistrate.INSTANCE.addRawLang("item.codmod.mango", "Mango");
+        CodRegistrate.INSTANCE.addRawLang("item.codmod.mre", "MRE");
+        CodRegistrate.INSTANCE.addRawLang("item.codmod.orange", "Orange");
+        CodRegistrate.INSTANCE.addRawLang("item.codmod.pizza", "Pizza");
+        CodRegistrate.INSTANCE.addRawLang("item.codmod.taco", "Taco");
+        CodRegistrate.INSTANCE.addRawLang("item.codmod.tomato", "Tomato");
     }
 }

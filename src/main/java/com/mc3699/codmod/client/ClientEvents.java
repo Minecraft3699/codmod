@@ -2,8 +2,6 @@ package com.mc3699.codmod.client;
 
 import com.mc3699.codmod.Codmod;
 import com.mc3699.codmod.entity.wisp.BaseWispEntityRenderer;
-import com.mojang.authlib.minecraft.client.MinecraftClient;
-import com.mojang.blaze3d.platform.NativeImage;
 import com.mojang.blaze3d.vertex.PoseStack;
 import dev.wendigodrip.thebrokenscript.api.util.Boxes;
 import foundry.veil.api.client.render.MatrixStack;
@@ -11,7 +9,6 @@ import foundry.veil.api.event.VeilRenderLevelStageEvent;
 import net.minecraft.client.Camera;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.Screenshot;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.renderer.LevelRenderer;
@@ -24,14 +21,8 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
-import net.neoforged.neoforge.client.event.ScreenshotEvent;
 import org.joml.Matrix4fc;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.awt.image.DataBufferInt;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.util.Objects;
 
 @EventBusSubscriber(value = Dist.CLIENT, modid = Codmod.MOD_ID)

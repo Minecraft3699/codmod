@@ -6,14 +6,13 @@ import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.server.players.UserBanList;
 import net.minecraft.server.players.UserBanListEntry;
-import net.minecraft.network.chat.Component;
+
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Objects;
 import java.util.Optional;
 
 public class TempBanCommand {
@@ -38,7 +37,8 @@ public class TempBanCommand {
 
                                             Optional<GameProfile> profile = server.getProfileCache().get(name);
                                             if (profile.isEmpty()) {
-                                                context.getSource().sendFailure(Component.literal("Player not found: " + name));
+                                                context.getSource()
+                                                        .sendFailure(Component.literal("Player not found: " + name));
                                                 return 0;
                                             }
 
@@ -50,15 +50,23 @@ public class TempBanCommand {
                                                     reason
                                             );
                                             server.getPlayerList().getBans().add(entry);
-                                            ServerPlayer serverplayer = context.getSource().getServer().getPlayerList().getPlayer(profile.get().getId());
+                                            ServerPlayer serverplayer = context.getSource()
+                                                    .getServer()
+                                                    .getPlayerList()
+                                                    .getPlayer(profile.get().getId());
 
-                                            if(serverplayer != null)
-                                            {
-                                                serverplayer.connection.disconnect(Component.literal("You have been temp-banned, join again for details."));
+                                            if (serverplayer != null) {
+                                                serverplayer.connection.disconnect(Component.literal(
+                                                        "You have been temp-banned, join again for details."));
                                             }
 
                                             context.getSource().sendSuccess(
-                                                    () -> Component.literal("Banned " + name + " for " + hours + " hours: " + reason),
+                                                    () -> Component.literal("Banned " +
+                                                                            name +
+                                                                            " for " +
+                                                                            hours +
+                                                                            " hours: " +
+                                                                            reason),
                                                     true
                                             );
                                             return 1;

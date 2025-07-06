@@ -10,7 +10,6 @@ import com.mc3699.codmod.entity.darkener.DarkenerEntityRenderer;
 import com.mc3699.codmod.entity.firelight.FireLightEntityRenderer;
 import com.mc3699.codmod.entity.friendlyFace.FriendlyFaceEntityRenderer;
 import com.mc3699.codmod.entity.gianni.GianniEntityRenderer;
-import com.mc3699.codmod.entity.itemProjectile.ItemProjectileEntity;
 import com.mc3699.codmod.entity.itemProjectile.ItemProjectileRenderer;
 import com.mc3699.codmod.entity.misguided.MisguidedEntityRenderer;
 import com.mc3699.codmod.entity.parachuteChest.ParachuteChestEntityModel;

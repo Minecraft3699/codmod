@@ -2,11 +2,8 @@ package com.mc3699.codmod.registry;
 
 import com.mc3699.codmod.Codmod;
 import com.mojang.serialization.Codec;
-import net.minecraft.core.Registry;
 import net.minecraft.core.component.DataComponentType;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -31,8 +28,7 @@ public class CodComponents {
                     .build()
     );
 
-    public static void register(IEventBus eventBus)
-    {
+    public static void register(IEventBus eventBus) {
         COMPONENTS.register(eventBus);
     }
 

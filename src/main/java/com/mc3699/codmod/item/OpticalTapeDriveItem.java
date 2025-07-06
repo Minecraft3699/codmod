@@ -17,7 +17,6 @@ import net.minecraft.world.item.component.CustomData;
 import org.jspecify.annotations.Nullable;
 
 import java.io.IOException;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,17 +34,20 @@ public class OpticalTapeDriveItem extends Item implements IMedia {
 
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+    public void appendHoverText(
+            ItemStack stack,
+            TooltipContext context,
+            List<Component> tooltipComponents,
+            TooltipFlag tooltipFlag
+    ) {
         CustomData data = stack.get(DataComponents.CUSTOM_DATA);
 
         String label = stack.getOrDefault(CodComponents.DISK_LABEL.get(), "No Label");
         Long storedSize = stack.getOrDefault(CodComponents.DISK_SIZE.get(), 0L);
         tooltipComponents.add(Component.literal("Drive Label: " + label).withStyle(ChatFormatting.AQUA));
 
-        if(data != null)
-        {
-            if(data.getUnsafe().contains("diskID"))
-            {
+        if (data != null) {
+            if (data.getUnsafe().contains("diskID")) {
                 String idText = data.getUnsafe().getString("diskID");
                 String idHex = Integer.toHexString(Integer.parseInt(idText));
                 tooltipComponents.add(Component.literal("Drive ID: " + idHex).withStyle(ChatFormatting.GRAY));
@@ -55,7 +57,7 @@ public class OpticalTapeDriveItem extends Item implements IMedia {
         }
 
 
-        tooltipComponents.add(Component.literal("Size: "+formatSize(storedSize)).withStyle(ChatFormatting.GRAY));
+        tooltipComponents.add(Component.literal("Size: " + formatSize(storedSize)).withStyle(ChatFormatting.GRAY));
     }
 
     private String formatSize(long bytes) {
@@ -67,8 +69,7 @@ public class OpticalTapeDriveItem extends Item implements IMedia {
 
     @Override
     public boolean setLabel(ItemStack stack, @Nullable String label) {
-        if(label == null)
-        {
+        if (label == null) {
             stack.remove(CodComponents.DISK_LABEL);
         } else {
             stack.set(CodComponents.DISK_LABEL, label);
@@ -79,18 +80,22 @@ public class OpticalTapeDriveItem extends Item implements IMedia {
     @Override
     public @Nullable Mount createDataMount(ItemStack stack, ServerLevel level) {
         CustomData data = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY);
-        String diskID = data.getUnsafe().contains("diskID") ? data.getUnsafe().getString("diskID") : String.valueOf(level.random.nextInt());
-        if(!data.getUnsafe().contains("diskID"))
-        {
-            stack.update(DataComponents.CUSTOM_DATA, CustomData.EMPTY, customData -> customData.update(nbt -> nbt.putString("diskID",diskID)));
+        String diskID = data.getUnsafe().contains("diskID") ?
+                        data.getUnsafe().getString("diskID") :
+                        String.valueOf(level.random.nextInt());
+        if (!data.getUnsafe().contains("diskID")) {
+            stack.update(
+                    DataComponents.CUSTOM_DATA,
+                    CustomData.EMPTY,
+                    customData -> customData.update(nbt -> nbt.putString("diskID", diskID))
+            );
         }
 
-        Mount mount = ComputerCraftAPI.createSaveDirMount(level.getServer(), "optical_drive/"+diskID, 10000000L);
+        Mount mount = ComputerCraftAPI.createSaveDirMount(level.getServer(), "optical_drive/" + diskID, 10000000L);
 
-        if(mount instanceof WritableMount writableMount)
-        {
+        if (mount instanceof WritableMount writableMount) {
             try {
-                long used = calculateMountSize(writableMount,"");
+                long used = calculateMountSize(writableMount, "");
                 stack.set(CodComponents.DISK_SIZE, used);
             } catch (IOException e) {
                 stack.set(CodComponents.DISK_SIZE, 0L);

@@ -1,6 +1,5 @@
 package com.mc3699.codmod.block.server;
 
-import com.mc3699.codmod.registry.CodBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -13,7 +12,6 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.material.FluidState;
@@ -60,15 +58,12 @@ public class ServerBlock extends Block {
     @Override
     protected void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean movedByPiston) {
         super.onPlace(state, level, pos, oldState, movedByPiston);
-        if(level instanceof ServerLevel serverLevel)
-        {
+        if (level instanceof ServerLevel serverLevel) {
 
-            if(serverLevel.getBlockState(pos.below()).getBlock().equals(this))
-            {
-                if(serverLevel.getBlockState(pos.below()).getValue(IS_TOP))
-                {
+            if (serverLevel.getBlockState(pos.below()).getBlock().equals(this)) {
+                if (serverLevel.getBlockState(pos.below()).getValue(IS_TOP)) {
                     BlockState newState = state.setValue(IS_TOP, false);
-                    serverLevel.setBlock(pos.below(), newState,3);
+                    serverLevel.setBlock(pos.below(), newState, 3);
                 }
 
             }
@@ -77,11 +72,16 @@ public class ServerBlock extends Block {
     }
 
     @Override
-    public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player, boolean willHarvest, FluidState fluid) {
-        if(level instanceof ServerLevel serverLevel)
-        {
-            if(serverLevel.getBlockState(pos.below()).getBlock().equals(this))
-            {
+    public boolean onDestroyedByPlayer(
+            BlockState state,
+            Level level,
+            BlockPos pos,
+            Player player,
+            boolean willHarvest,
+            FluidState fluid
+    ) {
+        if (level instanceof ServerLevel serverLevel) {
+            if (serverLevel.getBlockState(pos.below()).getBlock().equals(this)) {
                 serverLevel.destroyBlock(pos.below(), true);
             }
 
@@ -93,28 +93,30 @@ public class ServerBlock extends Block {
     }
 
     @Override
-    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
+    protected InteractionResult useWithoutItem(
+            BlockState state,
+            Level level,
+            BlockPos pos,
+            Player player,
+            BlockHitResult hitResult
+    ) {
 
-        if(level instanceof ServerLevel serverLevel)
-        {
+        if (level instanceof ServerLevel serverLevel) {
 
-            if(serverLevel.getBlockState(pos.below()).getBlock().equals(this))
-            {
-                if(!serverLevel.getBlockState(pos.below()).getValue(IS_TOP))
-                {
+            if (serverLevel.getBlockState(pos.below()).getBlock().equals(this)) {
+                if (!serverLevel.getBlockState(pos.below()).getValue(IS_TOP)) {
 
-                    if(state.getValue(ONLINE))
-                    {
+                    if (state.getValue(ONLINE)) {
                         BlockState topState = state.setValue(ONLINE, false);
                         serverLevel.setBlock(pos, topState, 3);
 
-                        BlockState bottomState = state.setValue(ONLINE,false).setValue(IS_TOP,false);
-                        serverLevel.setBlock(pos.below(), bottomState,3);
+                        BlockState bottomState = state.setValue(ONLINE, false).setValue(IS_TOP, false);
+                        serverLevel.setBlock(pos.below(), bottomState, 3);
                     } else {
                         BlockState topState = state.setValue(ONLINE, true);
                         serverLevel.setBlock(pos, topState, 3);
-                        BlockState bottomState = state.setValue(ONLINE,true).setValue(IS_TOP,false);
-                        serverLevel.setBlock(pos.below(), bottomState,3);
+                        BlockState bottomState = state.setValue(ONLINE, true).setValue(IS_TOP, false);
+                        serverLevel.setBlock(pos.below(), bottomState, 3);
                     }
                     return InteractionResult.SUCCESS;
                 }

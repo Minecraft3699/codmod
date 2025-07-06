@@ -12,13 +12,9 @@ import com.mc3699.codmod.entity.trialTrader.TrialTraderEntity;
 import com.mc3699.codmod.entity.vay.VayEntity;
 import com.mc3699.codmod.entity.wisp.wispTypes.YellowWispEntity;
 import com.mc3699.codmod.registry.CodEntities;
-import dev.wendigodrip.thebrokenscript.events.misc.DamageEvent;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.DamageTypes;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
-import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 
 @EventBusSubscriber(modid = Codmod.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
 public class ModEvents {

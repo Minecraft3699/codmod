@@ -12,19 +12,21 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class CodPeripheralUpgradeTypes {
 
-    public static final DeferredRegister<UpgradeType<? extends IPocketUpgrade>> UPGRADES = DeferredRegister.create(IPocketUpgrade.typeRegistry(), Codmod.MOD_ID);
+    public static final DeferredRegister<UpgradeType<? extends IPocketUpgrade>> UPGRADES = DeferredRegister.create(
+            IPocketUpgrade.typeRegistry(),
+            Codmod.MOD_ID
+    );
 
     public static final DeferredHolder<UpgradeType<? extends IPocketUpgrade>, UpgradeType<IPocketUpgrade>> COMMAND_MODULE_UPGRADE =
             UPGRADES.register("command_module", () -> UpgradeType.simple(new CommandModuleUpgrade()));
 
     public static final DeferredHolder<UpgradeType<? extends IPocketUpgrade>, UpgradeType<IPocketUpgrade>> HUB_MODULE_UPGRADE =
-            UPGRADES.register("hub_module",() -> UpgradeType.simple(new HubModuleUpgrade()));
+            UPGRADES.register("hub_module", () -> UpgradeType.simple(new HubModuleUpgrade()));
 
     public static final DeferredHolder<UpgradeType<? extends IPocketUpgrade>, UpgradeType<IPocketUpgrade>> INVENTORY_MODULE_UPGRADE =
-            UPGRADES.register("inventory_module",() -> UpgradeType.simple(new InventoryModuleUpgrade()));
+            UPGRADES.register("inventory_module", () -> UpgradeType.simple(new InventoryModuleUpgrade()));
 
-    public static void register(IEventBus eventBus)
-    {
+    public static void register(IEventBus eventBus) {
         UPGRADES.register(eventBus);
     }
 

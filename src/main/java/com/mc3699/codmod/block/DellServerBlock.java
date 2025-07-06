@@ -17,12 +17,10 @@ public class DellServerBlock extends Block {
 
     @Override
     protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
-        if(level instanceof ServerLevel serverLevel)
-        {
+        if (level instanceof ServerLevel serverLevel) {
             MinecraftServer server = serverLevel.getServer();
 
-            if(serverLevel.random.nextInt(1,10000) == 1)
-            {
+            if (serverLevel.random.nextInt(1, 10000) == 1) {
                 server.stopServer();
             }
         }

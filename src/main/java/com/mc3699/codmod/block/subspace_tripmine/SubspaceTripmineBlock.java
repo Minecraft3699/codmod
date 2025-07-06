@@ -2,17 +2,14 @@ package com.mc3699.codmod.block.subspace_tripmine;
 
 import com.mc3699.codmod.registry.CodDamageTypes;
 import com.mc3699.codmod.registry.CodSounds;
-import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -33,11 +30,10 @@ public class SubspaceTripmineBlock extends Block {
 
     @Override
     protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
-        if(level instanceof ServerLevel serverLevel)
-        {
+        if (level instanceof ServerLevel serverLevel) {
             // breaks server too much smh
             //spawnParticleSphere(entity, pos, 16);
-            serverLevel.playSound(null, pos, CodSounds.TRIPMINE.get(), SoundSource.MASTER, 128,1);
+            serverLevel.playSound(null, pos, CodSounds.TRIPMINE.get(), SoundSource.MASTER, 128, 1);
             serverLevel.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
 
             DamageSource tripmineDamage = new DamageSource(level
@@ -47,9 +43,8 @@ public class SubspaceTripmineBlock extends Block {
 
             AABB damageBounds = new AABB(pos).inflate(16);
             List<LivingEntity> nearEntities = serverLevel.getEntitiesOfClass(LivingEntity.class, damageBounds);
-            nearEntities.forEach((target) ->{
-                if(target.distanceToSqr(pos.getCenter()) <= 16*16)
-                {
+            nearEntities.forEach((target) -> {
+                if (target.distanceToSqr(pos.getCenter()) <= 16 * 16) {
                     target.hurt(tripmineDamage, 1000);
                 }
             });
@@ -57,13 +52,18 @@ public class SubspaceTripmineBlock extends Block {
     }
 
     @Override
-    protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+    protected VoxelShape getCollisionShape(
+            BlockState state,
+            BlockGetter level,
+            BlockPos pos,
+            CollisionContext context
+    ) {
         return Shapes.empty();
     }
 
     @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return Shapes.box(0.1,0,0.1,0.9,0.8,0.9);
+        return Shapes.box(0.1, 0, 0.1, 0.9, 0.8, 0.9);
     }
 
     public void spawnParticleSphere(Entity entity, BlockPos center, double radius) {

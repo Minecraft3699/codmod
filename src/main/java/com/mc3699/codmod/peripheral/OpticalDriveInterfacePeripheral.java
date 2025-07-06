@@ -1,9 +1,7 @@
 package com.mc3699.codmod.peripheral;
 
-import com.mc3699.codmod.block.opticalDriveInterface.OpticalDriveInterfaceBlock;
 import com.mc3699.codmod.block.opticalDriveInterface.OpticalDriveInterfaceBlockEntity;
 import com.mc3699.codmod.item.OpticalTapeDriveItem;
-import dan200.computercraft.api.filesystem.WritableMount;
 import dan200.computercraft.api.peripheral.IComputerAccess;
 import dan200.computercraft.api.peripheral.IPeripheral;
 import net.minecraft.server.level.ServerLevel;
@@ -29,7 +27,9 @@ public class OpticalDriveInterfacePeripheral implements IPeripheral {
     public void attach(@NotNull IComputerAccess computer) {
         this.computer = computer;
         ItemStack disk = drive.getDisk();
-        if (!disk.isEmpty() && disk.getItem() instanceof OpticalTapeDriveItem media && drive.getLevel() instanceof ServerLevel serverLevel) {
+        if (!disk.isEmpty() &&
+            disk.getItem() instanceof OpticalTapeDriveItem media &&
+            drive.getLevel() instanceof ServerLevel serverLevel) {
             try {
                 computer.mount("optical", media.createDataMount(disk, serverLevel));
             } catch (Exception e) {
@@ -47,8 +47,7 @@ public class OpticalDriveInterfacePeripheral implements IPeripheral {
 
     @Override
     public void detach(@NotNull IComputerAccess computer) {
-        if(this.computer != null)
-        {
+        if (this.computer != null) {
             this.computer.unmount("optical");
         }
 

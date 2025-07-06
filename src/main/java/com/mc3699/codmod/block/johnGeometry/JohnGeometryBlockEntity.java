@@ -1,12 +1,10 @@
 package com.mc3699.codmod.block.johnGeometry;
 
 import com.mc3699.codmod.registry.CodBlockEntities;
-import com.mc3699.codmod.registry.CodBlocks;
 import com.mc3699.codmod.registry.CodSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -15,7 +13,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
@@ -31,14 +28,12 @@ public class JohnGeometryBlockEntity extends BlockEntity {
     public static <T extends BlockEntity> void tick(Level level, BlockPos pos, BlockState blockState, T t) {
 
 
-        if(level instanceof ServerLevel serverLevel)
-        {
+        if (level instanceof ServerLevel serverLevel) {
             AABB searchRange = new AABB(pos).inflate(1);
 
             List<Player> playerList = serverLevel.getEntitiesOfClass(Player.class, searchRange);
 
-            if(!playerList.isEmpty())
-            {
+            if (!playerList.isEmpty()) {
                 // gotta make sure everyone knows john geometry is around
                 serverLevel.playSound(null, pos, CodSounds.GEOMETRY.get(), SoundSource.MASTER, 512, 1);
 

@@ -2,8 +2,6 @@ package com.mc3699.codmod.item;
 
 import com.mc3699.codmod.entity.itemProjectile.ItemProjectileEntity;
 import com.mc3699.codmod.registry.CodEntities;
-import com.mc3699.codmod.registry.CodItems;
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.server.MinecraftServer;
@@ -34,10 +32,8 @@ public class NetworkFuckerItem extends Item {
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand usedHand) {
         player.startUsingItem(usedHand);
-        if(level instanceof ServerLevel serverLevel)
-        {
-            if(ITEMS.isEmpty())
-            {
+        if (level instanceof ServerLevel serverLevel) {
+            if (ITEMS.isEmpty()) {
                 MinecraftServer server = serverLevel.getServer();
                 Registry<Item> itemRegistry = server.registryAccess().registryOrThrow(Registries.ITEM);
                 itemRegistry.forEach(ITEMS::add);
@@ -54,12 +50,18 @@ public class NetworkFuckerItem extends Item {
     @Override
     public void onUseTick(Level level, LivingEntity livingEntity, ItemStack stack, int remainingUseDuration) {
 
-        for(int i = 0; i < 2; i++)
-        {
+        for (int i = 0; i < 2; i++) {
             Item randomItem = ITEMS.isEmpty() ? Items.COD : ITEMS.get(RANDOM.nextInt(ITEMS.size()));
             ItemStack randomStack = new ItemStack(randomItem, 1);
 
-            ItemProjectileEntity projectile = new ItemProjectileEntity(CodEntities.ITEM_PROJECTILE.get(), level, randomStack, 5,10, false);
+            ItemProjectileEntity projectile = new ItemProjectileEntity(
+                    CodEntities.ITEM_PROJECTILE.get(),
+                    level,
+                    randomStack,
+                    5,
+                    10,
+                    false
+            );
             Vec3 eyePos = livingEntity.getEyePosition();
             Vec3 lookVec = livingEntity.getViewVector(1.0F).normalize().scale(0.8);
             projectile.setPos(eyePos.x + lookVec.x, eyePos.y + lookVec.y, eyePos.z + lookVec.z);
