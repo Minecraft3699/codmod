@@ -106,6 +106,30 @@ public class CodBlocks {
             .lang("Ugly Wallpaper")
             .register();
 
+    public static final BlockEntry<Block> RED_MOIST_CARPET = CodRegistrate.INSTANCE.block("red_moist_carpet", Block::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.RED_WOOL))
+            .simpleItem()
+            .lang("Stained Moist Carpet")
+            .register();
+
+    public static final BlockEntry<Block> RED_CEILING_TILE = CodRegistrate.INSTANCE.block("red_ceiling_tile", Block::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.SPONGE))
+            .simpleItem()
+            .lang("Stained Ceiling Tile")
+            .register();
+
+    public static final BlockEntry<Block> RED_CEILING_LIGHT = CodRegistrate.INSTANCE.block("red_ceiling_light", Block::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.GLOWSTONE))
+            .simpleItem()
+            .lang("Stained Ceiling Light")
+            .register();
+
+    public static final BlockEntry<Block> RED_UGLY_WALLPAPER = CodRegistrate.INSTANCE.block("red_ugly_wallpaper", Block::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD))
+            .simpleItem()
+            .lang("Stained Ugly Wallpaper")
+            .register();
+
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);

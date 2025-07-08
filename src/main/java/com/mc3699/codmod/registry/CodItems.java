@@ -162,7 +162,7 @@ public class CodItems {
                     ContinumSlicerItem::new
             )
             .properties(properties -> properties)
-            .lang("§4Continum Slicer")
+            .lang("§5Continuum Slicer")
             .register();
 
     public static final ItemEntry<MiningHeadgearItem> MINING_HEADGEAR = CodRegistrate.INSTANCE.item(
@@ -170,7 +170,7 @@ public class CodItems {
                     MiningHeadgearItem::new
             )
             .properties(properties -> properties)
-            .lang("Mining Headgear")
+            .lang("Mining Helmet")
             .register();
 
     public static final ItemEntry<Item> RED = CodRegistrate.INSTANCE.item("red", Item::new)
@@ -184,6 +184,14 @@ public class CodItems {
             )
             .properties(properties -> properties)
             .lang("§fSoul §0Taker")
+            .register();
+
+    public static final ItemEntry<VoidBreakerItem> VOID_BREAKER = CodRegistrate.INSTANCE.item(
+                    "voidbreaker",
+                    VoidBreakerItem::new
+            )
+            .properties(properties -> properties)
+            .lang("Voidbreaker")
             .register();
 
     // VOTV Foods

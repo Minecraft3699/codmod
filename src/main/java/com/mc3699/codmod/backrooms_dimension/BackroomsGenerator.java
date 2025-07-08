@@ -1,5 +1,6 @@
 package com.mc3699.codmod.backrooms_dimension;
 
+import com.mc3699.codmod.backrooms_dimension.levels.BackroomsLevelZero;
 import com.mc3699.codmod.registry.CodBlocks;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -32,14 +33,6 @@ public class BackroomsGenerator extends ChunkGenerator {
                     BiomeSource.CODEC.fieldOf("biome_source").forGetter(gen -> gen.biomeSource))
             .apply(instance, BackroomsGenerator::new));
 
-    List<BackroomsStructures.BackroomsStructureInfo> ROAD_XP_STRUCTURES = List.of(
-            BackroomsStructures.STREET_XP_COD_STORE,
-            BackroomsStructures.STREET_XP_FARM,
-            BackroomsStructures.STREET_XP_FOREST,
-            BackroomsStructures.STREET_XP_POND,
-            BackroomsStructures.STREET_XP_HOUSE
-    );
-
     public BackroomsGenerator(BiomeSource biomeSource) {
         super(biomeSource);
     }
@@ -62,13 +55,9 @@ public class BackroomsGenerator extends ChunkGenerator {
         // nuh uh
     }
 
-    private BackroomsStructures.BackroomsStructureInfo rollStructure(
-            List<BackroomsStructures.BackroomsStructureInfo> possibleStructures,
-            WorldGenRegion genRegion
-    ) {
-        int index = genRegion.getRandom().nextInt(0, possibleStructures.size());
-        return possibleStructures.get(index);
-    }
+
+    BackroomsLevelZero levelZero = new BackroomsLevelZero();
+
 
     @Override
     public void buildSurface(
@@ -77,86 +66,9 @@ public class BackroomsGenerator extends ChunkGenerator {
             RandomState randomState,
             ChunkAccess chunkAccess
     ) {
-        BRGenUtil.fillLayer(chunkAccess, 0, Blocks.BEDROCK);
-        BRGenUtil.fillLayer(chunkAccess, 1, CodBlocks.MOIST_CARPET.get());
 
+        levelZero.generate(worldGenRegion, structureManager, randomState, chunkAccess);
 
-        boolean walls = true;
-        boolean lights = true;
-        if (chunkAccess.getPos().x % 100 == 0) {
-            placeBackroomsStructure(
-                    BackroomsStructures.STREET_Z,
-                    worldGenRegion,
-                    chunkAccess.getPos().getWorldPosition().atY(1),
-                    worldGenRegion.getRandom()
-            );
-            walls = false;
-            lights = false;
-        }
-
-        if (chunkAccess.getPos().x % 100 == 1) {
-            if (worldGenRegion.getRandom().nextInt(0, 4) == 0) {
-                BackroomsStructures.BackroomsStructureInfo structureInfo = rollStructure(
-                        ROAD_XP_STRUCTURES,
-                        worldGenRegion
-                );
-                placeBackroomsStructure(
-                        structureInfo,
-                        worldGenRegion,
-                        chunkAccess.getPos().getWorldPosition().atY(1),
-                        worldGenRegion.getRandom()
-                );
-            } else {
-                placeBackroomsStructure(
-                        BackroomsStructures.STREET_XP_EMPTY,
-                        worldGenRegion,
-                        chunkAccess.getPos().getWorldPosition().atY(1),
-                        worldGenRegion.getRandom()
-                );
-            }
-            walls = false;
-            lights = false;
-        }
-
-        if (chunkAccess.getPos().x % 100 == 99) {
-            placeBackroomsStructure(
-                    BackroomsStructures.STREET_XN_EMPTY,
-                    worldGenRegion,
-                    chunkAccess.getPos().getWorldPosition().atY(1),
-                    worldGenRegion.getRandom()
-            );
-            walls = false;
-            lights = false;
-        }
-
-        //placeNbtStructure(worldGenRegion, chunkAccess, chunkAccess.getPos().getWorldPosition().atY(2), worldGenRegion.getRandom());
-        BRGenUtil.fillLayer(chunkAccess, 9, CodBlocks.CEILING_TILE.get());
-
-
-        if (walls) {
-            BRGenUtil.generateBasicWalls(chunkAccess, 1, 9, CodBlocks.UGLY_WALLPAPER.get());
-        }
-
-        if (lights) {
-            BRGenUtil.generateLights(chunkAccess, 9);
-        }
-    }
-
-    private void placeBackroomsStructure(
-            BackroomsStructures.BackroomsStructureInfo structureInfo,
-            WorldGenRegion world,
-            BlockPos startPos,
-            RandomSource random
-    ) {
-        StructureTemplateManager templateManager = world.getLevel().getStructureManager();
-        Optional<StructureTemplate> structureTemplate = templateManager.get(structureInfo.structure());
-
-        if (structureTemplate.isPresent()) {
-            StructureTemplate template = structureTemplate.get();
-            StructurePlaceSettings placeSettings = new StructurePlaceSettings().setRandom(random)
-                    .setIgnoreEntities(true);
-            template.placeInWorld(world, startPos, startPos.offset(structureInfo.offset()), placeSettings, random, 2);
-        }
     }
 
     @Override

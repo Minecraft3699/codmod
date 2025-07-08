@@ -2,6 +2,6 @@
   "message_id": "bad_sun",
   "exhaustion": 0.0,
   "scaling": "never",
-  "effects": "hurt",
+  "effects": "burning",
   "death_message_type": "default"
 }

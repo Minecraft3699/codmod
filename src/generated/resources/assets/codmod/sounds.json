@@ -1,4 +1,10 @@
 {
+  "9_27_2016": {
+    "sounds": [
+      "codmod:9_27_2016"
+    ],
+    "subtitle": "subtitles.codmod.9_27_2016"
+  },
   "anything": {
     "sounds": [
       "codmod:anything"

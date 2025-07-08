@@ -27,6 +27,12 @@ public class NetworkEvents {
                 FoliageColorPayload::handle
         );
 
+        registrar.playToClient(
+                ClientBadSunSyncPayload.TYPE,
+                ClientBadSunSyncPayload.CODEC,
+                ClientBadSunSyncPayload::handle
+        );
+
     }
 
     public static void sendToServer(CustomPacketPayload payload) {

@@ -29,12 +29,15 @@ public class DatagenBlockTagProvider extends BlockTagsProvider {
                 .add(CodBlocks.STABLE_DISRUPTION.get())
                 .add(CodBlocks.SERVER.get())
                 .add(CodBlocks.CEILING_LIGHT.get())
+                .add(CodBlocks.RED_CEILING_LIGHT.get())
         ;
         tag(BlockTags.MINEABLE_WITH_AXE)
                 .add(CodBlocks.UGLY_WALLPAPER.get())
+                .add(CodBlocks.RED_UGLY_WALLPAPER.get())
         ;
         tag(BlockTags.WOOL)
                 .add(CodBlocks.MOIST_CARPET.get())
+                .add(CodBlocks.RED_MOIST_CARPET.get())
         ;
 
         tag(BlockTags.MINEABLE_WITH_HOE)

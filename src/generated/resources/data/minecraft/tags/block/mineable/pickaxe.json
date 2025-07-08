@@ -5,6 +5,7 @@
     "codmod:uav_controller",
     "codmod:stable_disruption",
     "codmod:server",
-    "codmod:ceiling_light"
+    "codmod:ceiling_light",
+    "codmod:red_ceiling_light"
   ]
 }

@@ -1,6 +1,7 @@
 package com.mc3699.codmod.registry;
 
 import com.tterrag.registrate.util.entry.RegistryEntry;
+import net.minecraft.client.resources.sounds.Sound;
 import net.minecraft.sounds.SoundEvent;
 
 public class CodSounds {
@@ -28,6 +29,11 @@ public class CodSounds {
 
     public static final RegistryEntry<SoundEvent, SoundEvent> GEOMETRY = CodRegistrate.INSTANCE.sound("geometry")
             .simple(false)
+            .register();
+
+    public static final RegistryEntry<SoundEvent, SoundEvent> DISK_2016 = CodRegistrate.INSTANCE.sound("9_27_2016")
+            .simple(false)
+            .subtitle("? ? ?")
             .register();
 
     public static void register() {

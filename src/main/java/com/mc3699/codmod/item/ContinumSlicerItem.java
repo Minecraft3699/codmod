@@ -40,8 +40,9 @@ public class ContinumSlicerItem extends SwordItem {
             player.setDeltaMovement(lookVec.x * strength, lookVec.y * strength, lookVec.z * strength);
             player.hurtMarked = true;
             player.getCooldowns().addCooldown(this, 40);
+            player.getPersistentData().putBoolean("NoFall",true);
             serverLevel.sendParticles(
-                    new DustParticleOptions(new Vector3f(1.0F, 1.0F, 1.0F), 5.0F),
+                    new DustParticleOptions(new Vector3f(1.0F, 0.0F, 1.0F), 5.0F),
                     player.getX() + 0.5, player.getY() + 0.5, player.getZ() + 0.5,
                     8, // Count
                     0.0, 1.0, 0.0, // Spread
