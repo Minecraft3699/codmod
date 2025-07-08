@@ -2,6 +2,7 @@ package com.mc3699.codmod.event;
 
 import com.mc3699.codmod.Codmod;
 import com.mc3699.codmod.handlers.BadSunEvents;
+import com.mc3699.codmod.network.ClientBadSunSyncPayload;
 import com.mc3699.codmod.network.FoliageColorPayload;
 import com.mc3699.codmod.registry.CodSounds;
 import dev.wendigodrip.thebrokenscript.api.event.BaseEvent;
@@ -31,11 +32,13 @@ public class BadSunEvent extends BaseEvent {
                     player.getY(),
                     player.getZ(),
                     CodSounds.BAD_SUN_SIREN.get(),
-                    SoundSource.PLAYERS,
+                    SoundSource.MASTER,
                     1,
                     1
             );
         }
+
+        PacketDistributor.sendToAllPlayers(new ClientBadSunSyncPayload(true));
 
         Codmod.SERVER_QUEUE.add(
                 63 * 20, () -> {

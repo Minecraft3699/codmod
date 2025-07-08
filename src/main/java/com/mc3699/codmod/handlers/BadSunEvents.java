@@ -65,13 +65,12 @@ public class BadSunEvents {
         if (server == null) return false;
         if (!player.level().isDay()) return false;
 
-        BlockPos pos = BlockPos.containing(player.position().add(0, 1, 0));
         ServerLevel level = player.serverLevel();
 
         Vec3 sunPos = getSunDirection(level, 0).scale(1000);
 
-        return level.canSeeSky(pos) && level.clip(new ClipContext(
-                player.position().add(new Vec3(0,1.8,0)),
+        return level.clip(new ClipContext(
+                player.position().add(new Vec3(0,1.62,0)),
                 sunPos,
                 ClipContext.Block.VISUAL,
                 ClipContext.Fluid.NONE,
