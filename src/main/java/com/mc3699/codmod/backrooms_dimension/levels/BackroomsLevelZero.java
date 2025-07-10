@@ -29,38 +29,43 @@ public class BackroomsLevelZero extends BackroomsLevel {
     );
 
     @Override
+    public int getEndLevel() {
+        return 9;
+    }
+
+    @Override
     public void generate(WorldGenRegion worldGenRegion, StructureManager structureManager, RandomState randomState, ChunkAccess chunkAccess) {
 
         BRGenUtil.fillLayer(chunkAccess, 0, Blocks.BEDROCK);
         if(BRGenUtil.isChunkInNoise(chunkAccess, RedRoomNoise, 0.3))
         {
-            BRGenUtil.fillLayer(chunkAccess, 1, CodBlocks.RED_MOIST_CARPET.get());
-            BRGenUtil.fillLayer(chunkAccess, 9, CodBlocks.RED_CEILING_TILE.get());
+            BRGenUtil.fillLayer(chunkAccess, getStartLevel(), CodBlocks.RED_MOIST_CARPET.get());
+            BRGenUtil.fillLayer(chunkAccess, getEndLevel(), CodBlocks.RED_CEILING_TILE.get());
             if(!BRGenUtil.isChunkInNoise(chunkAccess, UnlitRoomNoise, 0.15))
             {
-                BRGenUtil.generateLights(chunkAccess, 9, true);
+                BRGenUtil.generateLights(chunkAccess, getEndLevel(), true);
             }
             if(!BRGenUtil.isChunkInNoise(chunkAccess, EmptyAreaNoise, 0.2))
             {
-                BRGenUtil.generateBasicWalls(chunkAccess, 1, 9, CodBlocks.RED_UGLY_WALLPAPER.get());
+                BRGenUtil.generateBasicWalls(chunkAccess, getStartLevel(), getEndLevel(), CodBlocks.RED_UGLY_WALLPAPER.get());
             }
         } else {
-            BRGenUtil.fillLayer(chunkAccess, 1, CodBlocks.MOIST_CARPET.get());
-            BRGenUtil.fillLayer(chunkAccess, 9, CodBlocks.CEILING_TILE.get());
+            BRGenUtil.fillLayer(chunkAccess, getStartLevel()+1, CodBlocks.MOIST_CARPET.get());
+            BRGenUtil.fillLayer(chunkAccess, getEndLevel(), CodBlocks.CEILING_TILE.get());
             if(!BRGenUtil.isChunkInNoise(chunkAccess, UnlitRoomNoise, 0.15))
             {
-                BRGenUtil.generateLights(chunkAccess, 9, false);
+                BRGenUtil.generateLights(chunkAccess, getEndLevel(), false);
             }
             if(!BRGenUtil.isChunkInNoise(chunkAccess, EmptyAreaNoise, 0.2))
             {
-                BRGenUtil.generateBasicWalls(chunkAccess, 1, 9, CodBlocks.UGLY_WALLPAPER.get());
+                BRGenUtil.generateBasicWalls(chunkAccess, getStartLevel()+1, getEndLevel(), CodBlocks.UGLY_WALLPAPER.get());
             }
         }
 
         if(worldGenRegion.getRandom().nextInt(0,300) == 1)
         {
             BackroomsStructures.BackroomsStructureInfo structureInfo = BRGenUtil.rollStructure(STRUCTURE_POOL);
-            BRGenUtil.placeBackroomsStructure(structureInfo, worldGenRegion, chunkAccess.getPos().getWorldPosition().atY(2), worldGenRegion.getRandom());
+            BRGenUtil.placeBackroomsStructure(structureInfo, worldGenRegion, chunkAccess.getPos().getWorldPosition().atY(getStartLevel()+2), worldGenRegion.getRandom());
         }
 
 

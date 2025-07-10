@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "codmod:block/threshold_backplane"
+    }
+  }
+}

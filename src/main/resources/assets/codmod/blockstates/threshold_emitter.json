@@ -1,0 +1,10 @@
+{
+  "variants": {
+
+    "facing=north": {"model": "codmod:block/threshold_emitter"},
+    "facing=east": {"model": "codmod:block/threshold_emitter", "y": 90},
+    "facing=south": {"model": "codmod:block/threshold_emitter", "y": 180},
+    "facing=west": {"model": "codmod:block/threshold_emitter", "y": 270}
+
+  }
+}

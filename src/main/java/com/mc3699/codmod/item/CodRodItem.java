@@ -42,7 +42,6 @@ public class CodRodItem extends MaceItem {
                 entity.remove(Entity.RemovalReason.DISCARDED);
             }
 
-
             serverLevel.playSound(
                     null,
                     BlockPos.containing(codSpawnPos),

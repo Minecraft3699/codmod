@@ -1,0 +1,10 @@
+{
+  "variants": {
+
+    "facing=north": {"model": "codmod:block/threshold_backplane"},
+    "facing=east": {"model": "codmod:block/threshold_backplane", "y": 90},
+    "facing=south": {"model": "codmod:block/threshold_backplane", "y": 180},
+    "facing=west": {"model": "codmod:block/threshold_backplane", "y": 270}
+
+  }
+}

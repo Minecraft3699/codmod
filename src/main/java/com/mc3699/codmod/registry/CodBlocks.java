@@ -2,6 +2,7 @@ package com.mc3699.codmod.registry;
 
 import com.mc3699.codmod.Codmod;
 import com.mc3699.codmod.block.DellServerBlock;
+import com.mc3699.codmod.block.thresholdParts.ThresholdPortalBlock;
 import com.mc3699.codmod.block.consoles.ScanningConsoleBlock;
 import com.mc3699.codmod.block.johnGeometry.JohnGeometryBlock;
 import com.mc3699.codmod.block.launchpad.LaunchPadBlock;
@@ -10,6 +11,8 @@ import com.mc3699.codmod.block.opticalDriveInterface.OpticalDriveInterfaceBlock;
 import com.mc3699.codmod.block.radar.RadarBlock;
 import com.mc3699.codmod.block.server.ServerBlock;
 import com.mc3699.codmod.block.subspace_tripmine.SubspaceTripmineBlock;
+import com.mc3699.codmod.block.thresholdParts.ThresholdBackplaneBlock;
+import com.mc3699.codmod.block.thresholdParts.ThresholdEmitterBlock;
 import com.mc3699.codmod.block.uavController.UAVControllerBlock;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.world.level.block.Block;
@@ -128,6 +131,24 @@ public class CodBlocks {
             .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD))
             .simpleItem()
             .lang("Stained Ugly Wallpaper")
+            .register();
+
+    public static final BlockEntry<ThresholdEmitterBlock> THRESHOLD_EMITTER = CodRegistrate.INSTANCE.block("threshold_emitter", ThresholdEmitterBlock::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).noOcclusion())
+            .simpleItem()
+            .lang("Threshold Emitter")
+            .register();
+
+
+    public static final BlockEntry<ThresholdBackplaneBlock> THRESHOLD_BACKPLANE = CodRegistrate.INSTANCE.block("threshold_backplane", ThresholdBackplaneBlock::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).noOcclusion())
+            .simpleItem()
+            .lang("Threshold Backplane")
+            .register();
+
+
+    public static final BlockEntry<ThresholdPortalBlock> THRESHOLD_PORTAL = CodRegistrate.INSTANCE.block("threshold_portal",ThresholdPortalBlock::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_PORTAL))
             .register();
 
 

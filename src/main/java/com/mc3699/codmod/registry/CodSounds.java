@@ -31,6 +31,7 @@ public class CodSounds {
             .simple(false)
             .register();
 
+    // sound submitted by @9272016
     public static final RegistryEntry<SoundEvent, SoundEvent> DISK_2016 = CodRegistrate.INSTANCE.sound("9_27_2016")
             .simple(false)
             .subtitle("? ? ?")

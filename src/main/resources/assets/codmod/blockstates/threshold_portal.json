@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "codmod:block/threshold_portal_ns"
+    },
+    "facing=south": {
+      "model": "codmod:block/threshold_portal_ns"
+    },
+    "facing=east": {
+      "model": "codmod:block/threshold_portal_ew"
+    },
+    "facing=west": {
+      "model": "codmod:block/threshold_portal_ew"
+    }
+  }
+}

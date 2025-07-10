@@ -10,4 +10,13 @@ public abstract class BackroomsLevel {
     public void generate(WorldGenRegion worldGenRegion, StructureManager structureManager, RandomState randomState, ChunkAccess chunkAccess) {
 
     }
+
+    public int getStartLevel(){
+     return 0;
+    }
+
+    public int getEndLevel()
+    {
+        return 1;
+    }
 }

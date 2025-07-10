@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-06T19:59:40.648884311	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Sound Definitions, Jukebox Songs, Custom Tags]
+// 1.21.1	2025-07-09T15:13:20.374504152	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Sound Definitions, Jukebox Songs, Custom Tags]
 e7cb80d710fab51bc6ace5b29bf5cf955a923adf assets/codmod/blockstates/ceiling_light.json
 7040b661ef94bb5c487639a82d59a859a6e42c36 assets/codmod/blockstates/ceiling_tile.json
 6abd47b117930380653fc1c77722bcc77f5b83bc assets/codmod/blockstates/cod_block.json
@@ -9,9 +9,11 @@ abd1a05e68848bf5558e5e9cda3e46bbf762b4e4 assets/codmod/blockstates/moist_carpet.
 a52fd403f646df255492ee30037a0300e02fa401 assets/codmod/blockstates/red_ugly_wallpaper.json
 253de56bb069fb2e7fb18b2224a5f87ab0c3f218 assets/codmod/blockstates/scanning_console.json
 6a2f12ba01d96859ffaa69b548e3f3665bbce99f assets/codmod/blockstates/subspace_tripmine.json
+08a602e1a02a63a3ee1ed52ad3152e0cb8f55a36 assets/codmod/blockstates/threshold_backplane.json
+fa161a7261482130ac94c13cb9fe6be05bafcab4 assets/codmod/blockstates/threshold_emitter.json
 f062903ff298b3585d7b47250018da45c0293850 assets/codmod/blockstates/ugly_wallpaper.json
-0ddeb2df72fe48b681613c5be985a089d6818e52 assets/codmod/lang/en_ud.json
-65d2b8100b40c30748a6731383270db9218f67af assets/codmod/lang/en_us.json
+a902112165ebdaae293d26d8c3da5a679b6598e7 assets/codmod/lang/en_ud.json
+031cd857236a87f8ae8e1958041348f21ea2b279 assets/codmod/lang/en_us.json
 13cd803f61e334af890df6bb81131bf7c4caad2e assets/codmod/models/block/ceiling_light.json
 8d7860352037461ea03d33414321cfa620e76f38 assets/codmod/models/block/ceiling_tile.json
 24bd76bdc035083fab23423ef889efe3f511310e assets/codmod/models/block/cod_block.json
@@ -22,10 +24,14 @@ cc5193b7055661bb77015a3a80c2af2eb730e921 assets/codmod/models/block/red_ceiling_
 1b33b2652da516bb7d61f0bbea3d3de923db4470 assets/codmod/models/block/red_ugly_wallpaper.json
 df058a5a8d32e47390f727acd71ebd53eabd4439 assets/codmod/models/block/scanning_console.json
 2449ec45c0f4b76d71d11bcea7929aa6e8d3afda assets/codmod/models/block/subspace_tripmine.json
+519c013861ecb6e11c35203ee0c3abf4fdf8d736 assets/codmod/models/block/threshold_backplane.json
+94b4c1cc0a55525f9816e4f745b76561fd2ba1a5 assets/codmod/models/block/threshold_emitter.json
 48684b1116c0fd7998b677e28dd768d7d6da7f8b assets/codmod/models/block/ugly_wallpaper.json
+58d2b811877134f0939cb58e50ca7599988ff76b assets/codmod/models/item/blue.json
 3d73f362dd02e40adaeb3de33b68a3d29105ff56 assets/codmod/models/item/ceiling_light.json
 61968c1ab1905b157109adec5dde9e43f1054a7d assets/codmod/models/item/ceiling_tile.json
 488335f0103d1c24871d0198430d8a02c91c23d0 assets/codmod/models/item/circuits_bane.json
+b8414bc0b10164b8080f30544242efa5fa94cc31 assets/codmod/models/item/cocaine.json
 be9268032c7c4e87e8644f46123b5bcdb1db8ee5 assets/codmod/models/item/cod_block.json
 517de0ee0b552412e7aee2e38f2fb6a0701f9e72 assets/codmod/models/item/cod_rod.json
 cba0cade4e3eb94d317c29eb61bc289020399b9b assets/codmod/models/item/command_module.json
@@ -35,6 +41,10 @@ d137e6061e65e0c34d5811c9efc1ed40efd1dfd3 assets/codmod/models/item/inventory_mod
 ab00fb55975a2972dc50fd5f1882ebfd3ca97285 assets/codmod/models/item/maxwell.json
 b6edf58edd96f6efd122abcaf5528985f7613f9b assets/codmod/models/item/mining_headgear.json
 e711d7e5fa8f787a221be12dc54684a1d0648cbb assets/codmod/models/item/moist_carpet.json
+34b5b7d8d2b2c221313ef041944a59fc0021fe01 assets/codmod/models/item/nbc_boots.json
+031127b2f9dd9d0ab449c36f9212dfefb2c08e69 assets/codmod/models/item/nbc_chestplate.json
+ed2fabcd1d2cb475fffea69c5c9a7e4d378dca2d assets/codmod/models/item/nbc_helmet.json
+27ed64665aa333e58d3aa332fae4c0738909b033 assets/codmod/models/item/nbc_leggings.json
 ff16bb2f158f1b46c5bd074027ebadaf18700a09 assets/codmod/models/item/network_fucker.json
 8a4ab10c53782592b0782bf134e2cdf11e4d80ab assets/codmod/models/item/red.json
 d313651c9ad36b990115f07e728c090b1f7ecbb1 assets/codmod/models/item/red_ceiling_light.json
@@ -47,6 +57,8 @@ fe6558c9434fae58f608b8dec37e8bece5ebdc57 assets/codmod/models/item/scythe.json
 2622f9d6eca88ca9e75ccc0a753626cd5018bf26 assets/codmod/models/item/shrimp_sniper.json
 88181fc0fff503394b8b1f339a0155a5edeae585 assets/codmod/models/item/soul_taker.json
 858220b3fd00572e370b53084f0aa440e0b2f48f assets/codmod/models/item/subspace_tripmine.json
+330e7786e43edc53166cb35e7b053db241c81c96 assets/codmod/models/item/threshold_backplane.json
+7b1f4e74b584dded590248ffdc087bbd6bebe4d1 assets/codmod/models/item/threshold_emitter.json
 675747199a65a032a596a5d6df5ea652cd851e78 assets/codmod/models/item/ugly_wallpaper.json
 11a0b511112b037581b022797049614bbfca99b5 assets/codmod/models/item/voidbreaker.json
 bd1ab44bb3593d4b071d7f7968b5cc72bd59810a assets/codmod/sounds.json
@@ -60,6 +72,8 @@ a3657c70dafd63b13a10a0d6843d2f631b3184d4 data/codmod/loot_table/blocks/red_ceili
 4be14d37a2bea9946b52db8ff556f3a4d614e595 data/codmod/loot_table/blocks/red_ugly_wallpaper.json
 51f8df362e0eb5667bc1e5179c3ae3d31019a801 data/codmod/loot_table/blocks/scanning_console.json
 ef31591a0779ff1e0562aaaade00880160e50926 data/codmod/loot_table/blocks/subspace_tripmine.json
+b19b860d10322920d1d8ea6af50fd0b826b95b3c data/codmod/loot_table/blocks/threshold_backplane.json
+f5fe35575830c6d3197670125b82babe1a4d0b0f data/codmod/loot_table/blocks/threshold_emitter.json
 acc5e6e3d1346e0cf957df45fea7202ca6b53fca data/codmod/loot_table/blocks/ugly_wallpaper.json
 0863d5c31f299349139391182d84c3f7a831fbfe data/codmod/loot_table/entities/applicant.json
 da1869a3476d25ecb4196486cf06c14714d38c74 data/codmod/loot_table/entities/ariral.json

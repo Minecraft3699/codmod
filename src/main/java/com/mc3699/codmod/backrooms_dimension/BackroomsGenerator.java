@@ -55,7 +55,6 @@ public class BackroomsGenerator extends ChunkGenerator {
         // nuh uh
     }
 
-
     BackroomsLevelZero levelZero = new BackroomsLevelZero();
 
 

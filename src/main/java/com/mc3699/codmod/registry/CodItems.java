@@ -6,9 +6,12 @@ import com.mc3699.codmod.item.commandModule.CommandModuleItem;
 import com.mc3699.codmod.item.hubModule.HubModuleItem;
 import com.mc3699.codmod.item.inventoryModule.InventoryModuleItem;
 import com.tterrag.registrate.util.entry.ItemEntry;
+import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.animal.Cod;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.food.Foods;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
@@ -192,6 +195,54 @@ public class CodItems {
             )
             .properties(properties -> properties)
             .lang("Voidbreaker")
+            .register();
+
+    public static final ItemEntry<Item> BLUE = CodRegistrate.INSTANCE.item(
+                "blue",
+                Item::new
+            )
+            .properties(properties -> properties)
+            .lang("Blue")
+            .register();
+
+    public static final ItemEntry<CocaineItem> COCAINE = CodRegistrate.INSTANCE.item(
+            "cocaine",
+            CocaineItem::new
+            )
+            .properties(properties -> properties.stacksTo(1))
+            .lang("Cocaine")
+            .register();
+
+    public static final ItemEntry<ArmorItem> NBC_HELMET = CodRegistrate.INSTANCE.item(
+            "nbc_helmet",
+            (properties) -> new ArmorItem(Holder.direct(CodArmor.NBC_ARMOR_MATERIAL), ArmorItem.Type.HELMET, properties)
+            )
+            .properties(properties -> properties.stacksTo(1))
+            .lang("NBC Suit Helmet")
+            .register();
+
+    public static final ItemEntry<ArmorItem> NBC_CHESTPLATE = CodRegistrate.INSTANCE.item(
+                    "nbc_chestplate",
+                    (properties) -> new ArmorItem(Holder.direct(CodArmor.NBC_ARMOR_MATERIAL), ArmorItem.Type.CHESTPLATE, properties)
+            )
+            .properties(properties -> properties.stacksTo(1))
+            .lang("NBC Suit Chestplate")
+            .register();
+
+    public static final ItemEntry<ArmorItem> NBC_LEGGINGS = CodRegistrate.INSTANCE.item(
+                    "nbc_leggings",
+                    (properties) -> new ArmorItem(Holder.direct(CodArmor.NBC_ARMOR_MATERIAL), ArmorItem.Type.LEGGINGS, properties)
+            )
+            .properties(properties -> properties.stacksTo(1))
+            .lang("NBC Suit Leggings")
+            .register();
+
+    public static final ItemEntry<ArmorItem> NBC_BOOTS = CodRegistrate.INSTANCE.item(
+                    "nbc_boots",
+                    (properties) -> new ArmorItem(Holder.direct(CodArmor.NBC_ARMOR_MATERIAL), ArmorItem.Type.BOOTS, properties)
+            )
+            .properties(properties -> properties.stacksTo(1))
+            .lang("NBC Suit Boots")
             .register();
 
     // VOTV Foods
