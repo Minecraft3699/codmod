@@ -17,6 +17,18 @@
     ],
     "subtitle": "subtitles.codmod.bad_sun_siren"
   },
+  "beep": {
+    "sounds": [
+      "codmod:beep"
+    ],
+    "subtitle": "subtitles.codmod.beep"
+  },
+  "detonation": {
+    "sounds": [
+      "codmod:detonation"
+    ],
+    "subtitle": "subtitles.codmod.detonation"
+  },
   "fiddlesticks": {
     "sounds": [
       "codmod:fiddlesticks"

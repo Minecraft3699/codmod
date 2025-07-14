@@ -1,7 +1,10 @@
 package com.mc3699.codmod.entity.applicant;
 
+import com.mc3699.codmod.backrooms_dimension.BackroomsGenerator;
+import com.mc3699.codmod.handlers.BackroomsEvents;
 import com.mc3699.codmod.registry.CodDamageTypes;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -35,6 +38,15 @@ public class ApplicantEntity extends PathfinderMob {
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 2, true));
         this.goalSelector.addGoal(2, new OpenDoorGoal(this, false));
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+        if(level().dimension().equals(BackroomsEvents.BACKROOMS_DIM) && level() instanceof ServerLevel serverLevel)
+        {
+            BackroomsEvents.flicker(serverLevel, blockPosition(), 16, 0.5f);
+        }
     }
 
     @Override

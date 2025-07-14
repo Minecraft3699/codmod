@@ -1,6 +1,8 @@
 package com.mc3699.codmod.registry;
 
 import com.mc3699.codmod.Codmod;
+import com.mc3699.codmod.block.backrooms.CeilingLightBlockEntity;
+import com.mc3699.codmod.block.codNuke.CodNukeBlockEntity;
 import com.mc3699.codmod.block.consoles.ScanningConsoleBlockEntity;
 import com.mc3699.codmod.block.johnGeometry.JohnGeometryBlockEntity;
 import com.mc3699.codmod.block.launchpad.LaunchPadBlockEntity;
@@ -62,6 +64,16 @@ public class CodBlockEntities {
                     Set.of(CodBlocks.OPTICAL_DRIVE_INTERFACE.get()),
                     null
             )
+    );
+
+    public static final Supplier<BlockEntityType<CeilingLightBlockEntity>> CEILING_LIGHT = BLOCK_ENTITIES.register(
+            "ceiling_light",
+            () -> new BlockEntityType<>(CeilingLightBlockEntity::new, Set.of(CodBlocks.CEILING_LIGHT.get()), null)
+    );
+
+    public static final Supplier<BlockEntityType<CodNukeBlockEntity>> COD_NUKE = BLOCK_ENTITIES.register(
+            "cod_nuke",
+            () -> new BlockEntityType<>(CodNukeBlockEntity::new, Set.of(CodBlocks.COD_NUKE.get()), null)
     );
 
 

@@ -2,6 +2,8 @@ package com.mc3699.codmod.registry;
 
 import com.mc3699.codmod.Codmod;
 import com.mc3699.codmod.block.DellServerBlock;
+import com.mc3699.codmod.block.backrooms.CeilingLightBlock;
+import com.mc3699.codmod.block.codNuke.CodNukeBlock;
 import com.mc3699.codmod.block.thresholdParts.ThresholdPortalBlock;
 import com.mc3699.codmod.block.consoles.ScanningConsoleBlock;
 import com.mc3699.codmod.block.johnGeometry.JohnGeometryBlock;
@@ -97,9 +99,10 @@ public class CodBlocks {
             .lang("Ceiling Tile")
             .register();
 
-    public static final BlockEntry<Block> CEILING_LIGHT = CodRegistrate.INSTANCE.block("ceiling_light", Block::new)
-            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.GLOWSTONE))
+    public static final BlockEntry<CeilingLightBlock> CEILING_LIGHT = CodRegistrate.INSTANCE.block("ceiling_light", CeilingLightBlock::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).lightLevel((state) -> state.getValue(CeilingLightBlock.ENABLED) ? 15 : 0))
             .simpleItem()
+            .defaultBlockstate()
             .lang("Ceiling Light")
             .register();
 
@@ -149,6 +152,10 @@ public class CodBlocks {
 
     public static final BlockEntry<ThresholdPortalBlock> THRESHOLD_PORTAL = CodRegistrate.INSTANCE.block("threshold_portal",ThresholdPortalBlock::new)
             .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_PORTAL))
+            .register();
+
+    public static final BlockEntry<CodNukeBlock> COD_NUKE = CodRegistrate.INSTANCE.block("cod_nuke", CodNukeBlock::new)
+            .simpleItem()
             .register();
 
 

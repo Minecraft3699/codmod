@@ -3,18 +3,19 @@ package com.mc3699.codmod.network;
 import com.google.gson.Gson;
 import com.sun.net.httpserver.HttpServer;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.players.UserBanList;
+import net.minecraft.stats.ServerStatsCounter;
+import net.minecraft.stats.Stats;
 
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 import java.util.UUID;
 
 record BanData(String username, String bannedBy, String uuid, String banStart, String banEnd, String reason) {
-}
-
-record PlayerData(String username) {
 }
 
 public class APIServer {
@@ -61,14 +62,4 @@ public class APIServer {
                 }
         );
     }
-
-    private void PlayerEndpoint(MinecraftServer server, HttpServer httpServer) {
-        httpServer.createContext(
-                "/api/players", exchange -> {
-
-                }
-        );
-    }
-
-
 }

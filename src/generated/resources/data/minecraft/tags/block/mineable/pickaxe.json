@@ -6,6 +6,8 @@
     "codmod:stable_disruption",
     "codmod:server",
     "codmod:ceiling_light",
-    "codmod:red_ceiling_light"
+    "codmod:red_ceiling_light",
+    "codmod:threshold_backplane",
+    "codmod:threshold_emitter"
   ]
 }

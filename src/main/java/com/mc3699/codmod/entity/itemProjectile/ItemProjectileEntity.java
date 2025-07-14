@@ -25,6 +25,12 @@ public class ItemProjectileEntity extends AbstractArrow {
             ItemProjectileEntity.class,
             EntityDataSerializers.INT
     );
+
+    private static final EntityDataAccessor<Integer> MAX_BOUNCE = SynchedEntityData.defineId(
+            ItemProjectileEntity.class,
+            EntityDataSerializers.INT
+    );
+
     private static final EntityDataAccessor<ItemStack> CARRIED_ITEM = SynchedEntityData.defineId(
             ItemProjectileEntity.class,
             EntityDataSerializers.ITEM_STACK
@@ -37,8 +43,7 @@ public class ItemProjectileEntity extends AbstractArrow {
             ItemProjectileEntity.class,
             EntityDataSerializers.BOOLEAN
     );
-    private static final int MAX_BOUNCES = 0;
-    private static final double SPEED_THRESHOLD = 0.01;
+    private static final double SPEED_THRESHOLD = 0.0001;
     private Vec3 lastPosition;
 
 
@@ -52,7 +57,7 @@ public class ItemProjectileEntity extends AbstractArrow {
     ) {
         super(entityType, level);
         this.setCarriedItem(carriedItem.copy());
-        this.getEntityData().set(BOUNCE_COUNT, bounceCount);
+        this.getEntityData().set(MAX_BOUNCE, bounceCount);
         this.getEntityData().set(DAMAGE, damage);
         this.getEntityData().set(SHOULD_DROP, dropItem);
         this.setCustomName(carriedItem.getDisplayName());
@@ -63,6 +68,7 @@ public class ItemProjectileEntity extends AbstractArrow {
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
         super.defineSynchedData(builder);
         builder.define(BOUNCE_COUNT, 0);
+        builder.define(MAX_BOUNCE, 0);
         builder.define(CARRIED_ITEM, ItemStack.EMPTY);
         builder.define(DAMAGE, 0);
         builder.define(SHOULD_DROP, false);
@@ -84,21 +90,22 @@ public class ItemProjectileEntity extends AbstractArrow {
     @Override
     protected void onHitBlock(BlockHitResult result) {
         if (!this.level().isClientSide) {
-            int currentBounce = this.getEntityData().get(BOUNCE_COUNT);
-            if (currentBounce < MAX_BOUNCES) {
-                this.inGround = false;
-                this.getEntityData().set(BOUNCE_COUNT, currentBounce + 1);
-                Vec3 velocity = this.getDeltaMovement();
-                Vec3 normal = new Vec3(
-                        result.getDirection().getNormal().getX(),
-                        result.getDirection().getNormal().getY(),
-                        result.getDirection().getNormal().getZ()
-                );
-                double dot = velocity.dot(normal);
-                Vec3 reflected = velocity.subtract(normal.scale(2.0 * dot));
-                this.setDeltaMovement(reflected);
-                this.setPos(this.position().add(normal.scale(0.2)));
-            } else {
+
+            int bounces = getEntityData().get(BOUNCE_COUNT);
+            int maxBounce = getEntityData().get(MAX_BOUNCE);
+
+            setOnGround(false);
+            getEntityData().set(BOUNCE_COUNT, bounces + 1);
+            Vec3 velocity = getDeltaMovement();
+            Vec3 normal = Vec3.atLowerCornerOf(result.getDirection().getNormal());
+            double dot = velocity.dot(normal);
+            setPos(position().add(normal.scale(0.5)));
+            Vec3 reflected = velocity.subtract(normal.scale(2.0 * dot));
+            setDeltaMovement(reflected);
+
+
+            if(bounces >= maxBounce)
+            {
                 ServerLevel serverLevel = (ServerLevel) this.level();
                 ItemStack item = this.getCarriedItem();
                 if (!item.isEmpty() && this.getEntityData().get(SHOULD_DROP)) {
@@ -112,6 +119,7 @@ public class ItemProjectileEntity extends AbstractArrow {
                 }
                 this.discard();
             }
+
         }
     }
 
@@ -184,6 +192,21 @@ public class ItemProjectileEntity extends AbstractArrow {
                 }
                 this.discard();
             }
+
+            if(tickCount > 600)
+            {
+                ItemStack item = this.getCarriedItem();
+                ServerLevel serverLevel = (ServerLevel) this.level();
+                serverLevel.addFreshEntity(new ItemEntity(
+                        serverLevel,
+                        this.getX(),
+                        this.getY(),
+                        this.getZ(),
+                        item
+                ));
+                this.discard();
+            }
+
         }
     }
 

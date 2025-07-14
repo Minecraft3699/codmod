@@ -39,7 +39,7 @@ public class BackroomsLevelZero extends BackroomsLevel {
         BRGenUtil.fillLayer(chunkAccess, 0, Blocks.BEDROCK);
         if(BRGenUtil.isChunkInNoise(chunkAccess, RedRoomNoise, 0.3))
         {
-            BRGenUtil.fillLayer(chunkAccess, getStartLevel(), CodBlocks.RED_MOIST_CARPET.get());
+            BRGenUtil.fillLayer(chunkAccess, getStartLevel()+1, CodBlocks.RED_MOIST_CARPET.get());
             BRGenUtil.fillLayer(chunkAccess, getEndLevel(), CodBlocks.RED_CEILING_TILE.get());
             if(!BRGenUtil.isChunkInNoise(chunkAccess, UnlitRoomNoise, 0.15))
             {
@@ -47,7 +47,7 @@ public class BackroomsLevelZero extends BackroomsLevel {
             }
             if(!BRGenUtil.isChunkInNoise(chunkAccess, EmptyAreaNoise, 0.2))
             {
-                BRGenUtil.generateBasicWalls(chunkAccess, getStartLevel(), getEndLevel(), CodBlocks.RED_UGLY_WALLPAPER.get());
+                BRGenUtil.generateBasicWalls(chunkAccess, getStartLevel()+1, getEndLevel(), CodBlocks.RED_UGLY_WALLPAPER.get());
             }
         } else {
             BRGenUtil.fillLayer(chunkAccess, getStartLevel()+1, CodBlocks.MOIST_CARPET.get());

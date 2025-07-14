@@ -61,8 +61,8 @@ public class BRGenUtil {
     public static void generateBasicWalls(ChunkAccess chunk, int floorLevel, int ceilingLevel, Block block) {
         int startX = random.nextInt(0, 15);
         int startZ = random.nextInt(0, 15);
-        int length = random.nextInt(5, 15);
-        int wallThickness = random.nextInt(0, 4);
+        int length = random.nextInt(1, 15);
+        int wallThickness = random.nextInt(0, 6);
 
         if (random.nextBoolean()) {
             fillArea(

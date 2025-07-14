@@ -37,6 +37,16 @@ public class CodSounds {
             .subtitle("? ? ?")
             .register();
 
+    public static final RegistryEntry<SoundEvent, SoundEvent> BEEP = CodRegistrate.INSTANCE.sound("beep")
+            .simple(false)
+            .subtitle("Beep")
+            .register();
+
+    public static final RegistryEntry<SoundEvent, SoundEvent> DETONATION = CodRegistrate.INSTANCE.sound("detonation")
+            .simple(false)
+            .subtitle("Cod Nuke prepares to detonate")
+            .register();
+
     public static void register() {
         // This method just exists so Java will load the class LOL
         // Since it doesn't actually need to "push" anything to the registry manually anymore
