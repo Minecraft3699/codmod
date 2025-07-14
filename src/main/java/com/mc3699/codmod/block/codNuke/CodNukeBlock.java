@@ -25,7 +25,6 @@ public class CodNukeBlock extends Block implements EntityBlock {
 
     @Override
     public @Nullable <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType) {
-        // or only return a ticker for some blockstates (e.g. when using a "my machine is working" blockstate property).
         return blockEntityType == CodBlockEntities.COD_NUKE.get() ? CodNukeBlockEntity::tick : null;
     }
 }

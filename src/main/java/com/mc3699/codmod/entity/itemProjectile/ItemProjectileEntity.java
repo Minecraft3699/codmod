@@ -156,15 +156,9 @@ public class ItemProjectileEntity extends AbstractArrow {
         return target.isAlive() && !(target instanceof ItemEntity);
     }
 
-
     @Override
-    public void addAdditionalSaveData(CompoundTag compound) {
-        super.addAdditionalSaveData(compound);
-        compound.putInt("BounceCount", this.getEntityData().get(BOUNCE_COUNT));
-        ItemStack item = this.getCarriedItem();
-        if (!item.isEmpty()) {
-            compound.put("CarriedItem", item.save(this.registryAccess()));
-        }
+    public boolean shouldBeSaved() {
+        return false;
     }
 
     @Override
@@ -193,7 +187,7 @@ public class ItemProjectileEntity extends AbstractArrow {
                 this.discard();
             }
 
-            if(tickCount > 600)
+            if(tickCount > 300)
             {
                 ItemStack item = this.getCarriedItem();
                 ServerLevel serverLevel = (ServerLevel) this.level();
@@ -207,17 +201,6 @@ public class ItemProjectileEntity extends AbstractArrow {
                 this.discard();
             }
 
-        }
-    }
-
-    @Override
-    public void readAdditionalSaveData(CompoundTag compound) {
-        super.readAdditionalSaveData(compound);
-        this.getEntityData().set(BOUNCE_COUNT, compound.getInt("BounceCount"));
-        if (compound.contains("CarriedItem")) {
-            ItemStack item = ItemStack.parse(this.registryAccess(), compound.getCompound("CarriedItem"))
-                    .orElse(ItemStack.EMPTY);
-            this.setCarriedItem(item);
         }
     }
 

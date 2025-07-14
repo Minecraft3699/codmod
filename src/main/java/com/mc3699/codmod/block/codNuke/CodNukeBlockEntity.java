@@ -124,13 +124,13 @@ public class CodNukeBlockEntity extends BlockEntity {
          */
 
 
-        for(int i = 0; i < 512; i++)
+        for(int i = 0; i < 1024; i++)
         {
             ItemStack stack = new ItemStack(Items.COD, 1);
-            ItemProjectileEntity codProjectile = new ItemProjectileEntity(CodEntities.ITEM_PROJECTILE.get(), serverLevel, stack, -1, 100, true);
-            double yaw = serverLevel.random.nextDouble() * Math.PI * 16;
-            double pitch = serverLevel.random.nextDouble() * 0.5 - 0.25;
-            double speed = 1f;
+            ItemProjectileEntity codProjectile = new ItemProjectileEntity(CodEntities.ITEM_PROJECTILE.get(), serverLevel, stack, 2, 100, false);
+            double yaw = serverLevel.random.nextDouble() * Math.PI * 4;
+            double pitch = serverLevel.random.nextDouble()-0.5;
+            double speed = 1.5f;
 
             codProjectile.setDeltaMovement(
                     Math.cos(yaw) * Math.cos(pitch) * speed,
