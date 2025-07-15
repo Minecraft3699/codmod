@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-13T18:20:32.921217027	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Sound Definitions, Jukebox Songs, Custom Tags]
+// 1.21.1	2025-07-14T12:50:09.393446316	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Sound Definitions, Jukebox Songs, Custom Tags]
 e7cb80d710fab51bc6ace5b29bf5cf955a923adf assets/codmod/blockstates/ceiling_light.json
 7040b661ef94bb5c487639a82d59a859a6e42c36 assets/codmod/blockstates/ceiling_tile.json
 6abd47b117930380653fc1c77722bcc77f5b83bc assets/codmod/blockstates/cod_block.json
@@ -14,8 +14,8 @@ a52fd403f646df255492ee30037a0300e02fa401 assets/codmod/blockstates/red_ugly_wall
 fa161a7261482130ac94c13cb9fe6be05bafcab4 assets/codmod/blockstates/threshold_emitter.json
 abcf062fd5decca251b2d4e623edb9daa7dec02a assets/codmod/blockstates/threshold_portal.json
 f062903ff298b3585d7b47250018da45c0293850 assets/codmod/blockstates/ugly_wallpaper.json
-6d58b25d19c2b90c4b5f1352fdb04f459696d72b assets/codmod/lang/en_ud.json
-723880948c102a35201ed63bfe314365c9daf530 assets/codmod/lang/en_us.json
+2f7bb4d9c8bd1b1c5556e54335b31b218f3a175e assets/codmod/lang/en_ud.json
+8846895cd8c19444903d77c5034579b55950252c assets/codmod/lang/en_us.json
 13cd803f61e334af890df6bb81131bf7c4caad2e assets/codmod/models/block/ceiling_light.json
 8d7860352037461ea03d33414321cfa620e76f38 assets/codmod/models/block/ceiling_tile.json
 24bd76bdc035083fab23423ef889efe3f511310e assets/codmod/models/block/cod_block.json
@@ -35,7 +35,6 @@ df058a5a8d32e47390f727acd71ebd53eabd4439 assets/codmod/models/block/scanning_con
 3d73f362dd02e40adaeb3de33b68a3d29105ff56 assets/codmod/models/item/ceiling_light.json
 61968c1ab1905b157109adec5dde9e43f1054a7d assets/codmod/models/item/ceiling_tile.json
 488335f0103d1c24871d0198430d8a02c91c23d0 assets/codmod/models/item/circuits_bane.json
-b8414bc0b10164b8080f30544242efa5fa94cc31 assets/codmod/models/item/cocaine.json
 be9268032c7c4e87e8644f46123b5bcdb1db8ee5 assets/codmod/models/item/cod_block.json
 bd589b79e143905dce7a03cd4fef9a64fef59331 assets/codmod/models/item/cod_nuke.json
 517de0ee0b552412e7aee2e38f2fb6a0701f9e72 assets/codmod/models/item/cod_rod.json

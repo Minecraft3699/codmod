@@ -189,15 +189,19 @@ public class ItemProjectileEntity extends AbstractArrow {
 
             if(tickCount > 300)
             {
-                ItemStack item = this.getCarriedItem();
-                ServerLevel serverLevel = (ServerLevel) this.level();
-                serverLevel.addFreshEntity(new ItemEntity(
-                        serverLevel,
-                        this.getX(),
-                        this.getY(),
-                        this.getZ(),
-                        item
-                ));
+
+                if(entityData.get(SHOULD_DROP))
+                {
+                    ItemStack item = this.getCarriedItem();
+                    ServerLevel serverLevel = (ServerLevel) this.level();
+                    serverLevel.addFreshEntity(new ItemEntity(
+                            serverLevel,
+                            this.getX(),
+                            this.getY(),
+                            this.getZ(),
+                            item
+                    ));
+                }
                 this.discard();
             }
 

@@ -5,6 +5,7 @@ import com.mc3699.codmod.item.*;
 import com.mc3699.codmod.item.commandModule.CommandModuleItem;
 import com.mc3699.codmod.item.hubModule.HubModuleItem;
 import com.mc3699.codmod.item.inventoryModule.InventoryModuleItem;
+import com.mc3699.codmod.item.marksmanRevolver.MarksmanRevolverItem;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -78,6 +79,9 @@ public class CodItems {
     public static final Supplier<Item> UAV = ITEMS.register("uav", () -> new Item(new Item.Properties()));
 
     public static final Supplier<Item> DETECTOR = ITEMS.register("detector", () -> new Item(new Item.Properties()));
+
+    public static final Supplier<MarksmanRevolverItem> MARKSMAN_REVOLVER = ITEMS.register("marksman_revolver", () -> new MarksmanRevolverItem(new Item.Properties()));
+    public static final Supplier<Item> MARKSMAN_REVOLVER_MODEL = ITEMS.register("marksman_revolver_model", () -> new Item(new Item.Properties()));
 
     public static final Supplier<Item> BROKEN_DETECTOR = ITEMS.register(
             "broken_detector",
@@ -205,13 +209,6 @@ public class CodItems {
             .lang("Blue")
             .register();
 
-    public static final ItemEntry<CocaineItem> COCAINE = CodRegistrate.INSTANCE.item(
-            "cocaine",
-            CocaineItem::new
-            )
-            .properties(properties -> properties.stacksTo(1))
-            .lang("Cocaine")
-            .register();
 
     public static final ItemEntry<ArmorItem> NBC_HELMET = CodRegistrate.INSTANCE.item(
             "nbc_helmet",
