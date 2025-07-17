@@ -52,6 +52,7 @@ public class EntityRendererRegistration {
         event.registerEntityRenderer(CodEntities.UAV.get(), UAVEntityRenderer::new);
         event.registerEntityRenderer(CodEntities.GIANNI.get(), GianniEntityRenderer::new);
         event.registerEntityRenderer(CodEntities.ITEM_PROJECTILE.get(), ItemProjectileRenderer::new);
+        event.registerEntityRenderer(CodEntities.MARKSMAN_COIN_ENTITY.get(), ItemProjectileRenderer::new);
 
         event.registerBlockEntityRenderer(CodBlockEntities.MANTLE_KEY.get(), MantleKeyBlockEntityRender::new);
         event.registerBlockEntityRenderer(CodBlockEntities.CEILING_LIGHT.get(), CeilingLightBlockEntityRenderer::new);

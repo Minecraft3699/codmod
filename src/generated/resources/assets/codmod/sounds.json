@@ -23,6 +23,12 @@
     ],
     "subtitle": "subtitles.codmod.beep"
   },
+  "coin": {
+    "sounds": [
+      "codmod:coin"
+    ],
+    "subtitle": "subtitles.codmod.coin"
+  },
   "detonation": {
     "sounds": [
       "codmod:detonation"

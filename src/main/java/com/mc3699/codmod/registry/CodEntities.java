@@ -1,5 +1,6 @@
 package com.mc3699.codmod.registry;
 
+import com.mc3699.codmod.entity.MarksmanRevolverCoinEntity;
 import com.mc3699.codmod.entity.applicant.ApplicantEntity;
 import com.mc3699.codmod.entity.ariral.AriralEntity;
 import com.mc3699.codmod.entity.codmissile.CodMissileEntity;
@@ -221,6 +222,14 @@ public class CodEntities {
             )
             .properties((it) -> it.sized(0.25f, 0.25f))
             .register();
+
+    public static final EntityEntry<MarksmanRevolverCoinEntity> MARKSMAN_COIN_ENTITY = CodRegistrate.INSTANCE.entity(
+            "marksman_coin_entity",
+            MarksmanRevolverCoinEntity::new,
+            MobCategory.MISC
+        )
+        .properties(mr -> mr.sized(0.5f,0.5f))
+        .register();
 
     public static void register() {
         // Hooray! Force Java to load the class!

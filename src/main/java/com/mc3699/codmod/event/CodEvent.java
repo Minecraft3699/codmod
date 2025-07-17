@@ -7,6 +7,7 @@ import net.minecraft.network.chat.Style;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.animal.Cod;
 import net.minecraft.world.phys.Vec3;
 
 public class CodEvent extends BaseEvent {

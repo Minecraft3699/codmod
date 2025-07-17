@@ -139,7 +139,7 @@ public class BadSunEvents {
             PacketDistributor.sendToAllPlayers(new ClientBadSunSyncPayload(isBadSunDay));
         }
 
-        if (tickCount % 5 == 0 && isBadSunDay) {
+        if (tickCount % 20 == 0 && isBadSunDay) {
 
             for (ServerPlayer player : players) {
                 if (isInSun(player)) {
@@ -152,7 +152,7 @@ public class BadSunEvents {
                             .getOrThrow(CodDamageTypes.BAD_SUN));
 
                     if (!player.isCreative() || !player.isSpectator()) {
-                        player.hurt(badSunDamage, 0.5f);
+                        player.hurt(badSunDamage, 2f);
                         ItemStack fleshItem = new ItemStack(Items.ROTTEN_FLESH, 1);
                         ItemEntity fleshEntity = new ItemEntity(
                                 player.level(),
