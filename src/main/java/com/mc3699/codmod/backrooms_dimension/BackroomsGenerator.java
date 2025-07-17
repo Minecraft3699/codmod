@@ -57,7 +57,7 @@ public class BackroomsGenerator extends ChunkGenerator {
     }
 
     BackroomsLevelZero levelZero = new BackroomsLevelZero();
-    Poolrooms poolrooms = new Poolrooms();
+//    Poolrooms poolrooms = new Poolrooms();
 
 
     @Override
@@ -69,7 +69,7 @@ public class BackroomsGenerator extends ChunkGenerator {
     ) {
 
         levelZero.generate(worldGenRegion, structureManager, randomState, chunkAccess);
-        poolrooms.generate(worldGenRegion, structureManager, randomState, chunkAccess);
+//        poolrooms.generate(worldGenRegion, structureManager, randomState, chunkAccess);
     }
 
     @Override
