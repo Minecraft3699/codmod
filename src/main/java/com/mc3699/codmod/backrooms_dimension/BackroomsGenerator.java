@@ -1,6 +1,7 @@
 package com.mc3699.codmod.backrooms_dimension;
 
 import com.mc3699.codmod.backrooms_dimension.levels.BackroomsLevelZero;
+import com.mc3699.codmod.backrooms_dimension.levels.Poolrooms;
 import com.mc3699.codmod.registry.CodBlocks;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -56,6 +57,7 @@ public class BackroomsGenerator extends ChunkGenerator {
     }
 
     BackroomsLevelZero levelZero = new BackroomsLevelZero();
+    Poolrooms poolrooms = new Poolrooms();
 
 
     @Override
@@ -67,7 +69,7 @@ public class BackroomsGenerator extends ChunkGenerator {
     ) {
 
         levelZero.generate(worldGenRegion, structureManager, randomState, chunkAccess);
-
+        poolrooms.generate(worldGenRegion, structureManager, randomState, chunkAccess);
     }
 
     @Override

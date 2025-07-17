@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "codmod:block/ceramic_tile",
+    "side": "codmod:block/ceramic_tile",
+    "top": "codmod:block/ceramic_tile"
+  }
+}

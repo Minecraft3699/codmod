@@ -34,8 +34,7 @@ public class JohnGeometryBlockEntity extends BlockEntity {
             List<Player> playerList = serverLevel.getEntitiesOfClass(Player.class, searchRange);
 
             if (!playerList.isEmpty()) {
-                // gotta make sure everyone knows john geometry is around
-                serverLevel.playSound(null, pos, CodSounds.GEOMETRY.get(), SoundSource.MASTER, 512, 1);
+                serverLevel.playSound(null, pos, CodSounds.GEOMETRY.get(), SoundSource.MASTER, 1, 1);
 
                 serverLevel.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
 

@@ -36,29 +36,29 @@ public class BackroomsLevelZero extends BackroomsLevel {
     @Override
     public void generate(WorldGenRegion worldGenRegion, StructureManager structureManager, RandomState randomState, ChunkAccess chunkAccess) {
 
-        BRGenUtil.fillLayer(chunkAccess, 0, Blocks.BEDROCK);
+        BRGenUtil.fillLayer(chunkAccess, 0, Blocks.BEDROCK.defaultBlockState());
         if(BRGenUtil.isChunkInNoise(chunkAccess, RedRoomNoise, 0.3))
         {
-            BRGenUtil.fillLayer(chunkAccess, getStartLevel()+1, CodBlocks.RED_MOIST_CARPET.get());
-            BRGenUtil.fillLayer(chunkAccess, getEndLevel(), CodBlocks.RED_CEILING_TILE.get());
+            BRGenUtil.fillLayer(chunkAccess, getStartLevel()+1, CodBlocks.RED_MOIST_CARPET.get().defaultBlockState());
+            BRGenUtil.fillLayer(chunkAccess, getEndLevel(), CodBlocks.RED_CEILING_TILE.get().defaultBlockState());
             if(!BRGenUtil.isChunkInNoise(chunkAccess, UnlitRoomNoise, 0.15))
             {
                 BRGenUtil.generateLights(chunkAccess, getEndLevel(), true);
             }
             if(!BRGenUtil.isChunkInNoise(chunkAccess, EmptyAreaNoise, 0.2))
             {
-                BRGenUtil.generateBasicWalls(chunkAccess, getStartLevel()+1, getEndLevel(), CodBlocks.RED_UGLY_WALLPAPER.get());
+                BRGenUtil.generateBasicWalls(chunkAccess, getStartLevel()+1, getEndLevel(), CodBlocks.RED_UGLY_WALLPAPER.get().defaultBlockState());
             }
         } else {
-            BRGenUtil.fillLayer(chunkAccess, getStartLevel()+1, CodBlocks.MOIST_CARPET.get());
-            BRGenUtil.fillLayer(chunkAccess, getEndLevel(), CodBlocks.CEILING_TILE.get());
+            BRGenUtil.fillLayer(chunkAccess, getStartLevel()+1, CodBlocks.MOIST_CARPET.get().defaultBlockState());
+            BRGenUtil.fillLayer(chunkAccess, getEndLevel(), CodBlocks.CEILING_TILE.get().defaultBlockState());
             if(!BRGenUtil.isChunkInNoise(chunkAccess, UnlitRoomNoise, 0.15))
             {
                 BRGenUtil.generateLights(chunkAccess, getEndLevel(), false);
             }
             if(!BRGenUtil.isChunkInNoise(chunkAccess, EmptyAreaNoise, 0.2))
             {
-                BRGenUtil.generateBasicWalls(chunkAccess, getStartLevel()+1, getEndLevel(), CodBlocks.UGLY_WALLPAPER.get());
+                BRGenUtil.generateBasicWalls(chunkAccess, getStartLevel()+1, getEndLevel(), CodBlocks.UGLY_WALLPAPER.get().defaultBlockState());
             }
         }
 
@@ -67,7 +67,6 @@ public class BackroomsLevelZero extends BackroomsLevel {
             BackroomsStructures.BackroomsStructureInfo structureInfo = BRGenUtil.rollStructure(STRUCTURE_POOL);
             BRGenUtil.placeBackroomsStructure(structureInfo, worldGenRegion, chunkAccess.getPos().getWorldPosition().atY(getStartLevel()+2), worldGenRegion.getRandom());
         }
-
 
     }
 }

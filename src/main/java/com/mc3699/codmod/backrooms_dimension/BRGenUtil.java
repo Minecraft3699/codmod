@@ -29,7 +29,7 @@ public class BRGenUtil {
             int endX,
             int endY,
             int endZ,
-            Block block
+            BlockState state
     ) {
 
         int minX = Math.min(startX, endX);
@@ -39,26 +39,24 @@ public class BRGenUtil {
         int maxY = Math.max(startY, endY);
         int maxZ = Math.max(startZ, endZ);
 
-        BlockState blockState = block.defaultBlockState();
-
         for (int x = minX; x <= maxX; x++) {
             for (int y = minY; y <= maxY; y++) {
                 for (int z = minZ; z <= maxZ; z++) {
                     BlockPos pos = new BlockPos(x, y, z);
-                    chunk.setBlockState(pos, blockState, true);
+                    chunk.setBlockState(pos, state, true);
                 }
             }
         }
     }
 
 
-    public static void fillLayer(ChunkAccess chunk, int layer, Block block) {
-        fillArea(chunk, 0, layer, 0, 15, layer, 15, block);
+    public static void fillLayer(ChunkAccess chunk, int layer, BlockState state) {
+        fillArea(chunk, 0, layer, 0, 15, layer, 15, state);
         chunk.initializeLightSources();
     }
 
 
-    public static void generateBasicWalls(ChunkAccess chunk, int floorLevel, int ceilingLevel, Block block) {
+    public static void generateBasicWalls(ChunkAccess chunk, int floorLevel, int ceilingLevel, BlockState state) {
         int startX = random.nextInt(0, 15);
         int startZ = random.nextInt(0, 15);
         int length = random.nextInt(1, 15);
@@ -73,7 +71,7 @@ public class BRGenUtil {
                     startX + length,
                     ceilingLevel - 1,
                     startZ + wallThickness,
-                    block
+                    state
             );
         } else {
             fillArea(
@@ -84,7 +82,7 @@ public class BRGenUtil {
                     startX + wallThickness,
                     ceilingLevel - 1,
                     startZ + length,
-                    block
+                    state
             );
         }
 
@@ -121,9 +119,9 @@ public class BRGenUtil {
             ChunkAccess chunk,
             int floorLevel,
             int ceilingLevel,
-            Block block,
+            BlockState wallState,
             int extensionOffset,
-            Block extensionBlock
+            BlockState extensionState
     ) {
         int startX = random.nextInt(0, 15);
         int startZ = random.nextInt(0, 15);
@@ -139,7 +137,7 @@ public class BRGenUtil {
                     startX + length,
                     ceilingLevel - 1,
                     startZ + wallThickness,
-                    block
+                    wallState
             );
             fillArea(
                     chunk,
@@ -149,7 +147,7 @@ public class BRGenUtil {
                     startX + length,
                     ceilingLevel + extensionOffset,
                     startZ + wallThickness,
-                    extensionBlock
+                    extensionState
             );
         } else {
             fillArea(
@@ -160,7 +158,7 @@ public class BRGenUtil {
                     startX + wallThickness,
                     ceilingLevel - 1,
                     startZ + length,
-                    block
+                    wallState
             );
             fillArea(
                     chunk,
@@ -170,7 +168,7 @@ public class BRGenUtil {
                     startX + wallThickness,
                     ceilingLevel + extensionOffset,
                     startZ + length,
-                    extensionBlock
+                    extensionState
             );
         }
 

@@ -17,8 +17,11 @@ import com.mc3699.codmod.block.thresholdParts.ThresholdBackplaneBlock;
 import com.mc3699.codmod.block.thresholdParts.ThresholdEmitterBlock;
 import com.mc3699.codmod.block.uavController.UAVControllerBlock;
 import com.tterrag.registrate.util.entry.BlockEntry;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -147,6 +150,27 @@ public class CodBlocks {
             .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).noOcclusion())
             .simpleItem()
             .lang("Threshold Backplane")
+            .register();
+
+    public static final BlockEntry<Block> CERAMIC_TILE = CodRegistrate.INSTANCE.block("ceramic_tile", Block::new)
+            .simpleItem()
+            .lang("Ceramic Tiles")
+            .register();
+
+    public static final BlockEntry<StairBlock> CERAMIC_STAIRS = CodRegistrate.INSTANCE
+            .block("ceramic_stairs", p -> new StairBlock(CodBlocks.CERAMIC_TILE.getDefaultState(), p))
+            .simpleItem()
+            .lang("Ceramic Tile Stairs")
+            .blockstate((ctx, prov) ->
+                    prov.stairsBlock(ctx.get(), ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "block/ceramic_tile")))
+            .register();
+
+    public static final BlockEntry<SlabBlock> CERAMIC_SLAB = CodRegistrate.INSTANCE
+            .block("ceramic_slab", SlabBlock::new)
+            .simpleItem()
+            .lang("Ceramic Tile Slab")
+            .blockstate((ctx, prov) ->
+                    prov.slabBlock(ctx.get(), ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "block/ceramic_tile"), ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "block/ceramic_tile")))
             .register();
 
 

@@ -31,7 +31,7 @@ import java.io.IOException;
 public class Codmod {
     public static final String MOD_ID = "codmod";
     public static final Logger LOGGER = LogUtils.getLogger();
-    public static final WorkQueue SERVER_QUEUE = new WorkQueue(SidedThreadGroups.SERVER);
+    public static final WorkQueue SERVER_QUEUE = new WorkQueue();
 
     public Codmod(IEventBus modEventBus, ModContainer modContainer) {
         CodComponents.register(modEventBus);
