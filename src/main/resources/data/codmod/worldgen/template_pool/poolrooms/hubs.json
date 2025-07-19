@@ -1,0 +1,15 @@
+{
+  "name": "codmod:pr_hub",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "codmod:poolrooms_hub",
+        "processors": "minecraft:empty"
+      }
+    }
+  ]
+}

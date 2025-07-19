@@ -1,0 +1,32 @@
+{
+  "name": "codmod:pr_hall",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 3,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "codmod:poolrooms_straight",
+        "processors": "minecraft:empty"
+      }
+    },    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "codmod:poolrooms_junction",
+        "processors": "minecraft:empty"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "codmod:poolrooms_turn",
+        "processors": "minecraft:empty"
+      }
+    }
+  ]
+}
