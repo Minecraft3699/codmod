@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-17T14:26:55.359172095	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
+// 1.21.1	2025-07-20T17:02:06.316024693	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
 e7cb80d710fab51bc6ace5b29bf5cf955a923adf assets/codmod/blockstates/ceiling_light.json
 7040b661ef94bb5c487639a82d59a859a6e42c36 assets/codmod/blockstates/ceiling_tile.json
 13cdd03b5ecfcd79516580da336255a0d07abedc assets/codmod/blockstates/ceramic_slab.json
@@ -17,8 +17,8 @@ a52fd403f646df255492ee30037a0300e02fa401 assets/codmod/blockstates/red_ugly_wall
 fa161a7261482130ac94c13cb9fe6be05bafcab4 assets/codmod/blockstates/threshold_emitter.json
 abcf062fd5decca251b2d4e623edb9daa7dec02a assets/codmod/blockstates/threshold_portal.json
 f062903ff298b3585d7b47250018da45c0293850 assets/codmod/blockstates/ugly_wallpaper.json
-a2642db112e699a979a79aa539bdcfa1d0f89149 assets/codmod/lang/en_ud.json
-d2189c1006f15562ca57bd051c0012d1f4d34210 assets/codmod/lang/en_us.json
+498d3ab42b15655fdf13ff761af06a027f99243f assets/codmod/lang/en_ud.json
+f45a458d29fbb598819eb4b9636548eb2952e331 assets/codmod/lang/en_us.json
 13cd803f61e334af890df6bb81131bf7c4caad2e assets/codmod/models/block/ceiling_light.json
 8d7860352037461ea03d33414321cfa620e76f38 assets/codmod/models/block/ceiling_tile.json
 a33ac3bce7ff86d30362c8f1f50bc3b06daf18b4 assets/codmod/models/block/ceramic_slab.json
@@ -54,6 +54,7 @@ cba0cade4e3eb94d317c29eb61bc289020399b9b assets/codmod/models/item/command_modul
 04abd3d7f1df01580929b34f09f1a3fcf4a594df assets/codmod/models/item/drive.json
 0801c8f300412067e094c0740b0e45c2cb2ce5c9 assets/codmod/models/item/hub_module.json
 d137e6061e65e0c34d5811c9efc1ed40efd1dfd3 assets/codmod/models/item/inventory_module.json
+9eac2a486b2e90a4bb3304c21ee5ad8ac6fc485a assets/codmod/models/item/marksman_revolver.json
 ab00fb55975a2972dc50fd5f1882ebfd3ca97285 assets/codmod/models/item/maxwell.json
 b6edf58edd96f6efd122abcaf5528985f7613f9b assets/codmod/models/item/mining_headgear.json
 e711d7e5fa8f787a221be12dc54684a1d0648cbb assets/codmod/models/item/moist_carpet.json

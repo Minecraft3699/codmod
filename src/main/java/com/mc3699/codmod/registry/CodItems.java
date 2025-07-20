@@ -80,8 +80,6 @@ public class CodItems {
 
     public static final Supplier<Item> DETECTOR = ITEMS.register("detector", () -> new Item(new Item.Properties()));
 
-    public static final Supplier<MarksmanRevolverItem> MARKSMAN_REVOLVER = ITEMS.register("marksman_revolver", () -> new MarksmanRevolverItem(new Item.Properties()));
-    public static final Supplier<Item> MARKSMAN_REVOLVER_MODEL = ITEMS.register("marksman_revolver_model", () -> new Item(new Item.Properties()));
 
     public static final Supplier<Item> BROKEN_DETECTOR = ITEMS.register(
             "broken_detector",
@@ -240,6 +238,12 @@ public class CodItems {
             )
             .properties(properties -> properties.stacksTo(1))
             .lang("NBC Suit Boots")
+            .register();
+
+    public static final ItemEntry<MarksmanRevolverItem> MARKSMAN_REVOLVER = CodRegistrate.INSTANCE.item(
+            "marksman_revolver",
+            (MarksmanRevolverItem::new))
+            .lang("Codsman Revolver")
             .register();
 
     // VOTV Foods

@@ -68,20 +68,10 @@ public class MarksmanRevolverItem extends Item {
             Vec3 launcVec = player.getLookAngle().scale(0.3);
             coinEntity.setDeltaMovement(new Vec3(0,0.6,0).add(launcVec));
             serverLevel.addFreshEntity(coinEntity);
-            serverLevel.playSound(null, player.blockPosition(), CodSounds.COIN.value(), SoundSource.MASTER, 16, 1);
+            serverLevel.playSound(null, player.blockPosition(), CodSounds.COIN.value(), SoundSource.MASTER, 1, 1);
         }
 
         return super.use(level, player, usedHand);
-    }
-
-    @Override
-    public void initializeClient(Consumer<IClientItemExtensions> consumer) {
-        consumer.accept(new IClientItemExtensions() {
-            @Override
-            public BlockEntityWithoutLevelRenderer getCustomRenderer() {
-                return MarksmanRevolverItemRenderer.INSTANCE;
-            }
-        });
     }
 
     private void fireRaycast(ServerLevel serverLevel, Player player)
@@ -123,9 +113,6 @@ public class MarksmanRevolverItem extends Item {
         );
 
 
-        if(hitResult != null)
-        {
-            hitResult.getEntity().hurt(serverLevel.damageSources().playerAttack(player), 5);
-        }
+        hitResult.getEntity().hurt(serverLevel.damageSources().playerAttack(player), 5);
     }
 }

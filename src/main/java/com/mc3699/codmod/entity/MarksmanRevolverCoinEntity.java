@@ -67,6 +67,11 @@ public class MarksmanRevolverCoinEntity extends ItemProjectileEntity {
     }
 
     @Override
+    protected double getDefaultGravity() {
+        return 0.03;
+    }
+
+    @Override
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
         builder.define(RICO_COUNT, 0);
         super.defineSynchedData(builder);
