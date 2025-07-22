@@ -16,8 +16,10 @@ import com.mc3699.codmod.block.subspace_tripmine.SubspaceTripmineBlock;
 import com.mc3699.codmod.block.thresholdParts.ThresholdBackplaneBlock;
 import com.mc3699.codmod.block.thresholdParts.ThresholdEmitterBlock;
 import com.mc3699.codmod.block.uavController.UAVControllerBlock;
+import com.mc3699.codmod.technology.coalGenerator.CoalGeneratorBlock;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.animal.Cod;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SlabBlock;
@@ -179,6 +181,22 @@ public class CodBlocks {
             .register();
 
     public static final BlockEntry<CodNukeBlock> COD_NUKE = CodRegistrate.INSTANCE.block("cod_nuke", CodNukeBlock::new)
+            .simpleItem()
+            .register();
+
+    // cod tech stuff
+
+    public static final BlockEntry<CoalGeneratorBlock> COAL_GENERATOR = CodRegistrate.INSTANCE.block("coal_generator", CoalGeneratorBlock::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK))
+            .blockstate(
+                    (ctx, prov) -> {
+                        prov.horizontalBlock(
+                                ctx.get(),
+                                ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "block/machine_casing_side"),
+                                ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "block/coal_generator_front"),
+                                ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "block/machine_casing_top")
+                                );}
+            )
             .simpleItem()
             .register();
 

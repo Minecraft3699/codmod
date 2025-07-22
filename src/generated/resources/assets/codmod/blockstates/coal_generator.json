@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "codmod:block/coal_generator",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "codmod:block/coal_generator"
+    },
+    "facing=south": {
+      "model": "codmod:block/coal_generator",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "codmod:block/coal_generator",
+      "y": 270
+    }
+  }
+}

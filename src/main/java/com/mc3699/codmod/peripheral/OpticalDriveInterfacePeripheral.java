@@ -9,6 +9,8 @@ import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 import org.jspecify.annotations.Nullable;
 
+import java.util.Objects;
+
 public class OpticalDriveInterfacePeripheral implements IPeripheral {
 
     private final OpticalDriveInterfaceBlockEntity drive;
@@ -31,7 +33,7 @@ public class OpticalDriveInterfacePeripheral implements IPeripheral {
             disk.getItem() instanceof OpticalTapeDriveItem media &&
             drive.getLevel() instanceof ServerLevel serverLevel) {
             try {
-                computer.mount("optical", media.createDataMount(disk, serverLevel));
+                computer.mount("optical", Objects.requireNonNull(media.createDataMount(disk, serverLevel)));
             } catch (Exception e) {
                 // just fucking deal with it, I don't want to hear it if your mount fails
             }

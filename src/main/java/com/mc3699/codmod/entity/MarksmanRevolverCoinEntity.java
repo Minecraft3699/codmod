@@ -68,7 +68,7 @@ public class MarksmanRevolverCoinEntity extends ItemProjectileEntity {
 
     @Override
     protected double getDefaultGravity() {
-        return 0.03;
+        return 0.04;
     }
 
     @Override

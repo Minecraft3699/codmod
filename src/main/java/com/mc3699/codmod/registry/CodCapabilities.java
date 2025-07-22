@@ -5,6 +5,9 @@ import com.mc3699.codmod.peripheral.LaunchPadPeripheral;
 import com.mc3699.codmod.peripheral.OpticalDriveInterfacePeripheral;
 import com.mc3699.codmod.peripheral.RadarPeripheral;
 import com.mc3699.codmod.peripheral.UAVControllerPeripheral;
+import com.mc3699.codmod.technology.coalGenerator.CoalGeneratorBlock;
+import com.mc3699.codmod.technology.coalGenerator.CoalGeneratorBlockEntity;
+import com.mc3699.codmod.technology.foundation.BaseMachineBlockEntity;
 import dan200.computercraft.api.peripheral.PeripheralCapability;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -43,6 +46,21 @@ public class CodCapabilities {
                 PeripheralCapability.get(),
                 CodBlockEntities.OPTICAL_DRIVE_INTERFACE.get(),
                 (driveInterface, direction) -> new OpticalDriveInterfacePeripheral(driveInterface)
+        );
+
+
+        // Coal generator
+
+        event.registerBlockEntity(
+                Capabilities.ItemHandler.BLOCK,
+                CodBlockEntities.COAL_GENERATOR.get(),
+                ((o, direction) -> o.getItemCap(o, direction))
+        );
+
+        event.registerBlockEntity(
+                Capabilities.EnergyStorage.BLOCK,
+                CodBlockEntities.COAL_GENERATOR.get(),
+                (((o, direction) -> o.getEnergyCap(o, direction)))
         );
     }
 }

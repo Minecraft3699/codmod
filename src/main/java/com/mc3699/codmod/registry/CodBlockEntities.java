@@ -10,6 +10,7 @@ import com.mc3699.codmod.block.mantleKey.MantleKeyBlockEntity;
 import com.mc3699.codmod.block.opticalDriveInterface.OpticalDriveInterfaceBlockEntity;
 import com.mc3699.codmod.block.radar.RadarBlockEntity;
 import com.mc3699.codmod.block.uavController.UAVControllerBlockEntity;
+import com.mc3699.codmod.technology.coalGenerator.CoalGeneratorBlockEntity;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -74,6 +75,14 @@ public class CodBlockEntities {
     public static final Supplier<BlockEntityType<CodNukeBlockEntity>> COD_NUKE = BLOCK_ENTITIES.register(
             "cod_nuke",
             () -> new BlockEntityType<>(CodNukeBlockEntity::new, Set.of(CodBlocks.COD_NUKE.get()), null)
+    );
+
+
+    // Cod Tech Stuff
+
+    public static final Supplier<BlockEntityType<CoalGeneratorBlockEntity>> COAL_GENERATOR = BLOCK_ENTITIES.register(
+            "coal_generator",
+            () -> new BlockEntityType<>(CoalGeneratorBlockEntity::new, Set.of(CodBlocks.COAL_GENERATOR.get()), null)
     );
 
 
