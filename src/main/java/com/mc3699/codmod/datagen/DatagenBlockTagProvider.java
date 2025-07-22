@@ -32,6 +32,9 @@ public class DatagenBlockTagProvider extends BlockTagsProvider {
                 .add(CodBlocks.RED_CEILING_LIGHT.get())
                 .add(CodBlocks.THRESHOLD_BACKPLANE.get())
                 .add(CodBlocks.THRESHOLD_EMITTER.get())
+                .add(CodBlocks.PUBLIC_STATIC_VOID_BLOCK.get())
+                .add(CodBlocks.PUBLIC_STATIC_VOID_SLAB.get())
+                .add(CodBlocks.PUBLIC_STATIC_VOID_STAIRS.get())
         ;
         tag(BlockTags.MINEABLE_WITH_AXE)
                 .add(CodBlocks.UGLY_WALLPAPER.get())

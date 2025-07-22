@@ -191,6 +191,21 @@ public class CodItems {
             .lang("§fSoul §0Taker")
             .register();
 
+    public static final ItemEntry<Item> BAGEL = CodRegistrate.INSTANCE.item(
+            "bagel",
+            Item::new
+            )
+            .properties(properties -> properties.food(Foods.BREAD))
+            .lang("Bagel")
+            .register();
+
+    public static final ItemEntry<Item> DONUT = CodRegistrate.INSTANCE.item(
+            "donut",
+            Item::new
+            )
+            .properties(properties -> new Item.Properties().food(CodFoods.CAKE))
+            .register();
+
     public static final ItemEntry<VoidBreakerItem> VOID_BREAKER = CodRegistrate.INSTANCE.item(
                     "voidbreaker",
                     VoidBreakerItem::new
@@ -244,6 +259,12 @@ public class CodItems {
             "marksman_revolver",
             (MarksmanRevolverItem::new))
             .lang("Codsman Revolver")
+            .register();
+
+    public static final ItemEntry<CurrentMeterItem> CURRENT_METER = CodRegistrate.INSTANCE.item(
+            "current_meter",
+            CurrentMeterItem::new)
+            .lang("Current Meter")
             .register();
 
     // VOTV Foods

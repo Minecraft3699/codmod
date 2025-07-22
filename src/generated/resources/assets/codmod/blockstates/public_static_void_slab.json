@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "codmod:block/public_static_void_slab"
+    },
+    "type=double": {
+      "model": "codmod:block/public_static_void"
+    },
+    "type=top": {
+      "model": "codmod:block/public_static_void_slab_top"
+    }
+  }
+}

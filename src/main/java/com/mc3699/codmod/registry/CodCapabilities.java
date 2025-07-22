@@ -62,5 +62,14 @@ public class CodCapabilities {
                 CodBlockEntities.COAL_GENERATOR.get(),
                 (((o, direction) -> o.getEnergyCap(o, direction)))
         );
+
+        // LV Cable
+
+        event.registerBlockEntity(
+                Capabilities.EnergyStorage.BLOCK,
+                CodBlockEntities.LOW_VOLTAGE_CABLE.get(),
+                ((o, direction) -> o.getEnergyCap(o, direction))
+        );
+
     }
 }

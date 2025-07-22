@@ -45,6 +45,10 @@ public class BaseMachineBlockEntity extends BlockEntity implements IEnergyStorag
         this.itemHandlerLazy = Lazy.of(() -> itemStackHandler);
     }
 
+    public ContainerData getData() {
+        return data;
+    }
+
     @Override
     protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
         super.saveAdditional(tag, registries);

@@ -2,6 +2,7 @@ package com.mc3699.codmod.technology.coalGenerator;
 
 import com.mc3699.codmod.registry.CodBlockEntities;
 import com.mc3699.codmod.registry.CodBlocks;
+import com.mc3699.codmod.technology.foundation.BaseGeneratingMachineBlockEntity;
 import com.mc3699.codmod.technology.foundation.BaseMachineBlockEntity;
 import com.mc3699.codmod.technology.foundation.IGeneratingMachine;
 import net.minecraft.client.Minecraft;
@@ -21,7 +22,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.energy.EnergyStorage;
 import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.items.ItemStackHandler;
-public class CoalGeneratorBlockEntity extends BaseMachineBlockEntity implements IGeneratingMachine {
+public class CoalGeneratorBlockEntity extends BaseGeneratingMachineBlockEntity {
 
     private int burnTime = 0;
 
@@ -46,6 +47,7 @@ public class CoalGeneratorBlockEntity extends BaseMachineBlockEntity implements 
                 }
             }
         }
+        energyExportTick(level, blockPos, blockState, t);
     }
 
     @Override

@@ -11,6 +11,7 @@ import com.mc3699.codmod.block.opticalDriveInterface.OpticalDriveInterfaceBlockE
 import com.mc3699.codmod.block.radar.RadarBlockEntity;
 import com.mc3699.codmod.block.uavController.UAVControllerBlockEntity;
 import com.mc3699.codmod.technology.coalGenerator.CoalGeneratorBlockEntity;
+import com.mc3699.codmod.technology.lowVoltageCable.LowVoltageCableBlockEntity;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -83,6 +84,11 @@ public class CodBlockEntities {
     public static final Supplier<BlockEntityType<CoalGeneratorBlockEntity>> COAL_GENERATOR = BLOCK_ENTITIES.register(
             "coal_generator",
             () -> new BlockEntityType<>(CoalGeneratorBlockEntity::new, Set.of(CodBlocks.COAL_GENERATOR.get()), null)
+    );
+
+    public static final Supplier<BlockEntityType<LowVoltageCableBlockEntity>> LOW_VOLTAGE_CABLE = BLOCK_ENTITIES.register(
+            "lv_cable",
+            ()->new BlockEntityType<>(LowVoltageCableBlockEntity::new, Set.of(CodBlocks.LV_CABLE_BLOCK.get()), null)
     );
 
 

@@ -8,6 +8,9 @@
     "codmod:ceiling_light",
     "codmod:red_ceiling_light",
     "codmod:threshold_backplane",
-    "codmod:threshold_emitter"
+    "codmod:threshold_emitter",
+    "codmod:public_static_void",
+    "codmod:public_static_void_slab",
+    "codmod:public_static_void_stairs"
   ]
 }

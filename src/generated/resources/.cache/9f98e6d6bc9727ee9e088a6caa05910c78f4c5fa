@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-21T15:49:45.10875569	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
+// 1.21.1	2025-07-22T11:04:20.668628578	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
 e7cb80d710fab51bc6ace5b29bf5cf955a923adf assets/codmod/blockstates/ceiling_light.json
 7040b661ef94bb5c487639a82d59a859a6e42c36 assets/codmod/blockstates/ceiling_tile.json
 13cdd03b5ecfcd79516580da336255a0d07abedc assets/codmod/blockstates/ceramic_slab.json
@@ -7,7 +7,11 @@ f2fdee44c05c49fbb57981b99079c788671e0edc assets/codmod/blockstates/ceramic_tile.
 8fb032203801a5e308bb68da2419095ba093c4d9 assets/codmod/blockstates/coal_generator.json
 6abd47b117930380653fc1c77722bcc77f5b83bc assets/codmod/blockstates/cod_block.json
 8d3b41fb059b60f6a4b6da798c27fe29790d9dca assets/codmod/blockstates/cod_nuke.json
+a47a4694c6c5a76af3601f66a55ee611c1a043ff assets/codmod/blockstates/lv_cable.json
 abd1a05e68848bf5558e5e9cda3e46bbf762b4e4 assets/codmod/blockstates/moist_carpet.json
+26a4e6684c2852cd1b49fc1caf712e4fccdfe5bb assets/codmod/blockstates/public_static_void.json
+92b90ea204cee4fbdf6891b45b246aa4731a6731 assets/codmod/blockstates/public_static_void_slab.json
+70291d4a10bdee59632f34ca0423ff6e927d62fb assets/codmod/blockstates/public_static_void_stairs.json
 40aeaeb54b8573d8ba57d37d70880c0f2354b20e assets/codmod/blockstates/red_ceiling_light.json
 372b9f0d1d05245ed853b524b9e6ff4da971d579 assets/codmod/blockstates/red_ceiling_tile.json
 4b7324be7efe067c424774f17d518cd752a0e3e9 assets/codmod/blockstates/red_moist_carpet.json
@@ -18,8 +22,8 @@ a52fd403f646df255492ee30037a0300e02fa401 assets/codmod/blockstates/red_ugly_wall
 fa161a7261482130ac94c13cb9fe6be05bafcab4 assets/codmod/blockstates/threshold_emitter.json
 abcf062fd5decca251b2d4e623edb9daa7dec02a assets/codmod/blockstates/threshold_portal.json
 f062903ff298b3585d7b47250018da45c0293850 assets/codmod/blockstates/ugly_wallpaper.json
-396ce0d995b4873d8ec2575472111619c308eced assets/codmod/lang/en_ud.json
-0d88f95488e059aaffad3e88461ecaacb19a3bc5 assets/codmod/lang/en_us.json
+40e0d9bad1e92815aa2b62c1e6fb5cc79419111f assets/codmod/lang/en_ud.json
+2e516ba4ae6a9ab9574cbe45c7ff521218fd4c24 assets/codmod/lang/en_us.json
 13cd803f61e334af890df6bb81131bf7c4caad2e assets/codmod/models/block/ceiling_light.json
 8d7860352037461ea03d33414321cfa620e76f38 assets/codmod/models/block/ceiling_tile.json
 a33ac3bce7ff86d30362c8f1f50bc3b06daf18b4 assets/codmod/models/block/ceramic_slab.json
@@ -31,7 +35,14 @@ fe409692cf1c3e9105e325675372af882652a1bd assets/codmod/models/block/ceramic_stai
 1dc48ba94bb6c89b85f5f90face6b3ee6d901740 assets/codmod/models/block/coal_generator.json
 24bd76bdc035083fab23423ef889efe3f511310e assets/codmod/models/block/cod_block.json
 eba65c8a634312604cb08c106eae5fe67828ffac assets/codmod/models/block/cod_nuke.json
+a5c7e2db49511871b54a83f1509677e1ed1c83e6 assets/codmod/models/block/lv_cable.json
 9f6c413f95555e578435943ec5a0cfaa16d6777f assets/codmod/models/block/moist_carpet.json
+059ec95e9a7297242069f3bedc74a136a131001c assets/codmod/models/block/public_static_void.json
+53b779ce83af8bb25e042a4da5db5743e1a5cf4f assets/codmod/models/block/public_static_void_slab.json
+944ace3a2ddcef35f095a31dc17d66559099f6cc assets/codmod/models/block/public_static_void_slab_top.json
+7d1602dc2059479e95c479ec87ee3b6519ed5ef7 assets/codmod/models/block/public_static_void_stairs.json
+99e4251f5d00599d5ef16aede803f95ff66093ca assets/codmod/models/block/public_static_void_stairs_inner.json
+ad8775dd4b33095b71f866a7ed6951bfb13fd79a assets/codmod/models/block/public_static_void_stairs_outer.json
 cc5193b7055661bb77015a3a80c2af2eb730e921 assets/codmod/models/block/red_ceiling_light.json
 087bba10c8fa9aeba9693accce2871252411cd2d assets/codmod/models/block/red_ceiling_tile.json
 08f15949da4e533f405217f1482aab6429f1fb98 assets/codmod/models/block/red_moist_carpet.json
@@ -42,6 +53,7 @@ df058a5a8d32e47390f727acd71ebd53eabd4439 assets/codmod/models/block/scanning_con
 94b4c1cc0a55525f9816e4f745b76561fd2ba1a5 assets/codmod/models/block/threshold_emitter.json
 056c882dc76be4dbe2002fb52edb507f283d9f6b assets/codmod/models/block/threshold_portal.json
 48684b1116c0fd7998b677e28dd768d7d6da7f8b assets/codmod/models/block/ugly_wallpaper.json
+8b9cbd354ac79a080eb5f89276688642392078ac assets/codmod/models/item/bagel.json
 58d2b811877134f0939cb58e50ca7599988ff76b assets/codmod/models/item/blue.json
 3d73f362dd02e40adaeb3de33b68a3d29105ff56 assets/codmod/models/item/ceiling_light.json
 61968c1ab1905b157109adec5dde9e43f1054a7d assets/codmod/models/item/ceiling_tile.json
@@ -54,9 +66,12 @@ be9268032c7c4e87e8644f46123b5bcdb1db8ee5 assets/codmod/models/item/cod_block.jso
 bd589b79e143905dce7a03cd4fef9a64fef59331 assets/codmod/models/item/cod_nuke.json
 517de0ee0b552412e7aee2e38f2fb6a0701f9e72 assets/codmod/models/item/cod_rod.json
 cba0cade4e3eb94d317c29eb61bc289020399b9b assets/codmod/models/item/command_module.json
+f3566f941ee7bdab935a38b07d676b8f65493829 assets/codmod/models/item/current_meter.json
+36d27b90214d170903ea5b8fb6911937b5d33dcf assets/codmod/models/item/donut.json
 04abd3d7f1df01580929b34f09f1a3fcf4a594df assets/codmod/models/item/drive.json
 0801c8f300412067e094c0740b0e45c2cb2ce5c9 assets/codmod/models/item/hub_module.json
 d137e6061e65e0c34d5811c9efc1ed40efd1dfd3 assets/codmod/models/item/inventory_module.json
+4241c1997a5962d5b72048ec913e4299110ced40 assets/codmod/models/item/lv_cable.json
 9eac2a486b2e90a4bb3304c21ee5ad8ac6fc485a assets/codmod/models/item/marksman_revolver.json
 ab00fb55975a2972dc50fd5f1882ebfd3ca97285 assets/codmod/models/item/maxwell.json
 b6edf58edd96f6efd122abcaf5528985f7613f9b assets/codmod/models/item/mining_headgear.json
@@ -66,6 +81,9 @@ e711d7e5fa8f787a221be12dc54684a1d0648cbb assets/codmod/models/item/moist_carpet.
 ed2fabcd1d2cb475fffea69c5c9a7e4d378dca2d assets/codmod/models/item/nbc_helmet.json
 27ed64665aa333e58d3aa332fae4c0738909b033 assets/codmod/models/item/nbc_leggings.json
 ff16bb2f158f1b46c5bd074027ebadaf18700a09 assets/codmod/models/item/network_fucker.json
+733b0e2fe23248a60e7339e1c2bd4d1100d2dd2e assets/codmod/models/item/public_static_void.json
+40c492dab9dbbf98113c5f95136f68d22698d079 assets/codmod/models/item/public_static_void_slab.json
+8073582aae3cc34d74ef540dcb3d3c35d8e7eb96 assets/codmod/models/item/public_static_void_stairs.json
 8a4ab10c53782592b0782bf134e2cdf11e4d80ab assets/codmod/models/item/red.json
 d313651c9ad36b990115f07e728c090b1f7ecbb1 assets/codmod/models/item/red_ceiling_light.json
 24617606e2a585e5e77dd364e510b549ed2e50be assets/codmod/models/item/red_ceiling_tile.json
@@ -90,7 +108,11 @@ b95552f02b610418250b4fe4816fb5fe80439962 data/codmod/loot_table/blocks/ceramic_t
 30a63605480737d08a40e22fc164e6f69da3d4f2 data/codmod/loot_table/blocks/coal_generator.json
 1f200e921be82345de87fe4e627a528cfb20ef48 data/codmod/loot_table/blocks/cod_block.json
 3b354d68d54803e0f3b55d79f78a5d7125bbd475 data/codmod/loot_table/blocks/cod_nuke.json
+b20ad25fe48c99aa6e47ded38236b1ec872f6873 data/codmod/loot_table/blocks/lv_cable.json
 4cc5a3e2512c85ff87184597ae4e77dc8df0f2d2 data/codmod/loot_table/blocks/moist_carpet.json
+5abc75f6c131477ec18be6da5e6da99e1df050a5 data/codmod/loot_table/blocks/public_static_void.json
+098c4abd3414881b8e463ac6d42853cf0f02c8ae data/codmod/loot_table/blocks/public_static_void_slab.json
+70382f50fa8e54f15f000d701d6e82fe984ae16f data/codmod/loot_table/blocks/public_static_void_stairs.json
 a3657c70dafd63b13a10a0d6843d2f631b3184d4 data/codmod/loot_table/blocks/red_ceiling_light.json
 735e94244476c9b456bc810ffbb238133625dc40 data/codmod/loot_table/blocks/red_ceiling_tile.json
 3590cf1bae415d6d24f9b4de89b20b7615997222 data/codmod/loot_table/blocks/red_moist_carpet.json

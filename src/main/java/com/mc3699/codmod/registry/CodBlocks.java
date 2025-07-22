@@ -17,13 +17,14 @@ import com.mc3699.codmod.block.thresholdParts.ThresholdBackplaneBlock;
 import com.mc3699.codmod.block.thresholdParts.ThresholdEmitterBlock;
 import com.mc3699.codmod.block.uavController.UAVControllerBlock;
 import com.mc3699.codmod.technology.coalGenerator.CoalGeneratorBlock;
+import com.mc3699.codmod.technology.lowVoltageCable.LowVoltageCableBlock;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.animal.Cod;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.entity.projectile.ProjectileUtil;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -184,7 +185,28 @@ public class CodBlocks {
             .simpleItem()
             .register();
 
-    // cod tech stuff
+    public static final BlockEntry<Block> PUBLIC_STATIC_VOID_BLOCK = CodRegistrate.INSTANCE.block("public_static_void", Block::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE))
+            .lang("Public Static Void")
+            .simpleItem()
+            .register();
+
+    public static final BlockEntry<StairBlock> PUBLIC_STATIC_VOID_STAIRS = CodRegistrate.INSTANCE.
+            block("public_static_void_stairs", properties -> new StairBlock(CodBlocks.PUBLIC_STATIC_VOID_BLOCK.getDefaultState(), properties))
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE))
+            .blockstate((ctx, prov) -> prov.stairsBlock(ctx.get(), ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "block/public_static_void")))
+            .lang("Public Static Void Stairs")
+            .simpleItem()
+            .register();
+
+    public static final BlockEntry<SlabBlock> PUBLIC_STATIC_VOID_SLAB = CodRegistrate.INSTANCE
+            .block("public_static_void_slab", SlabBlock::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE))
+            .blockstate((ctx, prov) -> {prov.slabBlock(ctx.get(), ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "block/public_static_void"), ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "block/public_static_void"));})
+            .lang("Public Static Void Slab")
+            .simpleItem()
+            .register();
+
 
     public static final BlockEntry<CoalGeneratorBlock> COAL_GENERATOR = CodRegistrate.INSTANCE.block("coal_generator", CoalGeneratorBlock::new)
             .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK))
@@ -197,6 +219,11 @@ public class CodBlocks {
                                 ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "block/machine_casing_top")
                                 );}
             )
+            .simpleItem()
+            .register();
+
+    public static final BlockEntry<LowVoltageCableBlock> LV_CABLE_BLOCK = CodRegistrate.INSTANCE.block("lv_cable", LowVoltageCableBlock::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE))
             .simpleItem()
             .register();
 

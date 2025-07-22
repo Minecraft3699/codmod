@@ -1,10 +1,16 @@
 package com.mc3699.codmod.registry;
 
 import com.mc3699.codmod.Codmod;
+import com.mc3699.codmod.technology.coalGenerator.CoalGeneratorMenu;
+import foundry.veil.platform.registry.RegistryObject;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.inventory.MenuType;
+import net.minecraft.world.inventory.SimpleContainerData;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class CodMenus {
     public static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(Registries.MENU, Codmod.MOD_ID);
+
 }
