@@ -207,6 +207,29 @@ public class CodBlocks {
             .simpleItem()
             .register();
 
+    public static final BlockEntry<Block> ENTROPY_SHALE = CodRegistrate.INSTANCE.block("entropy_shale", Block::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE))
+            .lang("Entropic Shale")
+            .simpleItem()
+            .register();
+
+    public static final BlockEntry<Block> ENTROPY_SAND = CodRegistrate.INSTANCE.block("entropy_sand", Block::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.SAND))
+            .lang("Entropic Sand")
+            .simpleItem()
+            .register();
+
+    public static final BlockEntry<Block> ENTROPY_BASALT = CodRegistrate.INSTANCE.block("entropy_basalt", Block::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE))
+            .lang("Entropic Basalt")
+            .simpleItem()
+            .register();
+
+    public static final BlockEntry<Block> IRON_MANTLE = CodRegistrate.INSTANCE.block("iron_mantle", Block::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.CRYING_OBSIDIAN))
+            .lang("Iron Mantle")
+            .simpleItem()
+            .register();
 
     public static final BlockEntry<CoalGeneratorBlock> COAL_GENERATOR = CodRegistrate.INSTANCE.block("coal_generator", CoalGeneratorBlock::new)
             .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK))

@@ -1,0 +1,24 @@
+{
+  "carvers": {
+    "air": [
+      "codmod:large_cave"
+    ]
+  },
+  "downfall": 0,
+  "effects": {
+    "fog_color": 0,
+    "sky_color": 0,
+    "water_color": 1728436,
+    "water_fog_color": 329011
+  },
+  "features": [
+    ["codmod:entropy_huge_diamond"],
+    ["codmod:entropy_huge_iron"],
+    ["codmod:entropy_huge_coal"],
+    ["minecraft:freeze_top_layer"]
+  ],
+  "has_precipitation": false,
+  "spawn_costs": {},
+  "spawners": {},
+  "temperature": 0.8
+}

@@ -97,6 +97,7 @@ public class CodItems {
                     "circuits_bane",
                     CircuitsBaneItem::new
             )
+            .model((ctx, prov) -> prov.handheld(ctx.lazy()))
             .properties((properties -> properties.durability(1024).rarity(Rarity.EPIC)))
             .lang("Circuit's Bane")
             .register();
@@ -210,6 +211,7 @@ public class CodItems {
                     "voidbreaker",
                     VoidBreakerItem::new
             )
+            .model((ctx, prov) -> prov.handheld(ctx.lazy()))
             .properties(properties -> properties)
             .lang("Voidbreaker")
             .register();

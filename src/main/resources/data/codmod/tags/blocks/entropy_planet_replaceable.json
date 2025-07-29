@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "redshift:entropy_sand",
+    "redshift:entropy_shale",
+    "redshift:entropy_basalt"
+  ]
+}

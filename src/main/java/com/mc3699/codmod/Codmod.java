@@ -34,6 +34,18 @@ public class Codmod {
     public static final WorkQueue SERVER_QUEUE = new WorkQueue();
 
     public Codmod(IEventBus modEventBus, ModContainer modContainer) {
+
+        CodEntities.register();
+        CodBlocks.register(modEventBus);
+        CodItems.register(modEventBus);
+        CodBlockEntities.register(modEventBus);
+        CodMobEffects.register(modEventBus);
+        CodSounds.register();
+        CodCreativeTabs.register(modEventBus);
+        CodLang.register();
+        CodPeripheralUpgradeTypes.register(modEventBus);
+        CodGenerators.register(modEventBus);
+
         CodComponents.register(modEventBus);
         CodRegistrate.INSTANCE.registerEventListeners(modEventBus);
         CodRegistrate.INSTANCE.event("vay_event", VayEvent::new).register();
@@ -46,16 +58,7 @@ public class Codmod {
 
         NeoForge.EVENT_BUS.register(this);
 
-        CodEntities.register();
-        CodBlocks.register(modEventBus);
-        CodItems.register(modEventBus);
-        CodBlockEntities.register(modEventBus);
-        CodMobEffects.register(modEventBus);
-        CodSounds.register();
-        CodCreativeTabs.register(modEventBus);
-        CodLang.register();
-        CodPeripheralUpgradeTypes.register(modEventBus);
-        CodGenerators.register(modEventBus);
+
 
     }
 

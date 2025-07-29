@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:cave",
+  "config": {
+    "floor_level": {
+      "type": "minecraft:constant",
+      "value": 1
+    },
+    "horizontal_radius_multiplier": {
+      "type": "minecraft:uniform",
+      "min_inclusive": 8,
+      "max_exclusive": 24
+    },
+    "lava_level": {
+      "above_bottom": 8
+    },
+    "probability": 0.15,
+    "replaceable": "#codmod:entropy_planet_replaceable",
+    "vertical_radius_multiplier": {
+      "type": "minecraft:uniform",
+      "min_inclusive": 8,
+      "max_exclusive": 24
+    },
+    "y": {
+      "type": "minecraft:uniform",
+      "max_inclusive": {
+        "absolute": 180
+      },
+      "min_inclusive": {
+        "above_bottom": 8
+      }
+    },
+    "yScale": {
+      "type": "minecraft:constant",
+      "value": 10
+    }
+  }
+}
