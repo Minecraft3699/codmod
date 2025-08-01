@@ -59,6 +59,12 @@
     ],
     "subtitle": "subtitles.codmod.missile_launch"
   },
+  "null_chicken_blast": {
+    "sounds": [
+      "codmod:null_chicken_blast"
+    ],
+    "subtitle": "subtitles.codmod.null_chicken_blast"
+  },
   "saul": {
     "sounds": [
       "codmod:saul"
