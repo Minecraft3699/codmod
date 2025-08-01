@@ -249,6 +249,14 @@ public class CodItems {
             .lang("NBC Suit Leggings")
             .register();
 
+    public static final ItemEntry<NullChickenSwordItem> NULL_CHICKEN_SWORD = CodRegistrate.INSTANCE.item(
+            "null_chicken_sword",
+            NullChickenSwordItem::new
+            )
+            .properties(properties -> properties)
+            .lang("Null Chicken Sword")
+            .register();
+
     public static final ItemEntry<ArmorItem> NBC_BOOTS = CodRegistrate.INSTANCE.item(
                     "nbc_boots",
                     (properties) -> new ArmorItem(Holder.direct(CodArmor.NBC_ARMOR_MATERIAL), ArmorItem.Type.BOOTS, properties)
