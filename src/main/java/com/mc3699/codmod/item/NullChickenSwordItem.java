@@ -24,13 +24,14 @@ public class NullChickenSwordItem extends SwordItem {
     @Override
     public float getAttackDamageBonus(Entity target, float damage, DamageSource damageSource) {
         return damage * 10;
+
     }
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand usedHand) {
         //return super.use(level, player, usedHand);
         for (int i = 0; i < 2; i++) {
-            ItemStack randomStack = new ItemStack(CodItems.NULL_CHICKEN.get(), 1);
+            ItemStack randomStack = new ItemStack(CodItems.NULL_CHICKEN.get(), 10);
 
             ItemProjectileEntity projectile = new ItemProjectileEntity(
                     CodEntities.ITEM_PROJECTILE.get(),
