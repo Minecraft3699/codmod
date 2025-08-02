@@ -224,6 +224,14 @@ public class CodItems {
             .lang("Blue")
             .register();
 
+    public static final ItemEntry<Item> cod_bomb = CodRegistrate.INSTANCE.item(
+                    "cod_bomb",
+                    Item::new
+            )
+            .properties(properties -> properties)
+            .lang("Cod Bomb")
+            .register();
+
 
     public static final ItemEntry<ArmorItem> NBC_HELMET = CodRegistrate.INSTANCE.item(
             "nbc_helmet",

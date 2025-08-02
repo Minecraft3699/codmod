@@ -1,4 +1,4 @@
-// 1.21.1	2025-08-01T03:58:35.778528463	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
+// 1.21.1	2025-08-01T20:37:10.7993763	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
 e7cb80d710fab51bc6ace5b29bf5cf955a923adf assets/codmod/blockstates/ceiling_light.json
 7040b661ef94bb5c487639a82d59a859a6e42c36 assets/codmod/blockstates/ceiling_tile.json
 13cdd03b5ecfcd79516580da336255a0d07abedc assets/codmod/blockstates/ceramic_slab.json
@@ -26,8 +26,8 @@ a52fd403f646df255492ee30037a0300e02fa401 assets/codmod/blockstates/red_ugly_wall
 fa161a7261482130ac94c13cb9fe6be05bafcab4 assets/codmod/blockstates/threshold_emitter.json
 abcf062fd5decca251b2d4e623edb9daa7dec02a assets/codmod/blockstates/threshold_portal.json
 f062903ff298b3585d7b47250018da45c0293850 assets/codmod/blockstates/ugly_wallpaper.json
-7fc4f9c2c4cbd18b61337447648929bf9be918cd assets/codmod/lang/en_ud.json
-3372cf970925a8f7084aa500dcece190fcb33830 assets/codmod/lang/en_us.json
+17ab7ceb98a6ca800c34205c2b8df3a9f76817ea assets/codmod/lang/en_ud.json
+b1714b6b847e1b06e4c3ca0845fc25f39ce039d9 assets/codmod/lang/en_us.json
 13cd803f61e334af890df6bb81131bf7c4caad2e assets/codmod/models/block/ceiling_light.json
 8d7860352037461ea03d33414321cfa620e76f38 assets/codmod/models/block/ceiling_tile.json
 a33ac3bce7ff86d30362c8f1f50bc3b06daf18b4 assets/codmod/models/block/ceramic_slab.json
@@ -71,6 +71,7 @@ df058a5a8d32e47390f727acd71ebd53eabd4439 assets/codmod/models/block/scanning_con
 0f6248576c40abb3e84578edf2bba3c668ae29a4 assets/codmod/models/item/circuits_bane.json
 6e4ae4a1075b96902735f18a3ca09569adfe3f55 assets/codmod/models/item/coal_generator.json
 be9268032c7c4e87e8644f46123b5bcdb1db8ee5 assets/codmod/models/item/cod_block.json
+d6d40a5fbaa25b325788bdc01877a77f74237d7a assets/codmod/models/item/cod_bomb.json
 bd589b79e143905dce7a03cd4fef9a64fef59331 assets/codmod/models/item/cod_nuke.json
 517de0ee0b552412e7aee2e38f2fb6a0701f9e72 assets/codmod/models/item/cod_rod.json
 cba0cade4e3eb94d317c29eb61bc289020399b9b assets/codmod/models/item/command_module.json
