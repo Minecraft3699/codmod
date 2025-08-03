@@ -23,7 +23,7 @@ public class NullChickenSwordItem extends SwordItem {
 
     @Override
     public float getAttackDamageBonus(Entity target, float damage, DamageSource damageSource) {
-        return damage * 10;
+        return damage * 13;
 
     }
 

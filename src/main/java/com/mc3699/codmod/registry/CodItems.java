@@ -184,6 +184,11 @@ public class CodItems {
             .lang("Red")
             .register();
 
+    public static final ItemEntry<Item> NORMAL_ABBE_PLUSHIE = CodRegistrate.INSTANCE.item("normal_abbe_plushie", Item::new)
+            .properties(properties -> properties)
+            .lang("Regular Abbe Plush")
+            .register();
+
     public static final ItemEntry<SoulTakerItem> SOUL_TAKER = CodRegistrate.INSTANCE.item(
                     "soul_taker",
                     SoulTakerItem::new

@@ -53,7 +53,7 @@ public class CodEntities {
                     MobCategory.MONSTER
             )
             .properties((it) -> it.sized(0.5f, 1.8f))
-            .lang("§kheywhyyoulookatcodmodsource?")
+            .lang("§kheywhyyoulookatcodmodsource?") //for fun lmao - nuz
             .loot((
                     (registrateEntityLootTables, type) ->
                             registrateEntityLootTables.add(type, new LootTable.Builder())
