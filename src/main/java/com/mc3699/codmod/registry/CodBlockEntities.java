@@ -4,6 +4,7 @@ import com.mc3699.codmod.Codmod;
 import com.mc3699.codmod.block.backrooms.CeilingLightBlockEntity;
 import com.mc3699.codmod.block.codNuke.CodNukeBlockEntity;
 import com.mc3699.codmod.block.consoles.ScanningConsoleBlockEntity;
+import com.mc3699.codmod.block.graphicsMonitor.GraphicsMonitorBlockEntity;
 import com.mc3699.codmod.block.johnGeometry.JohnGeometryBlockEntity;
 import com.mc3699.codmod.block.launchpad.LaunchPadBlockEntity;
 import com.mc3699.codmod.block.mantleKey.MantleKeyBlockEntity;
@@ -76,6 +77,11 @@ public class CodBlockEntities {
     public static final Supplier<BlockEntityType<CodNukeBlockEntity>> COD_NUKE = BLOCK_ENTITIES.register(
             "cod_nuke",
             () -> new BlockEntityType<>(CodNukeBlockEntity::new, Set.of(CodBlocks.COD_NUKE.get()), null)
+    );
+
+    public static final Supplier<BlockEntityType<GraphicsMonitorBlockEntity>> GRAPHICS_MONITOR = BLOCK_ENTITIES.register(
+            "graphics_monitor",
+            () -> new BlockEntityType<>(GraphicsMonitorBlockEntity::new, Set.of(CodBlocks.GRAPHICS_MONITOR.get()), null)
     );
 
 

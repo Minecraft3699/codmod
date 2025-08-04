@@ -3,6 +3,7 @@ package com.mc3699.codmod.client;
 import com.mc3699.codmod.Codmod;
 import com.mc3699.codmod.block.backrooms.CeilingLightBlockEntityRenderer;
 import com.mc3699.codmod.block.codNuke.CodNukeBlockEntityRenderer;
+import com.mc3699.codmod.block.graphicsMonitor.GraphicsMonitorBlockEntityRenderer;
 import com.mc3699.codmod.block.mantleKey.MantleKeyBlockEntityRender;
 import com.mc3699.codmod.entity.applicant.ApplicantEntityRenderer;
 import com.mc3699.codmod.entity.ariral.AriralEntityRenderer;
@@ -57,6 +58,7 @@ public class EntityRendererRegistration {
         event.registerBlockEntityRenderer(CodBlockEntities.MANTLE_KEY.get(), MantleKeyBlockEntityRender::new);
         event.registerBlockEntityRenderer(CodBlockEntities.CEILING_LIGHT.get(), CeilingLightBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(CodBlockEntities.COD_NUKE.get(), CodNukeBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(CodBlockEntities.GRAPHICS_MONITOR.get(), GraphicsMonitorBlockEntityRenderer::new);
     }
 
     @SubscribeEvent

@@ -4,6 +4,7 @@ import com.mc3699.codmod.Codmod;
 import com.mc3699.codmod.block.DellServerBlock;
 import com.mc3699.codmod.block.backrooms.CeilingLightBlock;
 import com.mc3699.codmod.block.codNuke.CodNukeBlock;
+import com.mc3699.codmod.block.graphicsMonitor.GraphicsMonitorBlock;
 import com.mc3699.codmod.block.thresholdParts.ThresholdPortalBlock;
 import com.mc3699.codmod.block.consoles.ScanningConsoleBlock;
 import com.mc3699.codmod.block.johnGeometry.JohnGeometryBlock;
@@ -242,6 +243,22 @@ public class CodBlocks {
                                 ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "block/machine_casing_top")
                                 );}
             )
+            .simpleItem()
+            .register();
+
+    public static final BlockEntry<GraphicsMonitorBlock> GRAPHICS_MONITOR = CodRegistrate.INSTANCE.block("graphics_monitor", GraphicsMonitorBlock::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE))
+            .blockstate((ctx, prov) -> {
+
+               prov.horizontalBlock(
+                        ctx.get(),
+                        ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "block/graphics_monitor_side"),
+                        ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "block/graphics_monitor_front"),
+                        ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "block/graphics_monitor_top")
+                );
+
+            })
+            .lang("Graphics Monitor")
             .simpleItem()
             .register();
 

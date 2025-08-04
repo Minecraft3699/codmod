@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "codmod:block/graphics_monitor_front",
+    "side": "codmod:block/graphics_monitor_side",
+    "top": "codmod:block/graphics_monitor_top"
+  }
+}
