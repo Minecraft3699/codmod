@@ -1,4 +1,4 @@
-// 1.21.1	2025-08-04T09:18:57.5467636	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
+// 1.21.1	2025-08-05T07:24:23.3456796	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
 e7cb80d710fab51bc6ace5b29bf5cf955a923adf assets/codmod/blockstates/ceiling_light.json
 7040b661ef94bb5c487639a82d59a859a6e42c36 assets/codmod/blockstates/ceiling_tile.json
 13cdd03b5ecfcd79516580da336255a0d07abedc assets/codmod/blockstates/ceramic_slab.json
@@ -26,8 +26,8 @@ a52fd403f646df255492ee30037a0300e02fa401 assets/codmod/blockstates/red_ugly_wall
 fa161a7261482130ac94c13cb9fe6be05bafcab4 assets/codmod/blockstates/threshold_emitter.json
 abcf062fd5decca251b2d4e623edb9daa7dec02a assets/codmod/blockstates/threshold_portal.json
 f062903ff298b3585d7b47250018da45c0293850 assets/codmod/blockstates/ugly_wallpaper.json
-09b350c8862d69e080608634a327c42696d4c876 assets/codmod/lang/en_ud.json
-fae71dccfc2fdcabcddeabd5fad78e8e3aca2da6 assets/codmod/lang/en_us.json
+79354f0da625906e55148140d9baf12dfa425c7c assets/codmod/lang/en_ud.json
+3ce9863c148fc40aa85184359d0186bfa38e19bd assets/codmod/lang/en_us.json
 13cd803f61e334af890df6bb81131bf7c4caad2e assets/codmod/models/block/ceiling_light.json
 8d7860352037461ea03d33414321cfa620e76f38 assets/codmod/models/block/ceiling_tile.json
 a33ac3bce7ff86d30362c8f1f50bc3b06daf18b4 assets/codmod/models/block/ceramic_slab.json
@@ -81,6 +81,7 @@ f3566f941ee7bdab935a38b07d676b8f65493829 assets/codmod/models/item/current_meter
 5080ac7a56309a0b80fd950a62d0407a119fea97 assets/codmod/models/item/entropy_basalt.json
 4ac89ed31014134a2382bd39c2b80975ab7e6e9b assets/codmod/models/item/entropy_sand.json
 131afbf904045a2a387c879ca85fc6dee9526a9f assets/codmod/models/item/entropy_shale.json
+6577e2c19605a8a3d669a88916e709f515ea7f02 assets/codmod/models/item/firelight_plushie.json
 0801c8f300412067e094c0740b0e45c2cb2ce5c9 assets/codmod/models/item/hub_module.json
 d137e6061e65e0c34d5811c9efc1ed40efd1dfd3 assets/codmod/models/item/inventory_module.json
 01d4d07fb14b94c89ea646cf95b6ead20abbe0e6 assets/codmod/models/item/iron_mantle.json
@@ -111,6 +112,7 @@ fe6558c9434fae58f608b8dec37e8bece5ebdc57 assets/codmod/models/item/scythe.json
 546c24bb6bb99fde19496f41adff434594701993 assets/codmod/models/item/skishel_plushie.json
 88181fc0fff503394b8b1f339a0155a5edeae585 assets/codmod/models/item/soul_taker.json
 858220b3fd00572e370b53084f0aa440e0b2f48f assets/codmod/models/item/subspace_tripmine.json
+616f10dee8c506e509e90430a4aaab86b533c382 assets/codmod/models/item/terra_plushie.json
 330e7786e43edc53166cb35e7b053db241c81c96 assets/codmod/models/item/threshold_backplane.json
 7b1f4e74b584dded590248ffdc087bbd6bebe4d1 assets/codmod/models/item/threshold_emitter.json
 675747199a65a032a596a5d6df5ea652cd851e78 assets/codmod/models/item/ugly_wallpaper.json

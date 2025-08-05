@@ -204,6 +204,11 @@ public class CodItems {
             .lang("Terra Plushie")
             .register();
 
+    public static final ItemEntry<Item> FIRELIGHT_PLUSHIE = CodRegistrate.INSTANCE.item("firelight_plushie", Item::new)
+            .properties(properties -> properties)
+            .lang("§5Firelight §rPlushie")
+            .register();
+
     public static final ItemEntry<SoulTakerItem> SOUL_TAKER = CodRegistrate.INSTANCE.item(
                     "soul_taker",
                     SoulTakerItem::new
