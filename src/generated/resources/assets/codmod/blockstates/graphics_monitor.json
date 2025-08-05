@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "codmod:block/graphics_monitor",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "codmod:block/graphics_monitor"
+    },
+    "facing=south": {
+      "model": "codmod:block/graphics_monitor",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "codmod:block/graphics_monitor",
+      "y": 270
+    }
+  }
+}
