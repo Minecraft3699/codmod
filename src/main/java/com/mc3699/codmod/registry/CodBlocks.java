@@ -135,7 +135,7 @@ public class CodBlocks {
     public static final BlockEntry<Block> NUZ_PLUSHIE = CodRegistrate.INSTANCE.block("nuz_plushie", Block::new)
             .properties(properties -> properties.noCollission().noOcclusion())
             .simpleItem()
-            .lang("§bNuz Plushie")
+            .lang("§bNuz Plushie.")
             .register();
 
     public static final BlockEntry<Block> MOIST_CARPET = CodRegistrate.INSTANCE.block("moist_carpet", Block::new)
