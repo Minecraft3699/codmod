@@ -36,6 +36,7 @@ public class VoidBreakerItem extends SwordItem {
 
     @Override
     public boolean onLeftClickEntity(ItemStack stack, Player player, Entity entity) {
+        if(player.level().isClientSide()) { return false; }
         player.sendSystemMessage(Component.literal(entity.getType().toString()));
 
         if(entity.getType().toString().contains("thebrokenscript"))
