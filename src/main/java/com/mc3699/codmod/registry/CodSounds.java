@@ -57,6 +57,21 @@ public class CodSounds {
             .subtitle("Null Chicken Blast")
             .register();
 
+    public static final RegistryEntry<SoundEvent, SoundEvent> TRANSPONDER_CALL = CodRegistrate.INSTANCE.sound("transponder_call")
+            .simple(false)
+            .subtitle("Transponder Rings")
+            .register();
+
+    public static final RegistryEntry<SoundEvent, SoundEvent> TRANSPONDER_ALERT = CodRegistrate.INSTANCE.sound("transponder_alert")
+            .simple(false)
+            .subtitle("Transponder Alerts")
+            .register();
+
+    public static final RegistryEntry<SoundEvent, SoundEvent> DESIGNATE_TARGET = CodRegistrate.INSTANCE.sound("designate_target")
+            .simple(false)
+            .subtitle("Target Designator Transmits...")
+            .register();
+
     public static void register() {
         // This method just exists so Java will load the class LOL
         // Since it doesn't actually need to "push" anything to the registry manually anymore

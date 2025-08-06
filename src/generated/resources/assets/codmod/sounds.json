@@ -29,6 +29,12 @@
     ],
     "subtitle": "subtitles.codmod.coin"
   },
+  "designate_target": {
+    "sounds": [
+      "codmod:designate_target"
+    ],
+    "subtitle": "subtitles.codmod.designate_target"
+  },
   "detonation": {
     "sounds": [
       "codmod:detonation"
@@ -70,6 +76,18 @@
       "codmod:saul"
     ],
     "subtitle": "subtitles.codmod.saul"
+  },
+  "transponder_alert": {
+    "sounds": [
+      "codmod:transponder_alert"
+    ],
+    "subtitle": "subtitles.codmod.transponder_alert"
+  },
+  "transponder_call": {
+    "sounds": [
+      "codmod:transponder_call"
+    ],
+    "subtitle": "subtitles.codmod.transponder_call"
   },
   "tripmine": {
     "sounds": [

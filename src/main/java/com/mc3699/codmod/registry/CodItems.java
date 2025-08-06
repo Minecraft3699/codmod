@@ -3,9 +3,12 @@ package com.mc3699.codmod.registry;
 import com.mc3699.codmod.Codmod;
 import com.mc3699.codmod.item.*;
 import com.mc3699.codmod.item.commandModule.CommandModuleItem;
+import com.mc3699.codmod.item.designator.DesignatorItem;
+import com.mc3699.codmod.item.environmentScanner.EnvironmentScannerItem;
 import com.mc3699.codmod.item.hubModule.HubModuleItem;
 import com.mc3699.codmod.item.inventoryModule.InventoryModuleItem;
 import com.mc3699.codmod.item.marksmanRevolver.MarksmanRevolverItem;
+import com.mc3699.codmod.item.transponder.TransponderItem;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -308,6 +311,34 @@ public class CodItems {
             "current_meter",
             CurrentMeterItem::new)
             .lang("Current Meter")
+            .register();
+
+    public static final ItemEntry<EnvironmentScannerItem> ENVIRONMENT_SCANNER = CodRegistrate.INSTANCE.item(
+            "environment_scanner",
+            EnvironmentScannerItem::new)
+            .properties(properties -> properties.stacksTo(1))
+            .lang("Environment Scanner")
+            .register();
+
+    public static final ItemEntry<TransponderItem> TRANSPONDER = CodRegistrate.INSTANCE.item(
+            "transponder",
+            TransponderItem::new)
+            .properties(properties -> properties.stacksTo(1))
+            .lang("Transponder")
+            .register();
+
+    public static final ItemEntry<Item> TELEPORTED_BREAD = CodRegistrate.INSTANCE.item(
+            "teleported_bread",
+            Item::new)
+            .properties(properties -> properties.food(CodFoods.MANGO))
+            .lang("Teleported Bread")
+            .register();
+
+    public static final ItemEntry<DesignatorItem> DESIGNATOR = CodRegistrate.INSTANCE.item(
+            "designator",
+            DesignatorItem::new)
+            .properties(properties -> properties.stacksTo(1))
+            .lang("Target Designator")
             .register();
 
     // VOTV Foods

@@ -1,4 +1,4 @@
-// 1.21.1	2025-08-06T08:35:16.9021536	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
+// 1.21.1	2025-08-04T13:50:51.695852109	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
 e7cb80d710fab51bc6ace5b29bf5cf955a923adf assets/codmod/blockstates/ceiling_light.json
 7040b661ef94bb5c487639a82d59a859a6e42c36 assets/codmod/blockstates/ceiling_tile.json
 13cdd03b5ecfcd79516580da336255a0d07abedc assets/codmod/blockstates/ceramic_slab.json
@@ -10,7 +10,6 @@ f2fdee44c05c49fbb57981b99079c788671e0edc assets/codmod/blockstates/ceramic_tile.
 31a9304aeedb4c5b4f5b89dc12caa5ee63130271 assets/codmod/blockstates/entropy_basalt.json
 ebecd3b06342c649085a7144b02548bd9ba4c592 assets/codmod/blockstates/entropy_sand.json
 e69251819f3c2330a3f2862046d31487709cff55 assets/codmod/blockstates/entropy_shale.json
-51e77a6ded5075a958d7ecd60535a56201bd1f9b assets/codmod/blockstates/garreth_plushie.json
 ba8ab8fe71b3174d5aa1d1ab1eaf7cd5f05c01e2 assets/codmod/blockstates/graphics_monitor.json
 1ede865beb891ab505e7fed8f41ac45b019f9936 assets/codmod/blockstates/iron_mantle.json
 a47a4694c6c5a76af3601f66a55ee611c1a043ff assets/codmod/blockstates/lv_cable.json
@@ -28,8 +27,8 @@ a52fd403f646df255492ee30037a0300e02fa401 assets/codmod/blockstates/red_ugly_wall
 fa161a7261482130ac94c13cb9fe6be05bafcab4 assets/codmod/blockstates/threshold_emitter.json
 abcf062fd5decca251b2d4e623edb9daa7dec02a assets/codmod/blockstates/threshold_portal.json
 f062903ff298b3585d7b47250018da45c0293850 assets/codmod/blockstates/ugly_wallpaper.json
-e14e416eeed1c6ed52955e0adc5df6018452a850 assets/codmod/lang/en_ud.json
-83dd51b3b3add91096253ea7b85d1876670d15fa assets/codmod/lang/en_us.json
+4771aa6fbb73a8f88a608b4c9fcfea17e6dca043 assets/codmod/lang/en_ud.json
+04e7bc182a7c5e4f5d589623a52250399244e285 assets/codmod/lang/en_us.json
 13cd803f61e334af890df6bb81131bf7c4caad2e assets/codmod/models/block/ceiling_light.json
 8d7860352037461ea03d33414321cfa620e76f38 assets/codmod/models/block/ceiling_tile.json
 a33ac3bce7ff86d30362c8f1f50bc3b06daf18b4 assets/codmod/models/block/ceramic_slab.json
@@ -44,7 +43,6 @@ eba65c8a634312604cb08c106eae5fe67828ffac assets/codmod/models/block/cod_nuke.jso
 7d93a248090f2aebb6de87adea0eeadf5b11ded6 assets/codmod/models/block/entropy_basalt.json
 85657c10192002b7f4a15078185f032450f77ae8 assets/codmod/models/block/entropy_sand.json
 aaf8a6e73b8a3771dfd68569b4e9ad6a04ccfb3a assets/codmod/models/block/entropy_shale.json
-307eaa0aa1dd413b90f73509a9fbabe7517d7bad assets/codmod/models/block/garreth_plushie.json
 72994c0dcf8917dbe755b5c71b86e048806140f6 assets/codmod/models/block/graphics_monitor.json
 7c4de1f5f69b5d90d48fbb545d6d5facf3677f0e assets/codmod/models/block/iron_mantle.json
 a5c7e2db49511871b54a83f1509677e1ed1c83e6 assets/codmod/models/block/lv_cable.json
@@ -85,8 +83,6 @@ f3566f941ee7bdab935a38b07d676b8f65493829 assets/codmod/models/item/current_meter
 5080ac7a56309a0b80fd950a62d0407a119fea97 assets/codmod/models/item/entropy_basalt.json
 4ac89ed31014134a2382bd39c2b80975ab7e6e9b assets/codmod/models/item/entropy_sand.json
 131afbf904045a2a387c879ca85fc6dee9526a9f assets/codmod/models/item/entropy_shale.json
-6577e2c19605a8a3d669a88916e709f515ea7f02 assets/codmod/models/item/firelight_plushie.json
-af4c109feabd8b2520a6b76b4dd2c2d2f13fd2c4 assets/codmod/models/item/garreth_plushie.json
 c790e5b11c7205a92f4066135b7d6385aaaf14cb assets/codmod/models/item/graphics_monitor.json
 0801c8f300412067e094c0740b0e45c2cb2ce5c9 assets/codmod/models/item/hub_module.json
 d137e6061e65e0c34d5811c9efc1ed40efd1dfd3 assets/codmod/models/item/inventory_module.json
@@ -136,7 +132,6 @@ b95552f02b610418250b4fe4816fb5fe80439962 data/codmod/loot_table/blocks/ceramic_t
 39890bf9ab126662276c5bb547840c307bc74eb3 data/codmod/loot_table/blocks/entropy_basalt.json
 ab2bb8def4dfc7088c2805116f41fd7ae7f41726 data/codmod/loot_table/blocks/entropy_sand.json
 792db40af9a8489aef3b3f89a695188112b4ebf9 data/codmod/loot_table/blocks/entropy_shale.json
-c895f540cd974b7d66d495c84c365378e444ee46 data/codmod/loot_table/blocks/garreth_plushie.json
 ce44d96bde0627939b34adaca5950c1384e52d62 data/codmod/loot_table/blocks/graphics_monitor.json
 8dff5257a968abc556a556b33bafd8162eda0ca2 data/codmod/loot_table/blocks/iron_mantle.json
 b20ad25fe48c99aa6e47ded38236b1ec872f6873 data/codmod/loot_table/blocks/lv_cable.json

@@ -4,6 +4,7 @@ import com.mc3699.codmod.entity.itemProjectile.ItemProjectileEntity;
 import com.mc3699.codmod.registry.CodEntities;
 import com.mc3699.codmod.registry.CodItems;
 import com.mc3699.codmod.registry.CodSounds;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -15,6 +16,8 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
+import java.util.List;
+
 public class NullChickenSwordItem extends SwordItem {
 
     public NullChickenSwordItem(Properties properties) {
@@ -24,7 +27,11 @@ public class NullChickenSwordItem extends SwordItem {
     @Override
     public float getAttackDamageBonus(Entity target, float damage, DamageSource damageSource) {
         return damage * 13;
+    }
 
+    @Override
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+        tooltipComponents.add(Component.literal("Whatever text you want"));
     }
 
     @Override

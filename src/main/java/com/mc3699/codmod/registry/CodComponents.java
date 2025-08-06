@@ -2,8 +2,11 @@ package com.mc3699.codmod.registry;
 
 import com.mc3699.codmod.Codmod;
 import com.mojang.serialization.Codec;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponentType;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -25,6 +28,27 @@ public class CodComponents {
             "disk_size",
             () -> DataComponentType.<Long>builder()
                     .persistent(Codec.LONG)
+                    .build()
+    );
+
+    public static final Supplier<DataComponentType<String>> TRANSPONDER_ID = COMPONENTS.register(
+            "transponder_id",
+            () -> DataComponentType.<String>builder()
+                    .persistent(Codec.STRING)
+                    .build()
+    );
+
+    public static final Supplier<DataComponentType<BlockPos>> BLOCK_POSITION = COMPONENTS.register(
+            "position",
+            () -> DataComponentType.<BlockPos>builder()
+                    .persistent(BlockPos.CODEC)
+                    .build()
+    );
+
+    public static final Supplier<DataComponentType<Integer>> CHANNEL = COMPONENTS.register(
+            "channel",
+            () -> DataComponentType.<Integer>builder()
+                    .persistent(Codec.INT)
                     .build()
     );
 
