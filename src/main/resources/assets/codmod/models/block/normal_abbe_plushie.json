@@ -2,7 +2,8 @@
 	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"1": "codmod:item/skishel_plushie"
+		"1": "codmod:block/normal_abbe_plushie",
+		"particle": "codmod:block/normal_abbe_plushie"
 	},
 	"elements": [
 		{

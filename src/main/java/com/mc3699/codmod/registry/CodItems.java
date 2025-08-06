@@ -187,31 +187,6 @@ public class CodItems {
             .lang("Red")
             .register();
 
-    public static final ItemEntry<Item> NORMAL_ABBE_PLUSHIE = CodRegistrate.INSTANCE.item("normal_abbe_plushie", Item::new)
-            .properties(properties -> properties)
-            .lang("Regular Abbe Plush")
-            .register();
-
-    public static final ItemEntry<Item> ZETOS_PLUSHIE = CodRegistrate.INSTANCE.item("zetos_plushie", Item::new)
-            .properties(properties -> properties)
-            .lang("Zetos Plushie")
-            .register();
-
-    public static final ItemEntry<Item> SKISHEL_PLUSHIE = CodRegistrate.INSTANCE.item("skishel_plushie", Item::new)
-            .properties(properties -> properties)
-            .lang("Skishel Plushie")
-            .register();
-
-    public static final ItemEntry<Item> TERRA_PLUSHIE = CodRegistrate.INSTANCE.item("terra_plushie", Item::new)
-            .properties(properties -> properties)
-            .lang("Terra Plushie")
-            .register();
-
-    public static final ItemEntry<Item> FIRELIGHT_PLUSHIE = CodRegistrate.INSTANCE.item("firelight_plushie", Item::new)
-            .properties(properties -> properties)
-            .lang("§5Firelight §rPlushie")
-            .register();
-
     public static final ItemEntry<SoulTakerItem> SOUL_TAKER = CodRegistrate.INSTANCE.item(
                     "soul_taker",
                     SoulTakerItem::new

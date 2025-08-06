@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "codmod:item/normal_abbe_plushie"
-  }
+  "parent": "codmod:block/normal_abbe_plushie"
 }

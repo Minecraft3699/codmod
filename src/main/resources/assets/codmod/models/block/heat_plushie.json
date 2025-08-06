@@ -2,8 +2,8 @@
 	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "codmod:item/zetos_plushie",
-		"particle": "codmod:item/zetos_plushie"
+		"0": "codmod:block/heat_plushie",
+		"particle": "codmod:block/heat_plushie"
 	},
 	"elements": [
 		{
@@ -57,9 +57,9 @@
 				"north": {"uv": [12.5, 4, 11.75, 5], "rotation": 180, "texture": "#0"},
 				"east": {"uv": [10, 5, 11, 8], "rotation": 270, "texture": "#0"},
 				"south": {"uv": [11.75, 5, 11, 4], "texture": "#0"},
-				"west": {"uv": [11.75, 5, 12.75, 8], "rotation": 90, "texture": "#0"},
+				"west": {"uv": [4, 13, 5, 16], "rotation": 90, "texture": "#0"},
 				"up": {"uv": [11, 5, 11.75, 8], "rotation": 180, "texture": "#0"},
-				"down": {"uv": [12.75, 5, 13.5, 8], "texture": "#0"}
+				"down": {"uv": [4, 13, 5, 16], "texture": "#0"}
 			}
 		},
 		{
@@ -68,11 +68,11 @@
 			"to": [6, 7, 9.5],
 			"rotation": {"angle": 0, "axis": "y", "origin": [5, 7, 5]},
 			"faces": {
-				"north": {"uv": [10.5, 12, 9.75, 13], "rotation": 180, "texture": "#0"},
-				"east": {"uv": [8, 13, 9, 16], "rotation": 270, "texture": "#0"},
+				"north": {"uv": [10.75, 13.25, 9.75, 14.25], "rotation": 180, "texture": "#0"},
+				"east": {"uv": [4, 13, 4.75, 16], "rotation": 270, "texture": "#0"},
 				"south": {"uv": [9.75, 13, 9, 12], "texture": "#0"},
-				"west": {"uv": [9.75, 13, 10.75, 16], "rotation": 90, "texture": "#0"},
-				"up": {"uv": [9, 13, 9.75, 16], "rotation": 180, "texture": "#0"},
+				"west": {"uv": [5, 13, 6.5, 16], "rotation": 90, "texture": "#0"},
+				"up": {"uv": [12, 5, 13, 8], "rotation": 180, "texture": "#0"},
 				"down": {"uv": [10.75, 13, 11.5, 16], "texture": "#0"}
 			}
 		},
