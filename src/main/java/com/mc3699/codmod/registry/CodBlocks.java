@@ -99,7 +99,7 @@ public class CodBlocks {
     public static final BlockEntry<Block> MOIST_CARPET = CodRegistrate.INSTANCE.block("garreth_plushie", Block::new)
             .properties(properties -> properties.noCollission().noOcclusion())
             .simpleItem()
-            .lang("Garreth Plushie of stupidity")
+            .lang("Garreth Plushie of stupidity.")
             .register();
 
     public static final BlockEntry<Block> GARRETH_PLUSHIE = CodRegistrate.INSTANCE.block("moist_carpet", Block::new)
