@@ -14,6 +14,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MoverType;
+import net.minecraft.world.entity.animal.Cod;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -296,19 +297,19 @@ public class CodMissileEntity extends Entity {
         );
 
         int gridSize = 16;
-        for (int i = 0; i < 64; i++) {
-            int xIndex = i % gridSize;
-            int zIndex = i / gridSize;
-            double xOffset = xIndex - (gridSize / 2.0);
-            double zOffset = zIndex - (gridSize / 2.0);
-            Vec3 spawnPos = codSpawnPos.add(xOffset, 0, zOffset);
-            Entity cod = new SwarmCodEntity(CodEntities.SWARM_COD.get(), serverLevel);
-            cod.setPos(spawnPos);
-            int randomVelX = serverLevel.random.nextInt(-4, 4);
-            int randomVelZ = serverLevel.random.nextInt(-4, 4);
-            int randomHeight = serverLevel.random.nextInt(8, 24);
-            cod.setDeltaMovement(randomVelX * 0.1, randomHeight * 0.05, randomVelZ * 0.1);
-            serverLevel.addFreshEntity(cod);
+        for (int xIndex = 0; xIndex < gridSize; xIndex++) {
+            for (int zIndex = 0; zIndex < gridSize; zIndex++) {
+                double xOffset = xIndex - (gridSize / 2.0) + 0.5;
+                double zOffset = zIndex - (gridSize / 2.0) + 0.5;
+                Vec3 spawnPos = codSpawnPos.add(xOffset, 0, zOffset);
+                Entity cod = new Cod(EntityType.COD, serverLevel);
+                cod.setPos(spawnPos);
+                int randomVelX = serverLevel.random.nextInt(-4, 5);
+                int randomVelZ = serverLevel.random.nextInt(-4, 5);
+                int randomHeight = serverLevel.random.nextInt(8, 25);
+                cod.setDeltaMovement(randomVelX * 0.1, randomHeight * 0.05, randomVelZ * 0.1);
+                serverLevel.addFreshEntity(cod);
+            }
         }
     }
 

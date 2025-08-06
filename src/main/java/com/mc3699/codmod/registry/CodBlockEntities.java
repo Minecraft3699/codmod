@@ -10,6 +10,8 @@ import com.mc3699.codmod.block.launchpad.LaunchPadBlockEntity;
 import com.mc3699.codmod.block.mantleKey.MantleKeyBlockEntity;
 import com.mc3699.codmod.block.opticalDriveInterface.OpticalDriveInterfaceBlockEntity;
 import com.mc3699.codmod.block.radar.RadarBlockEntity;
+import com.mc3699.codmod.block.teleporter.TeleporterBlockEntity;
+import com.mc3699.codmod.block.triangulator.TriangulatorBlockEntity;
 import com.mc3699.codmod.block.uavController.UAVControllerBlockEntity;
 import com.mc3699.codmod.technology.coalGenerator.CoalGeneratorBlockEntity;
 import com.mc3699.codmod.technology.lowVoltageCable.LowVoltageCableBlockEntity;
@@ -82,6 +84,16 @@ public class CodBlockEntities {
     public static final Supplier<BlockEntityType<GraphicsMonitorBlockEntity>> GRAPHICS_MONITOR = BLOCK_ENTITIES.register(
             "graphics_monitor",
             () -> new BlockEntityType<>(GraphicsMonitorBlockEntity::new, Set.of(CodBlocks.GRAPHICS_MONITOR.get()), null)
+    );
+
+    public static final Supplier<BlockEntityType<TeleporterBlockEntity>> TELEPORTER = BLOCK_ENTITIES.register(
+            "teleporter",
+            () -> new BlockEntityType<>(TeleporterBlockEntity::new, Set.of(CodBlocks.TELEPORTER.get()), null)
+    );
+
+    public static final Supplier<BlockEntityType<TriangulatorBlockEntity>> TRIANGULATOR = BLOCK_ENTITIES.register(
+            "triangulator",
+            () -> new BlockEntityType<>(TriangulatorBlockEntity::new, Set.of(CodBlocks.TRIANGULATOR.get()), null)
     );
 
 

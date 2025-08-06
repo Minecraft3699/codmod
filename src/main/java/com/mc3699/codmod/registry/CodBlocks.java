@@ -5,6 +5,7 @@ import com.mc3699.codmod.block.DellServerBlock;
 import com.mc3699.codmod.block.backrooms.CeilingLightBlock;
 import com.mc3699.codmod.block.codNuke.CodNukeBlock;
 import com.mc3699.codmod.block.graphicsMonitor.GraphicsMonitorBlock;
+import com.mc3699.codmod.block.teleporter.TeleporterBlock;
 import com.mc3699.codmod.block.thresholdParts.ThresholdPortalBlock;
 import com.mc3699.codmod.block.consoles.ScanningConsoleBlock;
 import com.mc3699.codmod.block.johnGeometry.JohnGeometryBlock;
@@ -16,6 +17,7 @@ import com.mc3699.codmod.block.server.ServerBlock;
 import com.mc3699.codmod.block.subspace_tripmine.SubspaceTripmineBlock;
 import com.mc3699.codmod.block.thresholdParts.ThresholdBackplaneBlock;
 import com.mc3699.codmod.block.thresholdParts.ThresholdEmitterBlock;
+import com.mc3699.codmod.block.triangulator.TriangulatorBlock;
 import com.mc3699.codmod.block.uavController.UAVControllerBlock;
 import com.mc3699.codmod.technology.coalGenerator.CoalGeneratorBlock;
 import com.mc3699.codmod.technology.lowVoltageCable.LowVoltageCableBlock;
@@ -264,6 +266,27 @@ public class CodBlocks {
 
     public static final BlockEntry<LowVoltageCableBlock> LV_CABLE_BLOCK = CodRegistrate.INSTANCE.block("lv_cable", LowVoltageCableBlock::new)
             .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE))
+            .simpleItem()
+            .register();
+
+    public static final BlockEntry<TeleporterBlock> TELEPORTER = CodRegistrate.INSTANCE.block("teleporter", TeleporterBlock::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK))
+            .blockstate(
+                    (ctx, prov) -> prov.simpleBlock(ctx.get(), prov.models().cube(
+                            "teleporter",
+                            ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "block/teleporter_bottom"),
+                            ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "block/teleporter_top"),
+                            ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "block/teleporter_side"),
+                            ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "block/teleporter_side"),
+                            ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "block/teleporter_side"),
+                            ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "block/teleporter_side")
+                    ))
+            )
+            .simpleItem()
+            .register();
+
+    public static final BlockEntry<TriangulatorBlock> TRIANGULATOR = CodRegistrate.INSTANCE.block("triangulator", TriangulatorBlock::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK))
             .simpleItem()
             .register();
 

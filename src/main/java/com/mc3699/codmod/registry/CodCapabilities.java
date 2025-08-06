@@ -1,10 +1,7 @@
 package com.mc3699.codmod.registry;
 
 import com.mc3699.codmod.Codmod;
-import com.mc3699.codmod.peripheral.LaunchPadPeripheral;
-import com.mc3699.codmod.peripheral.OpticalDriveInterfacePeripheral;
-import com.mc3699.codmod.peripheral.RadarPeripheral;
-import com.mc3699.codmod.peripheral.UAVControllerPeripheral;
+import com.mc3699.codmod.peripheral.*;
 import com.mc3699.codmod.technology.coalGenerator.CoalGeneratorBlock;
 import com.mc3699.codmod.technology.coalGenerator.CoalGeneratorBlockEntity;
 import com.mc3699.codmod.technology.foundation.BaseMachineBlockEntity;
@@ -46,6 +43,12 @@ public class CodCapabilities {
                 PeripheralCapability.get(),
                 CodBlockEntities.OPTICAL_DRIVE_INTERFACE.get(),
                 (driveInterface, direction) -> new OpticalDriveInterfacePeripheral(driveInterface)
+        );
+
+        event.registerBlockEntity(
+                PeripheralCapability.get(),
+                CodBlockEntities.TELEPORTER.get(),
+                (teleporter, direction) -> new TeleporterPeripheral(teleporter)
         );
 
 

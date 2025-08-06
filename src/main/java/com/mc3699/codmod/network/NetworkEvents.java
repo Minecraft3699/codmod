@@ -33,6 +33,24 @@ public class NetworkEvents {
                 ClientBadSunSyncPayload::handle
         );
 
+        registrar.playToServer(
+                TransponderSetIDPayload.TYPE,
+                TransponderSetIDPayload.CODEC,
+                TransponderSetIDPayload::handle
+        );
+
+        registrar.playToServer(
+                DesignatorChannelPayload.TYPE,
+                DesignatorChannelPayload.CODEC,
+                DesignatorChannelPayload::handle
+        );
+
+        registrar.playToClient(
+                OpenScreenPayload.TYPE,
+                OpenScreenPayload.CODEC,
+                OpenScreenPayload::handle
+        );
+
     }
 
     public static void sendToServer(CustomPacketPayload payload) {

@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "codmod:block/teleporter_bottom",
+    "east": "codmod:block/teleporter_side",
+    "north": "codmod:block/teleporter_side",
+    "south": "codmod:block/teleporter_side",
+    "up": "codmod:block/teleporter_top",
+    "west": "codmod:block/teleporter_side"
+  }
+}

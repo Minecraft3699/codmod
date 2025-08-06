@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "codmod:item/radio",
-		"particle": "codmod:item/radio"
+		"0": "codmod:item/designator",
+		"particle": "codmod:item/designator"
 	},
 	"elements": [
 		{
