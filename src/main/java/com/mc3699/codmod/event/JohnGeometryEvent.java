@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class JohnGeometryEvent extends BaseEvent {
     public JohnGeometryEvent() {
-        super(2);
+        super(1);
     }
 
     public static void placeJohn(ServerLevel level, BlockPos pos, int radius) {

@@ -326,6 +326,12 @@ public class CodItems {
             .lang("Target Designator")
             .register();
 
+    public static final ItemEntry<DisconnectorItem> DISCONNECTOR = CodRegistrate.INSTANCE.item
+            ("disconnector", DisconnectorItem::new)
+            .properties(properties -> properties)
+            .lang("Disconnector")
+            .register();
+
     // VOTV Foods
 
     public static final Supplier<Item> BURGER = ITEMS.register(

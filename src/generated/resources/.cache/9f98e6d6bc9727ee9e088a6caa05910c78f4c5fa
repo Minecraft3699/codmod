@@ -1,4 +1,4 @@
-// 1.21.1	2025-08-12T11:14:40.1759142	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
+// 1.21.1	2025-08-12T05:24:43.763104134	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
 e7cb80d710fab51bc6ace5b29bf5cf955a923adf assets/codmod/blockstates/ceiling_light.json
 7040b661ef94bb5c487639a82d59a859a6e42c36 assets/codmod/blockstates/ceiling_tile.json
 13cdd03b5ecfcd79516580da336255a0d07abedc assets/codmod/blockstates/ceramic_slab.json
@@ -36,8 +36,8 @@ fa161a7261482130ac94c13cb9fe6be05bafcab4 assets/codmod/blockstates/threshold_emi
 abcf062fd5decca251b2d4e623edb9daa7dec02a assets/codmod/blockstates/threshold_portal.json
 62981c818b0e56157d81e30ba4c84e88a03edeb3 assets/codmod/blockstates/triangulator.json
 f062903ff298b3585d7b47250018da45c0293850 assets/codmod/blockstates/ugly_wallpaper.json
-5ce57d3b5ccd61bcaddd5876ccd5ee1c9eaa0a13 assets/codmod/lang/en_ud.json
-3e85e99ff1659dd234817483bc6d9eb6f3d4c77c assets/codmod/lang/en_us.json
+672c4b0cc24197094558580ee25a56cc6917b420 assets/codmod/lang/en_ud.json
+b4e684294cf41c4b4adcf0a534cc5d40650331d6 assets/codmod/lang/en_us.json
 13cd803f61e334af890df6bb81131bf7c4caad2e assets/codmod/models/block/ceiling_light.json
 8d7860352037461ea03d33414321cfa620e76f38 assets/codmod/models/block/ceiling_tile.json
 a33ac3bce7ff86d30362c8f1f50bc3b06daf18b4 assets/codmod/models/block/ceramic_slab.json
@@ -98,6 +98,7 @@ bd589b79e143905dce7a03cd4fef9a64fef59331 assets/codmod/models/item/cod_nuke.json
 cba0cade4e3eb94d317c29eb61bc289020399b9b assets/codmod/models/item/command_module.json
 f3566f941ee7bdab935a38b07d676b8f65493829 assets/codmod/models/item/current_meter.json
 711a5d9f736782ae6bb3a9eb0a96516cb6f22ae6 assets/codmod/models/item/designator.json
+f1b3c66d29cebf851e9441cadda7f351377e6d05 assets/codmod/models/item/disconnector.json
 36d27b90214d170903ea5b8fb6911937b5d33dcf assets/codmod/models/item/donut.json
 04abd3d7f1df01580929b34f09f1a3fcf4a594df assets/codmod/models/item/drive.json
 5080ac7a56309a0b80fd950a62d0407a119fea97 assets/codmod/models/item/entropy_basalt.json
