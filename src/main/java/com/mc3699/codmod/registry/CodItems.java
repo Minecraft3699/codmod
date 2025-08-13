@@ -174,6 +174,22 @@ public class CodItems {
             .lang("§5Continuum Slicer")
             .register();
 
+    public static final ItemEntry<PsycheEthosGunItem> PSYCHE_GUN = CodRegistrate.INSTANCE.item(
+                    "psyche_gun",
+                    PsycheEthosGunItem::new
+            )
+            .properties(properties -> new Item.Properties().stacksTo(1))
+            .lang("§6Psyche")
+            .register();
+
+    public static final ItemEntry<PsycheEthosGunItem> ETHOS_GUN = CodRegistrate.INSTANCE.item(
+                    "ethos_gun",
+                    PsycheEthosGunItem::new
+            )
+            .properties(properties -> new Item.Properties().stacksTo(1))
+            .lang("§6Ethos")
+            .register();
+
     public static final ItemEntry<MiningHeadgearItem> MINING_HEADGEAR = CodRegistrate.INSTANCE.item(
                     "mining_headgear",
                     MiningHeadgearItem::new

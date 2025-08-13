@@ -72,6 +72,11 @@ public class CodSounds {
             .subtitle("Target Designator Transmits...")
             .register();
 
+    public static final RegistryEntry<SoundEvent, SoundEvent> GUNSHOT = CodRegistrate.INSTANCE.sound("gunshot")
+            .simple(false)
+            .subtitle("Gunshot")
+            .register();
+
     public static void register() {
         // This method just exists so Java will load the class LOL
         // Since it doesn't actually need to "push" anything to the registry manually anymore
