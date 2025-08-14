@@ -39,7 +39,7 @@ public class PsycheEthosGunItem extends Item {
             TooltipFlag tooltipFlag
     ) {
         tooltipComponents.add(Component.literal("Made for Mgwew2").withStyle(ChatFormatting.GRAY));
-        tooltipComponents.add(Component.literal("Model by Reverisiter").withStyle(ChatFormatting.GRAY));
+        tooltipComponents.add(Component.literal("Model by Reverister").withStyle(ChatFormatting.GRAY));
         tooltipComponents.add(Component.literal("Implemented by Deli_Shoes").withStyle(ChatFormatting.GRAY));
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }
