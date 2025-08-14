@@ -53,6 +53,12 @@
     ],
     "subtitle": "subtitles.codmod.geometry"
   },
+  "gunshot": {
+    "sounds": [
+      "codmod:gunshot"
+    ],
+    "subtitle": "subtitles.codmod.gunshot"
+  },
   "missile_entry": {
     "sounds": [
       "codmod:missile_entry"
