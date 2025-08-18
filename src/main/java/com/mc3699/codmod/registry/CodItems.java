@@ -253,6 +253,14 @@ public class CodItems {
             .lang("Blue")
             .register();
 
+    public static final ItemEntry<Item> CORRUPTEDKNIFE = CodRegistrate.INSTANCE.item(
+                    "corruptedknife",
+                    Item::new
+            )
+            .properties(properties -> properties)
+            .lang("Corrupted Knife")
+            .register();
+
     public static final ItemEntry<Item> cod_bomb = CodRegistrate.INSTANCE.item(
                     "cod_bomb",
                     Item::new
