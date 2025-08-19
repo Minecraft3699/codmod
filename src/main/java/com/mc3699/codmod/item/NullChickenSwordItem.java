@@ -31,7 +31,7 @@ public class NullChickenSwordItem extends SwordItem {
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-        tooltipComponents.add(Component.literal("Whatever text you want"));
+        tooltipComponents.add(Component.literal("ERR.NULLCHICKEN"));
     }
 
     @Override
