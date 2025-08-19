@@ -1,10 +1,11 @@
 package com.mc3699.codmod.item;
 
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
+
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
@@ -21,6 +22,7 @@ public class DisconnectorItem extends Item {
     }
 
     @Override
+    @OnlyIn(Dist.CLIENT)
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand usedHand) {
         Minecraft.getInstance().getConnection().disconnect(Component.literal("ABORT MISSION").withStyle(ChatFormatting.LIGHT_PURPLE));
         return InteractionResultHolder.success(player.getItemInHand(usedHand));
