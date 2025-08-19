@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "minecraft:smooth_stone"
+  },
+  "result": {
+    "id": "codmod:public_static_void"
+  },
+  "experience": 0.8,
+  "cookingtime": 20
+}

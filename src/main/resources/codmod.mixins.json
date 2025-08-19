@@ -5,5 +5,8 @@
   "mixins": [
     "TridentMixin"
   ],
-  "refmap": "codmod.mixins.refmap.json"
+  "refmap": "codmod.mixins.refmap.json",
+  "client": [
+    "EntropyMixin"
+  ]
 }

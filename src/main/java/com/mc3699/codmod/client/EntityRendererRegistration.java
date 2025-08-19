@@ -7,6 +7,8 @@ import com.mc3699.codmod.block.graphicsMonitor.GraphicsMonitorBlockEntityRendere
 import com.mc3699.codmod.block.mantleKey.MantleKeyBlockEntityRender;
 import com.mc3699.codmod.entity.applicant.ApplicantEntityRenderer;
 import com.mc3699.codmod.entity.ariral.AriralEntityRenderer;
+import com.mc3699.codmod.entity.cod_almighty.CodAlmightyEntityRenderer;
+import com.mc3699.codmod.entity.cod_almighty.CodAlmightyModel;
 import com.mc3699.codmod.entity.codmissile.CodMissileEntityRenderer;
 import com.mc3699.codmod.entity.codmissile.CodMissileModel;
 import com.mc3699.codmod.entity.darkener.DarkenerEntityRenderer;
@@ -57,6 +59,7 @@ public class EntityRendererRegistration {
         event.registerEntityRenderer(CodEntities.GIANNI.get(), GianniEntityRenderer::new);
         event.registerEntityRenderer(CodEntities.ITEM_PROJECTILE.get(), ItemProjectileRenderer::new);
         event.registerEntityRenderer(CodEntities.MARKSMAN_COIN_ENTITY.get(), ItemProjectileRenderer::new);
+        event.registerEntityRenderer(CodEntities.COD_ALMIGHTY.get(), CodAlmightyEntityRenderer::new);
 
         event.registerBlockEntityRenderer(CodBlockEntities.MANTLE_KEY.get(), MantleKeyBlockEntityRender::new);
         event.registerBlockEntityRenderer(CodBlockEntities.CEILING_LIGHT.get(), CeilingLightBlockEntityRenderer::new);
@@ -73,6 +76,7 @@ public class EntityRendererRegistration {
                 ParachuteChestEntityModel.LAYER_LOCATION,
                 ParachuteChestEntityModel::createBodyLayer
         );
+        event.registerLayerDefinition(CodAlmightyModel.LAYER_LOCATION, CodAlmightyModel::createBodyLayer);
     }
 
 }

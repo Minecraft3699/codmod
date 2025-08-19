@@ -27,6 +27,7 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.animal.Cod;
 import net.minecraft.world.entity.projectile.ProjectileUtil;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
@@ -94,6 +95,7 @@ public class CodBlocks {
             .properties(properties -> properties.noCollission().noOcclusion())
             .lang("Subspace Tripmine")
             .simpleItem()
+            .loot((c,b) -> c.add(b, c.createOreDrop(b, Items.COD)))
             .register();
 
     public static final BlockEntry<Block> GARRETH_PLUSHIE = CodRegistrate.INSTANCE.block("garreth_plushie", Block::new)

@@ -1,8 +1,10 @@
 package com.mc3699.codmod.datagen;
 
+import com.mc3699.codmod.Codmod;
 import com.mc3699.codmod.registry.CodBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -47,6 +49,17 @@ public class DatagenBlockTagProvider extends BlockTagsProvider {
 
         tag(BlockTags.MINEABLE_WITH_HOE)
                 .add(CodBlocks.COD_BLOCK.get());
+
+        tag(BlockTags.STONE_ORE_REPLACEABLES)
+                .add(CodBlocks.ENTROPY_BASALT.get())
+                .add(CodBlocks.ENTROPY_SHALE.get());
+
+        tag(BlockTags.DEEPSLATE_ORE_REPLACEABLES)
+                .add(CodBlocks.ENTROPY_BASALT.get());
+
+        tag(BlockTags.create(ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "entropy_planet_replaceable")))
+                .add(CodBlocks.ENTROPY_BASALT.get())
+                .add(CodBlocks.ENTROPY_SHALE.get());
     }
 
 }

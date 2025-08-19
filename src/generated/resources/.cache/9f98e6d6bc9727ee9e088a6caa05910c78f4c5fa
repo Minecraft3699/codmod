@@ -1,4 +1,4 @@
-// 1.21.1	2025-08-14T00:24:13.5117005	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
+// 1.21.1	2025-08-19T00:12:51.302381711	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
 e7cb80d710fab51bc6ace5b29bf5cf955a923adf assets/codmod/blockstates/ceiling_light.json
 7040b661ef94bb5c487639a82d59a859a6e42c36 assets/codmod/blockstates/ceiling_tile.json
 13cdd03b5ecfcd79516580da336255a0d07abedc assets/codmod/blockstates/ceramic_slab.json
@@ -36,8 +36,8 @@ fa161a7261482130ac94c13cb9fe6be05bafcab4 assets/codmod/blockstates/threshold_emi
 abcf062fd5decca251b2d4e623edb9daa7dec02a assets/codmod/blockstates/threshold_portal.json
 62981c818b0e56157d81e30ba4c84e88a03edeb3 assets/codmod/blockstates/triangulator.json
 f062903ff298b3585d7b47250018da45c0293850 assets/codmod/blockstates/ugly_wallpaper.json
-ece46450050b124e96196b2aec0a71a64687f124 assets/codmod/lang/en_ud.json
-2bd846378a1842d382cb5a2705db8304b6a84596 assets/codmod/lang/en_us.json
+42d73bd9f4c620ec9a604b84cbd8ed892c1db194 assets/codmod/lang/en_ud.json
+cd1509d501977edbba83395302e8795fb9ef647f assets/codmod/lang/en_us.json
 13cd803f61e334af890df6bb81131bf7c4caad2e assets/codmod/models/block/ceiling_light.json
 8d7860352037461ea03d33414321cfa620e76f38 assets/codmod/models/block/ceiling_tile.json
 a33ac3bce7ff86d30362c8f1f50bc3b06daf18b4 assets/codmod/models/block/ceramic_slab.json
@@ -182,7 +182,7 @@ a3657c70dafd63b13a10a0d6843d2f631b3184d4 data/codmod/loot_table/blocks/red_ceili
 4be14d37a2bea9946b52db8ff556f3a4d614e595 data/codmod/loot_table/blocks/red_ugly_wallpaper.json
 51f8df362e0eb5667bc1e5179c3ae3d31019a801 data/codmod/loot_table/blocks/scanning_console.json
 1d608710884e3dfef2c0c27a3c60cc04eacd9c83 data/codmod/loot_table/blocks/skishel_plushie.json
-ef31591a0779ff1e0562aaaade00880160e50926 data/codmod/loot_table/blocks/subspace_tripmine.json
+1eadc591fb61bbddc23c6c5ebd91b0173501d374 data/codmod/loot_table/blocks/subspace_tripmine.json
 d9eecbca98be28e946dfbfd7f2e849a8b97bd680 data/codmod/loot_table/blocks/teleporter.json
 b256a1687c4f73b187b159a8b323e6e5ac3e6929 data/codmod/loot_table/blocks/terra_plushie.json
 b19b860d10322920d1d8ea6af50fd0b826b95b3c data/codmod/loot_table/blocks/threshold_backplane.json
@@ -192,6 +192,7 @@ f392b80ba95e109ea7bd046982afb3392719ad8b data/codmod/loot_table/blocks/triangula
 acc5e6e3d1346e0cf957df45fea7202ca6b53fca data/codmod/loot_table/blocks/ugly_wallpaper.json
 0863d5c31f299349139391182d84c3f7a831fbfe data/codmod/loot_table/entities/applicant.json
 da1869a3476d25ecb4196486cf06c14714d38c74 data/codmod/loot_table/entities/ariral.json
+6912eda651ceb8ac0338000c8d57814335b0aed5 data/codmod/loot_table/entities/cod_almighty.json
 6712f35dc4f9877b7d0332834de3b3041eacd523 data/codmod/loot_table/entities/cod_missile.json
 10faa91b1cce0c5c764aa7b28f01c31aa51dbd5b data/codmod/loot_table/entities/darkener.json
 262f80c93ab52c5323dedcba4975214f3110dca8 data/codmod/loot_table/entities/firelight.json

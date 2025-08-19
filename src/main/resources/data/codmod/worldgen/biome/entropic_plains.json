@@ -12,10 +12,14 @@
     "water_fog_color": 329011
   },
   "features": [
-    ["codmod:entropy_huge_diamond"],
-    ["codmod:entropy_huge_iron"],
-    ["codmod:entropy_huge_coal"],
-    ["minecraft:freeze_top_layer"]
+    "minecraft:ore_diamond_large",
+    "minecraft:ore_iron_upper",
+    "minecraft:ore_gold_extra",
+    "minecraft:ore_lapis",
+    "minecraft:ore_copper_large",
+    "minecraft:ore_redstone_lower",
+    "minecraft:ore_iron_middle",
+    "minecraft:ore_ancient_debris_large"
   ],
   "has_precipitation": false,
   "spawn_costs": {},

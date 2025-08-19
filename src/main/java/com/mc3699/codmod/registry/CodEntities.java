@@ -3,6 +3,7 @@ package com.mc3699.codmod.registry;
 import com.mc3699.codmod.entity.MarksmanRevolverCoinEntity;
 import com.mc3699.codmod.entity.applicant.ApplicantEntity;
 import com.mc3699.codmod.entity.ariral.AriralEntity;
+import com.mc3699.codmod.entity.cod_almighty.CodAlmightyEntity;
 import com.mc3699.codmod.entity.codmissile.CodMissileEntity;
 import com.mc3699.codmod.entity.darkener.DarkenerEntity;
 import com.mc3699.codmod.entity.firelight.FirelightEntity;
@@ -149,6 +150,7 @@ public class CodEntities {
                             registrateEntityLootTables.add(type, new LootTable.Builder())
             ))
             .register();
+
     public static final EntityEntry<RedWispEntity> RED_WISP = CodRegistrate.INSTANCE.entity(
                     "red_wisp",
                     RedWispEntity::new,
@@ -160,6 +162,7 @@ public class CodEntities {
                             registrateEntityLootTables.add(type, new LootTable.Builder())
             ))
             .register();
+
     public static final EntityEntry<CodMissileEntity> COD_MISSILE = CodRegistrate.INSTANCE.entity(
                     "cod_missile",
                     (EntityType<CodMissileEntity> ty, Level lvl) -> new CodMissileEntity(
@@ -221,6 +224,18 @@ public class CodEntities {
                     MobCategory.MISC
             )
             .properties((it) -> it.sized(0.25f, 0.25f))
+            .register();
+
+    public static final EntityEntry<CodAlmightyEntity> COD_ALMIGHTY = CodRegistrate.INSTANCE.entity(
+                    "cod_almighty",
+                    CodAlmightyEntity::new,
+                    MobCategory.MONSTER
+            )
+            .properties((it) -> it.sized(5f, 3f))
+            .loot((
+                    (registrateEntityLootTables, type) ->
+                            registrateEntityLootTables.add(type, new LootTable.Builder())
+            ))
             .register();
 
     public static final EntityEntry<MarksmanRevolverCoinEntity> MARKSMAN_COIN_ENTITY = CodRegistrate.INSTANCE.entity(

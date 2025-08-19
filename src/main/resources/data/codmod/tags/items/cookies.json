@@ -1,6 +1,5 @@
 {
-  "replace": "false",
   "values": [
-    {"id": "codmod:integrity_cookie", "required": false}
+    "codmod:integrity_cookie"
   ]
 }

@@ -2,6 +2,7 @@ package com.mc3699.codmod;
 
 import com.mc3699.codmod.entity.applicant.ApplicantEntity;
 import com.mc3699.codmod.entity.ariral.AriralEntity;
+import com.mc3699.codmod.entity.cod_almighty.CodAlmightyEntity;
 import com.mc3699.codmod.entity.darkener.DarkenerEntity;
 import com.mc3699.codmod.entity.firelight.FirelightEntity;
 import com.mc3699.codmod.entity.friendlyFace.FriendlyFaceEntity;
@@ -32,5 +33,6 @@ public class ModEvents {
         event.put(CodEntities.FRIENDLY_FACE.get(), FriendlyFaceEntity.createAttributes().build());
         event.put(CodEntities.GIANNI.get(), GianniEntity.createAttributes().build());
         event.put(CodEntities.MISGUIDED.get(), MisguidedEntity.createAttributes().build());
+        event.put(CodEntities.COD_ALMIGHTY.get(), CodAlmightyEntity.createAttributes().build());
     }
 }

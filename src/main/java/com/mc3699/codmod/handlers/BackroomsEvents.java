@@ -21,6 +21,7 @@ import net.minecraft.world.entity.RelativeMovement;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.neoforged.api.distmarker.Dist;
@@ -53,10 +54,14 @@ public class BackroomsEvents {
             {
                 if(random.nextInt(0,12) == 2)
                 {
-                    event.getEntity().teleportTo(Objects.requireNonNull(serverLevel.getServer().getLevel(BACKROOMS_DIM)), entity.getX(), 3, entity.getZ(), RelativeMovement.ALL, entity.getYRot(), entity.getXRot());
-                    event.setNewDamage(0);
+                    if(entity.getInBlockState().equals(Blocks.SAND.defaultBlockState()) || entity.getInBlockState().equals(Blocks.GRAVEL.defaultBlockState()))
+                    {
+                        event.getEntity().teleportTo(Objects.requireNonNull(serverLevel.getServer().getLevel(BACKROOMS_DIM)), entity.getX(), 3, entity.getZ(), RelativeMovement.ALL, entity.getYRot(), entity.getXRot());
+                        event.setNewDamage(0);
+                    }
                 }
             }
+
         }
     }
 
