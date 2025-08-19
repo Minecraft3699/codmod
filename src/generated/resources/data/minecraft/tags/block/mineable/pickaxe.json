@@ -11,6 +11,8 @@
     "codmod:threshold_emitter",
     "codmod:public_static_void",
     "codmod:public_static_void_slab",
-    "codmod:public_static_void_stairs"
+    "codmod:public_static_void_stairs",
+    "codmod:entropy_basalt",
+    "codmod:entropy_shale"
   ]
 }

@@ -253,7 +253,7 @@ public class CodItems {
             .lang("Blue")
             .register();
 
-    public static final ItemEntry<Item> CORRUPTEDKNIFE = CodRegistrate.INSTANCE.item(
+    public static final ItemEntry<Item> CORRUPTED_KNIFE = CodRegistrate.INSTANCE.item(
                     "corruptedknife",
                     Item::new
             )
@@ -356,6 +356,11 @@ public class CodItems {
             .lang("Disconnector")
             .register();
 
+    public static final ItemEntry<HardDriveHammerItem> HARD_DRIVE_HAMMER = CodRegistrate.INSTANCE.item
+            ("hard_drive_hammer", HardDriveHammerItem::new)
+            .properties(properties -> properties.fireResistant().rarity(Rarity.EPIC).durability(6000))
+            .lang("Hard Drive Hammer")
+            .register();
     // VOTV Foods
 
     public static final Supplier<Item> BURGER = ITEMS.register(

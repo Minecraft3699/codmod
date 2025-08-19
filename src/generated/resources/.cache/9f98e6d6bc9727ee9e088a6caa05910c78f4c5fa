@@ -1,4 +1,4 @@
-// 1.21.1	2025-08-19T00:12:51.302381711	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
+// 1.21.1	2025-08-19T18:18:37.153067702	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
 e7cb80d710fab51bc6ace5b29bf5cf955a923adf assets/codmod/blockstates/ceiling_light.json
 7040b661ef94bb5c487639a82d59a859a6e42c36 assets/codmod/blockstates/ceiling_tile.json
 13cdd03b5ecfcd79516580da336255a0d07abedc assets/codmod/blockstates/ceramic_slab.json
@@ -36,8 +36,8 @@ fa161a7261482130ac94c13cb9fe6be05bafcab4 assets/codmod/blockstates/threshold_emi
 abcf062fd5decca251b2d4e623edb9daa7dec02a assets/codmod/blockstates/threshold_portal.json
 62981c818b0e56157d81e30ba4c84e88a03edeb3 assets/codmod/blockstates/triangulator.json
 f062903ff298b3585d7b47250018da45c0293850 assets/codmod/blockstates/ugly_wallpaper.json
-42d73bd9f4c620ec9a604b84cbd8ed892c1db194 assets/codmod/lang/en_ud.json
-cd1509d501977edbba83395302e8795fb9ef647f assets/codmod/lang/en_us.json
+a7d0a5a3d529a54a8333aab5c7353f8cdc73b618 assets/codmod/lang/en_ud.json
+28020467154b77722cf3ce4105b97e265029ea69 assets/codmod/lang/en_us.json
 13cd803f61e334af890df6bb81131bf7c4caad2e assets/codmod/models/block/ceiling_light.json
 8d7860352037461ea03d33414321cfa620e76f38 assets/codmod/models/block/ceiling_tile.json
 a33ac3bce7ff86d30362c8f1f50bc3b06daf18b4 assets/codmod/models/block/ceramic_slab.json
@@ -96,6 +96,7 @@ bd589b79e143905dce7a03cd4fef9a64fef59331 assets/codmod/models/item/cod_nuke.json
 8c1c50040df1285e22084f92d036b89f6d6320ad assets/codmod/models/item/cod_pickaxe.json
 517de0ee0b552412e7aee2e38f2fb6a0701f9e72 assets/codmod/models/item/cod_rod.json
 cba0cade4e3eb94d317c29eb61bc289020399b9b assets/codmod/models/item/command_module.json
+5791d83990b5740736dc583c29640cc28d59fa0f assets/codmod/models/item/corruptedknife.json
 f3566f941ee7bdab935a38b07d676b8f65493829 assets/codmod/models/item/current_meter.json
 711a5d9f736782ae6bb3a9eb0a96516cb6f22ae6 assets/codmod/models/item/designator.json
 f1b3c66d29cebf851e9441cadda7f351377e6d05 assets/codmod/models/item/disconnector.json
@@ -110,6 +111,7 @@ df20e421a77c0e561a8965501ff0ed0c17fd3a1a assets/codmod/models/item/ethos_gun.jso
 af4c109feabd8b2520a6b76b4dd2c2d2f13fd2c4 assets/codmod/models/item/garreth_plushie.json
 c790e5b11c7205a92f4066135b7d6385aaaf14cb assets/codmod/models/item/graphics_monitor.json
 ddbe3a78d09518def7481cfafb2315b7f36c9d83 assets/codmod/models/item/green.json
+88b9a41db2508d1e1afc0b25190ec6be61ef0194 assets/codmod/models/item/hard_drive_hammer.json
 041825c4bcae22c8f47d6ed1e795ce0fc9232e86 assets/codmod/models/item/heat_plushie.json
 0801c8f300412067e094c0740b0e45c2cb2ce5c9 assets/codmod/models/item/hub_module.json
 d137e6061e65e0c34d5811c9efc1ed40efd1dfd3 assets/codmod/models/item/inventory_module.json
