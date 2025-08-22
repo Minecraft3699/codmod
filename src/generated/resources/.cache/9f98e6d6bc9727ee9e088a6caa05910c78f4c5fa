@@ -1,4 +1,4 @@
-// 1.21.1	2025-08-22T13:05:53.5130156	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
+// 1.21.1	2025-08-22T14:01:14.0330702	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
 e7cb80d710fab51bc6ace5b29bf5cf955a923adf assets/codmod/blockstates/ceiling_light.json
 7040b661ef94bb5c487639a82d59a859a6e42c36 assets/codmod/blockstates/ceiling_tile.json
 13cdd03b5ecfcd79516580da336255a0d07abedc assets/codmod/blockstates/ceramic_slab.json
@@ -37,8 +37,8 @@ abcf062fd5decca251b2d4e623edb9daa7dec02a assets/codmod/blockstates/threshold_por
 62981c818b0e56157d81e30ba4c84e88a03edeb3 assets/codmod/blockstates/triangulator.json
 f062903ff298b3585d7b47250018da45c0293850 assets/codmod/blockstates/ugly_wallpaper.json
 064fe3376b3c1cf85c49ff1eca7371979390528b assets/codmod/blockstates/zetos_plushie.json
-efe7d1e5d7534a2975b56167e9850a826a6854d8 assets/codmod/lang/en_ud.json
-814b81eed14ad1d1b826b9d62ff7a181c2caa324 assets/codmod/lang/en_us.json
+5ccdb7262cf652d1df93bcb6c3eb6bd931e5fc21 assets/codmod/lang/en_ud.json
+f55ef1bf7f46657b45c2701f4d34f0bfac27f16c assets/codmod/lang/en_us.json
 13cd803f61e334af890df6bb81131bf7c4caad2e assets/codmod/models/block/ceiling_light.json
 8d7860352037461ea03d33414321cfa620e76f38 assets/codmod/models/block/ceiling_tile.json
 a33ac3bce7ff86d30362c8f1f50bc3b06daf18b4 assets/codmod/models/block/ceramic_slab.json
@@ -128,6 +128,7 @@ e711d7e5fa8f787a221be12dc54684a1d0648cbb assets/codmod/models/item/moist_carpet.
 ed2fabcd1d2cb475fffea69c5c9a7e4d378dca2d assets/codmod/models/item/nbc_helmet.json
 27ed64665aa333e58d3aa332fae4c0738909b033 assets/codmod/models/item/nbc_leggings.json
 ff16bb2f158f1b46c5bd074027ebadaf18700a09 assets/codmod/models/item/network_fucker.json
+cd96f31de73da22f37a1b47d14b200af8d61b920 assets/codmod/models/item/nibble_ultra.json
 0a36ff15c85d89eef6ee44980a034be74e4f3f95 assets/codmod/models/item/normal_abbe_plushie.json
 66cc0d1f6fb9f9da726ee9065de56d3f2aa1e49a assets/codmod/models/item/null_chicken_sword.json
 f8026e0f2c6754de5fe6db13fd02ef4b8c993434 assets/codmod/models/item/nuz_plushie.json

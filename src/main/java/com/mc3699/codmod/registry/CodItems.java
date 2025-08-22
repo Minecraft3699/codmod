@@ -208,6 +208,11 @@ public class CodItems {
             .lang("Green")
             .register();
 
+    public static final ItemEntry<Item> NIBBLE_ULTRA = CodRegistrate.INSTANCE.item("nibble_ultra", Item::new)
+            .properties(properties -> properties)
+            .lang("Nibble Ultra")
+            .register();
+
     public static final ItemEntry<CodPickaxeItem> COD_PICKAXE = CodRegistrate.INSTANCE.item("cod_pickaxe",CodPickaxeItem::new)
             .properties(properties -> properties)
             .lang("Cod Pickaxe")
