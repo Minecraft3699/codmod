@@ -8,5 +8,6 @@
   "refmap": "codmod.mixins.refmap.json",
   "client": [
     "EntropyMixin"
-  ]
+  ],
+  "priority": 1000000
 }

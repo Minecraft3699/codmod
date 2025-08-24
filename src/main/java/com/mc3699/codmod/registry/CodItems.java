@@ -299,6 +299,14 @@ public class CodItems {
             .lang("NBC Suit Leggings")
             .register();
 
+    public static final ItemEntry<ArmorItem> NBC_BOOTS = CodRegistrate.INSTANCE.item(
+                    "nbc_boots",
+                    (properties) -> new ArmorItem(Holder.direct(CodArmor.NBC_ARMOR_MATERIAL), ArmorItem.Type.BOOTS, properties)
+            )
+            .properties(properties -> properties.stacksTo(1))
+            .lang("NBC Suit Boots")
+            .register();
+
     public static final ItemEntry<NullChickenSwordItem> NULL_CHICKEN_SWORD = CodRegistrate.INSTANCE.item(
             "null_chicken_sword",
             NullChickenSwordItem::new
@@ -307,13 +315,7 @@ public class CodItems {
             .lang("Null Chicken Sword")
             .register();
 
-    public static final ItemEntry<ArmorItem> NBC_BOOTS = CodRegistrate.INSTANCE.item(
-                    "nbc_boots",
-                    (properties) -> new ArmorItem(Holder.direct(CodArmor.NBC_ARMOR_MATERIAL), ArmorItem.Type.BOOTS, properties)
-            )
-            .properties(properties -> properties.stacksTo(1))
-            .lang("NBC Suit Boots")
-            .register();
+
 
     public static final ItemEntry<MarksmanRevolverItem> MARKSMAN_REVOLVER = CodRegistrate.INSTANCE.item(
             "marksman_revolver",
@@ -366,6 +368,56 @@ public class CodItems {
             .properties(properties -> properties.fireResistant().rarity(Rarity.EPIC).durability(6000))
             .lang("Hard Drive Hammer")
             .register();
+
+    public static final ItemEntry<Item> SEALED_FABRIC = CodRegistrate.INSTANCE.item
+            ("sealed_fabric", Item::new)
+            .lang("Sealed Fabric")
+            .register();
+
+    public static final ItemEntry<Item> THERMAL_COMPOUND = CodRegistrate.INSTANCE.item
+            ("thermal_compound", Item::new)
+            .lang("Thermal Compound")
+            .register();
+
+    public static final ItemEntry<Item> SPACE_GRADE_FABRIC = CodRegistrate.INSTANCE.item
+            ("space_grade_fabric", Item::new)
+            .lang("Space Grade Fabric")
+            .register();
+
+
+    public static final ItemEntry<ArmorItem> SPACE_HELMET = CodRegistrate.INSTANCE.item(
+                    "space_helmet",
+                    (properties) -> new ArmorItem(Holder.direct(CodArmor.SPACE_SUIT_ARMOR_MATERIAL), ArmorItem.Type.HELMET, properties)
+            )
+            .properties(properties -> properties.stacksTo(1))
+            .lang("Space Helmet")
+            .register();
+
+    public static final ItemEntry<ArmorItem> SPACE_CHESTPLATE = CodRegistrate.INSTANCE.item(
+                    "space_chestplate",
+                    (properties) -> new ArmorItem(Holder.direct(CodArmor.SPACE_SUIT_ARMOR_MATERIAL), ArmorItem.Type.CHESTPLATE, properties)
+            )
+            .properties(properties -> properties.stacksTo(1))
+            .lang("Space Suit Chestplate")
+            .register();
+
+    public static final ItemEntry<ArmorItem> SPACE_LEGGINGS = CodRegistrate.INSTANCE.item(
+                    "space_leggings",
+                    (properties) -> new ArmorItem(Holder.direct(CodArmor.SPACE_SUIT_ARMOR_MATERIAL), ArmorItem.Type.LEGGINGS, properties)
+            )
+            .properties(properties -> properties.stacksTo(1))
+            .lang("Space Suit Leggings")
+            .register();
+
+    public static final ItemEntry<ArmorItem> SPACE_BOOTS = CodRegistrate.INSTANCE.item(
+                    "space_boots",
+                    (properties) -> new ArmorItem(Holder.direct(CodArmor.SPACE_SUIT_ARMOR_MATERIAL), ArmorItem.Type.BOOTS, properties)
+            )
+            .properties(properties -> properties.stacksTo(1))
+            .lang("Space Suit Boots")
+            .register();
+
+
     // VOTV Foods
 
     public static final Supplier<Item> BURGER = ITEMS.register(

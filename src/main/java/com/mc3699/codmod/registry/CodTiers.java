@@ -26,4 +26,13 @@ public class CodTiers {
             () -> Ingredient.of(Tags.Items.GEMS_DIAMOND)
     );
 
+    public static final Tier HARD_DRIVE_HAMMER = new SimpleTier(
+            BlockTags.INCORRECT_FOR_NETHERITE_TOOL,
+            10000,
+            0.0f, // not used
+            10,
+            20,
+            () -> Ingredient.of(Tags.Items.INGOTS_NETHERITE)
+    );
+
 }
