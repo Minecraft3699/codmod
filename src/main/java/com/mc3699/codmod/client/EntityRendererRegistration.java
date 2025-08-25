@@ -5,6 +5,8 @@ import com.mc3699.codmod.block.backrooms.CeilingLightBlockEntityRenderer;
 import com.mc3699.codmod.block.codNuke.CodNukeBlockEntityRenderer;
 import com.mc3699.codmod.block.graphicsMonitor.GraphicsMonitorBlockEntityRenderer;
 import com.mc3699.codmod.block.mantleKey.MantleKeyBlockEntityRender;
+import com.mc3699.codmod.block.oxygenDistributor.OxygenDistributorBlockEntity;
+import com.mc3699.codmod.block.oxygenDistributor.OxygenDistributorBlockEntityRenderer;
 import com.mc3699.codmod.entity.applicant.ApplicantEntityRenderer;
 import com.mc3699.codmod.entity.ariral.AriralEntityRenderer;
 import com.mc3699.codmod.entity.cod_almighty.CodAlmightyEntityRenderer;
@@ -65,6 +67,7 @@ public class EntityRendererRegistration {
         event.registerBlockEntityRenderer(CodBlockEntities.CEILING_LIGHT.get(), CeilingLightBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(CodBlockEntities.COD_NUKE.get(), CodNukeBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(CodBlockEntities.GRAPHICS_MONITOR.get(), GraphicsMonitorBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(CodBlockEntities.OXYGEN_DISTRIBUTOR.get(), OxygenDistributorBlockEntityRenderer::new);
     }
 
     @SubscribeEvent

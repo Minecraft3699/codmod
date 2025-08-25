@@ -24,7 +24,8 @@
       "codmod:entropy_iron_placed",
       "codmod:entropy_gold_placed",
       "codmod:entropy_coal_placed",
-      "codmod:entropy_ice_placed"
+      "codmod:entropy_ice_placed",
+      "codmod:entropy_diamond_placed"
     ],
     [],
     [
