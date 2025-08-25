@@ -56,6 +56,7 @@ public class CodItems {
             () -> new Item(new Item.Properties().food(Foods.COOKED_CHICKEN).rarity(Rarity.RARE))
     );
 
+
     public static final Supplier<Item> APPLICATION = ITEMS.register(
             "application",
             () -> new Item(new Item.Properties())
@@ -78,6 +79,7 @@ public class CodItems {
                             .alwaysEdible()
                             .build()))
     );
+
 
     public static final Supplier<Item> UAV = ITEMS.register("uav", () -> new Item(new Item.Properties()));
 
