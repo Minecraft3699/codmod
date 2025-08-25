@@ -1,4 +1,4 @@
-// 1.21.1	2025-08-19T18:18:37.153067702	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
+// 1.21.1	2025-08-25T18:17:38.857301908	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
 e7cb80d710fab51bc6ace5b29bf5cf955a923adf assets/codmod/blockstates/ceiling_light.json
 7040b661ef94bb5c487639a82d59a859a6e42c36 assets/codmod/blockstates/ceiling_tile.json
 13cdd03b5ecfcd79516580da336255a0d07abedc assets/codmod/blockstates/ceramic_slab.json
@@ -19,6 +19,7 @@ a47a4694c6c5a76af3601f66a55ee611c1a043ff assets/codmod/blockstates/lv_cable.json
 abd1a05e68848bf5558e5e9cda3e46bbf762b4e4 assets/codmod/blockstates/moist_carpet.json
 e0a7baf429ef66c17975d800833c54c79e93c7ac assets/codmod/blockstates/normal_abbe_plushie.json
 58e32d3ae229529597f17df0ee4c9297928b6e96 assets/codmod/blockstates/nuz_plushie.json
+2c1803f6f99760675e55f891aa6dbac9b140dfc8 assets/codmod/blockstates/oxygen_distributor.json
 26a4e6684c2852cd1b49fc1caf712e4fccdfe5bb assets/codmod/blockstates/public_static_void.json
 92b90ea204cee4fbdf6891b45b246aa4731a6731 assets/codmod/blockstates/public_static_void_slab.json
 70291d4a10bdee59632f34ca0423ff6e927d62fb assets/codmod/blockstates/public_static_void_stairs.json
@@ -36,8 +37,9 @@ fa161a7261482130ac94c13cb9fe6be05bafcab4 assets/codmod/blockstates/threshold_emi
 abcf062fd5decca251b2d4e623edb9daa7dec02a assets/codmod/blockstates/threshold_portal.json
 62981c818b0e56157d81e30ba4c84e88a03edeb3 assets/codmod/blockstates/triangulator.json
 f062903ff298b3585d7b47250018da45c0293850 assets/codmod/blockstates/ugly_wallpaper.json
-a7d0a5a3d529a54a8333aab5c7353f8cdc73b618 assets/codmod/lang/en_ud.json
-28020467154b77722cf3ce4105b97e265029ea69 assets/codmod/lang/en_us.json
+064fe3376b3c1cf85c49ff1eca7371979390528b assets/codmod/blockstates/zetos_plushie.json
+5b14d6f3a90f5b95f4c4961c20910f7dbc72b677 assets/codmod/lang/en_ud.json
+5f9bf1d15626231edb9c8e50c40b5e52fa381257 assets/codmod/lang/en_us.json
 13cd803f61e334af890df6bb81131bf7c4caad2e assets/codmod/models/block/ceiling_light.json
 8d7860352037461ea03d33414321cfa620e76f38 assets/codmod/models/block/ceiling_tile.json
 a33ac3bce7ff86d30362c8f1f50bc3b06daf18b4 assets/codmod/models/block/ceramic_slab.json
@@ -61,6 +63,7 @@ a5c7e2db49511871b54a83f1509677e1ed1c83e6 assets/codmod/models/block/lv_cable.jso
 9f6c413f95555e578435943ec5a0cfaa16d6777f assets/codmod/models/block/moist_carpet.json
 8b4cdfd0407b56781776007348f38065b52f13b3 assets/codmod/models/block/normal_abbe_plushie.json
 4ee15dbcc706b2478259f43a4e59dfc6263564cb assets/codmod/models/block/nuz_plushie.json
+41f2cd284632bf78ed6861e97f36203e4c686361 assets/codmod/models/block/oxygen_distributor.json
 059ec95e9a7297242069f3bedc74a136a131001c assets/codmod/models/block/public_static_void.json
 53b779ce83af8bb25e042a4da5db5743e1a5cf4f assets/codmod/models/block/public_static_void_slab.json
 944ace3a2ddcef35f095a31dc17d66559099f6cc assets/codmod/models/block/public_static_void_slab_top.json
@@ -81,6 +84,7 @@ df058a5a8d32e47390f727acd71ebd53eabd4439 assets/codmod/models/block/scanning_con
 056c882dc76be4dbe2002fb52edb507f283d9f6b assets/codmod/models/block/threshold_portal.json
 1a4d949d8b765dde5692f9b2d9775fa2fe8968f8 assets/codmod/models/block/triangulator.json
 48684b1116c0fd7998b677e28dd768d7d6da7f8b assets/codmod/models/block/ugly_wallpaper.json
+7c324e73f75e5583081b413dbc8ec7743308599c assets/codmod/models/block/zetos_plushie.json
 8b9cbd354ac79a080eb5f89276688642392078ac assets/codmod/models/item/bagel.json
 58d2b811877134f0939cb58e50ca7599988ff76b assets/codmod/models/item/blue.json
 3d73f362dd02e40adaeb3de33b68a3d29105ff56 assets/codmod/models/item/ceiling_light.json
@@ -88,7 +92,7 @@ df058a5a8d32e47390f727acd71ebd53eabd4439 assets/codmod/models/block/scanning_con
 957faf2632baffa485f827f1756ce44aab26bd79 assets/codmod/models/item/ceramic_slab.json
 72d8bc0b46b7156333dd161f952434eab15ac239 assets/codmod/models/item/ceramic_stairs.json
 9bd7f4365d91fdf4487f04ba7ef2b2589772df6c assets/codmod/models/item/ceramic_tile.json
-0f6248576c40abb3e84578edf2bba3c668ae29a4 assets/codmod/models/item/circuits_bane.json
+488335f0103d1c24871d0198430d8a02c91c23d0 assets/codmod/models/item/circuits_bane.json
 6e4ae4a1075b96902735f18a3ca09569adfe3f55 assets/codmod/models/item/coal_generator.json
 be9268032c7c4e87e8644f46123b5bcdb1db8ee5 assets/codmod/models/item/cod_block.json
 d6d40a5fbaa25b325788bdc01877a77f74237d7a assets/codmod/models/item/cod_bomb.json
@@ -126,13 +130,17 @@ e711d7e5fa8f787a221be12dc54684a1d0648cbb assets/codmod/models/item/moist_carpet.
 ed2fabcd1d2cb475fffea69c5c9a7e4d378dca2d assets/codmod/models/item/nbc_helmet.json
 27ed64665aa333e58d3aa332fae4c0738909b033 assets/codmod/models/item/nbc_leggings.json
 ff16bb2f158f1b46c5bd074027ebadaf18700a09 assets/codmod/models/item/network_fucker.json
+cd96f31de73da22f37a1b47d14b200af8d61b920 assets/codmod/models/item/nibble_ultra.json
 0a36ff15c85d89eef6ee44980a034be74e4f3f95 assets/codmod/models/item/normal_abbe_plushie.json
 66cc0d1f6fb9f9da726ee9065de56d3f2aa1e49a assets/codmod/models/item/null_chicken_sword.json
 f8026e0f2c6754de5fe6db13fd02ef4b8c993434 assets/codmod/models/item/nuz_plushie.json
+72282e4fe3a6da4f852448a300e524c2c7eb237f assets/codmod/models/item/oxygen_distributor.json
+0ee3a17289b7dd13625597c26b7fd193f73b887f assets/codmod/models/item/oxygen_tank.json
 c9d0f2f21ca1272be5eb962b4a834a5e4f1561fc assets/codmod/models/item/psyche_gun.json
 733b0e2fe23248a60e7339e1c2bd4d1100d2dd2e assets/codmod/models/item/public_static_void.json
 40c492dab9dbbf98113c5f95136f68d22698d079 assets/codmod/models/item/public_static_void_slab.json
 8073582aae3cc34d74ef540dcb3d3c35d8e7eb96 assets/codmod/models/item/public_static_void_stairs.json
+aaf91167b7f3357b3808411c10cf6b8623604db6 assets/codmod/models/item/purple.json
 8a4ab10c53782592b0782bf134e2cdf11e4d80ab assets/codmod/models/item/red.json
 d313651c9ad36b990115f07e728c090b1f7ecbb1 assets/codmod/models/item/red_ceiling_light.json
 24617606e2a585e5e77dd364e510b549ed2e50be assets/codmod/models/item/red_ceiling_tile.json
@@ -141,19 +149,27 @@ c6b9a0e463afd3d465f2769dca4b170a61587ddd assets/codmod/models/item/red_moist_car
 19b0e54cde96bff0207b5cb2bdd5eb10d417568e assets/codmod/models/item/resistor.json
 11482dff99933134c9c8bec81b30b33a88d567e1 assets/codmod/models/item/round_meal.json
 fe6558c9434fae58f608b8dec37e8bece5ebdc57 assets/codmod/models/item/scythe.json
+fe2e8039c811cea004f1e94f4e97523bffe5fbfe assets/codmod/models/item/sealed_fabric.json
 2622f9d6eca88ca9e75ccc0a753626cd5018bf26 assets/codmod/models/item/shrimp_sniper.json
 c95cbcb31f84631ed4de81eccf9b5d582e9bc0f3 assets/codmod/models/item/skishel_plushie.json
 88181fc0fff503394b8b1f339a0155a5edeae585 assets/codmod/models/item/soul_taker.json
+2e0862df901201af67b4f776fad7bb86a698bdfc assets/codmod/models/item/space_boots.json
+aa5161b624cb3a289d42779284ed31eb1469e3a9 assets/codmod/models/item/space_chestplate.json
+7ccc226cae52ce7819afcef08a8da1fdbd2bb221 assets/codmod/models/item/space_grade_fabric.json
+6ccf0bed42e5c53793deb2c8b9c1cf1a5343efb5 assets/codmod/models/item/space_helmet.json
+509e597bc481a11d52363c46b17c5e1757c30a2f assets/codmod/models/item/space_leggings.json
 858220b3fd00572e370b53084f0aa440e0b2f48f assets/codmod/models/item/subspace_tripmine.json
 feaa3a18d60e1dd893b4f35c6cb30737ff373850 assets/codmod/models/item/teleported_bread.json
 b7d592e721c04a998eaa2c954ef21e172af26478 assets/codmod/models/item/teleporter.json
 743ea49a48fb815c866334b7c7c7e4df0a9c6656 assets/codmod/models/item/terra_plushie.json
+5f0f83d3b2874f48f6c56eee1bc44b85c37fdacd assets/codmod/models/item/thermal_compound.json
 330e7786e43edc53166cb35e7b053db241c81c96 assets/codmod/models/item/threshold_backplane.json
 7b1f4e74b584dded590248ffdc087bbd6bebe4d1 assets/codmod/models/item/threshold_emitter.json
 d24bb2999bea2c5d5a2a9b7d3a25d1eb05125162 assets/codmod/models/item/transponder.json
 76e3e1a0f7b5ff66e292a496c3dcec6e0ccd8e12 assets/codmod/models/item/triangulator.json
 675747199a65a032a596a5d6df5ea652cd851e78 assets/codmod/models/item/ugly_wallpaper.json
 61594bd513bca241f53c6a9b6b7825c3adcde2cb assets/codmod/models/item/voidbreaker.json
+51459b916a01daed3d6e4bd24ecc712e3da66058 assets/codmod/models/item/zetos_plushie.json
 a017f8316190390e2e73f5fa1c3c555b7ccd2f52 assets/codmod/sounds.json
 4640da060c3dd82f26361577225f58e2ee2efad1 data/codmod/loot_table/blocks/ceiling_light.json
 b0299ee3b2b07dc906703200fec9fed4aec21752 data/codmod/loot_table/blocks/ceiling_tile.json
@@ -175,6 +191,7 @@ b20ad25fe48c99aa6e47ded38236b1ec872f6873 data/codmod/loot_table/blocks/lv_cable.
 4cc5a3e2512c85ff87184597ae4e77dc8df0f2d2 data/codmod/loot_table/blocks/moist_carpet.json
 6a986a2f9cd3834fa80780ac320135a1bde4a6f0 data/codmod/loot_table/blocks/normal_abbe_plushie.json
 a52bfa22f3e2ad9c3f18003fb0075940ce55ec1a data/codmod/loot_table/blocks/nuz_plushie.json
+6ab8b2b8013de64b3e20a5448edd29aa24e8554a data/codmod/loot_table/blocks/oxygen_distributor.json
 5abc75f6c131477ec18be6da5e6da99e1df050a5 data/codmod/loot_table/blocks/public_static_void.json
 098c4abd3414881b8e463ac6d42853cf0f02c8ae data/codmod/loot_table/blocks/public_static_void_slab.json
 70382f50fa8e54f15f000d701d6e82fe984ae16f data/codmod/loot_table/blocks/public_static_void_stairs.json
@@ -192,6 +209,7 @@ f5fe35575830c6d3197670125b82babe1a4d0b0f data/codmod/loot_table/blocks/threshold
 6457cfee7314522e151b30d474f68205c3eabef9 data/codmod/loot_table/blocks/threshold_portal.json
 f392b80ba95e109ea7bd046982afb3392719ad8b data/codmod/loot_table/blocks/triangulator.json
 acc5e6e3d1346e0cf957df45fea7202ca6b53fca data/codmod/loot_table/blocks/ugly_wallpaper.json
+6fc0903c978b1c8a27f2a67fbbb67f8009eed164 data/codmod/loot_table/blocks/zetos_plushie.json
 0863d5c31f299349139391182d84c3f7a831fbfe data/codmod/loot_table/entities/applicant.json
 da1869a3476d25ecb4196486cf06c14714d38c74 data/codmod/loot_table/entities/ariral.json
 6912eda651ceb8ac0338000c8d57814335b0aed5 data/codmod/loot_table/entities/cod_almighty.json

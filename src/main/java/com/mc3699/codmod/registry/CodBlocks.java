@@ -270,7 +270,7 @@ public class CodBlocks {
 
     public static final BlockEntry<Block> ENTROPY_SAND = CodRegistrate.INSTANCE.block("entropy_sand", Block::new)
             .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.SAND))
-            .lang("Entropic Sand")
+            .lang("Entropic Regolith")
             .simpleItem()
             .register();
 
