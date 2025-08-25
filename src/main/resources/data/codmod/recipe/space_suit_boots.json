@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#I#",
+    "# #"
+  ],
+  "key": {
+    "#": {
+      "item": "codmod:space_grade_fabric"
+    },
+    "I": {
+      "item": "minecraft:iron_boots"
+    }
+  },
+  "result": {
+    "id": "codmod:space_boots",
+    "count": 1
+  }
+}

@@ -13,6 +13,7 @@
     "codmod:public_static_void_slab",
     "codmod:public_static_void_stairs",
     "codmod:entropy_basalt",
-    "codmod:entropy_shale"
+    "codmod:entropy_shale",
+    "codmod:oxygen_distributor"
   ]
 }

@@ -9,6 +9,8 @@ import com.mc3699.codmod.block.johnGeometry.JohnGeometryBlockEntity;
 import com.mc3699.codmod.block.launchpad.LaunchPadBlockEntity;
 import com.mc3699.codmod.block.mantleKey.MantleKeyBlockEntity;
 import com.mc3699.codmod.block.opticalDriveInterface.OpticalDriveInterfaceBlockEntity;
+import com.mc3699.codmod.block.oxygenDistributor.OxygenDistributorBlock;
+import com.mc3699.codmod.block.oxygenDistributor.OxygenDistributorBlockEntity;
 import com.mc3699.codmod.block.radar.RadarBlockEntity;
 import com.mc3699.codmod.block.teleporter.TeleporterBlockEntity;
 import com.mc3699.codmod.block.triangulator.TriangulatorBlockEntity;
@@ -94,6 +96,11 @@ public class CodBlockEntities {
     public static final Supplier<BlockEntityType<TriangulatorBlockEntity>> TRIANGULATOR = BLOCK_ENTITIES.register(
             "triangulator",
             () -> new BlockEntityType<>(TriangulatorBlockEntity::new, Set.of(CodBlocks.TRIANGULATOR.get()), null)
+    );
+
+    public static final Supplier<BlockEntityType<OxygenDistributorBlockEntity>> OXYGEN_DISTRIBUTOR = BLOCK_ENTITIES.register(
+            "oxygen_distributor",
+            () -> new BlockEntityType<>(OxygenDistributorBlockEntity::new, Set.of(CodBlocks.OXYGEN_DISTRIBUTOR.get()), null)
     );
 
 

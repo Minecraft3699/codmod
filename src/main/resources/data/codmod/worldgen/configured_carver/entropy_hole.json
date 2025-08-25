@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:cave",
+  "config": {
+    "lava_level": {
+      "absolute": -100
+    },
+    "probability": 0.01,
+    "replaceable": [
+      "codmod:entropy_sand",
+      "codmod:entropy_shale",
+      "codmod:entropy_basalt",
+      "minecraft:bedrock"
+    ],
+    "y": {
+      "below_top": -10
+    },
+    "yScale": 200,
+    "horizontal_radius_multiplier": 8,
+    "vertical_radius_multiplier": 128,
+    "floor_level": -1
+  }
+}

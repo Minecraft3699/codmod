@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "S",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "codmod:sealed_fabric"
+    },
+    "S": {
+      "item": "codmod:thermal_compound"
+    }
+  },
+  "result": {
+    "id": "codmod:space_grade_fabric",
+    "count": 1
+  }
+}

@@ -1,9 +1,9 @@
-// 1.21.1	2025-08-19T18:18:37.152819954	Tags for minecraft:block mod id codmod
+// 1.21.1	2025-08-24T20:09:51.234893163	Tags for minecraft:block mod id codmod
 c07d56e519c2670a4a6b53d32c12d615ad9017e5 data/codmod/tags/block/entropy_planet_replaceable.json
 6e0e685b233312f7264564f601be154ddaede52e data/minecraft/tags/block/deepslate_ore_replaceables.json
 a0f5a4c6451bf315ff61219fa479b3c047813676 data/minecraft/tags/block/mineable/axe.json
 6d2e63a9c74e2337d2db2fee03fc4d8c7c69e6cc data/minecraft/tags/block/mineable/hoe.json
-a7a9af1e969775a34f87639b52e486a17100d662 data/minecraft/tags/block/mineable/pickaxe.json
+85ea42237bf0cdac893ae9e2ee0ea41a54199576 data/minecraft/tags/block/mineable/pickaxe.json
 97de4b47a8717e8a31455682f83152be62184b59 data/minecraft/tags/block/mineable/shovel.json
 c07d56e519c2670a4a6b53d32c12d615ad9017e5 data/minecraft/tags/block/stone_ore_replaceables.json
 09da7375ed97e92c47503ec137a454991952ca8c data/minecraft/tags/block/wool.json

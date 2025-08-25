@@ -5,6 +5,7 @@ import com.mc3699.codmod.block.DellServerBlock;
 import com.mc3699.codmod.block.backrooms.CeilingLightBlock;
 import com.mc3699.codmod.block.codNuke.CodNukeBlock;
 import com.mc3699.codmod.block.graphicsMonitor.GraphicsMonitorBlock;
+import com.mc3699.codmod.block.oxygenDistributor.OxygenDistributorBlock;
 import com.mc3699.codmod.block.teleporter.TeleporterBlock;
 import com.mc3699.codmod.block.thresholdParts.ThresholdPortalBlock;
 import com.mc3699.codmod.block.consoles.ScanningConsoleBlock;
@@ -31,6 +32,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -338,6 +340,12 @@ public class CodBlocks {
     public static final BlockEntry<TriangulatorBlock> TRIANGULATOR = CodRegistrate.INSTANCE.block("triangulator", TriangulatorBlock::new)
             .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK))
             .simpleItem()
+            .register();
+
+    public static final BlockEntry<OxygenDistributorBlock> OXYGEN_DISTRIBUTOR = CodRegistrate.INSTANCE.block("oxygen_distributor", OxygenDistributorBlock::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.NETHERITE_BLOCK))
+            .simpleItem()
+            .lang("Oxygen Distributor")
             .register();
 
 

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "# #",
+    "#C#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "codmod:space_grade_fabric"
+    },
+    "C": {
+      "item": "minecraft:iron_chestplate"
+    }
+  },
+  "result": {
+    "id": "codmod:space_chestplate",
+    "count": 1
+  }
+}

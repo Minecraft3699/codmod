@@ -389,12 +389,18 @@ public class CodItems {
             .lang("Space Grade Fabric")
             .register();
 
+    public static final ItemEntry<OxygenTankItem> OXYGEN_TANK = CodRegistrate.INSTANCE.item
+            ("oxygen_tank", OxygenTankItem::new)
+            .lang("Oxygen Tank")
+            .properties(properties -> properties.stacksTo(1).component(CodComponents.OXYGEN, 1000))
+            .register();
+
 
     public static final ItemEntry<ArmorItem> SPACE_HELMET = CodRegistrate.INSTANCE.item(
                     "space_helmet",
                     (properties) -> new ArmorItem(Holder.direct(CodArmor.SPACE_SUIT_ARMOR_MATERIAL), ArmorItem.Type.HELMET, properties)
             )
-            .properties(properties -> properties.stacksTo(1))
+            .properties(properties -> properties.stacksTo(1).durability(100))
             .lang("Space Helmet")
             .register();
 
@@ -402,7 +408,7 @@ public class CodItems {
                     "space_chestplate",
                     (properties) -> new ArmorItem(Holder.direct(CodArmor.SPACE_SUIT_ARMOR_MATERIAL), ArmorItem.Type.CHESTPLATE, properties)
             )
-            .properties(properties -> properties.stacksTo(1))
+            .properties(properties -> properties.stacksTo(1).durability(400))
             .lang("Space Suit Chestplate")
             .register();
 
@@ -410,7 +416,7 @@ public class CodItems {
                     "space_leggings",
                     (properties) -> new ArmorItem(Holder.direct(CodArmor.SPACE_SUIT_ARMOR_MATERIAL), ArmorItem.Type.LEGGINGS, properties)
             )
-            .properties(properties -> properties.stacksTo(1))
+            .properties(properties -> properties.stacksTo(1).durability(300))
             .lang("Space Suit Leggings")
             .register();
 
@@ -418,7 +424,7 @@ public class CodItems {
                     "space_boots",
                     (properties) -> new ArmorItem(Holder.direct(CodArmor.SPACE_SUIT_ARMOR_MATERIAL), ArmorItem.Type.BOOTS, properties)
             )
-            .properties(properties -> properties.stacksTo(1))
+            .properties(properties -> properties.stacksTo(1).durability(250))
             .lang("Space Suit Boots")
             .register();
 

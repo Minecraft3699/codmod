@@ -52,6 +52,13 @@ public class CodComponents {
                     .build()
     );
 
+    public static final Supplier<DataComponentType<Integer>> OXYGEN = COMPONENTS.register(
+            "stored_oxygen",
+            () -> DataComponentType.<Integer>builder()
+                    .persistent(Codec.INT)
+                    .build()
+    );
+
     public static void register(IEventBus eventBus) {
         COMPONENTS.register(eventBus);
     }

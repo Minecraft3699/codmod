@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#I#",
+    "# #"
+  ],
+  "key": {
+    "#": {
+      "item": "codmod:space_grade_fabric"
+    },
+    "I": {
+      "item": "minecraft:iron_leggings"
+    }
+  },
+  "result": {
+    "id": "codmod:space_leggings",
+    "count": 1
+  }
+}
