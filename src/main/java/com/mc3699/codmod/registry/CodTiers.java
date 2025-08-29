@@ -35,4 +35,15 @@ public class CodTiers {
             () -> Ingredient.of(Tags.Items.INGOTS_NETHERITE)
     );
 
+    public static final Tier K_STAR = new SimpleTier(
+            BlockTags.INCORRECT_FOR_NETHERITE_TOOL,
+            9999,
+            1.0f,
+            5.5f,
+            20,
+            () -> Ingredient.of(Tags.Items.INGOTS_NETHERITE)
+    );
+
+
+
 }

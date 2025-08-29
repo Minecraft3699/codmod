@@ -1,7 +1,6 @@
 package com.mc3699.codmod.item;
 
-import com.mc3699.codmod.client.EntropyEvents;
-import com.mc3699.codmod.handlers.OxygenHandler;
+import com.mc3699.codmod.dimension.DimensionKeys;
 import com.mc3699.codmod.registry.CodBlocks;
 import com.mc3699.codmod.registry.CodComponents;
 import com.mc3699.codmod.registry.CodItems;
@@ -9,7 +8,6 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
@@ -82,7 +80,7 @@ public class OxygenTankItem extends Item {
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand usedHand) {
         if(level instanceof ServerLevel serverLevel)
         {
-            if(serverLevel.dimension() != EntropyEvents.ENTROPY_KEY)
+            if(serverLevel.dimension() != DimensionKeys.ENTROPY)
             {
 
                 ItemStack stack = player.getItemInHand(usedHand);

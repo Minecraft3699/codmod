@@ -429,6 +429,13 @@ public class CodItems {
             .lang("Space Suit Boots")
             .register();
 
+    public static final ItemEntry<FracturedArkItem> FRACTURED_ARK = CodRegistrate.INSTANCE.item
+            ("fractured_ark", FracturedArkItem::new)
+            .properties(properties -> properties)
+            .model((ctx, prov) -> prov.handheld(ctx))
+            .lang("K-Star's Fractured Ark")
+            .register();
+
 
     // VOTV Foods
 

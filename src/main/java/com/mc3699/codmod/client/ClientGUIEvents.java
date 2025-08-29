@@ -95,7 +95,7 @@ public class ClientGUIEvents {
         if (!suitValid) {
             if (System.currentTimeMillis() % 1000 < 500) {
                 guiGraphics.blit(WARNING, guiGraphics.guiWidth() / 2 - 8, guiGraphics.guiHeight() / 2 - 40, 0, 0, 16, 16, 16, 16);
-                guiGraphics.drawCenteredString(Minecraft.getInstance().font, "MASTER CAUTION", guiGraphics.guiWidth() / 2, guiGraphics.guiHeight() / 2 - 20, 0xFF0000);
+                guiGraphics.drawCenteredString(Minecraft.getInstance().font, "SUIT ERROR", guiGraphics.guiWidth() / 2, guiGraphics.guiHeight() / 2 - 20, 0xFF0000);
             }
         }
 

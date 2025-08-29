@@ -1,4 +1,4 @@
-package com.mc3699.codmod.backrooms_dimension;
+package com.mc3699.codmod.dimension.backrooms;
 
 import com.mc3699.codmod.Codmod;
 import net.minecraft.core.BlockPos;

@@ -1,19 +1,16 @@
-package com.mc3699.codmod.backrooms_dimension;
+package com.mc3699.codmod.dimension.backrooms;
 
-import com.mc3699.codmod.backrooms_dimension.levels.BackroomsLevelZero;
-import com.mc3699.codmod.backrooms_dimension.levels.Poolrooms;
-import com.mc3699.codmod.registry.CodBlocks;
+import com.mc3699.codmod.dimension.backrooms.levels.BackroomsLevelZero;
+import com.mc3699.codmod.dimension.backrooms.levels.Poolrooms;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.WorldGenRegion;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelHeightAccessor;
 import net.minecraft.world.level.NoiseColumn;
 import net.minecraft.world.level.StructureManager;
 import net.minecraft.world.level.biome.BiomeManager;
 import net.minecraft.world.level.biome.BiomeSource;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.ChunkAccess;
 import net.minecraft.world.level.chunk.ChunkGenerator;
@@ -21,12 +18,8 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.RandomState;
 import net.minecraft.world.level.levelgen.blending.Blender;
-import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
-import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
-import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplateManager;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
 public class BackroomsGenerator extends ChunkGenerator {

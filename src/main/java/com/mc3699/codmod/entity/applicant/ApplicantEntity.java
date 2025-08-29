@@ -1,6 +1,5 @@
 package com.mc3699.codmod.entity.applicant;
 
-import com.mc3699.codmod.backrooms_dimension.BackroomsGenerator;
 import com.mc3699.codmod.handlers.BackroomsEvents;
 import com.mc3699.codmod.registry.CodDamageTypes;
 import net.minecraft.core.registries.Registries;

@@ -1,8 +1,8 @@
-package com.mc3699.codmod.backrooms_dimension.levels;
+package com.mc3699.codmod.dimension.backrooms.levels;
 
-import com.mc3699.codmod.backrooms_dimension.BRGenUtil;
-import com.mc3699.codmod.backrooms_dimension.BackroomsLevel;
-import com.mc3699.codmod.backrooms_dimension.BackroomsStructures;
+import com.mc3699.codmod.dimension.backrooms.BRGenUtil;
+import com.mc3699.codmod.dimension.backrooms.BackroomsLevel;
+import com.mc3699.codmod.dimension.backrooms.BackroomsStructures;
 import com.mc3699.codmod.registry.CodBlocks;
 import net.minecraft.server.level.WorldGenRegion;
 import net.minecraft.util.RandomSource;
