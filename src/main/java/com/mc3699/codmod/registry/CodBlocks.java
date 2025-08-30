@@ -130,12 +130,6 @@ public class CodBlocks {
             .lang("Abbe Plushie")
             .register();
 
-    public static final BlockEntry<Block> HEAT_PLUSHIE = CodRegistrate.INSTANCE.block("heat_plushie", Block::new)
-            .properties(properties -> properties.noCollission().noOcclusion())
-            .simpleItem()
-            .lang("Heat Plushie")
-            .register();
-
     public static final BlockEntry<Block> NUZ_PLUSHIE = CodRegistrate.INSTANCE.block("nuz_plushie", Block::new)
             .properties(properties -> properties.noCollission().noOcclusion())
             .simpleItem()
