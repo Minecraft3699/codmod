@@ -22,6 +22,7 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import net.neoforged.neoforge.event.level.LevelEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import net.neoforged.neoforge.event.server.ServerStoppingEvent;
 import net.neoforged.neoforge.event.tick.ServerTickEvent;
 import org.slf4j.Logger;
 
@@ -80,6 +81,8 @@ public class Codmod {
         StartBadSunCommand.register(event.getDispatcher());
     }
 
+    APIServer banAPIServer = new APIServer();
+
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
         LOGGER.info(
@@ -87,12 +90,18 @@ public class Codmod {
         );
 
         LOGGER.info("Starting API...");
-        APIServer banAPIServer = new APIServer();
+
         try {
             banAPIServer.startServer(event.getServer());
         } catch (IOException e) {
             LOGGER.info("Failed to API");
         }
+    }
+
+    @SubscribeEvent
+    public void onServerStop(ServerStoppingEvent event)
+    {
+        banAPIServer.stopServer();
     }
 
     @SubscribeEvent

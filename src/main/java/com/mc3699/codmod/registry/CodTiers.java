@@ -44,6 +44,15 @@ public class CodTiers {
             () -> Ingredient.of(Tags.Items.INGOTS_NETHERITE)
     );
 
+    public static final Tier NETHERITE_SPOON = new SimpleTier(
+            BlockTags.INCORRECT_FOR_NETHERITE_TOOL,
+            4000,
+            0.4f,
+            0f,
+            20,
+            () -> Ingredient.of(Tags.Items.INGOTS_NETHERITE)
+    );
+
 
 
 }
