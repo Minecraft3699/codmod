@@ -442,6 +442,13 @@ public class CodItems {
             .lang("Sausage")
             .register();
 
+    public static final ItemEntry<NetheriteSpoonItem> NETHERITE_SPOON = CodRegistrate.INSTANCE.item
+            ("netherite_spoon", NetheriteSpoonItem::new)
+            .properties(properties -> properties)
+            .lang("Netherite Spoon")
+            .model((ctx, prov) -> prov.handheld(ctx))
+            .register();
+
 
     // VOTV Foods
 
