@@ -13,7 +13,7 @@ public class SausageItem extends Item {
     @Override
     public ItemStack getDefaultInstance() {
         ItemStack defaultItem = new ItemStack(this);
-        defaultItem.set(CodComponents.SAUSAGE_COLOR, 0xFFFF0000);
+        defaultItem.set(CodComponents.SAUSAGE_COLOR, 0xFFFFFFFF);
 
         return defaultItem;
     }

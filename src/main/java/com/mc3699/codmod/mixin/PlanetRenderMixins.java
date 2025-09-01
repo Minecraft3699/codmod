@@ -50,15 +50,7 @@ public abstract class PlanetRenderMixins {
     @Inject(method = "renderSky", at = @At("HEAD"), cancellable = true)
     private void noSky(Matrix4f frustumMatrix, Matrix4f projectionMatrix, float partialTick, Camera camera, boolean isFoggy, Runnable skyFogSetup, CallbackInfo ci) {
         if (level != null && level.dimension() == DimensionKeys.ENTROPY) {
-            Vec3 fog = level.getSkyColor(camera.getPosition(), partialTick);
-            float r = (float) (fog.x * 0.4F);
-            float g = (float) (fog.y * 0.4F);
-            float b = (float) (fog.z * 0.4F);
-
-            RenderSystem.setShaderColor(r, g, b, 0.5F);
-
             PoseStack poseStack = new PoseStack();
-
             this.renderEndSky(poseStack);
 
             poseStack.mulPose(frustumMatrix);
