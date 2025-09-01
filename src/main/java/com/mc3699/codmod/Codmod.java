@@ -46,6 +46,7 @@ public class Codmod {
         CodPeripheralUpgradeTypes.register(modEventBus);
         CodGenerators.register(modEventBus);
         CodTurtleUpgrades.register(modEventBus);
+        CodRecipeSerializers.register(modEventBus);
 
         CodComponents.register(modEventBus);
         CodRegistrate.INSTANCE.registerEventListeners(modEventBus);

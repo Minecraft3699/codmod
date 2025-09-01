@@ -436,6 +436,12 @@ public class CodItems {
             .lang("K-Star's Fractured Ark")
             .register();
 
+    public static final ItemEntry<SausageItem> SAUSAGE = CodRegistrate.INSTANCE.item
+            ("sausage", SausageItem::new)
+            .properties(properties -> properties)
+            .lang("Sausage")
+            .register();
+
 
     // VOTV Foods
 

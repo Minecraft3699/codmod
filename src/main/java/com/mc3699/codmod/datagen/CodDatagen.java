@@ -36,6 +36,8 @@ public class CodDatagen {
         generator.addProvider(event.includeServer(),
                 new DatagenItemTagProvider(packOutput, lookupProvider, blockProvider.contentsGetter())
         );
+
+        generator.addProvider(event.includeServer(), new DatagenSausageProvider(packOutput, lookupProvider));
     }
 
 }
