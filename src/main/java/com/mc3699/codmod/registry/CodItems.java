@@ -436,11 +436,10 @@ public class CodItems {
             .lang("K-Star's Fractured Ark")
             .register();
 
-    public static final ItemEntry<NetheriteSpoonItem> NETHERITE_SPOON = CodRegistrate.INSTANCE.item
-            ("netherite_spoon", NetheriteSpoonItem::new)
+    public static final ItemEntry<SausageItem> SAUSAGE = CodRegistrate.INSTANCE.item
+            ("sausage", SausageItem::new)
             .properties(properties -> properties)
-            .model((ctx, prov) -> prov.handheld(ctx))
-            .lang("Netherite Spoon")
+            .lang("Sausage")
             .register();
 
 

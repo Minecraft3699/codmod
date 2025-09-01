@@ -1,0 +1,76 @@
+{
+  "values": {
+    "minecraft:apple": {
+      "color": 255,
+      "disgust": 0.1,
+      "nutrition": 3,
+      "saturation": 2.0
+    },
+    "minecraft:beef": {
+      "color": 16711680,
+      "disgust": 0.2,
+      "nutrition": 4,
+      "saturation": 2.0
+    },
+    "minecraft:carrot": {
+      "color": 16550921,
+      "disgust": 0.8,
+      "nutrition": 4,
+      "saturation": 2.0
+    },
+    "minecraft:chicken": {
+      "color": 12255232,
+      "disgust": 0.8,
+      "nutrition": 2,
+      "saturation": 1.0
+    },
+    "minecraft:chorus_fruit": {
+      "color": 7821431,
+      "disgust": 0.9,
+      "nutrition": 2,
+      "saturation": 2.0
+    },
+    "minecraft:cod": {
+      "color": 16777215,
+      "disgust": -10.0,
+      "nutrition": 15,
+      "saturation": 10.0
+    },
+    "minecraft:glow_berries": {
+      "color": 15635524,
+      "disgust": 0.4,
+      "nutrition": 1,
+      "saturation": 4.0
+    },
+    "minecraft:golden_apple": {
+      "color": 65280,
+      "disgust": 0.0,
+      "nutrition": 10,
+      "saturation": 15.0
+    },
+    "minecraft:golden_carrot": {
+      "color": 15199062,
+      "disgust": -0.5,
+      "nutrition": 12,
+      "saturation": 24.0
+    },
+    "minecraft:melon_slice": {
+      "color": 12882039,
+      "disgust": 0.2,
+      "nutrition": 2,
+      "saturation": 1.0
+    },
+    "minecraft:potato": {
+      "color": 13014329,
+      "disgust": 0.2,
+      "nutrition": 3,
+      "saturation": 3.0
+    },
+    "minecraft:sweet_berries": {
+      "color": 3608079,
+      "disgust": 0.3,
+      "nutrition": 1,
+      "saturation": 3.0
+    }
+  }
+}

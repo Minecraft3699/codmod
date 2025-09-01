@@ -1,4 +1,4 @@
-// 1.21.1	2025-08-31T22:05:36.079274898	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
+// 1.21.1	2025-08-31T03:40:08.5005224	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
 e7cb80d710fab51bc6ace5b29bf5cf955a923adf assets/codmod/blockstates/ceiling_light.json
 7040b661ef94bb5c487639a82d59a859a6e42c36 assets/codmod/blockstates/ceiling_tile.json
 13cdd03b5ecfcd79516580da336255a0d07abedc assets/codmod/blockstates/ceramic_slab.json
@@ -13,7 +13,6 @@ e69251819f3c2330a3f2862046d31487709cff55 assets/codmod/blockstates/entropy_shale
 bd9c2e449f53b9da38a82160f373a61b4e552b52 assets/codmod/blockstates/firelight_plushie.json
 51e77a6ded5075a958d7ecd60535a56201bd1f9b assets/codmod/blockstates/garreth_plushie.json
 ba8ab8fe71b3174d5aa1d1ab1eaf7cd5f05c01e2 assets/codmod/blockstates/graphics_monitor.json
-89b010755bb41786d9f2de7664d51cd59c78210c assets/codmod/blockstates/heat_plushie.json
 1ede865beb891ab505e7fed8f41ac45b019f9936 assets/codmod/blockstates/iron_mantle.json
 a47a4694c6c5a76af3601f66a55ee611c1a043ff assets/codmod/blockstates/lv_cable.json
 abd1a05e68848bf5558e5e9cda3e46bbf762b4e4 assets/codmod/blockstates/moist_carpet.json
@@ -38,8 +37,8 @@ abcf062fd5decca251b2d4e623edb9daa7dec02a assets/codmod/blockstates/threshold_por
 62981c818b0e56157d81e30ba4c84e88a03edeb3 assets/codmod/blockstates/triangulator.json
 f062903ff298b3585d7b47250018da45c0293850 assets/codmod/blockstates/ugly_wallpaper.json
 064fe3376b3c1cf85c49ff1eca7371979390528b assets/codmod/blockstates/zetos_plushie.json
-f3743f193ec7c094f8fe239441fa3b85a2620495 assets/codmod/lang/en_ud.json
-57bbab64a210482475c793f262948c83c85466ca assets/codmod/lang/en_us.json
+2dbd0c2f7502433005e304b23f9a04a8067ccd82 assets/codmod/lang/en_ud.json
+b0aafb3a7ab68eadf0362357701b2c5cd12d3cfb assets/codmod/lang/en_us.json
 13cd803f61e334af890df6bb81131bf7c4caad2e assets/codmod/models/block/ceiling_light.json
 8d7860352037461ea03d33414321cfa620e76f38 assets/codmod/models/block/ceiling_tile.json
 a33ac3bce7ff86d30362c8f1f50bc3b06daf18b4 assets/codmod/models/block/ceramic_slab.json
@@ -57,7 +56,6 @@ aaf8a6e73b8a3771dfd68569b4e9ad6a04ccfb3a assets/codmod/models/block/entropy_shal
 7ba39718dd877c27853c07c49d7a2a8c7bf1a03f assets/codmod/models/block/firelight_plushie.json
 307eaa0aa1dd413b90f73509a9fbabe7517d7bad assets/codmod/models/block/garreth_plushie.json
 72994c0dcf8917dbe755b5c71b86e048806140f6 assets/codmod/models/block/graphics_monitor.json
-4647684cb83370bde091a98b189ee0ea8bce513d assets/codmod/models/block/heat_plushie.json
 7c4de1f5f69b5d90d48fbb545d6d5facf3677f0e assets/codmod/models/block/iron_mantle.json
 a5c7e2db49511871b54a83f1509677e1ed1c83e6 assets/codmod/models/block/lv_cable.json
 9f6c413f95555e578435943ec5a0cfaa16d6777f assets/codmod/models/block/moist_carpet.json
@@ -117,7 +115,6 @@ af4c109feabd8b2520a6b76b4dd2c2d2f13fd2c4 assets/codmod/models/item/garreth_plush
 c790e5b11c7205a92f4066135b7d6385aaaf14cb assets/codmod/models/item/graphics_monitor.json
 ddbe3a78d09518def7481cfafb2315b7f36c9d83 assets/codmod/models/item/green.json
 88b9a41db2508d1e1afc0b25190ec6be61ef0194 assets/codmod/models/item/hard_drive_hammer.json
-041825c4bcae22c8f47d6ed1e795ce0fc9232e86 assets/codmod/models/item/heat_plushie.json
 0801c8f300412067e094c0740b0e45c2cb2ce5c9 assets/codmod/models/item/hub_module.json
 d137e6061e65e0c34d5811c9efc1ed40efd1dfd3 assets/codmod/models/item/inventory_module.json
 01d4d07fb14b94c89ea646cf95b6ead20abbe0e6 assets/codmod/models/item/iron_mantle.json
@@ -130,7 +127,6 @@ e711d7e5fa8f787a221be12dc54684a1d0648cbb assets/codmod/models/item/moist_carpet.
 031127b2f9dd9d0ab449c36f9212dfefb2c08e69 assets/codmod/models/item/nbc_chestplate.json
 ed2fabcd1d2cb475fffea69c5c9a7e4d378dca2d assets/codmod/models/item/nbc_helmet.json
 27ed64665aa333e58d3aa332fae4c0738909b033 assets/codmod/models/item/nbc_leggings.json
-4760b4d045a3169b60b4fa75255390b09a6b32ba assets/codmod/models/item/netherite_spoon.json
 ff16bb2f158f1b46c5bd074027ebadaf18700a09 assets/codmod/models/item/network_fucker.json
 cd96f31de73da22f37a1b47d14b200af8d61b920 assets/codmod/models/item/nibble_ultra.json
 0a36ff15c85d89eef6ee44980a034be74e4f3f95 assets/codmod/models/item/normal_abbe_plushie.json
@@ -150,6 +146,7 @@ c6b9a0e463afd3d465f2769dca4b170a61587ddd assets/codmod/models/item/red_moist_car
 2acc1b4c86ea510e0f93057cc7663ee1344f95db assets/codmod/models/item/red_ugly_wallpaper.json
 19b0e54cde96bff0207b5cb2bdd5eb10d417568e assets/codmod/models/item/resistor.json
 11482dff99933134c9c8bec81b30b33a88d567e1 assets/codmod/models/item/round_meal.json
+de7ddef5be9f38769c1ed727134e0acd62976002 assets/codmod/models/item/sausage.json
 fe6558c9434fae58f608b8dec37e8bece5ebdc57 assets/codmod/models/item/scythe.json
 fe2e8039c811cea004f1e94f4e97523bffe5fbfe assets/codmod/models/item/sealed_fabric.json
 2622f9d6eca88ca9e75ccc0a753626cd5018bf26 assets/codmod/models/item/shrimp_sniper.json
@@ -187,7 +184,6 @@ ab2bb8def4dfc7088c2805116f41fd7ae7f41726 data/codmod/loot_table/blocks/entropy_s
 277363f2bf7d18b9d01bece149c4205b85d310d3 data/codmod/loot_table/blocks/firelight_plushie.json
 c895f540cd974b7d66d495c84c365378e444ee46 data/codmod/loot_table/blocks/garreth_plushie.json
 ce44d96bde0627939b34adaca5950c1384e52d62 data/codmod/loot_table/blocks/graphics_monitor.json
-0264447b45f4346d0bd3d99b72a634587bbf4e7a data/codmod/loot_table/blocks/heat_plushie.json
 8dff5257a968abc556a556b33bafd8162eda0ca2 data/codmod/loot_table/blocks/iron_mantle.json
 b20ad25fe48c99aa6e47ded38236b1ec872f6873 data/codmod/loot_table/blocks/lv_cable.json
 4cc5a3e2512c85ff87184597ae4e77dc8df0f2d2 data/codmod/loot_table/blocks/moist_carpet.json
