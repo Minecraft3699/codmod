@@ -12,7 +12,6 @@ import com.mc3699.codmod.item.transponder.TransponderItem;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.entity.animal.Cod;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.ArmorItem;
@@ -224,6 +223,7 @@ public class CodItems {
             .lang("Cod Pickaxe")
             .register();
 
+
     public static final ItemEntry<SoulTakerItem> SOUL_TAKER = CodRegistrate.INSTANCE.item(
                     "soul_taker",
                     SoulTakerItem::new
@@ -238,6 +238,14 @@ public class CodItems {
             )
             .properties(properties -> properties.food(Foods.BREAD))
             .lang("Bagel")
+            .register();
+
+    public static final ItemEntry<Item> NULLCAKE1 = CodRegistrate.INSTANCE.item(
+                    "nullcake1",
+                    Item::new
+            )
+            .properties(properties -> properties.food(Foods.BREAD))
+            .lang("Null Cake")
             .register();
 
     public static final ItemEntry<Item> DONUT = CodRegistrate.INSTANCE.item(
