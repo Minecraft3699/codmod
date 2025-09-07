@@ -31,6 +31,7 @@ public class MarksmanRevolverItem extends Item {
     }
 
 
+    //TODO FROM EYAE:PLEASE BALANCE THIS! ADD A COOLDOWN OR SM SHIT IDFK
     @Override
     public boolean onEntitySwing(ItemStack stack, LivingEntity entity) {
         if(entity instanceof Player player && player.level() instanceof ServerLevel serverLevel)
@@ -67,6 +68,7 @@ public class MarksmanRevolverItem extends Item {
             coinEntity.setPos(player.getEyePosition().add(coinSpawnPos));
             Vec3 launcVec = player.getLookAngle().scale(0.3);
             coinEntity.setDeltaMovement(new Vec3(0,0.6,0).add(launcVec));
+            coinEntity.setOwner(player);
             serverLevel.addFreshEntity(coinEntity);
             serverLevel.playSound(null, player.blockPosition(), CodSounds.COIN.value(), SoundSource.MASTER, 1, 1);
         }
@@ -93,7 +95,9 @@ public class MarksmanRevolverItem extends Item {
 
         AABB hitZone = player.getBoundingBox().expandTowards(angle.scale(maxRange));
         EntityHitResult hitResult = ProjectileUtil.getEntityHitResult(player, start, end, hitZone, (entity -> true), 1000000000);
-        spawnParticleLine(serverLevel, start.add(0,-0.25f,0), hitResult.getLocation(), ParticleTypes.ELECTRIC_SPARK, 100);
+
+        if (hitResult != null) {
+            spawnParticleLine(serverLevel, start.add(0, -0.25f, 0), hitResult.getLocation(), ParticleTypes.ELECTRIC_SPARK, 100);
 
 
         if (hitResult.getEntity() instanceof MarksmanRevolverCoinEntity coinEntity) {
@@ -101,18 +105,19 @@ public class MarksmanRevolverItem extends Item {
         }
 
 
-        serverLevel.sendParticles(ParticleTypes.CRIT,
-                (start.x + end.x) / 2,
-                (start.y + end.y) / 2,
-                (start.z + end.z) / 2,
-                10,
-                (end.x - start.x) / 2,
-                (end.y - start.y) / 2,
-                (end.z - start.z) / 2,
-                0.1
-        );
+            serverLevel.sendParticles(ParticleTypes.CRIT,
+                    (start.x + end.x) / 2,
+                    (start.y + end.y) / 2,
+                    (start.z + end.z) / 2,
+                    10,
+                    (end.x - start.x) / 2,
+                    (end.y - start.y) / 2,
+                    (end.z - start.z) / 2,
+                    0.1
+            );
 
 
-        hitResult.getEntity().hurt(serverLevel.damageSources().playerAttack(player), 5);
+            hitResult.getEntity().hurt(serverLevel.damageSources().playerAttack(player), 5);
+        }
     }
 }
