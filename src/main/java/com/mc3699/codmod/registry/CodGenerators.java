@@ -1,7 +1,7 @@
 package com.mc3699.codmod.registry;
 
 import com.mc3699.codmod.Codmod;
-import com.mc3699.codmod.backrooms_dimension.BackroomsGenerator;
+import com.mc3699.codmod.dimension.backrooms.BackroomsGenerator;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.chunk.ChunkGenerator;

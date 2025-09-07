@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#nn",
+    "Y/Y",
+    " / "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:netherite_block"
+    },
+    "n": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "Y": {
+      "item": "minecraft:yellow_dye"
+    },
+    "/": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "id": "codmod:hard_drive_hammer",
+    "count": 1
+  }
+}

@@ -1,11 +1,18 @@
 package com.mc3699.codmod.client;
 
+import ca.weblite.objc.Client;
 import com.mc3699.codmod.Codmod;
+import com.mc3699.codmod.datagen.DatagenItemTagProvider;
+import com.mc3699.codmod.item.OxygenTankItem;
+import com.mc3699.codmod.registry.CodItems;
 import com.mc3699.codmod.registry.CodMobEffects;
+import com.mc3699.codmod.registry.CodSounds;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.datafix.fixes.ItemStackTagFix;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -27,24 +34,29 @@ public class ClientGUIEvents {
     );
     private static final Random random = new Random();
 
-
     @SubscribeEvent
     public static void onRenderGUI(RenderGuiLayerEvent.Pre event) {
+        Player player = Minecraft.getInstance().player;
+
         if (event.getName().equals(VanillaGuiLayers.PLAYER_HEALTH)) {
-            Player player = Minecraft.getInstance().player;
             if (player != null && player.hasEffect(CodMobEffects.HEART_CORRUPTION)) {
                 event.setCanceled(true);
-                renderCustomHearts(event.getGuiGraphics(), player);
+                renderCorruptHearts(event.getGuiGraphics(), player);
             }
         }
+
+        if (player != null && player.getInventory().getArmor(3).is(CodItems.SPACE_HELMET)) {
+            renderSpaceSuit(event.getGuiGraphics(), player);
+        }
+
     }
 
-    private static void renderCustomHearts(GuiGraphics guiGraphics, Player player) {
+    private static void renderCorruptHearts(GuiGraphics guiGraphics, Player player) {
 
         int maxHealth = (int) player.getMaxHealth();
         int health = (int) player.getHealth();
-        int corruptedHearts = (20 - maxHealth) / 2; // 2 health = 1 heart
-        int x = guiGraphics.guiWidth() / 2 - 91; // Vanilla heart position
+        int corruptedHearts = (20 - maxHealth) / 2;
+        int x = guiGraphics.guiWidth() / 2 - 91;
         int y = guiGraphics.guiHeight() - 39;
 
         for (int i = 0; i < corruptedHearts; i++) {
@@ -62,4 +74,56 @@ public class ClientGUIEvents {
         }
     }
 
+
+    public static final ResourceLocation OXYGEN_FULL = ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "textures/gui/oxygen_full.png");
+    public static final ResourceLocation OXYGEN_EMPTY = ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "textures/gui/oxygen_empty.png");
+    public static final ResourceLocation OXYGEN_SAT_FULL = ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "textures/gui/oxygen_saturation_full.png");
+    public static final ResourceLocation OXYGEN_SAT_EMPTY = ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "textures/gui/oxygen_saturation_empty.png");
+    public static final ResourceLocation WARNING = ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "textures/gui/warning.png");
+
+
+    private static void renderSpaceSuit(GuiGraphics guiGraphics, Player player) {
+
+        // show suit error
+        boolean suitValid = true;
+        for (ItemStack stack : player.getArmorSlots()) {
+            if (!stack.is(DatagenItemTagProvider.SPACE_SUIT_VALID)) {
+                suitValid = false;
+            }
+        }
+
+        if (!suitValid) {
+            if (System.currentTimeMillis() % 1000 < 500) {
+                guiGraphics.blit(WARNING, guiGraphics.guiWidth() / 2 - 8, guiGraphics.guiHeight() / 2 - 40, 0, 0, 16, 16, 16, 16);
+                guiGraphics.drawCenteredString(Minecraft.getInstance().font, "SUIT ERROR", guiGraphics.guiWidth() / 2, guiGraphics.guiHeight() / 2 - 20, 0xFF0000);
+            }
+        }
+
+        // show o2 error
+        if (ClientOxygen.oxygenSaturation < 100) {
+            if (System.currentTimeMillis() % 500 < 250) {
+                guiGraphics.blit(WARNING, guiGraphics.guiWidth() / 2 - 8, guiGraphics.guiHeight() / 2 - 70, 0, 0, 16, 16, 16, 16);
+                guiGraphics.drawCenteredString(Minecraft.getInstance().font, "OXYGEN SATURATION LOW", guiGraphics.guiWidth() / 2, guiGraphics.guiHeight() / 2 - 50, 0xFF0000);
+            }
+        }
+
+        int oxygenCapacity = 0;
+        int storedOxygen = 0;
+
+        for (ItemStack stack : player.getInventory().items) {
+            if (stack.getItem() instanceof OxygenTankItem tank) {
+                oxygenCapacity += 1000;
+                storedOxygen += tank.getOxygen(stack);
+            }
+        }
+
+        // draw bars
+        guiGraphics.blit(OXYGEN_EMPTY, 5, 5, 0, 0, 128, 8, 128, 8);
+        int totalOxygen = (int) Math.ceil((double) storedOxygen / oxygenCapacity * 128);
+        guiGraphics.blit(OXYGEN_FULL, 5,5,0,0,totalOxygen,8,128,8);
+
+        guiGraphics.blit(OXYGEN_SAT_EMPTY, 5, 15, 0, 0, 128, 8, 128, 8);
+        int oxygenFilled = (int) Math.ceil((double) ClientOxygen.oxygenSaturation / 300 * 128);
+        guiGraphics.blit(OXYGEN_SAT_FULL, 5, 15, 0, 0, oxygenFilled, 8, 128, 8);
+    }
 }

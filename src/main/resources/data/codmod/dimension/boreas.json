@@ -1,0 +1,72 @@
+{
+  "type": "codmod:boreas",
+  "generator": {
+    "type": "minecraft:noise",
+    "biome_source": {
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "minecraft:snowy_plains",
+          "parameters": {
+            "temperature": 0.3,
+            "humidity": 0,
+            "continentalness": 0,
+            "erosion": 1,
+            "weirdness": 0,
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "minecraft:frozen_peaks",
+          "parameters": {
+            "temperature": 0.3,
+            "humidity": 0,
+            "continentalness": 0,
+            "erosion": 0,
+            "weirdness": 0,
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "minecraft:frozen_river",
+          "parameters": {
+            "temperature": 0.5,
+            "humidity": 0,
+            "continentalness": 0,
+            "erosion": 0,
+            "weirdness": 0,
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "minecraft:ice_spikes",
+          "parameters": {
+            "temperature": 0.01,
+            "humidity": 0,
+            "continentalness": 0,
+            "erosion": 0,
+            "weirdness": 0.5,
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "minecraft:snowy_taiga",
+          "parameters": {
+            "temperature": 0,
+            "humidity": 0,
+            "continentalness": 0,
+            "erosion": 0,
+            "weirdness": 0.3,
+            "depth": 0,
+            "offset": 0
+          }
+        }
+      ]
+    },
+    "settings": "minecraft:overworld"
+  }
+}

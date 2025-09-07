@@ -51,6 +51,12 @@ public class NetworkEvents {
                 OpenScreenPayload::handle
         );
 
+        registrar.playToClient(
+                OxygenClientPayload.TYPE,
+                OxygenClientPayload.CODEC,
+                OxygenClientPayload::handle
+        );
+
     }
 
     public static void sendToServer(CustomPacketPayload payload) {

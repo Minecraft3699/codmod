@@ -20,13 +20,17 @@ record BanData(String username, String bannedBy, String uuid, String banStart, S
 
 public class APIServer {
 
+    private HttpServer httpServer;
 
     public void startServer(MinecraftServer server) throws IOException {
-        HttpServer httpServer = HttpServer.create(new InetSocketAddress(15017), 0);
-
+        httpServer = HttpServer.create(new InetSocketAddress(15017), 0);
         BanEndpoint(server, httpServer);
-
         httpServer.start();
+    }
+
+    public void stopServer()
+    {
+        httpServer.stop(0);
     }
 
     private void BanEndpoint(MinecraftServer server, HttpServer httpServer) {

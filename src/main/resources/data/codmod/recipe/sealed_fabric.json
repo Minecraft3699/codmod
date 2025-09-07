@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#S#",
+    "OOO",
+    "#S#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:leather"
+    },
+    "S": {
+      "item": "minecraft:string"
+    },
+    "O": {
+      "item": "minecraft:slime_ball"
+    }
+  },
+  "result": {
+    "id": "codmod:sealed_fabric",
+    "count": 2
+  }
+}

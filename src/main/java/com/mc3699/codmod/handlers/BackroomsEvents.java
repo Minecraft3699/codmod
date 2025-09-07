@@ -1,7 +1,6 @@
 package com.mc3699.codmod.handlers;
 
 import com.mc3699.codmod.Codmod;
-import com.mc3699.codmod.backrooms_dimension.BackroomsLevel;
 import com.mc3699.codmod.block.backrooms.CeilingLightBlock;
 import com.mc3699.codmod.registry.CodArmor;
 import net.minecraft.core.BlockPos;
@@ -11,10 +10,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageTypes;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.RelativeMovement;
@@ -23,14 +19,10 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.AABB;
-import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
-import net.neoforged.neoforge.event.tick.LevelTickEvent;
-import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 
 import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;

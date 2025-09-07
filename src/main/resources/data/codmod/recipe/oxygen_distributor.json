@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#I#",
+    "iRi",
+    "RWR"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:redstone"
+    },
+    "I": {
+      "item": "minecraft:iron_bars"
+    },
+    "i": {
+      "item": "minecraft:iron_ingot"
+    },
+    "R": {
+      "item": "minecraft:iron_block"
+    },
+    "W": {
+      "item": "minecraft:copper_block"
+    }
+  },
+  "result": {
+    "id": "codmod:oxygen_distributor",
+    "count": 1
+  }
+}

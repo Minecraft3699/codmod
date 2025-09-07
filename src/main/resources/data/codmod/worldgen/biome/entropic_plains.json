@@ -1,7 +1,9 @@
 {
   "carvers": {
     "air": [
-      "codmod:large_cave"
+      "codmod:entropy_hole",
+      "codmod:large_cave",
+      "codmod:entropy_canyon"
     ]
   },
   "downfall": 0,
@@ -12,14 +14,25 @@
     "water_fog_color": 329011
   },
   "features": [
-    "minecraft:ore_diamond_large",
-    "minecraft:ore_iron_upper",
-    "minecraft:ore_gold_extra",
-    "minecraft:ore_lapis",
-    "minecraft:ore_copper_large",
-    "minecraft:ore_redstone_lower",
-    "minecraft:ore_iron_middle",
-    "minecraft:ore_ancient_debris_large"
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "codmod:entropy_iron_placed",
+      "codmod:entropy_gold_placed",
+      "codmod:entropy_coal_placed",
+      "codmod:entropy_ice_placed",
+      "codmod:entropy_diamond_placed"
+    ],
+    [],
+    [
+      "minecraft:spring_lava"
+    ],
+    [],
+    []
   ],
   "has_precipitation": false,
   "spawn_costs": {},

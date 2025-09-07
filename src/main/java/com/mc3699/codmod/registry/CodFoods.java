@@ -40,6 +40,13 @@ public class CodFoods {
                     3f, Optional.of(ItemStack.EMPTY), List.of()
             );
 
+    public static final FoodProperties NULLCAKE1 =
+            new FoodProperties(
+                    -110, -10, false,
+                    3f, Optional.of(ItemStack.EMPTY), List.of()
+
+            );
+
     public static final FoodProperties CHEESE =
             new FoodProperties(
                     5, 4, false,

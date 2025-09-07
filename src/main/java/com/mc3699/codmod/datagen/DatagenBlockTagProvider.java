@@ -1,6 +1,7 @@
 package com.mc3699.codmod.datagen;
 
 import com.mc3699.codmod.Codmod;
+import com.mc3699.codmod.registry.CodBlockEntities;
 import com.mc3699.codmod.registry.CodBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -37,7 +38,13 @@ public class DatagenBlockTagProvider extends BlockTagsProvider {
                 .add(CodBlocks.PUBLIC_STATIC_VOID_BLOCK.get())
                 .add(CodBlocks.PUBLIC_STATIC_VOID_SLAB.get())
                 .add(CodBlocks.PUBLIC_STATIC_VOID_STAIRS.get())
-        ;
+                .add(CodBlocks.ENTROPY_BASALT.get())
+                .add(CodBlocks.ENTROPY_SHALE.get())
+                .add(CodBlocks.OXYGEN_DISTRIBUTOR.get());
+
+        tag(BlockTags.MINEABLE_WITH_SHOVEL)
+                .add(CodBlocks.ENTROPY_SAND.get());
+
         tag(BlockTags.MINEABLE_WITH_AXE)
                 .add(CodBlocks.UGLY_WALLPAPER.get())
                 .add(CodBlocks.RED_UGLY_WALLPAPER.get())
@@ -48,7 +55,8 @@ public class DatagenBlockTagProvider extends BlockTagsProvider {
         ;
 
         tag(BlockTags.MINEABLE_WITH_HOE)
-                .add(CodBlocks.COD_BLOCK.get());
+                .add(CodBlocks.COD_BLOCK.get())
+                .add(CodBlocks.CEILING_TILE.get());
 
         tag(BlockTags.STONE_ORE_REPLACEABLES)
                 .add(CodBlocks.ENTROPY_BASALT.get())

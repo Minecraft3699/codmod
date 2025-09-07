@@ -12,7 +12,6 @@ import com.mc3699.codmod.item.transponder.TransponderItem;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.entity.animal.Cod;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.ArmorItem;
@@ -56,6 +55,7 @@ public class CodItems {
             () -> new Item(new Item.Properties().food(Foods.COOKED_CHICKEN).rarity(Rarity.RARE))
     );
 
+
     public static final Supplier<Item> APPLICATION = ITEMS.register(
             "application",
             () -> new Item(new Item.Properties())
@@ -79,6 +79,7 @@ public class CodItems {
                             .build()))
     );
 
+
     public static final Supplier<Item> UAV = ITEMS.register("uav", () -> new Item(new Item.Properties()));
 
     public static final Supplier<Item> DETECTOR = ITEMS.register("detector", () -> new Item(new Item.Properties()));
@@ -100,7 +101,6 @@ public class CodItems {
                     "circuits_bane",
                     CircuitsBaneItem::new
             )
-            .model((ctx, prov) -> prov.handheld(ctx.lazy()))
             .properties((properties -> properties.durability(1024).rarity(Rarity.EPIC)))
             .lang("Circuit's Bane")
             .register();
@@ -208,10 +208,21 @@ public class CodItems {
             .lang("Green")
             .register();
 
+    public static final ItemEntry<Item> PURPLE = CodRegistrate.INSTANCE.item("purple", Item::new)
+            .properties(properties -> properties)
+            .lang("The Long awaited Purple")
+            .register();
+
+    public static final ItemEntry<Item> NIBBLE_ULTRA = CodRegistrate.INSTANCE.item("nibble_ultra", Item::new)
+            .properties(properties -> properties)
+            .lang("Nibble Ultra")
+            .register();
+
     public static final ItemEntry<CodPickaxeItem> COD_PICKAXE = CodRegistrate.INSTANCE.item("cod_pickaxe",CodPickaxeItem::new)
             .properties(properties -> properties)
             .lang("Cod Pickaxe")
             .register();
+
 
     public static final ItemEntry<SoulTakerItem> SOUL_TAKER = CodRegistrate.INSTANCE.item(
                     "soul_taker",
@@ -227,6 +238,14 @@ public class CodItems {
             )
             .properties(properties -> properties.food(Foods.BREAD))
             .lang("Bagel")
+            .register();
+
+    public static final ItemEntry<Item> NULLCAKE1 = CodRegistrate.INSTANCE.item(
+                    "nullcake1",
+                    Item::new
+            )
+            .properties(properties -> properties.food(Foods.BREAD))
+            .lang("Null Cake")
             .register();
 
     public static final ItemEntry<Item> DONUT = CodRegistrate.INSTANCE.item(
@@ -253,7 +272,7 @@ public class CodItems {
             .lang("Blue")
             .register();
 
-    public static final ItemEntry<Item> CORRUPTEDKNIFE = CodRegistrate.INSTANCE.item(
+    public static final ItemEntry<Item> CORRUPTED_KNIFE = CodRegistrate.INSTANCE.item(
                     "corruptedknife",
                     Item::new
             )
@@ -294,6 +313,14 @@ public class CodItems {
             .lang("NBC Suit Leggings")
             .register();
 
+    public static final ItemEntry<ArmorItem> NBC_BOOTS = CodRegistrate.INSTANCE.item(
+                    "nbc_boots",
+                    (properties) -> new ArmorItem(Holder.direct(CodArmor.NBC_ARMOR_MATERIAL), ArmorItem.Type.BOOTS, properties)
+            )
+            .properties(properties -> properties.stacksTo(1))
+            .lang("NBC Suit Boots")
+            .register();
+
     public static final ItemEntry<NullChickenSwordItem> NULL_CHICKEN_SWORD = CodRegistrate.INSTANCE.item(
             "null_chicken_sword",
             NullChickenSwordItem::new
@@ -302,13 +329,7 @@ public class CodItems {
             .lang("Null Chicken Sword")
             .register();
 
-    public static final ItemEntry<ArmorItem> NBC_BOOTS = CodRegistrate.INSTANCE.item(
-                    "nbc_boots",
-                    (properties) -> new ArmorItem(Holder.direct(CodArmor.NBC_ARMOR_MATERIAL), ArmorItem.Type.BOOTS, properties)
-            )
-            .properties(properties -> properties.stacksTo(1))
-            .lang("NBC Suit Boots")
-            .register();
+
 
     public static final ItemEntry<MarksmanRevolverItem> MARKSMAN_REVOLVER = CodRegistrate.INSTANCE.item(
             "marksman_revolver",
@@ -355,6 +376,87 @@ public class CodItems {
             .properties(properties -> properties)
             .lang("Disconnector")
             .register();
+
+    public static final ItemEntry<HardDriveHammerItem> HARD_DRIVE_HAMMER = CodRegistrate.INSTANCE.item
+            ("hard_drive_hammer", HardDriveHammerItem::new)
+            .properties(properties -> properties.fireResistant().rarity(Rarity.EPIC).durability(6000))
+            .lang("Hard Drive Hammer")
+            .register();
+
+    public static final ItemEntry<Item> SEALED_FABRIC = CodRegistrate.INSTANCE.item
+            ("sealed_fabric", Item::new)
+            .lang("Sealed Fabric")
+            .register();
+
+    public static final ItemEntry<Item> THERMAL_COMPOUND = CodRegistrate.INSTANCE.item
+            ("thermal_compound", Item::new)
+            .lang("Thermal Compound")
+            .register();
+
+    public static final ItemEntry<Item> SPACE_GRADE_FABRIC = CodRegistrate.INSTANCE.item
+            ("space_grade_fabric", Item::new)
+            .lang("Space Grade Fabric")
+            .register();
+
+    public static final ItemEntry<OxygenTankItem> OXYGEN_TANK = CodRegistrate.INSTANCE.item
+            ("oxygen_tank", OxygenTankItem::new)
+            .lang("Oxygen Tank")
+            .properties(properties -> properties.stacksTo(1).component(CodComponents.OXYGEN, 1000))
+            .register();
+
+
+    public static final ItemEntry<ArmorItem> SPACE_HELMET = CodRegistrate.INSTANCE.item(
+                    "space_helmet",
+                    (properties) -> new ArmorItem(Holder.direct(CodArmor.SPACE_SUIT_ARMOR_MATERIAL), ArmorItem.Type.HELMET, properties)
+            )
+            .properties(properties -> properties.stacksTo(1).durability(100))
+            .lang("Space Helmet")
+            .register();
+
+    public static final ItemEntry<ArmorItem> SPACE_CHESTPLATE = CodRegistrate.INSTANCE.item(
+                    "space_chestplate",
+                    (properties) -> new ArmorItem(Holder.direct(CodArmor.SPACE_SUIT_ARMOR_MATERIAL), ArmorItem.Type.CHESTPLATE, properties)
+            )
+            .properties(properties -> properties.stacksTo(1).durability(400))
+            .lang("Space Suit Chestplate")
+            .register();
+
+    public static final ItemEntry<ArmorItem> SPACE_LEGGINGS = CodRegistrate.INSTANCE.item(
+                    "space_leggings",
+                    (properties) -> new ArmorItem(Holder.direct(CodArmor.SPACE_SUIT_ARMOR_MATERIAL), ArmorItem.Type.LEGGINGS, properties)
+            )
+            .properties(properties -> properties.stacksTo(1).durability(300))
+            .lang("Space Suit Leggings")
+            .register();
+
+    public static final ItemEntry<ArmorItem> SPACE_BOOTS = CodRegistrate.INSTANCE.item(
+                    "space_boots",
+                    (properties) -> new ArmorItem(Holder.direct(CodArmor.SPACE_SUIT_ARMOR_MATERIAL), ArmorItem.Type.BOOTS, properties)
+            )
+            .properties(properties -> properties.stacksTo(1).durability(250))
+            .lang("Space Suit Boots")
+            .register();
+
+    public static final ItemEntry<FracturedArkItem> FRACTURED_ARK = CodRegistrate.INSTANCE.item
+            ("fractured_ark", FracturedArkItem::new)
+            .properties(properties -> properties)
+            .model((ctx, prov) -> prov.handheld(ctx))
+            .lang("K-Star's Fractured Ark")
+            .register();
+
+    public static final ItemEntry<SausageItem> SAUSAGE = CodRegistrate.INSTANCE.item
+            ("sausage", SausageItem::new)
+            .properties(properties -> properties)
+            .lang("Sausage")
+            .register();
+
+    public static final ItemEntry<NetheriteSpoonItem> NETHERITE_SPOON = CodRegistrate.INSTANCE.item
+            ("netherite_spoon", NetheriteSpoonItem::new)
+            .properties(properties -> properties)
+            .lang("Netherite Spoon")
+            .model((ctx, prov) -> prov.handheld(ctx))
+            .register();
+
 
     // VOTV Foods
 

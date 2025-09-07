@@ -5,6 +5,7 @@ import com.mc3699.codmod.block.DellServerBlock;
 import com.mc3699.codmod.block.backrooms.CeilingLightBlock;
 import com.mc3699.codmod.block.codNuke.CodNukeBlock;
 import com.mc3699.codmod.block.graphicsMonitor.GraphicsMonitorBlock;
+import com.mc3699.codmod.block.oxygenDistributor.OxygenDistributorBlock;
 import com.mc3699.codmod.block.teleporter.TeleporterBlock;
 import com.mc3699.codmod.block.thresholdParts.ThresholdPortalBlock;
 import com.mc3699.codmod.block.consoles.ScanningConsoleBlock;
@@ -31,6 +32,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -128,16 +130,16 @@ public class CodBlocks {
             .lang("Abbe Plushie")
             .register();
 
-    public static final BlockEntry<Block> HEAT_PLUSHIE = CodRegistrate.INSTANCE.block("heat_plushie", Block::new)
-            .properties(properties -> properties.noCollission().noOcclusion())
-            .simpleItem()
-            .lang("Heat Plushie")
-            .register();
-
     public static final BlockEntry<Block> NUZ_PLUSHIE = CodRegistrate.INSTANCE.block("nuz_plushie", Block::new)
             .properties(properties -> properties.noCollission().noOcclusion())
             .simpleItem()
             .lang("§bNuz Plushie.")
+            .register();
+
+    public static final BlockEntry<Block> ZETOS_PLUSHIE = CodRegistrate.INSTANCE.block("zetos_plushie", Block::new)
+            .properties(properties -> properties.noCollission().noOcclusion())
+            .simpleItem()
+            .lang("§gZetos Plushie")
             .register();
 
     public static final BlockEntry<Block> MOIST_CARPET = CodRegistrate.INSTANCE.block("moist_carpet", Block::new)
@@ -262,7 +264,7 @@ public class CodBlocks {
 
     public static final BlockEntry<Block> ENTROPY_SAND = CodRegistrate.INSTANCE.block("entropy_sand", Block::new)
             .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.SAND))
-            .lang("Entropic Sand")
+            .lang("Entropic Regolith")
             .simpleItem()
             .register();
 
@@ -332,6 +334,12 @@ public class CodBlocks {
     public static final BlockEntry<TriangulatorBlock> TRIANGULATOR = CodRegistrate.INSTANCE.block("triangulator", TriangulatorBlock::new)
             .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK))
             .simpleItem()
+            .register();
+
+    public static final BlockEntry<OxygenDistributorBlock> OXYGEN_DISTRIBUTOR = CodRegistrate.INSTANCE.block("oxygen_distributor", OxygenDistributorBlock::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.NETHERITE_BLOCK))
+            .simpleItem()
+            .lang("Oxygen Distributor")
             .register();
 
 

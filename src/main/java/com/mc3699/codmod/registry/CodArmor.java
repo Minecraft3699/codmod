@@ -29,4 +29,19 @@ public class CodArmor {
             2
     );
 
+    public static final ArmorMaterial SPACE_SUIT_ARMOR_MATERIAL = new ArmorMaterial(
+            Map.of(
+                    ArmorItem.Type.HELMET, 1,
+                    ArmorItem.Type.CHESTPLATE, 5,
+                    ArmorItem.Type.LEGGINGS, 3,
+                    ArmorItem.Type.BOOTS, 1
+            ),
+            10,
+            SoundEvents.ARMOR_EQUIP_LEATHER,
+            () -> Ingredient.of(CodItems.SPACE_GRADE_FABRIC),
+            List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "space_suit"))),
+            0,
+            0
+    );
+
 }

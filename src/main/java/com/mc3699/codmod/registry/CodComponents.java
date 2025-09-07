@@ -6,6 +6,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -49,6 +50,21 @@ public class CodComponents {
             "channel",
             () -> DataComponentType.<Integer>builder()
                     .persistent(Codec.INT)
+                    .build()
+    );
+
+    public static final Supplier<DataComponentType<Integer>> OXYGEN = COMPONENTS.register(
+            "stored_oxygen",
+            () -> DataComponentType.<Integer>builder()
+                    .persistent(Codec.INT)
+                    .build()
+    );
+
+    public static final Supplier<DataComponentType<Integer>> SAUSAGE_COLOR = COMPONENTS.register(
+            "sausage_color",
+            () -> DataComponentType.<Integer>builder()
+                    .persistent(Codec.INT)
+                    .networkSynchronized(ByteBufCodecs.INT)
                     .build()
     );
 

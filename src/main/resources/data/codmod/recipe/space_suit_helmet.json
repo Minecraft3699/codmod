@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "#I#",
+        "#G#"
+    ],
+    "key": {
+        "#": {
+            "item": "codmod:space_grade_fabric"
+        },
+        "I": {
+            "item": "minecraft:iron_helmet"
+        },
+        "G": {
+            "item": "minecraft:glass_pane"
+        }
+    },
+    "result": {
+        "id": "codmod:space_helmet",
+        "count": 1
+    }
+}
