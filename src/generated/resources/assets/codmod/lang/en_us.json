@@ -154,6 +154,7 @@
   "item.codmod.tomato": "Tomato",
   "item.codmod.transponder": "Transponder",
   "item.codmod.voidbreaker": "Voidbreaker",
+  "item.codmod.no_permission": "You need to be an Operator to use this!",
   "itemGroup.codmod": "Cod Mod",
   "itemGroup.votv_food": "Voices of the Void: Food",
   "subtitles.codmod.9_27_2016": "? ? ?",
