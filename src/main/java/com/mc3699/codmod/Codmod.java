@@ -13,12 +13,14 @@ import com.mojang.logging.LogUtils;
 import dev.wendigodrip.thebrokenscript.api.queue.WorkQueue;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.player.Player;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.util.thread.SidedThreadGroups;
 import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.common.util.FakePlayer;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import net.neoforged.neoforge.event.level.LevelEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
@@ -98,6 +100,13 @@ public class Codmod {
         } catch (IOException e) {
             LOGGER.info("Failed to API");
         }
+    }
+
+    public static boolean hasOperatorPermission(Player player) { //This can be used to check if a player has perms to use items and should be added to all staff items like im about to do to the codrod
+        if (player instanceof FakePlayer) {
+            return true;
+        }
+        return player.hasPermissions(2);
     }
 
     @SubscribeEvent
