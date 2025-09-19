@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:green_dye"
+    }
+  ],
+  "result": {
+    "id": "codmod:green",
+    "count": 1
+  }
+}
