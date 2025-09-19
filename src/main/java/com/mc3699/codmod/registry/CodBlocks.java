@@ -136,6 +136,12 @@ public class CodBlocks {
             .lang("§dPinky§r §3Plushie")
             .register();
 
+    public static final BlockEntry<Block> BLADE_PLUSHIE = CodRegistrate.INSTANCE.block("blade_plushie", Block::new)
+            .properties(properties -> properties.noCollission().noOcclusion())
+            .simpleItem()
+            .lang("§cBlade Plushie")
+            .register();
+
     public static final BlockEntry<Block> NUZ_PLUSHIE = CodRegistrate.INSTANCE.block("nuz_plushie", Block::new)
             .properties(properties -> properties.noCollission().noOcclusion())
             .simpleItem()

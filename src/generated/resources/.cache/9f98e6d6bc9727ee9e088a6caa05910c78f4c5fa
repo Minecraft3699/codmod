@@ -1,4 +1,5 @@
-// 1.21.1	2025-09-19T09:28:16.1588858	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
+// 1.21.1	2025-09-19T10:32:39.147196	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
+c4642b0c685192cf5d5d07b6893cc7333a63d1da assets/codmod/blockstates/blade_plushie.json
 e7cb80d710fab51bc6ace5b29bf5cf955a923adf assets/codmod/blockstates/ceiling_light.json
 7040b661ef94bb5c487639a82d59a859a6e42c36 assets/codmod/blockstates/ceiling_tile.json
 13cdd03b5ecfcd79516580da336255a0d07abedc assets/codmod/blockstates/ceramic_slab.json
@@ -38,8 +39,9 @@ abcf062fd5decca251b2d4e623edb9daa7dec02a assets/codmod/blockstates/threshold_por
 62981c818b0e56157d81e30ba4c84e88a03edeb3 assets/codmod/blockstates/triangulator.json
 f062903ff298b3585d7b47250018da45c0293850 assets/codmod/blockstates/ugly_wallpaper.json
 064fe3376b3c1cf85c49ff1eca7371979390528b assets/codmod/blockstates/zetos_plushie.json
-83a98270cb9526bdea68038210f48c7f102abb3b assets/codmod/lang/en_ud.json
-c35268ce0ce70e59c85cdce52509c40c75ac25f6 assets/codmod/lang/en_us.json
+414985b2d0ce72b2e294c6e162aa7fcd45d0d041 assets/codmod/lang/en_ud.json
+9c0c5ad773217b72ad1b99c9cc232fa276b842ca assets/codmod/lang/en_us.json
+e2cf401ffd25a21c829b15e577a98dc35dd12dd6 assets/codmod/models/block/blade_plushie.json
 13cd803f61e334af890df6bb81131bf7c4caad2e assets/codmod/models/block/ceiling_light.json
 8d7860352037461ea03d33414321cfa620e76f38 assets/codmod/models/block/ceiling_tile.json
 a33ac3bce7ff86d30362c8f1f50bc3b06daf18b4 assets/codmod/models/block/ceramic_slab.json
@@ -86,6 +88,7 @@ df058a5a8d32e47390f727acd71ebd53eabd4439 assets/codmod/models/block/scanning_con
 48684b1116c0fd7998b677e28dd768d7d6da7f8b assets/codmod/models/block/ugly_wallpaper.json
 7c324e73f75e5583081b413dbc8ec7743308599c assets/codmod/models/block/zetos_plushie.json
 8b9cbd354ac79a080eb5f89276688642392078ac assets/codmod/models/item/bagel.json
+fac945979d9236cba3ce079471441fc2e8ddf2d9 assets/codmod/models/item/blade_plushie.json
 58d2b811877134f0939cb58e50ca7599988ff76b assets/codmod/models/item/blue.json
 3d73f362dd02e40adaeb3de33b68a3d29105ff56 assets/codmod/models/item/ceiling_light.json
 61968c1ab1905b157109adec5dde9e43f1054a7d assets/codmod/models/item/ceiling_tile.json
@@ -175,6 +178,7 @@ d24bb2999bea2c5d5a2a9b7d3a25d1eb05125162 assets/codmod/models/item/transponder.j
 61594bd513bca241f53c6a9b6b7825c3adcde2cb assets/codmod/models/item/voidbreaker.json
 51459b916a01daed3d6e4bd24ecc712e3da66058 assets/codmod/models/item/zetos_plushie.json
 a017f8316190390e2e73f5fa1c3c555b7ccd2f52 assets/codmod/sounds.json
+0e64b54ba3fc040fd424b9c411f8a54de77ffa32 data/codmod/loot_table/blocks/blade_plushie.json
 4640da060c3dd82f26361577225f58e2ee2efad1 data/codmod/loot_table/blocks/ceiling_light.json
 b0299ee3b2b07dc906703200fec9fed4aec21752 data/codmod/loot_table/blocks/ceiling_tile.json
 07e309c191b022dccfc43c794558a787ee9eaa58 data/codmod/loot_table/blocks/ceramic_slab.json
