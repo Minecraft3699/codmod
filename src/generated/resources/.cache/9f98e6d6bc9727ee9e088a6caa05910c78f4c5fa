@@ -1,4 +1,4 @@
-// 1.21.1	2025-09-20T23:07:18.9002327	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
+// 1.21.1	2025-09-21T06:34:52.1211156	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
 c4642b0c685192cf5d5d07b6893cc7333a63d1da assets/codmod/blockstates/blade_plushie.json
 e7cb80d710fab51bc6ace5b29bf5cf955a923adf assets/codmod/blockstates/ceiling_light.json
 7040b661ef94bb5c487639a82d59a859a6e42c36 assets/codmod/blockstates/ceiling_tile.json
@@ -8,6 +8,7 @@ f2fdee44c05c49fbb57981b99079c788671e0edc assets/codmod/blockstates/ceramic_tile.
 8fb032203801a5e308bb68da2419095ba093c4d9 assets/codmod/blockstates/coal_generator.json
 6abd47b117930380653fc1c77722bcc77f5b83bc assets/codmod/blockstates/cod_block.json
 8d3b41fb059b60f6a4b6da798c27fe29790d9dca assets/codmod/blockstates/cod_nuke.json
+8b6faa1617afdb086dea33d203eb872d31443618 assets/codmod/blockstates/compactedglass1.json
 31a9304aeedb4c5b4f5b89dc12caa5ee63130271 assets/codmod/blockstates/entropy_basalt.json
 ebecd3b06342c649085a7144b02548bd9ba4c592 assets/codmod/blockstates/entropy_sand.json
 e69251819f3c2330a3f2862046d31487709cff55 assets/codmod/blockstates/entropy_shale.json
@@ -40,8 +41,8 @@ abcf062fd5decca251b2d4e623edb9daa7dec02a assets/codmod/blockstates/threshold_por
 62981c818b0e56157d81e30ba4c84e88a03edeb3 assets/codmod/blockstates/triangulator.json
 f062903ff298b3585d7b47250018da45c0293850 assets/codmod/blockstates/ugly_wallpaper.json
 064fe3376b3c1cf85c49ff1eca7371979390528b assets/codmod/blockstates/zetos_plushie.json
-58cf949c10317cb3e3ba885d63714839f1e225b1 assets/codmod/lang/en_ud.json
-299f1070323bc261c3411af1882e4a40e9343a22 assets/codmod/lang/en_us.json
+d444e5a8115c5ee56fe4b101864affaa24990be5 assets/codmod/lang/en_ud.json
+1b23696086ff61491103a11c044e375caa76c61c assets/codmod/lang/en_us.json
 e2cf401ffd25a21c829b15e577a98dc35dd12dd6 assets/codmod/models/block/blade_plushie.json
 13cd803f61e334af890df6bb81131bf7c4caad2e assets/codmod/models/block/ceiling_light.json
 8d7860352037461ea03d33414321cfa620e76f38 assets/codmod/models/block/ceiling_tile.json
@@ -54,6 +55,7 @@ fe409692cf1c3e9105e325675372af882652a1bd assets/codmod/models/block/ceramic_stai
 1dc48ba94bb6c89b85f5f90face6b3ee6d901740 assets/codmod/models/block/coal_generator.json
 24bd76bdc035083fab23423ef889efe3f511310e assets/codmod/models/block/cod_block.json
 eba65c8a634312604cb08c106eae5fe67828ffac assets/codmod/models/block/cod_nuke.json
+c7b5fd702bbbf97f2dc0cad0ddbfd41e9ae86b14 assets/codmod/models/block/compactedglass1.json
 7d93a248090f2aebb6de87adea0eeadf5b11ded6 assets/codmod/models/block/entropy_basalt.json
 85657c10192002b7f4a15078185f032450f77ae8 assets/codmod/models/block/entropy_sand.json
 aaf8a6e73b8a3771dfd68569b4e9ad6a04ccfb3a assets/codmod/models/block/entropy_shale.json
@@ -105,6 +107,7 @@ bd589b79e143905dce7a03cd4fef9a64fef59331 assets/codmod/models/item/cod_nuke.json
 8c1c50040df1285e22084f92d036b89f6d6320ad assets/codmod/models/item/cod_pickaxe.json
 517de0ee0b552412e7aee2e38f2fb6a0701f9e72 assets/codmod/models/item/cod_rod.json
 cba0cade4e3eb94d317c29eb61bc289020399b9b assets/codmod/models/item/command_module.json
+04fb50530eb20ae18adc9c567443f1edf20e474d assets/codmod/models/item/compactedglass1.json
 5791d83990b5740736dc583c29640cc28d59fa0f assets/codmod/models/item/corruptedknife.json
 f3566f941ee7bdab935a38b07d676b8f65493829 assets/codmod/models/item/current_meter.json
 711a5d9f736782ae6bb3a9eb0a96516cb6f22ae6 assets/codmod/models/item/designator.json
@@ -191,6 +194,7 @@ b95552f02b610418250b4fe4816fb5fe80439962 data/codmod/loot_table/blocks/ceramic_t
 30a63605480737d08a40e22fc164e6f69da3d4f2 data/codmod/loot_table/blocks/coal_generator.json
 1f200e921be82345de87fe4e627a528cfb20ef48 data/codmod/loot_table/blocks/cod_block.json
 3b354d68d54803e0f3b55d79f78a5d7125bbd475 data/codmod/loot_table/blocks/cod_nuke.json
+5558ad77a73ae819730665b0b35f98615e269429 data/codmod/loot_table/blocks/compactedglass1.json
 39890bf9ab126662276c5bb547840c307bc74eb3 data/codmod/loot_table/blocks/entropy_basalt.json
 ab2bb8def4dfc7088c2805116f41fd7ae7f41726 data/codmod/loot_table/blocks/entropy_sand.json
 792db40af9a8489aef3b3f89a695188112b4ebf9 data/codmod/loot_table/blocks/entropy_shale.json

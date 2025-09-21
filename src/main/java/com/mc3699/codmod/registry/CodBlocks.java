@@ -90,6 +90,12 @@ public class CodBlocks {
             .simpleItem()
             .register();
 
+    public static final BlockEntry<Block> COMPACTEDGLASS1 = CodRegistrate.INSTANCE.block("compactedglass1", Block::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS))
+            .simpleItem()
+            .lang("Compacted Glass")
+            .register();
+
     public static final BlockEntry<SubspaceTripmineBlock> SUBSPACE_TRIPMINE = CodRegistrate.INSTANCE.block(
                     "subspace_tripmine",
                     SubspaceTripmineBlock::new
