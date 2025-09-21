@@ -1,4 +1,4 @@
-// 1.21.1	2025-09-19T10:32:39.147196	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
+// 1.21.1	2025-09-20T23:07:18.9002327	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
 c4642b0c685192cf5d5d07b6893cc7333a63d1da assets/codmod/blockstates/blade_plushie.json
 e7cb80d710fab51bc6ace5b29bf5cf955a923adf assets/codmod/blockstates/ceiling_light.json
 7040b661ef94bb5c487639a82d59a859a6e42c36 assets/codmod/blockstates/ceiling_tile.json
@@ -29,6 +29,7 @@ e0a7baf429ef66c17975d800833c54c79e93c7ac assets/codmod/blockstates/normal_abbe_p
 4b7324be7efe067c424774f17d518cd752a0e3e9 assets/codmod/blockstates/red_moist_carpet.json
 a52fd403f646df255492ee30037a0300e02fa401 assets/codmod/blockstates/red_ugly_wallpaper.json
 253de56bb069fb2e7fb18b2224a5f87ab0c3f218 assets/codmod/blockstates/scanning_console.json
+f8de464617ee8093bc5a005be011f69f93ab88c3 assets/codmod/blockstates/scuffed_plushie.json
 905be3d94fd7e679262bf436cd91304c648e6d46 assets/codmod/blockstates/skishel_plushie.json
 6a2f12ba01d96859ffaa69b548e3f3665bbce99f assets/codmod/blockstates/subspace_tripmine.json
 9b99e84308099a4efa10c41aad9fc0e25a083dfc assets/codmod/blockstates/teleporter.json
@@ -39,8 +40,8 @@ abcf062fd5decca251b2d4e623edb9daa7dec02a assets/codmod/blockstates/threshold_por
 62981c818b0e56157d81e30ba4c84e88a03edeb3 assets/codmod/blockstates/triangulator.json
 f062903ff298b3585d7b47250018da45c0293850 assets/codmod/blockstates/ugly_wallpaper.json
 064fe3376b3c1cf85c49ff1eca7371979390528b assets/codmod/blockstates/zetos_plushie.json
-414985b2d0ce72b2e294c6e162aa7fcd45d0d041 assets/codmod/lang/en_ud.json
-9c0c5ad773217b72ad1b99c9cc232fa276b842ca assets/codmod/lang/en_us.json
+58cf949c10317cb3e3ba885d63714839f1e225b1 assets/codmod/lang/en_ud.json
+299f1070323bc261c3411af1882e4a40e9343a22 assets/codmod/lang/en_us.json
 e2cf401ffd25a21c829b15e577a98dc35dd12dd6 assets/codmod/models/block/blade_plushie.json
 13cd803f61e334af890df6bb81131bf7c4caad2e assets/codmod/models/block/ceiling_light.json
 8d7860352037461ea03d33414321cfa620e76f38 assets/codmod/models/block/ceiling_tile.json
@@ -77,6 +78,7 @@ cc5193b7055661bb77015a3a80c2af2eb730e921 assets/codmod/models/block/red_ceiling_
 08f15949da4e533f405217f1482aab6429f1fb98 assets/codmod/models/block/red_moist_carpet.json
 1b33b2652da516bb7d61f0bbea3d3de923db4470 assets/codmod/models/block/red_ugly_wallpaper.json
 df058a5a8d32e47390f727acd71ebd53eabd4439 assets/codmod/models/block/scanning_console.json
+9e43c8c0182875d0cbb60b47636f0f92de5e8375 assets/codmod/models/block/scuffed_plushie.json
 3ea02eb8d4f88ea23c5eb6704e810f8b7d7e609c assets/codmod/models/block/skishel_plushie.json
 2449ec45c0f4b76d71d11bcea7929aa6e8d3afda assets/codmod/models/block/subspace_tripmine.json
 4a82dbe0bda806042f72ce6fffb03d262c883a82 assets/codmod/models/block/teleporter.json
@@ -139,6 +141,7 @@ cd96f31de73da22f37a1b47d14b200af8d61b920 assets/codmod/models/item/nibble_ultra.
 2961d52398dceef1d3fbe7b8665c7cd60ee745b8 assets/codmod/models/item/nullcake1.json
 66cc0d1f6fb9f9da726ee9065de56d3f2aa1e49a assets/codmod/models/item/null_chicken_sword.json
 f8026e0f2c6754de5fe6db13fd02ef4b8c993434 assets/codmod/models/item/nuz_plushie.json
+ca09ef9397acbb94b5aadac41ba4066fd7cba7b3 assets/codmod/models/item/oswald.json
 72282e4fe3a6da4f852448a300e524c2c7eb237f assets/codmod/models/item/oxygen_distributor.json
 0ee3a17289b7dd13625597c26b7fd193f73b887f assets/codmod/models/item/oxygen_tank.json
 aace96a8261710405c7837fa824d7ef65c983c6c assets/codmod/models/item/pinky_plushie.json
@@ -155,6 +158,7 @@ c6b9a0e463afd3d465f2769dca4b170a61587ddd assets/codmod/models/item/red_moist_car
 19b0e54cde96bff0207b5cb2bdd5eb10d417568e assets/codmod/models/item/resistor.json
 11482dff99933134c9c8bec81b30b33a88d567e1 assets/codmod/models/item/round_meal.json
 de7ddef5be9f38769c1ed727134e0acd62976002 assets/codmod/models/item/sausage.json
+3d1b24d98fa98e7c5bfe6233a8273b4990a48f8b assets/codmod/models/item/scuffed_plushie.json
 fe6558c9434fae58f608b8dec37e8bece5ebdc57 assets/codmod/models/item/scythe.json
 fe2e8039c811cea004f1e94f4e97523bffe5fbfe assets/codmod/models/item/sealed_fabric.json
 2622f9d6eca88ca9e75ccc0a753626cd5018bf26 assets/codmod/models/item/shrimp_sniper.json
@@ -208,6 +212,7 @@ a3657c70dafd63b13a10a0d6843d2f631b3184d4 data/codmod/loot_table/blocks/red_ceili
 3590cf1bae415d6d24f9b4de89b20b7615997222 data/codmod/loot_table/blocks/red_moist_carpet.json
 4be14d37a2bea9946b52db8ff556f3a4d614e595 data/codmod/loot_table/blocks/red_ugly_wallpaper.json
 51f8df362e0eb5667bc1e5179c3ae3d31019a801 data/codmod/loot_table/blocks/scanning_console.json
+4b7fad4b2617e6647c88cf33d1b5972afece8429 data/codmod/loot_table/blocks/scuffed_plushie.json
 1d608710884e3dfef2c0c27a3c60cc04eacd9c83 data/codmod/loot_table/blocks/skishel_plushie.json
 1eadc591fb61bbddc23c6c5ebd91b0173501d374 data/codmod/loot_table/blocks/subspace_tripmine.json
 d9eecbca98be28e946dfbfd7f2e849a8b97bd680 data/codmod/loot_table/blocks/teleporter.json
