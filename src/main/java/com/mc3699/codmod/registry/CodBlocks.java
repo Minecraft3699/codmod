@@ -90,6 +90,12 @@ public class CodBlocks {
             .simpleItem()
             .register();
 
+    public static final BlockEntry<Block> COMPACTEDGLASS1 = CodRegistrate.INSTANCE.block("compactedglass1", Block::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS))
+            .simpleItem()
+            .lang("Compacted Glass")
+            .register();
+
     public static final BlockEntry<SubspaceTripmineBlock> SUBSPACE_TRIPMINE = CodRegistrate.INSTANCE.block(
                     "subspace_tripmine",
                     SubspaceTripmineBlock::new
@@ -104,6 +110,12 @@ public class CodBlocks {
             .properties(properties -> properties.noCollission().noOcclusion())
             .simpleItem()
             .lang("Garreth Plushie of stupidity.")
+            .register();
+
+    public static final BlockEntry<Block> ANCIENT_PLUSHIE = CodRegistrate.INSTANCE.block("ancient_plushie", Block::new)
+            .properties(properties -> properties.noCollission().noOcclusion())
+            .simpleItem()
+            .lang("Ancients Plushie")
             .register();
 
     public static final BlockEntry<Block> SKISHEL_PLUSHIE = CodRegistrate.INSTANCE.block("skishel_plushie", Block::new)
@@ -124,6 +136,12 @@ public class CodBlocks {
             .lang("§5Firelight §rPlushie")
             .register();
 
+    public static final BlockEntry<Block> SCUFFED_PLUSHIE = CodRegistrate.INSTANCE.block("scuffed_plushie", Block::new)
+            .properties(properties -> properties.noCollission().noOcclusion())
+            .simpleItem()
+            .lang("Scuffed Plushie")
+            .register();
+
     public static final BlockEntry<Block> NORMAL_ABBE_PLUSHIE = CodRegistrate.INSTANCE.block("normal_abbe_plushie", Block::new)
             .properties(properties -> properties.noCollission().noOcclusion())
             .simpleItem()
@@ -134,6 +152,12 @@ public class CodBlocks {
             .properties(properties -> properties.noCollission().noOcclusion())
             .simpleItem()
             .lang("§dPinky§r §3Plushie")
+            .register();
+
+    public static final BlockEntry<Block> BLADE_PLUSHIE = CodRegistrate.INSTANCE.block("blade_plushie", Block::new)
+            .properties(properties -> properties.noCollission().noOcclusion())
+            .simpleItem()
+            .lang("§cBlade Plushie")
             .register();
 
     public static final BlockEntry<Block> NUZ_PLUSHIE = CodRegistrate.INSTANCE.block("nuz_plushie", Block::new)

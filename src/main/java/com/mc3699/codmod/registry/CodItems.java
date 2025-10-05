@@ -213,6 +213,11 @@ public class CodItems {
             .lang("The Long awaited Purple")
             .register();
 
+    public static final ItemEntry<Item> OSWALD = CodRegistrate.INSTANCE.item("oswald", Item::new)
+            .properties(properties -> properties)
+            .lang("oswald")
+            .register();
+
     public static final ItemEntry<Item> NIBBLE_ULTRA = CodRegistrate.INSTANCE.item("nibble_ultra", Item::new)
             .properties(properties -> properties)
             .lang("Nibble Ultra")
