@@ -461,6 +461,12 @@ public class CodItems {
             .lang("Netherite Spoon")
             .model((ctx, prov) -> prov.handheld(ctx))
             .register();
+    //glad your ditching registrate what a piece of shit
+    public static final ItemEntry<BelowEternityItem> BELOW_ETERNITY = CodRegistrate.INSTANCE.item
+            ("below_eternity", BelowEternityItem::new)
+            .properties(properties -> properties)
+            .lang("Below Eternity")
+            .register();
 
 
     // VOTV Foods

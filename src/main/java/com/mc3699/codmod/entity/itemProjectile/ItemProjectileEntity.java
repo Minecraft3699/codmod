@@ -212,4 +212,55 @@ public class ItemProjectileEntity extends AbstractArrow {
     public float getPickRadius() {
         return 0.5F;
     }
+
+    //bug fixed :3 it should be safe to save and throw these mfs through nether portals now
+    @Override
+    public void addAdditionalSaveData(CompoundTag compound) {
+
+        compound.putByte("inBlockState", (byte) 0);
+        compound.putByte("pickup", (byte) 0); // No pickup
+        compound.putDouble("damage", 0.0D);
+        compound.putBoolean("crit", false);
+        compound.putByte("PierceLevel", (byte) 0);
+        compound.putString("SoundEvent", "minecraft:entity.arrow.hit");
+        compound.putBoolean("ShotFromCrossbow", false);
+
+        ItemStack carriedItem = getCarriedItem();
+        if (!carriedItem.isEmpty()) {
+            compound.put("CarriedItem", carriedItem.save(this.registryAccess()));
+        }
+
+        compound.putInt("BounceCount", this.getEntityData().get(BOUNCE_COUNT));
+        compound.putInt("MaxBounce", this.getEntityData().get(MAX_BOUNCE));
+        compound.putInt("Damage", this.getEntityData().get(DAMAGE));
+        compound.putBoolean("ShouldDrop", this.getEntityData().get(SHOULD_DROP));
+    }
+
+    @Override
+    public void readAdditionalSaveData(CompoundTag compound) {
+        if (compound.contains("CarriedItem", 10)) {
+            CompoundTag itemTag = compound.getCompound("CarriedItem");
+            ItemStack carriedItem = ItemStack.parseOptional(this.registryAccess(), itemTag);
+            this.setCarriedItem(carriedItem);
+        }
+
+        if (compound.contains("BounceCount")) {
+            this.getEntityData().set(BOUNCE_COUNT, compound.getInt("BounceCount"));
+        }
+        if (compound.contains("MaxBounce")) {
+            this.getEntityData().set(MAX_BOUNCE, compound.getInt("MaxBounce"));
+        }
+        if (compound.contains("Damage")) {
+            this.getEntityData().set(DAMAGE, compound.getInt("Damage"));
+        }
+        if (compound.contains("ShouldDrop")) {
+            this.getEntityData().set(SHOULD_DROP, compound.getBoolean("ShouldDrop"));
+        }
+    }
+
+    @Override
+    protected ItemStack getPickupItem() {
+        ItemStack carried = getCarriedItem();
+        return carried.isEmpty() ? ItemStack.EMPTY : carried;
+    }
 }

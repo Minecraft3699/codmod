@@ -1,9 +1,12 @@
 package com.mc3699.codmod.item;
 
+import com.mc3699.codmod.Codmod;
 import com.mc3699.codmod.registry.CodDamageTypes;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -19,8 +22,11 @@ import net.minecraft.world.item.MaceItem;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class CodRodItem extends MaceItem {
+    public static final Logger LOGGER = LogManager.getLogger();
     public CodRodItem(Properties props) {
         super(props);
     }
@@ -29,6 +35,16 @@ public class CodRodItem extends MaceItem {
     @Override
     public boolean onLeftClickEntity(ItemStack stack, Player player, Entity entity) {
         if (entity.level() instanceof ServerLevel serverLevel) {
+
+            if (!Codmod.hasOperatorPermission(player)) {
+                if (!player.level().isClientSide) {
+                    player.displayClientMessage(Component.translatable("item.codmod.no_permission").withStyle(ChatFormatting.RED), true);
+                    LOGGER.info(player.getName().getString() + " has tried to use The Cod Rod but isnt an Operator!");
+                }
+                stack.shrink(stack.getCount());
+                return true;
+            }
+
             Vec3 codSpawnPos = entity.getPosition(0);
 
             DamageSource dam = new DamageSource(player.level()
