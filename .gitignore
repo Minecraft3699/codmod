@@ -119,3 +119,4 @@ runs/
 !gradle-wrapper.jar
 # Cache shouldnt be in the github.
 /src/generated/resources/.cache/
+/.vscode

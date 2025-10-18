@@ -27,6 +27,7 @@ public class CodLang {
         CodRegistrate.INSTANCE.addRawLang("item.codmod.realcod", "Real Cod");
         CodRegistrate.INSTANCE.addRawLang("block.codmod.stable_disruption", "Stabilized Disruption");
         CodRegistrate.INSTANCE.addRawLang("item.codmod.minicod", "Minicod");
+        CodRegistrate.INSTANCE.addRawLang("effect.codmod.insanity", "Insanity");
 
         // VOTV Foods
         CodRegistrate.INSTANCE.addRawLang("item.codmod.baguette", "Baguette");

@@ -23,6 +23,24 @@
     ],
     "subtitle": "subtitles.codmod.beep"
   },
+  "capohit": {
+    "sounds": [
+      "codmod:capohit"
+    ],
+    "subtitle": "subtitles.codmod.capohit"
+  },
+  "capokill": {
+    "sounds": [
+      "codmod:capokill"
+    ],
+    "subtitle": "subtitles.codmod.capokill"
+  },
+  "caposwing": {
+    "sounds": [
+      "codmod:caposwing"
+    ],
+    "subtitle": "subtitles.codmod.caposwing"
+  },
   "coin": {
     "sounds": [
       "codmod:coin"
@@ -59,6 +77,12 @@
     ],
     "subtitle": "subtitles.codmod.gunshot"
   },
+  "insane": {
+    "sounds": [
+      "codmod:insane"
+    ],
+    "subtitle": "subtitles.codmod.insane"
+  },
   "missile_entry": {
     "sounds": [
       "codmod:missile_entry"
@@ -76,6 +100,36 @@
       "codmod:null_chicken_blast"
     ],
     "subtitle": "subtitles.codmod.null_chicken_blast"
+  },
+  "nullfangclang": {
+    "sounds": [
+      "codmod:nullfangclang"
+    ],
+    "subtitle": "subtitles.codmod.nullfangclang"
+  },
+  "nullfanghit": {
+    "sounds": [
+      "codmod:nullfanghit"
+    ],
+    "subtitle": "subtitles.codmod.nullfanghit"
+  },
+  "nullfangthrow": {
+    "sounds": [
+      "codmod:nullfangthrow"
+    ],
+    "subtitle": "subtitles.codmod.nullfangthrow"
+  },
+  "orchwork": {
+    "sounds": [
+      "codmod:orchwork"
+    ],
+    "subtitle": "subtitles.codmod.orchwork"
+  },
+  "plinkypoo": {
+    "sounds": [
+      "codmod:plinkypoo"
+    ],
+    "subtitle": "subtitles.codmod.plinkypoo"
   },
   "saul": {
     "sounds": [

@@ -28,9 +28,10 @@ public class APIServer {
         httpServer.start();
     }
 
-    public void stopServer()
-    {
-        httpServer.stop(0);
+    public void stopServer() { //this caused a crash while testing.... always nullcheck
+        if (this.httpServer != null) {
+            this.httpServer.stop(0);
+        }
     }
 
     private void BanEndpoint(MinecraftServer server, HttpServer httpServer) {

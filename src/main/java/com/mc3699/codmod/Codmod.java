@@ -11,6 +11,9 @@ import com.mc3699.codmod.registry.*;
 import com.mc3699.codmod.responses.VayChat;
 import com.mojang.logging.LogUtils;
 import dev.wendigodrip.thebrokenscript.api.queue.WorkQueue;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.player.Player;
@@ -26,9 +29,16 @@ import net.neoforged.neoforge.event.level.LevelEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.neoforged.neoforge.event.server.ServerStoppingEvent;
 import net.neoforged.neoforge.event.tick.ServerTickEvent;
+import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
+import net.neoforged.neoforge.network.handling.IPayloadHandler;
+import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 import org.slf4j.Logger;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import static com.mc3699.codmod.network.CodVariables.ATTACHMENT_TYPES;
 
 @Mod(Codmod.MOD_ID)
 public class Codmod {
@@ -63,7 +73,8 @@ public class Codmod {
         CodRegistrate.INSTANCE.chatResponse("vay_response", VayChat::new).register();
 
         NeoForge.EVENT_BUS.register(this);
-
+        modEventBus.addListener(this::registerNetworking);
+        ATTACHMENT_TYPES.register(modEventBus);
 
 
     }
@@ -120,5 +131,22 @@ public class Codmod {
         if (!(event.getLevel() instanceof ServerLevel level)) return;
 
         level.getServer().overworld().getDataStorage().computeIfAbsent(CodData.FACTORY, "cod");
+    }
+    private static boolean networkingRegistered = false;
+    private static final Map<CustomPacketPayload.Type<?>, NetworkMessage<?>> MESSAGES = new HashMap<>();
+
+    private record NetworkMessage<T extends CustomPacketPayload>(StreamCodec<? extends FriendlyByteBuf, T> reader, IPayloadHandler<T> handler) { }
+
+    public static <T extends CustomPacketPayload> void addNetworkMessage(CustomPacketPayload.Type<T> id, StreamCodec<? extends FriendlyByteBuf, T> reader, IPayloadHandler<T> handler) {
+        if (networkingRegistered)
+            throw new IllegalStateException("Cannot register new network messages after networking has been registered");
+        MESSAGES.put(id, new NetworkMessage<>(reader, handler));
+    }
+
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    private void registerNetworking(final RegisterPayloadHandlersEvent event) {
+        final PayloadRegistrar registrar = event.registrar(MOD_ID);
+        MESSAGES.forEach((id, networkMessage) -> registrar.playBidirectional(id, ((NetworkMessage) networkMessage).reader(), ((NetworkMessage) networkMessage).handler()));
+        networkingRegistered = true;
     }
 }

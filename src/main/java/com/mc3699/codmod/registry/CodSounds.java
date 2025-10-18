@@ -76,6 +76,39 @@ public class CodSounds {
             .simple(false)
             .subtitle("Gunshot")
             .register();
+    public static final RegistryEntry<SoundEvent, SoundEvent> NULLFANGHIT = CodRegistrate.INSTANCE.sound("nullfanghit")
+            .simple(false)
+            .register();
+    public static final RegistryEntry<SoundEvent, SoundEvent> NULLFANGTHROW = CodRegistrate.INSTANCE.sound("nullfangthrow")
+            .simple(false)
+            .register();
+    public static final RegistryEntry<SoundEvent, SoundEvent> NULLFANGCLANG = CodRegistrate.INSTANCE.sound("nullfangclang")
+            .simple(false)
+            .register();
+
+    public static final RegistryEntry<SoundEvent, SoundEvent> CAPOSWING = CodRegistrate.INSTANCE.sound("caposwing")
+            .simple(false)
+            .register();
+
+    public static final RegistryEntry<SoundEvent, SoundEvent> CAPOHIT = CodRegistrate.INSTANCE.sound("capohit")
+            .simple(false)
+            .register();
+
+    public static final RegistryEntry<SoundEvent, SoundEvent> CAPOKILL = CodRegistrate.INSTANCE.sound("capokill")
+            .simple(false)
+            .register();
+
+    public static final RegistryEntry<SoundEvent, SoundEvent> ORCHWORK = CodRegistrate.INSTANCE.sound("orchwork")
+            .simple(false)
+            .register();
+
+    public static final RegistryEntry<SoundEvent, SoundEvent> INSANE = CodRegistrate.INSTANCE.sound("insane")
+            .simple(false)
+            .register();
+
+    public static final RegistryEntry<SoundEvent, SoundEvent> PLINKYPOO = CodRegistrate.INSTANCE.sound("plinkypoo")
+            .simple(false)
+            .register();
 
     public static void register() {
         // This method just exists so Java will load the class LOL
