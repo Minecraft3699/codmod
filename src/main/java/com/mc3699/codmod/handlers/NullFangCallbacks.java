@@ -22,7 +22,7 @@ import net.minecraft.commands.arguments.EntityAnchorArgument;
 
 import java.util.Comparator;
 
-public class GrapplingHookCallbacks {
+public class NullFangCallbacks {
     private static final float PULL_FORCE_X = 0.025f;
     private static final float PULL_FORCE_Y = 0.02f;
     private static final float GRAB_DAMAGE_RESISTANCE_TICKS = 100;
@@ -148,11 +148,11 @@ public class GrapplingHookCallbacks {
         if (world instanceof Level level && !level.isClientSide()) {
             level.playSound(null, BlockPos.containing(x, y, z),
                     BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse(soundId)),
-                    SoundSource.MASTER, volume, pitch);
+                    SoundSource.PLAYERS, volume, pitch);
         } else if (world instanceof Level level) {
             level.playLocalSound(x, y, z,
                     BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse(soundId)),
-                    SoundSource.MASTER, volume, pitch, false);
+                    SoundSource.PLAYERS, volume, pitch, false);
         }
     }
 

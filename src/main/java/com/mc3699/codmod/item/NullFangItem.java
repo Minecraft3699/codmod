@@ -1,5 +1,6 @@
 package com.mc3699.codmod.item;
 
+import com.mc3699.codmod.handlers.NullFangCallbacks;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.component.Unbreakable;
@@ -24,7 +25,6 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.network.chat.Component;
 
-import com.mc3699.codmod.handlers.GrapplingHookCallbacks;
 import com.mc3699.codmod.entity.NullFangHookEntity;
 
 import java.util.List;
@@ -69,9 +69,9 @@ public class NullFangItem extends Item {
             List<Component> tooltipComponents,
             TooltipFlag tooltipFlag
     ) {
-        tooltipComponents.add(Component.literal("Made for Pinky - Initally Made by BigManRake - Fixed and UnMcreatored by Eyae").withStyle(ChatFormatting.GRAY));
         tooltipComponents.add(Component.literal("A magenta-swirled harpoon-like growth. Venemous fang, seething with corruption.").withStyle(ChatFormatting.GRAY));
-        tooltipComponents.add(Component.literal("Allows the user to grapple enemies as well as surfaces. (Sneak to unstuck yourself)").withStyle(ChatFormatting.GRAY));
+        tooltipComponents.add(Component.literal("Allows the user to grapple enemies as well as surfaces. (Sneak to unstuck yourself)\n").withStyle(ChatFormatting.GRAY));
+        tooltipComponents.add(Component.literal("Made for Pinky - Initally Made by BigManRake - Fixed and UnMcreatored by Eyae").withStyle(ChatFormatting.GRAY));
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }
 
@@ -90,7 +90,7 @@ public class NullFangItem extends Item {
     @Override
     public boolean hurtEnemy(ItemStack itemstack, LivingEntity hitEntity, LivingEntity attacker) {
         boolean result = super.hurtEnemy(itemstack, hitEntity, attacker);
-        GrapplingHookCallbacks.onMeleeHit(hitEntity.level(), hitEntity.getX(), hitEntity.getY(), hitEntity.getZ(), hitEntity, attacker);
+        NullFangCallbacks.onMeleeHit(hitEntity.level(), hitEntity.getX(), hitEntity.getY(), hitEntity.getZ(), hitEntity, attacker);
         return result;
     }
 
@@ -104,12 +104,12 @@ public class NullFangItem extends Item {
 
             boolean isInHand = mainHand == itemstack || offHand == itemstack;
 
-            if (!isInHand && GrapplingHookCallbacks.isPlayerGrappling(entity)) {
-                GrapplingHookCallbacks.setPlayerGrappling(entity, false);
+            if (!isInHand && NullFangCallbacks.isPlayerGrappling(entity)) {
+                NullFangCallbacks.setPlayerGrappling(entity, false);
             }
         }
 
-        GrapplingHookCallbacks.onInventoryTick(entity);
+        NullFangCallbacks.onInventoryTick(entity);
     }
 
     @Override
@@ -136,7 +136,7 @@ public class NullFangItem extends Item {
             consumeAmmo(ammo, world, player);
         }
 
-        GrapplingHookCallbacks.onRangedShot(world, entity.getX(), entity.getY(), entity.getZ(), entity);
+        NullFangCallbacks.onRangedShot(world, entity.getX(), entity.getY(), entity.getZ(), entity);
     }
 
     private ItemStack findAmmo(Player player) {

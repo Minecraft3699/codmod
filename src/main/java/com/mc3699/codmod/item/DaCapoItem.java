@@ -2,11 +2,12 @@ package com.mc3699.codmod.item;
 
 import com.mc3699.codmod.registry.CodMobEffects;
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.Unbreakable;
-import net.neoforged.api.distmarker.OnlyIn;
-import net.neoforged.api.distmarker.Dist;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -74,6 +75,15 @@ public class DaCapoItem extends SwordItem {
     }
 
     @Override
+    public boolean supportsEnchantment(ItemStack stack, Holder<Enchantment> enchantment) { //tag doesnt work in codmod for some reason...
+        return enchantment.is(Enchantments.SHARPNESS) || enchantment.is(Enchantments.SMITE) ||
+                enchantment.is(Enchantments.BANE_OF_ARTHROPODS) || enchantment.is(Enchantments.KNOCKBACK) ||
+                enchantment.is(Enchantments.FIRE_ASPECT) || enchantment.is(Enchantments.LOOTING) ||
+                enchantment.is(Enchantments.SWEEPING_EDGE) || enchantment.is(Enchantments.UNBREAKING) ||
+                enchantment.is(Enchantments.MENDING) || enchantment.is(Enchantments.VANISHING_CURSE);
+    }
+
+    @Override
     public boolean hurtEnemy(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
         boolean retval = super.hurtEnemy(itemstack, entity, sourceentity);
         onLivingEntityHit(entity.level(), entity.getX(), entity.getY(), entity.getZ(), entity);
@@ -94,8 +104,8 @@ public class DaCapoItem extends SwordItem {
             List<Component> tooltipComponents,
             TooltipFlag tooltipFlag
     ) {
-        tooltipComponents.add(Component.literal("???").withStyle(ChatFormatting.GRAY));
-        tooltipComponents.add(Component.literal("Made by BigManRake - fixed1 by alex - Fixed2 and ported to codmod by Eyae").withStyle(ChatFormatting.GRAY));
+        tooltipComponents.add(Component.literal("§oA sweeping, monochrome scythe. You can hear the calling of voices in the distance. Are they singing?\n").withStyle(ChatFormatting.GRAY));
+        tooltipComponents.add(Component.literal("Made by BigManRake - Fixed1 by AliveAlex - Fixed2 and ported to codmod by Eyae").withStyle(ChatFormatting.GRAY));
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }
 
@@ -110,7 +120,7 @@ public class DaCapoItem extends SwordItem {
         if (entity == null)
             return;
 
-        playSound(world, x, y, z, "codmod:orchwork", SoundSource.NEUTRAL, 0.4f, 1f);
+        playSound(world, x, y, z, "codmod:orchwork", SoundSource.PLAYERS, 0.4f, 1f);
 
         for (Entity entityIterator : world.getEntities(entity, new AABB(x + 14, y + 14, z + 14, x - 14, y - 14, z - 14))) {
             if (entityIterator instanceof LivingEntity livingEntity && !livingEntity.level().isClientSide()) {

@@ -18,7 +18,7 @@ import net.minecraft.core.registries.Registries;
 import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.api.distmarker.Dist;
 
-import com.mc3699.codmod.handlers.GrapplingHookCallbacks;
+import com.mc3699.codmod.handlers.NullFangCallbacks;
 import com.mc3699.codmod.registry.CodItems;
 import com.mc3699.codmod.registry.CodEntities;
 
@@ -104,13 +104,13 @@ public class NullFangHookEntity extends AbstractArrow implements ItemSupplier {
             return;
         }
 
-        GrapplingHookCallbacks.onHitEntity(this.level(), this.getX(), this.getY(), this.getZ(), result.getEntity(), this.getOwner());
+        NullFangCallbacks.onHitEntity(this.level(), this.getX(), this.getY(), this.getZ(), result.getEntity(), this.getOwner());
     }
 
     @Override
     public void onHitBlock(BlockHitResult result) {
         super.onHitBlock(result);
-        GrapplingHookCallbacks.onHitBlock(this.level(), result.getBlockPos(), this.getOwner());
+        NullFangCallbacks.onHitBlock(this.level(), result.getBlockPos(), this.getOwner());
     }
 
     @Override
