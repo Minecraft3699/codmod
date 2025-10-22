@@ -467,6 +467,15 @@ public class CodItems {
             .properties(properties -> properties)
             .lang("Below Eternity")
             .register();
+    public static final ItemEntry<NullFangItem> NULLFANG = CodRegistrate.INSTANCE.item
+            ("nullfang", NullFangItem::new)
+            .properties(properties -> properties)
+            .lang("Nullfang")
+            .register();
+    public static final ItemEntry<DaCapoItem> DACAPO = CodRegistrate.INSTANCE.item("dacapo",
+            (properties) -> new DaCapoItem())
+            .lang("DaCapo")
+            .register();
 
 
     // VOTV Foods

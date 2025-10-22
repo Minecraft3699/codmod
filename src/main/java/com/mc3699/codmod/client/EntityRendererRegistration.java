@@ -34,6 +34,7 @@ import com.mc3699.codmod.registry.CodEntities;
 import dan200.computercraft.api.ForgeComputerCraftAPI;
 import dan200.computercraft.api.client.turtle.RegisterTurtleUpgradeModeller;
 import dan200.computercraft.impl.ComputerCraftAPIService;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -62,6 +63,7 @@ public class EntityRendererRegistration {
         event.registerEntityRenderer(CodEntities.ITEM_PROJECTILE.get(), ItemProjectileRenderer::new);
         event.registerEntityRenderer(CodEntities.MARKSMAN_COIN_ENTITY.get(), ItemProjectileRenderer::new);
         event.registerEntityRenderer(CodEntities.COD_ALMIGHTY.get(), CodAlmightyEntityRenderer::new);
+        event.registerEntityRenderer(CodEntities.NULLFANG_HOOK.get(), ThrownItemRenderer::new);
 
         event.registerBlockEntityRenderer(CodBlockEntities.MANTLE_KEY.get(), MantleKeyBlockEntityRender::new);
         event.registerBlockEntityRenderer(CodBlockEntities.CEILING_LIGHT.get(), CeilingLightBlockEntityRenderer::new);
