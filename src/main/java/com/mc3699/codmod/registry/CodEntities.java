@@ -1,6 +1,7 @@
 package com.mc3699.codmod.registry;
 
 import com.mc3699.codmod.entity.MarksmanRevolverCoinEntity;
+import com.mc3699.codmod.entity.NullFangHookEntity;
 import com.mc3699.codmod.entity.applicant.ApplicantEntity;
 import com.mc3699.codmod.entity.ariral.AriralEntity;
 import com.mc3699.codmod.entity.cod_almighty.CodAlmightyEntity;
@@ -245,6 +246,18 @@ public class CodEntities {
         )
         .properties(mr -> mr.sized(0.5f,0.5f))
         .register();
+    public static final EntityEntry<NullFangHookEntity> NULLFANG_HOOK = CodRegistrate.INSTANCE.<NullFangHookEntity>entity(
+                    "nullfang_hook",
+                    NullFangHookEntity::new,
+                    MobCategory.MISC
+            )
+            .properties(e -> e
+                    .setShouldReceiveVelocityUpdates(true)
+                    .setTrackingRange(64)
+                    .setUpdateInterval(1)
+                    .sized(0.3f, 0.3f)
+            )
+            .register();
 
     public static void register() {
         // Hooray! Force Java to load the class!

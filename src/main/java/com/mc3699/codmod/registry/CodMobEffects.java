@@ -2,6 +2,7 @@ package com.mc3699.codmod.registry;
 
 import com.mc3699.codmod.Codmod;
 import com.mc3699.codmod.effect.HeartCorruptionEffect;
+import com.mc3699.codmod.effect.InsanityMobEffect;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.effect.MobEffect;
 import net.neoforged.bus.api.IEventBus;
@@ -18,6 +19,11 @@ public class CodMobEffects {
     public static final DeferredHolder<MobEffect, HeartCorruptionEffect> HEART_CORRUPTION = MOB_EFFECTS.register(
             "heart_corruption",
             HeartCorruptionEffect::new
+    );
+
+    public static final DeferredHolder<MobEffect, InsanityMobEffect> INSANITY = MOB_EFFECTS.register(
+            "insanity",
+            InsanityMobEffect::new
     );
 
     public static void register(IEventBus eventBus) {
