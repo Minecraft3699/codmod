@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "codmod:block/terra_plushie" },
+    "facing=east": { "model": "codmod:block/terra_plushie", "y": 90 },
+    "facing=south": { "model": "codmod:block/terra_plushie", "y": 180 },
+    "facing=west": { "model": "codmod:block/terra_plushie", "y": 270 }
+  }
+}

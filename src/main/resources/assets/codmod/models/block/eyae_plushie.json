@@ -2,8 +2,8 @@
 	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "codmod:block/garreth_plushie",
-		"particle": "codmod:block/garreth_plushie"
+		"0": "codmod:block/eyae_plushie",
+		"particle": "codmod:block/eyae_plushie"
 	},
 	"elements": [
 		{
