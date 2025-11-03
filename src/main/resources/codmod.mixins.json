@@ -3,7 +3,6 @@
   "package": "com.mc3699.codmod.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "SixSevenMixin",
     "TridentMixin"
   ],
   "refmap": "codmod.mixins.refmap.json",
