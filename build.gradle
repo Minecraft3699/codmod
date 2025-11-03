@@ -142,7 +142,7 @@ dependencies {
         exclude group: "me.fallenbreath"
     }
 
-    compileOnly("cc.tweaked:cc-tweaked-$project.minecraft_version-forge-api:$cctVersion")
+    compileOnly("cc.tweaked:cc-tweaked-$project.minecraft_version-forge:$cctVersion")
     runtimeOnly("cc.tweaked:cc-tweaked-$project.minecraft_version-forge:$cctVersion")
 
     implementation(jarJar("com.tterrag.registrate:Registrate:MC1.21-1.3.0+67"))

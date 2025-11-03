@@ -6,7 +6,8 @@ import dan200.computercraft.api.peripheral.IComputerAccess;
 import dan200.computercraft.api.peripheral.IPeripheral;
 import dan200.computercraft.api.pocket.IPocketAccess;
 import net.minecraft.world.item.ItemStack;
-import org.jspecify.annotations.Nullable;
+
+import javax.annotation.Nullable;
 
 public class HubPeripheral implements IPeripheral {
 

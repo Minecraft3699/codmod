@@ -9,7 +9,6 @@ import com.mc3699.codmod.block.johnGeometry.JohnGeometryBlockEntity;
 import com.mc3699.codmod.block.launchpad.LaunchPadBlockEntity;
 import com.mc3699.codmod.block.mantleKey.MantleKeyBlockEntity;
 import com.mc3699.codmod.block.opticalDriveInterface.OpticalDriveInterfaceBlockEntity;
-import com.mc3699.codmod.block.oxygenDistributor.OxygenDistributorBlock;
 import com.mc3699.codmod.block.oxygenDistributor.OxygenDistributorBlockEntity;
 import com.mc3699.codmod.block.radar.RadarBlockEntity;
 import com.mc3699.codmod.block.teleporter.TeleporterBlockEntity;
@@ -102,7 +101,6 @@ public class CodBlockEntities {
             "oxygen_distributor",
             () -> new BlockEntityType<>(OxygenDistributorBlockEntity::new, Set.of(CodBlocks.OXYGEN_DISTRIBUTOR.get()), null)
     );
-
 
     // Cod Tech Stuff
 

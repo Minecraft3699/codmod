@@ -3,6 +3,7 @@ package com.mc3699.codmod.registry;
 import com.mc3699.codmod.Codmod;
 import com.mc3699.codmod.block.DellServerBlock;
 import com.mc3699.codmod.block.backrooms.CeilingLightBlock;
+import com.mc3699.codmod.block.bloodGenerator.BloodGeneratorBlock;
 import com.mc3699.codmod.block.codNuke.CodNukeBlock;
 import com.mc3699.codmod.block.graphicsMonitor.GraphicsMonitorBlock;
 import com.mc3699.codmod.block.oxygenDistributor.OxygenDistributorBlock;
@@ -24,16 +25,12 @@ import com.mc3699.codmod.technology.coalGenerator.CoalGeneratorBlock;
 import com.mc3699.codmod.technology.lowVoltageCable.LowVoltageCableBlock;
 import com.mc3699.codmod.block.PlushieBlock;
 import com.tterrag.registrate.util.entry.BlockEntry;
+import com.tterrag.registrate.util.entry.FluidEntry;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.entity.animal.Cod;
-import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -391,6 +388,11 @@ public class CodBlocks {
             .lang("Oxygen Distributor")
             .register();
 
+    public static final BlockEntry<BloodGeneratorBlock> BLOOD_GENERATOR = CodRegistrate.INSTANCE.block("blood_generator", BloodGeneratorBlock::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK))
+            .simpleItem()
+            .lang("Blood Generator")
+            .register();
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);

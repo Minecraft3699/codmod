@@ -1,7 +1,8 @@
 package com.mc3699.codmod.peripheral;
 
 import dan200.computercraft.api.peripheral.IPeripheral;
-import org.jspecify.annotations.Nullable;
+
+import javax.annotation.Nullable;
 
 public class InventoryPeripheral implements IPeripheral {
     @Override

@@ -486,6 +486,12 @@ public class CodItems {
             .lang("DaCapo")
             .register();
 
+    public static final ItemEntry<AdvancedServerItem> ADVANCED_SERVER = CodRegistrate.INSTANCE.item
+            ("advanced_server", AdvancedServerItem::new)
+            .properties(properties -> properties)
+            .lang("Advanced Server")
+            .register();
+
 
     // VOTV Foods
 

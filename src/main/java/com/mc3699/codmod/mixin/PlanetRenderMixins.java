@@ -10,6 +10,7 @@ import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.client.renderer.LevelRenderer;
+import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.phys.Vec3;
 import org.joml.Matrix4f;
@@ -38,6 +39,9 @@ public abstract class PlanetRenderMixins {
 
     @Shadow
     public abstract void renderSky(Matrix4f frustumMatrix, Matrix4f projectionMatrix, float partialTick, Camera camera, boolean isFoggy, Runnable skyFogSetup);
+
+    @Shadow
+    protected abstract void renderSnowAndRain(LightTexture lightTexture, float partialTick, double camX, double camY, double camZ);
 
     @Inject(method = "renderClouds", at = @At("HEAD"), cancellable = true)
     private void stopRendering(PoseStack poseStack, Matrix4f frustumMatrix, Matrix4f projectionMatrix, float partialTick, double camX, double camY, double camZ, CallbackInfo ci) {

@@ -7,8 +7,8 @@ import dan200.computercraft.api.peripheral.IPeripheral;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
-import org.jspecify.annotations.Nullable;
 
+import javax.annotation.Nullable;
 import java.util.Objects;
 
 public class OpticalDriveInterfacePeripheral implements IPeripheral {

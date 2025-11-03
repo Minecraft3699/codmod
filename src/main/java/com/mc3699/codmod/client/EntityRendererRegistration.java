@@ -7,6 +7,7 @@ import com.mc3699.codmod.block.graphicsMonitor.GraphicsMonitorBlockEntityRendere
 import com.mc3699.codmod.block.mantleKey.MantleKeyBlockEntityRender;
 import com.mc3699.codmod.block.oxygenDistributor.OxygenDistributorBlockEntity;
 import com.mc3699.codmod.block.oxygenDistributor.OxygenDistributorBlockEntityRenderer;
+import com.mc3699.codmod.client.particles.blood.BloodParticleProvider;
 import com.mc3699.codmod.entity.applicant.ApplicantEntityRenderer;
 import com.mc3699.codmod.entity.ariral.AriralEntityRenderer;
 import com.mc3699.codmod.entity.cod_almighty.CodAlmightyEntityRenderer;
@@ -31,6 +32,7 @@ import com.mc3699.codmod.entity.wisp.BaseWispModel;
 import com.mc3699.codmod.entity.wisp.wispTypes.DistortedWispEntityRenderer;
 import com.mc3699.codmod.registry.CodBlockEntities;
 import com.mc3699.codmod.registry.CodEntities;
+import com.mc3699.codmod.registry.CodParticles;
 import dan200.computercraft.api.ForgeComputerCraftAPI;
 import dan200.computercraft.api.client.turtle.RegisterTurtleUpgradeModeller;
 import dan200.computercraft.impl.ComputerCraftAPIService;
@@ -39,6 +41,7 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 
 @EventBusSubscriber(modid = Codmod.MOD_ID, value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD)
 public class EntityRendererRegistration {
@@ -82,6 +85,11 @@ public class EntityRendererRegistration {
                 ParachuteChestEntityModel::createBodyLayer
         );
         event.registerLayerDefinition(CodAlmightyModel.LAYER_LOCATION, CodAlmightyModel::createBodyLayer);
+    }
+
+    @SubscribeEvent
+    public static void registerParticles(RegisterParticleProvidersEvent event) {
+        event.registerSpriteSet(CodParticles.BLOOD_PARTICLE.get(), BloodParticleProvider::new);
     }
 
 }

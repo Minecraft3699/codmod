@@ -1,6 +1,7 @@
 {
   "block.codmod.ancient_plushie": "Ancients Plushie",
   "block.codmod.blade_plushie": "§cBlade Plushie",
+  "block.codmod.blood_generator": "Blood Generator",
   "block.codmod.ceiling_light": "Ceiling Light",
   "block.codmod.ceiling_tile": "Ceiling Tile",
   "block.codmod.ceramic_slab": "Ceramic Tile Slab",
@@ -86,6 +87,7 @@
   "event.codmod.john_geometry": "John Geometry",
   "event.codmod.salmon_event": "Salmon Event",
   "event.codmod.vay_event": "Vay Event",
+  "item.codmod.advanced_server": "Advanced Server",
   "item.codmod.application": "Job Application",
   "item.codmod.bagel": "Bagel",
   "item.codmod.baguette": "Baguette",

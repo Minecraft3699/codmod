@@ -60,6 +60,9 @@ public class Codmod {
         CodGenerators.register(modEventBus);
         CodTurtleUpgrades.register(modEventBus);
         CodRecipeSerializers.register(modEventBus);
+        CodFluidTypes.register(modEventBus);
+        CodFluids.register(modEventBus);
+        CodParticles.register(modEventBus);
 
         CodComponents.register(modEventBus);
         CodRegistrate.INSTANCE.registerEventListeners(modEventBus);

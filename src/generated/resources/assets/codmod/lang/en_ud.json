@@ -1,6 +1,7 @@
 {
   "block.codmod.ancient_plushie": "ǝıɥsnןԀ sʇuǝıɔuⱯ",
   "block.codmod.blade_plushie": "ǝıɥsnןԀ ǝpɐןᗺɔ§",
+  "block.codmod.blood_generator": "ɹoʇɐɹǝuǝ⅁ pooןᗺ",
   "block.codmod.ceiling_light": "ʇɥbıꞀ buıןıǝƆ",
   "block.codmod.ceiling_tile": "ǝןı⟘ buıןıǝƆ",
   "block.codmod.ceramic_slab": "qɐןS ǝןı⟘ ɔıɯɐɹǝƆ",
@@ -86,6 +87,7 @@
   "event.codmod.john_geometry": "ʎɹʇǝɯoǝ⅁ uɥoſ",
   "event.codmod.salmon_event": "ʇuǝʌƎ uoɯןɐS",
   "event.codmod.vay_event": "ʇuǝʌƎ ʎɐΛ",
+  "item.codmod.advanced_server": "ɹǝʌɹǝS pǝɔuɐʌpⱯ",
   "item.codmod.application": "uoıʇɐɔıןddⱯ qoſ",
   "item.codmod.bagel": "ןǝbɐᗺ",
   "item.codmod.baguette": "ǝʇʇǝnbɐᗺ",
