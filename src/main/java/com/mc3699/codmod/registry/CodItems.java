@@ -10,6 +10,7 @@ import com.mc3699.codmod.item.inventoryModule.InventoryModuleItem;
 import com.mc3699.codmod.item.marksmanRevolver.MarksmanRevolverItem;
 import com.mc3699.codmod.item.transponder.TransponderItem;
 import com.tterrag.registrate.util.entry.ItemEntry;
+import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.food.FoodProperties;
@@ -218,9 +219,10 @@ public class CodItems {
             .lang("oswald")
             .register();
 
-    public static final ItemEntry<Item> NIBBLE_ULTRA = CodRegistrate.INSTANCE.item("nibble_ultra", Item::new)
+    public static final ItemEntry<RatBladeItem> RAT_BLADE = CodRegistrate.INSTANCE
+            .item("rat_blade", RatBladeItem::new)
             .properties(properties -> properties)
-            .lang("Nibble Ultra")
+            .lang("Rat Blade")
             .register();
 
     public static final ItemEntry<CodPickaxeItem> COD_PICKAXE = CodRegistrate.INSTANCE.item("cod_pickaxe",CodPickaxeItem::new)
@@ -490,6 +492,12 @@ public class CodItems {
             ("advanced_server", AdvancedServerItem::new)
             .properties(properties -> properties)
             .lang("Advanced Server")
+            .register();
+
+    public static final ItemEntry<SpaghettiStrainerItem> SPAGHETTI_STRAINER = CodRegistrate.INSTANCE.item
+            ("spaghetti_strainer", SpaghettiStrainerItem::new)
+            .properties(properties -> properties.stacksTo(1))
+            .lang("Spaghetti Strainer")
             .register();
 
 

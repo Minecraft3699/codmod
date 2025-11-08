@@ -198,5 +198,6 @@
   "subtitles.codmod.saul": "Saul Goodman Noises",
   "subtitles.codmod.transponder_alert": "Transponder Alerts",
   "subtitles.codmod.transponder_call": "Transponder Rings",
-  "subtitles.codmod.tripmine": "Subspace Tripmine Explodes"
+  "subtitles.codmod.tripmine": "Subspace Tripmine Explodes",
+  "item.codmod.rat_blade": "Rat Blade"
 }
