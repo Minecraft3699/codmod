@@ -1,10 +1,13 @@
 package com.mc3699.codmod.item;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobSpawnType;
@@ -39,7 +42,8 @@ public class BelowEternityItem extends Item {
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack itemStack = player.getItemInHand(hand);
-
+        boolean isShiftClick = player.isCrouching();
+        if (isShiftClick) {
         if (!level.isClientSide) {
             if (player.getCooldowns().isOnCooldown(this)) {
                 return InteractionResultHolder.fail(itemStack);
@@ -68,19 +72,27 @@ public class BelowEternityItem extends Item {
                     warden.setHealth(75.0f);
                     warden.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(15.0);
 
+                    MobEffectInstance weaknessEffect = new MobEffectInstance(MobEffects.WEAKNESS, -1, 1, false, true, true);
+
+                    warden.addEffect(weaknessEffect);
                     warden.setPersistenceRequired();
                     warden.getPersistentData().putBoolean("NoDrops", true);
+                    warden.setCustomName(Component.literal("Summoned Warden"));
+                    warden.setCustomNameVisible(true);
 
                     serverLevel.addFreshEntity(warden);
 
-                    serverLevel.playSound(null, spawnPos, SoundEvents.WARDEN_EMERGE, SoundSource.NEUTRAL, 1.0F, 0.8F);
-                    serverLevel.playSound(null, spawnPos, SoundEvents.SCULK_CATALYST_BLOOM, SoundSource.NEUTRAL, 0.8F, 1.2F);
+                    serverLevel.playSound(null, spawnPos, SoundEvents.WARDEN_EMERGE, SoundSource.PLAYERS, 1.0F, 0.8F);
+                    serverLevel.playSound(null, spawnPos, SoundEvents.SCULK_CATALYST_BLOOM, SoundSource.PLAYERS, 0.8F, 1.2F);
 
                     summonedWarden = warden;
                     wardenLifetime = 0;
 
                     return InteractionResultHolder.success(itemStack);
                 }
+            } else {
+                return InteractionResultHolder.pass(itemStack);
+            }
             } else {
                 return InteractionResultHolder.fail(itemStack);
             }
