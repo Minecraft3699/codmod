@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "codmod:item/nibble_ultra"
+    "layer0": "codmod:item/spaghetti_strainer"
   }
 }

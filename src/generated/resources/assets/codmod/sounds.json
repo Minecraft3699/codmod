@@ -154,5 +154,11 @@
       "codmod:tripmine"
     ],
     "subtitle": "subtitles.codmod.tripmine"
+  },
+  "tripmine_armed": {
+    "sounds": [
+      "codmod:tripmine_armed"
+    ],
+    "subtitle": "subtitles.codmod.tripmine_armed"
   }
 }
