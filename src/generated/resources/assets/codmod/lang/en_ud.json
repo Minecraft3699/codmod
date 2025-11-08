@@ -137,7 +137,6 @@
   "item.codmod.nbc_leggings": "sbuıbbǝꞀ ʇınS ƆᗺN",
   "item.codmod.netherite_spoon": "uoodS ǝʇıɹǝɥʇǝN",
   "item.codmod.network_fucker": "0006 ɹǝʞɔnℲ ʞɹoʍʇǝN",
-  "item.codmod.nibble_ultra": "ɐɹʇן∩ ǝןqqıN",
   "item.codmod.null_chicken": "uǝʞɔıɥƆ ןןnN",
   "item.codmod.null_chicken_sword": "pɹoʍS uǝʞɔıɥƆ ןןnN",
   "item.codmod.null_cod": "poƆ ןןnN",
@@ -150,6 +149,7 @@
   "item.codmod.pizza": "ɐzzıԀ",
   "item.codmod.psyche_gun": "ǝɥɔʎsԀ9§",
   "item.codmod.purple": "ǝןdɹnԀ pǝʇıɐʍɐ buoꞀ ǝɥ⟘",
+  "item.codmod.rat_blade": "ǝpɐןᗺ ʇɐᴚ",
   "item.codmod.realcod": "poƆ ןɐǝᴚ",
   "item.codmod.red": "pǝᴚ",
   "item.codmod.resistor": "ɹoʇsısǝᴚ ǝbɹɐꞀ ʎןןɐɔıɯoƆ",
@@ -165,6 +165,7 @@
   "item.codmod.space_grade_fabric": "ɔıɹqɐℲ ǝpɐɹ⅁ ǝɔɐdS",
   "item.codmod.space_helmet": "ʇǝɯןǝH ǝɔɐdS",
   "item.codmod.space_leggings": "sbuıbbǝꞀ ʇınS ǝɔɐdS",
+  "item.codmod.spaghetti_strainer": "ɹǝuıɐɹʇS ıʇʇǝɥbɐdS",
   "item.codmod.taco": "oɔɐ⟘",
   "item.codmod.teleported_bread": "pɐǝɹᗺ pǝʇɹodǝןǝ⟘",
   "item.codmod.thermal_compound": "punodɯoƆ ןɐɯɹǝɥ⟘",
@@ -199,5 +200,5 @@
   "subtitles.codmod.transponder_alert": "sʇɹǝןⱯ ɹǝpuodsuɐɹ⟘",
   "subtitles.codmod.transponder_call": "sbuıᴚ ɹǝpuodsuɐɹ⟘",
   "subtitles.codmod.tripmine": "sǝpoןdxƎ ǝuıɯdıɹ⟘ ǝɔɐdsqnS",
-  "item.codmod.rat_blade": "ǝpɐןᗺ ʇɐᴚ"
+  "subtitles.codmod.tripmine_armed": "pǝɯɹⱯ ǝuıɯdıɹ⟘"
 }

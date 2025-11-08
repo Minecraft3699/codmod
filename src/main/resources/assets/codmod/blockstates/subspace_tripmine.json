@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "visible=true": {
+      "model": "codmod:block/subspace_tripmine"
+    },
+    "visible=false": {
+      "model": "minecraft:block/air"
+    }
+  }
+}
