@@ -492,6 +492,12 @@ public class CodItems {
             .lang("Advanced Server")
             .register();
 
+    public static final ItemEntry<SpaghettiStrainerItem> SPAGHETTI_STRAINER = CodRegistrate.INSTANCE.item
+            ("spaghetti_strainer", SpaghettiStrainerItem::new)
+            .properties(properties -> properties.stacksTo(1))
+            .lang("Spaghetti Strainer")
+            .register();
+
 
     // VOTV Foods
 
