@@ -15,10 +15,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.food.Foods;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -500,6 +497,23 @@ public class CodItems {
             .lang("Spaghetti Strainer")
             .register();
 
+    public static final ItemEntry<Item> RAW_SPAGHETTI = CodRegistrate.INSTANCE.item
+            ("raw_spaghetti", Item::new)
+            .properties(properties -> properties)
+            .lang("Uncooked Spaghetti")
+            .register();
+
+    public static final ItemEntry<Item> WET_SPAGHETTI = CodRegistrate.INSTANCE.item
+            ("wet_spaghetti", Item::new)
+            .properties(properties -> properties)
+            .lang("Wet Spaghetti")
+            .register();
+
+    public static final ItemEntry<Item> COOKED_SPAGHETTI = CodRegistrate.INSTANCE.item
+            ("cooked_spaghetti", Item::new)
+            .properties(properties -> properties.food(new FoodProperties.Builder().nutrition(20).saturationModifier(80).usingConvertsTo(Items.BOWL).build()).stacksTo(16))
+            .lang("Bowl of Spaghetti")
+            .register();
 
     // VOTV Foods
 

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " W ",
+    " S ",
+    "   "
+  ],
+  "key": {
+    "W": {
+      "item": "minecraft:water_bucket"
+    },
+    "S": {
+      "item": "codmod:raw_spaghetti"
+    }
+  },
+  "result": {
+    "id": "codmod:wet_spaghetti",
+    "count": 1
+  }
+}

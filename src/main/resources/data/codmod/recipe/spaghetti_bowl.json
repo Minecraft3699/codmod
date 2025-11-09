@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " S ",
+    " T ",
+    " B "
+  ],
+  "key": {
+    "S": {
+      "item": "codmod:wet_spaghetti"
+    },
+    "T": {
+      "item": "codmod:spaghetti_strainer"
+    },
+    "B": {
+      "item": "minecraft:bowl"
+    }
+  },
+  "result": {
+    "id": "codmod:spaghetti_bowl",
+    "count": 1
+  }
+}

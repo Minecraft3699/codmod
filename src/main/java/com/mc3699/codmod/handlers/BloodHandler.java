@@ -15,36 +15,34 @@ import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 public class BloodHandler {
 
     @SubscribeEvent
-    public static void damageEvent(LivingDamageEvent.Post event)
-    {
+    public static void damageEvent(LivingDamageEvent.Post event) {
 
         LivingEntity entity = event.getEntity();
 
-        if(entity.level() instanceof ServerLevel serverLevel)
-        {
-            spawnBloodBurst(serverLevel, entity.position());
+        if (entity.level() instanceof ServerLevel serverLevel) {
+
+            // disabled for now
+
         }
 
     }
 
     private static void spawnBloodBurst(ServerLevel level, Vec3 pos) {
         var random = level.getRandom();
-        int particleCount = 80; // denser burst
+        int particleCount = 80;
 
         for (int i = 0; i < particleCount; i++) {
-            // Strong upward bias
-            double dx = (random.nextDouble() - 0.5) * 1.5; // wider horizontal spread
-            double dy = random.nextDouble() * 2.0 + 0.4;   // strong upward push
+            double dx = (random.nextDouble() - 0.5) * 1.5;
+            double dy = random.nextDouble() * 2.0 + 0.4;
             double dz = (random.nextDouble() - 0.5) * 1.5;
 
-            // normalize & scale
             Vec3 dir = new Vec3(dx, dy, dz).normalize()
-                    .scale(0.7 + random.nextDouble() * 0.8); // stronger initial velocity
+                    .scale(0.7 + random.nextDouble() * 0.8);
 
-            // spawn particle flying in that direction
+
             level.sendParticles(
                     new BlockParticleOption(ParticleTypes.BLOCK, Blocks.REDSTONE_BLOCK.defaultBlockState()),
-                    pos.x, pos.y + 0.6, pos.z,  // origin just above ground
+                    pos.x, pos.y + 0.6, pos.z,
                     1,
                     dir.x, dir.y, dir.z,
                     0.0
