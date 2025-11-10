@@ -1,4 +1,4 @@
-// 1.21.1	2025-11-09T00:49:25.6317695	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
+// 1.21.1	2025-11-04T00:10:28.728501343	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
 e71fb77fc3ce99c6fb5b8f5a3105a1f58d7355d0 assets/codmod/blockstates/ancient_plushie.json
 c4642b0c685192cf5d5d07b6893cc7333a63d1da assets/codmod/blockstates/blade_plushie.json
 d05194c582b9b611842dbfea105e133ad43fa109 assets/codmod/blockstates/blood_generator.json
@@ -44,8 +44,8 @@ abcf062fd5decca251b2d4e623edb9daa7dec02a assets/codmod/blockstates/threshold_por
 62981c818b0e56157d81e30ba4c84e88a03edeb3 assets/codmod/blockstates/triangulator.json
 f062903ff298b3585d7b47250018da45c0293850 assets/codmod/blockstates/ugly_wallpaper.json
 064fe3376b3c1cf85c49ff1eca7371979390528b assets/codmod/blockstates/zetos_plushie.json
-d61a4a3bd8501c9366e784c2a7c3ab8e6977d4a2 assets/codmod/lang/en_ud.json
-94150029235c1426f33c85e6b1f3a718537c97bf assets/codmod/lang/en_us.json
+7e9da0c9593c61677c25efd62de803182bd5c589 assets/codmod/lang/en_ud.json
+68f00441939da463f1d2bf7fa8cfc99226a2c0fa assets/codmod/lang/en_us.json
 646809a9d5f50abc7f271a084374ef921b101e4c assets/codmod/models/block/ancient_plushie.json
 e2cf401ffd25a21c829b15e577a98dc35dd12dd6 assets/codmod/models/block/blade_plushie.json
 00a371cf6cad513002db2b62c28d1395e6cb8829 assets/codmod/models/block/blood_generator.json
@@ -98,19 +98,21 @@ df058a5a8d32e47390f727acd71ebd53eabd4439 assets/codmod/models/block/scanning_con
 48684b1116c0fd7998b677e28dd768d7d6da7f8b assets/codmod/models/block/ugly_wallpaper.json
 7c324e73f75e5583081b413dbc8ec7743308599c assets/codmod/models/block/zetos_plushie.json
 2cc0d16046aac711885668740dcaf604250e6f01 assets/codmod/models/item/advanced_server.json
+6e7f0233d24fb52164a2616679506ba15606bdde assets/codmod/models/item/amulite.json
 1bc2718c04663c734acba79137dae7d0975fb90b assets/codmod/models/item/ancient_plushie.json
 8b9cbd354ac79a080eb5f89276688642392078ac assets/codmod/models/item/bagel.json
 12ba3e8b452c45f3ce94b5fae8f11ff6e086c77b assets/codmod/models/item/below_eternity.json
 fac945979d9236cba3ce079471441fc2e8ddf2d9 assets/codmod/models/item/blade_plushie.json
 40d0ad2a1c75475cb05084daf946cea358952ce7 assets/codmod/models/item/blood_generator.json
 58d2b811877134f0939cb58e50ca7599988ff76b assets/codmod/models/item/blue.json
+2f7b394d9ad13f19075cdd65576083e33b1bd024 assets/codmod/models/item/cardinal_grammeter.json
 3d73f362dd02e40adaeb3de33b68a3d29105ff56 assets/codmod/models/item/ceiling_light.json
 61968c1ab1905b157109adec5dde9e43f1054a7d assets/codmod/models/item/ceiling_tile.json
 957faf2632baffa485f827f1756ce44aab26bd79 assets/codmod/models/item/ceramic_slab.json
 72d8bc0b46b7156333dd161f952434eab15ac239 assets/codmod/models/item/ceramic_stairs.json
 9bd7f4365d91fdf4487f04ba7ef2b2589772df6c assets/codmod/models/item/ceramic_tile.json
-488335f0103d1c24871d0198430d8a02c91c23d0 assets/codmod/models/item/circuits_bane.json
 0ebb4a7888b8c9de5c6faa740eaf23eb0b9d7dee assets/codmod/models/item/circuit_bomb.json
+488335f0103d1c24871d0198430d8a02c91c23d0 assets/codmod/models/item/circuits_bane.json
 6e4ae4a1075b96902735f18a3ca09569adfe3f55 assets/codmod/models/item/coal_generator.json
 be9268032c7c4e87e8644f46123b5bcdb1db8ee5 assets/codmod/models/item/cod_block.json
 d6d40a5fbaa25b325788bdc01877a77f74237d7a assets/codmod/models/item/cod_bomb.json
@@ -120,7 +122,6 @@ bd589b79e143905dce7a03cd4fef9a64fef59331 assets/codmod/models/item/cod_nuke.json
 517de0ee0b552412e7aee2e38f2fb6a0701f9e72 assets/codmod/models/item/cod_rod.json
 cba0cade4e3eb94d317c29eb61bc289020399b9b assets/codmod/models/item/command_module.json
 04fb50530eb20ae18adc9c567443f1edf20e474d assets/codmod/models/item/compactedglass1.json
-d081ce2983a531f5681c0f1bf9f8974a8f99e4d7 assets/codmod/models/item/cooked_spaghetti.json
 5791d83990b5740736dc583c29640cc28d59fa0f assets/codmod/models/item/corruptedknife.json
 f3566f941ee7bdab935a38b07d676b8f65493829 assets/codmod/models/item/current_meter.json
 0cb0f60a04f4a70b1a154154086c7221906615a1 assets/codmod/models/item/dacapo.json
@@ -141,8 +142,11 @@ c790e5b11c7205a92f4066135b7d6385aaaf14cb assets/codmod/models/item/graphics_moni
 ddbe3a78d09518def7481cfafb2315b7f36c9d83 assets/codmod/models/item/green.json
 88b9a41db2508d1e1afc0b25190ec6be61ef0194 assets/codmod/models/item/hard_drive_hammer.json
 0801c8f300412067e094c0740b0e45c2cb2ce5c9 assets/codmod/models/item/hub_module.json
+27704dede285e27eda7d0b72c81a73382c1648ed assets/codmod/models/item/hydrocoptic_marzlevanes.json
 d137e6061e65e0c34d5811c9efc1ed40efd1dfd3 assets/codmod/models/item/inventory_module.json
 01d4d07fb14b94c89ea646cf95b6ead20abbe0e6 assets/codmod/models/item/iron_mantle.json
+0091219d30551e640b3653d51007452b671cb7ae assets/codmod/models/item/logarithmic_casing.json
+df30eed35569e42e44e8b411f417853984aff0f0 assets/codmod/models/item/lunar_wane_shaft.json
 4241c1997a5962d5b72048ec913e4299110ced40 assets/codmod/models/item/lv_cable.json
 9eac2a486b2e90a4bb3304c21ee5ad8ac6fc485a assets/codmod/models/item/marksman_revolver.json
 ab00fb55975a2972dc50fd5f1882ebfd3ca97285 assets/codmod/models/item/maxwell.json
@@ -154,22 +158,22 @@ ed2fabcd1d2cb475fffea69c5c9a7e4d378dca2d assets/codmod/models/item/nbc_helmet.js
 27ed64665aa333e58d3aa332fae4c0738909b033 assets/codmod/models/item/nbc_leggings.json
 4760b4d045a3169b60b4fa75255390b09a6b32ba assets/codmod/models/item/netherite_spoon.json
 ff16bb2f158f1b46c5bd074027ebadaf18700a09 assets/codmod/models/item/network_fucker.json
+cd96f31de73da22f37a1b47d14b200af8d61b920 assets/codmod/models/item/nibble_ultra.json
 0a36ff15c85d89eef6ee44980a034be74e4f3f95 assets/codmod/models/item/normal_abbe_plushie.json
+66cc0d1f6fb9f9da726ee9065de56d3f2aa1e49a assets/codmod/models/item/null_chicken_sword.json
 2961d52398dceef1d3fbe7b8665c7cd60ee745b8 assets/codmod/models/item/nullcake1.json
 3f13364fb2a2ffd1ca310c8e0a7df422a829c825 assets/codmod/models/item/nullfang.json
-66cc0d1f6fb9f9da726ee9065de56d3f2aa1e49a assets/codmod/models/item/null_chicken_sword.json
 f8026e0f2c6754de5fe6db13fd02ef4b8c993434 assets/codmod/models/item/nuz_plushie.json
 ca09ef9397acbb94b5aadac41ba4066fd7cba7b3 assets/codmod/models/item/oswald.json
 72282e4fe3a6da4f852448a300e524c2c7eb237f assets/codmod/models/item/oxygen_distributor.json
 0ee3a17289b7dd13625597c26b7fd193f73b887f assets/codmod/models/item/oxygen_tank.json
+ac14c1ac576d5a242b1f2debcd18abffb812345f assets/codmod/models/item/pentametric_fan.json
 aace96a8261710405c7837fa824d7ef65c983c6c assets/codmod/models/item/pinky_plushie.json
 c9d0f2f21ca1272be5eb962b4a834a5e4f1561fc assets/codmod/models/item/psyche_gun.json
 733b0e2fe23248a60e7339e1c2bd4d1100d2dd2e assets/codmod/models/item/public_static_void.json
 40c492dab9dbbf98113c5f95136f68d22698d079 assets/codmod/models/item/public_static_void_slab.json
 8073582aae3cc34d74ef540dcb3d3c35d8e7eb96 assets/codmod/models/item/public_static_void_stairs.json
 aaf91167b7f3357b3808411c10cf6b8623604db6 assets/codmod/models/item/purple.json
-1325cd304e153e8b9ac0d576ae0fbd14e03c717a assets/codmod/models/item/rat_blade.json
-b1514c7e97e707ce56184d9326babf309d450fcf assets/codmod/models/item/raw_spaghetti.json
 8a4ab10c53782592b0782bf134e2cdf11e4d80ab assets/codmod/models/item/red.json
 d313651c9ad36b990115f07e728c090b1f7ecbb1 assets/codmod/models/item/red_ceiling_light.json
 24617606e2a585e5e77dd364e510b549ed2e50be assets/codmod/models/item/red_ceiling_tile.json
@@ -189,7 +193,7 @@ aa5161b624cb3a289d42779284ed31eb1469e3a9 assets/codmod/models/item/space_chestpl
 7ccc226cae52ce7819afcef08a8da1fdbd2bb221 assets/codmod/models/item/space_grade_fabric.json
 6ccf0bed42e5c53793deb2c8b9c1cf1a5343efb5 assets/codmod/models/item/space_helmet.json
 509e597bc481a11d52363c46b17c5e1757c30a2f assets/codmod/models/item/space_leggings.json
-f621a041cbacf60a9da9041eab2e3d3b73c1501e assets/codmod/models/item/spaghetti_strainer.json
+ad24f3b7217d9e86fc6410f2edfc18396bf60d4d assets/codmod/models/item/sperving_bearing.json
 858220b3fd00572e370b53084f0aa440e0b2f48f assets/codmod/models/item/subspace_tripmine.json
 feaa3a18d60e1dd893b4f35c6cb30737ff373850 assets/codmod/models/item/teleported_bread.json
 b7d592e721c04a998eaa2c954ef21e172af26478 assets/codmod/models/item/teleporter.json
@@ -200,10 +204,10 @@ b7d592e721c04a998eaa2c954ef21e172af26478 assets/codmod/models/item/teleporter.js
 d24bb2999bea2c5d5a2a9b7d3a25d1eb05125162 assets/codmod/models/item/transponder.json
 76e3e1a0f7b5ff66e292a496c3dcec6e0ccd8e12 assets/codmod/models/item/triangulator.json
 675747199a65a032a596a5d6df5ea652cd851e78 assets/codmod/models/item/ugly_wallpaper.json
+d93ee97054e38a0ac800ed10a04906ef33d38324 assets/codmod/models/item/unilateral_phase_detractor.json
 61594bd513bca241f53c6a9b6b7825c3adcde2cb assets/codmod/models/item/voidbreaker.json
-a2d1875e241513d0fa03501a18c77089d6f0af09 assets/codmod/models/item/wet_spaghetti.json
 51459b916a01daed3d6e4bd24ecc712e3da66058 assets/codmod/models/item/zetos_plushie.json
-d2ba6e430149a47e95765ea663169dba1f3bdc64 assets/codmod/sounds.json
+4903e725925dca0f817c64c2f82bd28853bafc1e assets/codmod/sounds.json
 dcd9e45bceac209aa3849bb896e8de886ba3bc89 data/codmod/loot_table/blocks/ancient_plushie.json
 0e64b54ba3fc040fd424b9c411f8a54de77ffa32 data/codmod/loot_table/blocks/blade_plushie.json
 26f2ee43cb1e6997a9dfaa33dead6b998c5ff8ee data/codmod/loot_table/blocks/blood_generator.json

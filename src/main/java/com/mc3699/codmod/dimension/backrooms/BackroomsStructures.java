@@ -3,6 +3,7 @@ package com.mc3699.codmod.dimension.backrooms;
 import com.mc3699.codmod.Codmod;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Block;
 
 
 public class BackroomsStructures {
@@ -11,6 +12,13 @@ public class BackroomsStructures {
     // Street Test
     public static final BackroomsStructureInfo STREET_Z = new BackroomsStructureInfo(
             ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "street_z"), BlockPos.ZERO);
+
+    public static final BackroomsStructureInfo STREET_X = new BackroomsStructureInfo(
+            ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "street_x"), BlockPos.ZERO);
+
+    public static final BackroomsStructureInfo STREET_INTERSECTION = new BackroomsStructureInfo(
+            ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "road_intersection"), BlockPos.ZERO);
+
     public static final BackroomsStructureInfo STREET_Z_DAMAGE = new BackroomsStructureInfo(
             ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "street_z_damaged"), BlockPos.ZERO);
     public static final BackroomsStructureInfo STREET_XP_EMPTY = new BackroomsStructureInfo(

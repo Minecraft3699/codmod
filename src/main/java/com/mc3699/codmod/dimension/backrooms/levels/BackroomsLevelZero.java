@@ -24,8 +24,8 @@ public class BackroomsLevelZero extends BackroomsLevel {
     List<BackroomsStructures.BackroomsStructureInfo> STRUCTURE_POOL = List.of(
             BackroomsStructures.OASIS,
             BackroomsStructures.PYRAMID,
-            BackroomsStructures.OUTPOST_K84,
-            BackroomsStructures.CARBON_ANOMALY
+            BackroomsStructures.OUTPOST_K84
+            //BackroomsStructures.CARBON_ANOMALY
     );
 
     @Override
@@ -37,6 +37,33 @@ public class BackroomsLevelZero extends BackroomsLevel {
     public void generate(WorldGenRegion worldGenRegion, StructureManager structureManager, RandomState randomState, ChunkAccess chunkAccess) {
 
         BRGenUtil.fillLayer(chunkAccess, 0, Blocks.BEDROCK.defaultBlockState());
+
+        int streetSpacing = 8;
+
+        if(chunkAccess.getPos().x % streetSpacing == 0 && chunkAccess.getPos().z % streetSpacing == 0) {
+            BRGenUtil.fillLayer(chunkAccess, getStartLevel()+1, CodBlocks.MOIST_CARPET.get().defaultBlockState());
+            BRGenUtil.fillLayer(chunkAccess, getEndLevel(), CodBlocks.CEILING_TILE.get().defaultBlockState());
+            BRGenUtil.generateLights(chunkAccess, getEndLevel(), false);
+            BRGenUtil.placeBackroomsStructure(BackroomsStructures.STREET_INTERSECTION, worldGenRegion, chunkAccess.getPos().getWorldPosition().above(1), worldGenRegion.getRandom());
+            return;
+        }
+
+        if(chunkAccess.getPos().x % streetSpacing == 0) {
+            BRGenUtil.fillLayer(chunkAccess, getStartLevel()+1, CodBlocks.MOIST_CARPET.get().defaultBlockState());
+            BRGenUtil.fillLayer(chunkAccess, getEndLevel(), CodBlocks.CEILING_TILE.get().defaultBlockState());
+            BRGenUtil.generateLights(chunkAccess, getEndLevel(), false);
+            BRGenUtil.placeBackroomsStructure(BackroomsStructures.STREET_Z, worldGenRegion, chunkAccess.getPos().getWorldPosition().above(1), worldGenRegion.getRandom());
+            return;
+        }
+
+        if(chunkAccess.getPos().z % streetSpacing == 0) {
+            BRGenUtil.fillLayer(chunkAccess, getStartLevel()+1, CodBlocks.MOIST_CARPET.get().defaultBlockState());
+            BRGenUtil.fillLayer(chunkAccess, getEndLevel(), CodBlocks.CEILING_TILE.get().defaultBlockState());
+            BRGenUtil.generateLights(chunkAccess, getEndLevel(), false);
+            BRGenUtil.placeBackroomsStructure(BackroomsStructures.STREET_X, worldGenRegion, chunkAccess.getPos().getWorldPosition().above(1), worldGenRegion.getRandom());
+            return;
+        }
+
         if(BRGenUtil.isChunkInNoise(chunkAccess, RedRoomNoise, 0.3))
         {
             BRGenUtil.fillLayer(chunkAccess, getStartLevel()+1, CodBlocks.RED_MOIST_CARPET.get().defaultBlockState());

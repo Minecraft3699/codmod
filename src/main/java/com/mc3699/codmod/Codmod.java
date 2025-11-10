@@ -21,7 +21,6 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.util.thread.SidedThreadGroups;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.util.FakePlayer;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
@@ -54,14 +53,14 @@ public class Codmod {
         CodBlockEntities.register(modEventBus);
         CodMobEffects.register(modEventBus);
         CodSounds.register();
-        CodCreativeTabs.register(modEventBus);
+        //CodCreativeTabs.register(modEventBus);
         CodLang.register();
         CodPeripheralUpgradeTypes.register(modEventBus);
-        CodGenerators.register(modEventBus);
+        EvilCodDwellerEntity.register(modEventBus);
         CodTurtleUpgrades.register(modEventBus);
         CodRecipeSerializers.register(modEventBus);
-        CodFluidTypes.register(modEventBus);
-        CodFluids.register(modEventBus);
+        //CodFluidTypes.register(modEventBus);
+        //CodFluids.register(modEventBus);
         CodParticles.register(modEventBus);
 
         CodComponents.register(modEventBus);

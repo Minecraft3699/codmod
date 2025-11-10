@@ -16,20 +16,6 @@ public class CodFluids {
 
     public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(Registries.FLUID, Codmod.MOD_ID);
 
-
-    public static final BaseFlowingFluid.Properties BLOOD_PROPERTIES =
-            new BaseFlowingFluid.Properties(
-                    CodFluidTypes.BLOOD,
-                    CodFluids.BLOOD,
-                    CodFluids.BLOOD_FLOWING
-            );
-
-    public static final Supplier<Fluid> BLOOD = FLUIDS.register("blood", () ->
-            new BaseFlowingFluid.Source(BLOOD_PROPERTIES));
-
-    public static final Supplier<Fluid> BLOOD_FLOWING = FLUIDS.register("blood_flowing", () ->
-            new BaseFlowingFluid.Source(BLOOD_PROPERTIES));
-
     public static void register(IEventBus eventBus)
     {
         FLUIDS.register(eventBus);

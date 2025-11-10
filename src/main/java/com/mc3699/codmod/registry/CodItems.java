@@ -10,12 +10,14 @@ import com.mc3699.codmod.item.inventoryModule.InventoryModuleItem;
 import com.mc3699.codmod.item.marksmanRevolver.MarksmanRevolverItem;
 import com.mc3699.codmod.item.transponder.TransponderItem;
 import com.tterrag.registrate.util.entry.ItemEntry;
-import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.food.Foods;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Rarity;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -216,10 +218,9 @@ public class CodItems {
             .lang("oswald")
             .register();
 
-    public static final ItemEntry<RatBladeItem> RAT_BLADE = CodRegistrate.INSTANCE
-            .item("rat_blade", RatBladeItem::new)
+    public static final ItemEntry<Item> NIBBLE_ULTRA = CodRegistrate.INSTANCE.item("nibble_ultra", Item::new)
             .properties(properties -> properties)
-            .lang("Rat Blade")
+            .lang("Nibble Ultra")
             .register();
 
     public static final ItemEntry<CodPickaxeItem> COD_PICKAXE = CodRegistrate.INSTANCE.item("cod_pickaxe",CodPickaxeItem::new)
@@ -469,12 +470,14 @@ public class CodItems {
             .lang("Netherite Spoon")
             .model((ctx, prov) -> prov.handheld(ctx))
             .register();
+
     //glad your ditching registrate what a piece of shit
     public static final ItemEntry<BelowEternityItem> BELOW_ETERNITY = CodRegistrate.INSTANCE.item
             ("below_eternity", BelowEternityItem::new)
             .properties(properties -> properties)
             .lang("Below Eternity")
             .register();
+
     public static final ItemEntry<NullFangItem> NULLFANG = CodRegistrate.INSTANCE.item
             ("nullfang", NullFangItem::new)
             .properties(properties -> properties)
@@ -491,29 +494,46 @@ public class CodItems {
             .lang("Advanced Server")
             .register();
 
-    public static final ItemEntry<SpaghettiStrainerItem> SPAGHETTI_STRAINER = CodRegistrate.INSTANCE.item
-            ("spaghetti_strainer", SpaghettiStrainerItem::new)
-            .properties(properties -> properties.stacksTo(1))
-            .lang("Spaghetti Strainer")
+    public static final ItemEntry<Item> CARDINAL_GRAMMETER = CodRegistrate.INSTANCE.item
+            ("cardinal_grammeter", Item::new)
+            .lang("Cardinal Grammeter")
             .register();
 
-    public static final ItemEntry<Item> RAW_SPAGHETTI = CodRegistrate.INSTANCE.item
-            ("raw_spaghetti", Item::new)
-            .properties(properties -> properties)
-            .lang("Uncooked Spaghetti")
+    public static final ItemEntry<Item> HYDROCOPTIC_MARZLEVANES = CodRegistrate.INSTANCE.item
+            ("hydrocoptic_marzlevanes", Item::new)
+            .lang("Hydrocoptic Marzlevanes")
             .register();
 
-    public static final ItemEntry<Item> WET_SPAGHETTI = CodRegistrate.INSTANCE.item
-            ("wet_spaghetti", Item::new)
-            .properties(properties -> properties)
-            .lang("Wet Spaghetti")
+    public static final ItemEntry<Item> LOGARITHMIC_CASING = CodRegistrate.INSTANCE.item
+            ("logarithmic_casing", Item::new)
+            .lang("Logarithmic Casing")
             .register();
 
-    public static final ItemEntry<Item> COOKED_SPAGHETTI = CodRegistrate.INSTANCE.item
-            ("cooked_spaghetti", Item::new)
-            .properties(properties -> properties.food(new FoodProperties.Builder().nutrition(20).saturationModifier(80).usingConvertsTo(Items.BOWL).build()).stacksTo(16))
-            .lang("Bowl of Spaghetti")
+    public static final ItemEntry<Item> LUNAR_WANE_SHAFT = CodRegistrate.INSTANCE.item
+            ("lunar_wane_shaft", Item::new)
+            .lang("Ambifacient Lunar Wane Shaft")
             .register();
+
+    public static final ItemEntry<Item> PENTAMETRIC_FAN = CodRegistrate.INSTANCE.item
+            ("pentametric_fan", Item::new)
+            .lang("Pentametric Fan")
+            .register();
+
+    public static final ItemEntry<Item> AMULITE = CodRegistrate.INSTANCE.item
+            ("amulite", Item::new)
+            .lang("Pre-Famulated Amulite")
+            .register();
+
+    public static final ItemEntry<Item> SPERVING_BEARING = CodRegistrate.INSTANCE.item
+            ("sperving_bearing", Item::new)
+            .lang("Sperving Bearing")
+            .register();
+
+    public static final ItemEntry<Item> UNILATERAL_PHASE_DETRACTOR = CodRegistrate.INSTANCE.item
+            ("unilateral_phase_detractor", Item::new)
+            .lang("Unilateral Phase Detractor")
+            .register();
+
 
     // VOTV Foods
 
