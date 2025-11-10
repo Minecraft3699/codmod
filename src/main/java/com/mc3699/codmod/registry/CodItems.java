@@ -218,9 +218,10 @@ public class CodItems {
             .lang("oswald")
             .register();
 
-    public static final ItemEntry<Item> NIBBLE_ULTRA = CodRegistrate.INSTANCE.item("nibble_ultra", Item::new)
+    public static final ItemEntry<RatBladeItem> RAT_BLADE = CodRegistrate.INSTANCE
+            .item("rat_blade", RatBladeItem::new)
             .properties(properties -> properties)
-            .lang("Nibble Ultra")
+            .lang("Rat Blade")
             .register();
 
     public static final ItemEntry<CodPickaxeItem> COD_PICKAXE = CodRegistrate.INSTANCE.item("cod_pickaxe",CodPickaxeItem::new)
