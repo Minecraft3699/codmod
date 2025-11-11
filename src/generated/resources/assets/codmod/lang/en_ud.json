@@ -109,6 +109,7 @@
   "item.codmod.cod_pickaxe": "ǝxɐʞɔıԀ poƆ",
   "item.codmod.cod_rod": "poᴚ poƆ",
   "item.codmod.command_module": "ǝןnpoW puɐɯɯoƆ",
+  "item.codmod.cooked_spaghetti": "ıʇʇǝɥbɐdS ɟo ןʍoᗺ",
   "item.codmod.corruptedknife": "ǝɟıuʞ pǝʇdnɹɹoƆ",
   "item.codmod.cucumber": "ɹǝqɯnɔnƆ",
   "item.codmod.current_meter": "ɹǝʇǝW ʇuǝɹɹnƆ",
@@ -142,7 +143,6 @@
   "item.codmod.nbc_leggings": "sbuıbbǝꞀ ʇınS ƆᗺN",
   "item.codmod.netherite_spoon": "uoodS ǝʇıɹǝɥʇǝN",
   "item.codmod.network_fucker": "0006 ɹǝʞɔnℲ ʞɹoʍʇǝN",
-  "item.codmod.nibble_ultra": "ɐɹʇן∩ ǝןqqıN",
   "item.codmod.null_chicken": "uǝʞɔıɥƆ ןןnN",
   "item.codmod.null_chicken_sword": "pɹoʍS uǝʞɔıɥƆ ןןnN",
   "item.codmod.null_cod": "poƆ ןןnN",
@@ -156,6 +156,8 @@
   "item.codmod.pizza": "ɐzzıԀ",
   "item.codmod.psyche_gun": "ǝɥɔʎsԀ9§",
   "item.codmod.purple": "ǝןdɹnԀ pǝʇıɐʍɐ buoꞀ ǝɥ⟘",
+  "item.codmod.rat_blade": "ǝpɐlq ʇɐɹ",
+  "item.codmod.raw_spaghetti": "ıʇʇǝɥbɐdS pǝʞooɔu∩",
   "item.codmod.realcod": "poƆ ןɐǝᴚ",
   "item.codmod.red": "pǝᴚ",
   "item.codmod.resistor": "ɹoʇsısǝᴚ ǝbɹɐꞀ ʎןןɐɔıɯoƆ",
@@ -171,6 +173,7 @@
   "item.codmod.space_grade_fabric": "ɔıɹqɐℲ ǝpɐɹ⅁ ǝɔɐdS",
   "item.codmod.space_helmet": "ʇǝɯןǝH ǝɔɐdS",
   "item.codmod.space_leggings": "sbuıbbǝꞀ ʇınS ǝɔɐdS",
+  "item.codmod.spaghetti_strainer": "ɹǝuıɐɹʇS ıʇʇǝɥbɐdS",
   "item.codmod.sperving_bearing": "buıɹɐǝᗺ buıʌɹǝdS",
   "item.codmod.taco": "oɔɐ⟘",
   "item.codmod.teleported_bread": "pɐǝɹᗺ pǝʇɹodǝןǝ⟘",
@@ -179,6 +182,7 @@
   "item.codmod.transponder": "ɹǝpuodsuɐɹ⟘",
   "item.codmod.unilateral_phase_detractor": "ɹoʇɔɐɹʇǝᗡ ǝsɐɥԀ ןɐɹǝʇɐןıu∩",
   "item.codmod.voidbreaker": "ɹǝʞɐǝɹqpıoΛ",
+  "item.codmod.wet_spaghetti": "ıʇʇǝɥbɐdS ʇǝM",
   "itemGroup.codmod": "poW poƆ",
   "itemGroup.votv_food": "pooℲ :pıoΛ ǝɥʇ ɟo sǝɔıoΛ",
   "subtitles.codmod.9_27_2016": "¿ ¿ ¿",
@@ -206,5 +210,6 @@
   "subtitles.codmod.saul": "sǝsıoN uɐɯpoo⅁ ןnɐS",
   "subtitles.codmod.transponder_alert": "sʇɹǝןⱯ ɹǝpuodsuɐɹ⟘",
   "subtitles.codmod.transponder_call": "sbuıᴚ ɹǝpuodsuɐɹ⟘",
-  "subtitles.codmod.tripmine": "sǝpoןdxƎ ǝuıɯdıɹ⟘ ǝɔɐdsqnS"
+  "subtitles.codmod.tripmine": "sǝpoןdxƎ ǝuıɯdıɹ⟘ ǝɔɐdsqnS",
+  "subtitles.codmod.tripmine_armed": "pǝɯɹⱯ ǝuıɯdıɹ⟘"
 }

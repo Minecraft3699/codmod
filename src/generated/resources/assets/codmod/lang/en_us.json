@@ -109,6 +109,7 @@
   "item.codmod.cod_pickaxe": "Cod Pickaxe",
   "item.codmod.cod_rod": "Cod Rod",
   "item.codmod.command_module": "Command Module",
+  "item.codmod.cooked_spaghetti": "Bowl of Spaghetti",
   "item.codmod.corruptedknife": "Corrupted Knife",
   "item.codmod.cucumber": "Cucumber",
   "item.codmod.current_meter": "Current Meter",
@@ -142,7 +143,6 @@
   "item.codmod.nbc_leggings": "NBC Suit Leggings",
   "item.codmod.netherite_spoon": "Netherite Spoon",
   "item.codmod.network_fucker": "Network Fucker 9000",
-  "item.codmod.nibble_ultra": "Nibble Ultra",
   "item.codmod.null_chicken": "Null Chicken",
   "item.codmod.null_chicken_sword": "Null Chicken Sword",
   "item.codmod.null_cod": "Null Cod",
@@ -156,6 +156,8 @@
   "item.codmod.pizza": "Pizza",
   "item.codmod.psyche_gun": "§6Psyche",
   "item.codmod.purple": "The Long awaited Purple",
+  "item.codmod.rat_blade": "Rat Blade",
+  "item.codmod.raw_spaghetti": "Uncooked Spaghetti",
   "item.codmod.realcod": "Real Cod",
   "item.codmod.red": "Red",
   "item.codmod.resistor": "Comically Large Resistor",
@@ -171,6 +173,7 @@
   "item.codmod.space_grade_fabric": "Space Grade Fabric",
   "item.codmod.space_helmet": "Space Helmet",
   "item.codmod.space_leggings": "Space Suit Leggings",
+  "item.codmod.spaghetti_strainer": "Spaghetti Strainer",
   "item.codmod.sperving_bearing": "Sperving Bearing",
   "item.codmod.taco": "Taco",
   "item.codmod.teleported_bread": "Teleported Bread",
@@ -179,6 +182,7 @@
   "item.codmod.transponder": "Transponder",
   "item.codmod.unilateral_phase_detractor": "Unilateral Phase Detractor",
   "item.codmod.voidbreaker": "Voidbreaker",
+  "item.codmod.wet_spaghetti": "Wet Spaghetti",
   "itemGroup.codmod": "Cod Mod",
   "itemGroup.votv_food": "Voices of the Void: Food",
   "subtitles.codmod.9_27_2016": "? ? ?",
@@ -206,5 +210,6 @@
   "subtitles.codmod.saul": "Saul Goodman Noises",
   "subtitles.codmod.transponder_alert": "Transponder Alerts",
   "subtitles.codmod.transponder_call": "Transponder Rings",
-  "subtitles.codmod.tripmine": "Subspace Tripmine Explodes"
+  "subtitles.codmod.tripmine": "Subspace Tripmine Explodes",
+  "subtitles.codmod.tripmine_armed": "Tripmine Armed"
 }
