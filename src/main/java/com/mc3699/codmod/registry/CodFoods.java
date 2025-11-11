@@ -83,6 +83,12 @@ public class CodFoods {
                     1f, Optional.of(ItemStack.EMPTY), List.of()
             );
 
+    public static final FoodProperties LEMONADE =
+            new FoodProperties(
+                    2, 6, false,
+                    2f, Optional.of(ItemStack.EMPTY), List.of()
+            );
+
     public static final FoodProperties MANGO = // EAT THE MANGO
             new FoodProperties(
                     4, 1, false,

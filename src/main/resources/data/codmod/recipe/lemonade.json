@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "codmod:lemon"
+    },
+    {
+      "item": "codmod:lemon"
+    },
+    {
+      "item": "codmod:lemon"
+    },
+    {
+      "item": "codmod:lemon"
+    },
+    {
+      "item": "codmod:lemon"
+    },
+    {
+      "item": "codmod:lemon"
+    },
+    {
+      "item": "codmod:lemon"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:glass_bottle"
+    }
+  ],
+  "result": {
+    "id": "codmod:lemonade",
+    "count": 1
+  }
+}

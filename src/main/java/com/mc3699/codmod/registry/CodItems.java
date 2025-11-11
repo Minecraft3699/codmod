@@ -25,6 +25,7 @@ import java.util.function.Supplier;
 
 import static com.mc3699.codmod.registry.CodBlocks.BLOCKS;
 
+
 public class CodItems {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.createItems(Codmod.MOD_ID);
@@ -236,6 +237,16 @@ public class CodItems {
     public static final ItemEntry<CircuitBombItem> CIRCUIT_BOMB = CodRegistrate.INSTANCE.item("circuit_bomb",CircuitBombItem::new)
             .properties(properties -> properties)
             .lang("Circuit Bomb")
+            .register();
+
+    public static final ItemEntry<LemonadeDrinkItem> LEMONADE_DRINK =
+            CodRegistrate.INSTANCE.item("lemonade", p -> new LemonadeDrinkItem(CodBlocks.LEMONADE_BLOCK.get(), p))
+                    .lang("Lemonade")
+                    .register();
+
+    public static final ItemEntry<TearsOfBloodItem> TEARS_OF_BLOOD = CodRegistrate.INSTANCE.item("tears_of_blood",TearsOfBloodItem::new)
+            .properties(properties -> properties)
+            .lang("Tears Of Blood")
             .register();
 
     public static final ItemEntry<SoulTakerItem> SOUL_TAKER = CodRegistrate.INSTANCE.item(

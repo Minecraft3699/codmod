@@ -2,8 +2,8 @@ package com.mc3699.codmod.registry;
 
 import com.mc3699.codmod.Codmod;
 import com.mc3699.codmod.block.DellServerBlock;
+import com.mc3699.codmod.block.LemonadeBlock;
 import com.mc3699.codmod.block.backrooms.CeilingLightBlock;
-import com.mc3699.codmod.block.bloodGenerator.BloodGeneratorBlock;
 import com.mc3699.codmod.block.codNuke.CodNukeBlock;
 import com.mc3699.codmod.block.graphicsMonitor.GraphicsMonitorBlock;
 import com.mc3699.codmod.block.oxygenDistributor.OxygenDistributorBlock;
@@ -23,14 +23,17 @@ import com.mc3699.codmod.block.triangulator.TriangulatorBlock;
 import com.mc3699.codmod.block.uavController.UAVControllerBlock;
 import com.mc3699.codmod.technology.coalGenerator.CoalGeneratorBlock;
 import com.mc3699.codmod.technology.lowVoltageCable.LowVoltageCableBlock;
-import com.mc3699.codmod.block.PlushieBlock;
 import com.tterrag.registrate.util.entry.BlockEntry;
-import com.tterrag.registrate.util.entry.FluidEntry;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.entity.animal.Cod;
+import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -104,88 +107,70 @@ public class CodBlocks {
             .loot((c,b) -> c.add(b, c.createOreDrop(b, Items.COD)))
             .register();
 
-    public static final BlockEntry<PlushieBlock> GARRETH_PLUSHIE = CodRegistrate.INSTANCE.block("garreth_plushie", PlushieBlock::new)
-            .initialProperties(() -> Blocks.WHITE_WOOL)
+    public static final BlockEntry<Block> GARRETH_PLUSHIE = CodRegistrate.INSTANCE.block("garreth_plushie", Block::new)
             .properties(properties -> properties.noCollission().noOcclusion())
             .simpleItem()
             .lang("Garreth Plushie of stupidity.")
             .register();
 
-    public static final BlockEntry<PlushieBlock> ANCIENT_PLUSHIE = CodRegistrate.INSTANCE.block("ancient_plushie", PlushieBlock::new)
-            .initialProperties(() -> Blocks.WHITE_WOOL)
+    public static final BlockEntry<Block> ANCIENT_PLUSHIE = CodRegistrate.INSTANCE.block("ancient_plushie", Block::new)
             .properties(properties -> properties.noCollission().noOcclusion())
             .simpleItem()
             .lang("Ancients Plushie")
             .register();
 
-    public static final BlockEntry<PlushieBlock> SKISHEL_PLUSHIE = CodRegistrate.INSTANCE.block("skishel_plushie", PlushieBlock::new)
-            .initialProperties(() -> Blocks.WHITE_WOOL)
+    public static final BlockEntry<Block> SKISHEL_PLUSHIE = CodRegistrate.INSTANCE.block("skishel_plushie", Block::new)
             .properties(properties -> properties.noCollission().noOcclusion())
             .simpleItem()
             .lang("Skishel Plushie")
             .register();
 
-    public static final BlockEntry<PlushieBlock> TERRA_PLUSHIE = CodRegistrate.INSTANCE.block("terra_plushie", PlushieBlock::new)
-            .initialProperties(() -> Blocks.WHITE_WOOL)
+    public static final BlockEntry<Block> TERRA_PLUSHIE = CodRegistrate.INSTANCE.block("terra_plushie", Block::new)
             .properties(properties -> properties.noCollission().noOcclusion())
             .simpleItem()
             .lang("Terra Plushie")
             .register();
 
-    public static final BlockEntry<PlushieBlock> FIRELIGHT_PLUSHIE = CodRegistrate.INSTANCE.block("firelight_plushie", PlushieBlock::new)
-            .initialProperties(() -> Blocks.WHITE_WOOL)
+    public static final BlockEntry<Block> FIRELIGHT_PLUSHIE = CodRegistrate.INSTANCE.block("firelight_plushie", Block::new)
             .properties(properties -> properties.noCollission().noOcclusion())
             .simpleItem()
             .lang("§5Firelight §rPlushie")
             .register();
 
-    public static final BlockEntry<PlushieBlock> SCUFFED_PLUSHIE = CodRegistrate.INSTANCE.block("scuffed_plushie", PlushieBlock::new)
-            .initialProperties(() -> Blocks.WHITE_WOOL)
+    public static final BlockEntry<Block> SCUFFED_PLUSHIE = CodRegistrate.INSTANCE.block("scuffed_plushie", Block::new)
             .properties(properties -> properties.noCollission().noOcclusion())
             .simpleItem()
             .lang("Scuffed Plushie")
             .register();
 
-    public static final BlockEntry<PlushieBlock> NORMAL_ABBE_PLUSHIE = CodRegistrate.INSTANCE.block("normal_abbe_plushie", PlushieBlock::new)
-            .initialProperties(() -> Blocks.WHITE_WOOL)
+    public static final BlockEntry<Block> NORMAL_ABBE_PLUSHIE = CodRegistrate.INSTANCE.block("normal_abbe_plushie", Block::new)
             .properties(properties -> properties.noCollission().noOcclusion())
             .simpleItem()
             .lang("Abbe Plushie")
             .register();
 
-    public static final BlockEntry<PlushieBlock> PINKY_PLUSHIE = CodRegistrate.INSTANCE.block("pinky_plushie", PlushieBlock::new)
-            .initialProperties(() -> Blocks.WHITE_WOOL)
+    public static final BlockEntry<Block> PINKY_PLUSHIE = CodRegistrate.INSTANCE.block("pinky_plushie", Block::new)
             .properties(properties -> properties.noCollission().noOcclusion())
             .simpleItem()
             .lang("§dPinky§r §3Plushie")
             .register();
 
-    public static final BlockEntry<PlushieBlock> BLADE_PLUSHIE = CodRegistrate.INSTANCE.block("blade_plushie", PlushieBlock::new)
-            .initialProperties(() -> Blocks.WHITE_WOOL)
+    public static final BlockEntry<Block> BLADE_PLUSHIE = CodRegistrate.INSTANCE.block("blade_plushie", Block::new)
             .properties(properties -> properties.noCollission().noOcclusion())
             .simpleItem()
             .lang("§cBlade Plushie")
             .register();
 
-    public static final BlockEntry<PlushieBlock> NUZ_PLUSHIE = CodRegistrate.INSTANCE.block("nuz_plushie", PlushieBlock::new)
-            .initialProperties(() -> Blocks.WHITE_WOOL)
+    public static final BlockEntry<Block> NUZ_PLUSHIE = CodRegistrate.INSTANCE.block("nuz_plushie", Block::new)
             .properties(properties -> properties.noCollission().noOcclusion())
             .simpleItem()
             .lang("§bNuz Plushie.")
             .register();
 
-    public static final BlockEntry<PlushieBlock> ZETOS_PLUSHIE = CodRegistrate.INSTANCE.block("zetos_plushie", PlushieBlock::new)
-            .initialProperties(() -> Blocks.WHITE_WOOL)
+    public static final BlockEntry<Block> ZETOS_PLUSHIE = CodRegistrate.INSTANCE.block("zetos_plushie", Block::new)
             .properties(properties -> properties.noCollission().noOcclusion())
             .simpleItem()
             .lang("§gZetos Plushie")
-            .register();
-
-    public static final BlockEntry<PlushieBlock> EYAE_PLUSHIE = CodRegistrate.INSTANCE.block("eyae_plushie", PlushieBlock::new)
-            .initialProperties(() -> Blocks.WHITE_WOOL)
-            .properties(properties -> properties.noCollission().noOcclusion())
-            .simpleItem()
-            .lang("§1Eyae Plushie")
             .register();
 
     public static final BlockEntry<Block> MOIST_CARPET = CodRegistrate.INSTANCE.block("moist_carpet", Block::new)
@@ -388,11 +373,17 @@ public class CodBlocks {
             .lang("Oxygen Distributor")
             .register();
 
-    public static final BlockEntry<BloodGeneratorBlock> BLOOD_GENERATOR = CodRegistrate.INSTANCE.block("blood_generator", BloodGeneratorBlock::new)
-            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK))
-            .simpleItem()
-            .lang("Blood Generator")
+    public static final BlockEntry<LemonadeBlock> LEMONADE_BLOCK = CodRegistrate.INSTANCE
+            .block("lemonade_block", LemonadeBlock::new)
+            .initialProperties(() -> Blocks.GLASS)
+            .properties(properties -> properties.noOcclusion().sound(SoundType.GLASS).destroyTime(0.3f))
+            .blockstate((ctx, prov) -> prov.simpleBlock(ctx.get(),
+                    prov.models().getExistingFile(prov.modLoc("block/lemonade_block"))))
+            .loot((tables, block) -> tables.dropOther(block, CodItems.LEMONADE_DRINK.get()))
+            .lang("Lemonade Block")
             .register();
+
+
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);

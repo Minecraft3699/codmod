@@ -3,6 +3,8 @@ package com.mc3699.codmod.registry;
 import com.mc3699.codmod.Codmod;
 import dev.wendigodrip.thebrokenscript.api.registry.ExtendedRegistrate;
 
+import javax.sound.midi.MidiFileFormat;
+
 public class CodRegistrate extends ExtendedRegistrate<CodRegistrate> {
     public static final CodRegistrate INSTANCE = new CodRegistrate();
 
