@@ -67,7 +67,7 @@ public class RatBladeItem extends SwordItem {
             int hitCount = tag.getInt("HitCount");
             hitCount++;
 
-            if (hitCount >= 5) {
+            if (hitCount >= 6) {
                 player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 0));
                 player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 200, 0));
                 hitCount = 0;
