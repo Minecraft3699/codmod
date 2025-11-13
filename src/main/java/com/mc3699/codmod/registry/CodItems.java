@@ -556,6 +556,25 @@ public class CodItems {
             .lang("Unilateral Phase Detractor")
             .register();
 
+    public static final ItemEntry<VOnePickaxeItem> V1_PICKAXE = CodRegistrate.INSTANCE.item
+            ("v1_pickaxe", VOnePickaxeItem::new)
+            .lang("V1 Pickaxe")
+            .register();
+
+    public static final ItemEntry<VOneAxeItem> V1_AXE = CodRegistrate.INSTANCE.item
+                    ("v1_axe", VOneAxeItem::new)
+            .lang("V1 Axe")
+            .register();
+
+    public static final ItemEntry<VOneHoeItem> V1_HOE = CodRegistrate.INSTANCE.item
+                ("v1_hoe", VOneHoeItem::new)
+            .lang("V1 Hoe")
+            .register();
+
+    public static final ItemEntry<VOneShovelItem> V1_SHOVEL = CodRegistrate.INSTANCE.item
+                    ("v1_shovel", VOneShovelItem::new)
+            .lang("V1 Shovel")
+            .register();
 
     // VOTV Foods
 
