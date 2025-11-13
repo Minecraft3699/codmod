@@ -87,7 +87,7 @@ public class RatBladeItem extends SwordItem {
         CustomData customData = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY);
         int hitCount = customData.copyTag().getInt("HitCount");
 
-        tooltipComponents.add(Component.literal("§7Hits: §f" + hitCount + "§7/§f5 §6(squeak)"));
+        tooltipComponents.add(Component.literal("§7Hits: §f" + hitCount + "§7/§f6 §6(squeak)"));
         tooltipComponents.add(Component.literal("§75 hits = §bSpeed and §cStrength §7for 10s §6(squeak squeak)"));
 
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
