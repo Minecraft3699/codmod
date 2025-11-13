@@ -61,29 +61,20 @@ public class RatBladeItem extends SwordItem {
     @Override
     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         if (attacker instanceof Player player && !player.level().isClientSide) {
-            boolean isCriticalHit = player.fallDistance > 0.0F &&
-                    !player.onGround() &&
-                    !player.onClimbable() &&
-                    !player.isInWater() &&
-                    !player.hasEffect(MobEffects.BLINDNESS) &&
-                    !player.isPassenger() &&
-                    player.getAttackStrengthScale(0.5F) > 0.9F;
+            CustomData customData = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY);
+            CompoundTag tag = customData.copyTag();
 
-            if (isCriticalHit) {
-                CustomData customData = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY);
-                CompoundTag tag = customData.copyTag();
+            int hitCount = tag.getInt("HitCount");
+            hitCount++;
 
-                int hitCount = tag.getInt("HitCount");
-                hitCount++;
-
-                if (hitCount >= 5) {
-                    player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 0));
-                    hitCount = 0;
-                }
-
-                tag.putInt("HitCount", hitCount);
-                stack.set(DataComponents.CUSTOM_DATA, CustomData.of(tag));
+            if (hitCount >= 5) {
+                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 0));
+                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 200, 0));
+                hitCount = 0;
             }
+
+            tag.putInt("HitCount", hitCount);
+            stack.set(DataComponents.CUSTOM_DATA, CustomData.of(tag));
         }
 
         return super.hurtEnemy(stack, target, attacker);
@@ -96,8 +87,8 @@ public class RatBladeItem extends SwordItem {
         CustomData customData = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY);
         int hitCount = customData.copyTag().getInt("HitCount");
 
-        tooltipComponents.add(Component.literal("§7Crits: §f" + hitCount + "§7/§f5 §6(squeak)"));
-        tooltipComponents.add(Component.literal("§75 crits = §bSpeed §7for 15s §6(squeak squeak)"));
+        tooltipComponents.add(Component.literal("§7Hits: §f" + hitCount + "§7/§f5 §6(squeak)"));
+        tooltipComponents.add(Component.literal("§75 hits = §bSpeed and §cStrength §7for 10s §6(squeak squeak)"));
 
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }
