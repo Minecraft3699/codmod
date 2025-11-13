@@ -63,18 +63,20 @@ public class NullFangCallbacks {
     }
 
     public static void onHitBlock(LevelAccessor world, BlockPos blockPos, Entity shooter) {
-        if (shooter == null) return;
+        if (shooter == null || !(shooter instanceof Player)) return;
 
+        Player player = (Player) shooter;
         double x = blockPos.getX();
         double y = blockPos.getY();
         double z = blockPos.getZ();
 
-        Player nearestPlayer = findNearestPlayer(world, x, y, z, HOOK_DETECTION_RANGE);
-        if (nearestPlayer != null && nearestPlayer == shooter) {
-            if (!shooter.isShiftKeyDown()) {
-                setHookPosition(shooter, x, y, z);
-                setPlayerGrappling(shooter, true);
-            }
+        if (player.distanceToSqr(x, y, z) > HOOK_DETECTION_RANGE * HOOK_DETECTION_RANGE) {
+            return;
+        }
+
+        if (!player.isShiftKeyDown()) {
+            setHookPosition(player, x, y, z);
+            setPlayerGrappling(player, true);
         }
 
         playHitSound(world, x, y, z, "codmod:nullfangclang", 0.45f, 1.0f);
