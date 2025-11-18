@@ -107,6 +107,8 @@ public class CodItems {
             .lang("Comically Large Resistor")
             .register();
 
+
+
     public static final ItemEntry<ShrimpSniperItem> SHRIMP_SNIPER = CodRegistrate.INSTANCE.item(
                     "shrimp_sniper",
                     ShrimpSniperItem::new
@@ -475,7 +477,11 @@ public class CodItems {
             .properties(properties -> properties)
             .lang("Below Eternity")
             .register();
-
+    public static final ItemEntry<AstBattleAxeItem> AST_BATTLE_AXE = CodRegistrate.INSTANCE.item
+            ("ast_battle_axe", AstBattleAxeItem::new)
+            .properties(properties -> properties)
+            .lang("Asterous's Battle Axe")
+            .register();
     public static final ItemEntry<NullFangItem> NULLFANG = CodRegistrate.INSTANCE.item
             ("nullfang", NullFangItem::new)
             .properties(properties -> properties)

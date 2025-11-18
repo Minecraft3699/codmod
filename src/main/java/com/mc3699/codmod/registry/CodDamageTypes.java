@@ -12,6 +12,7 @@ public class CodDamageTypes {
     public static final ResourceKey<DamageType> SUBSPACE_TRIPMINE = type("tripmine");
     public static final ResourceKey<DamageType> ITEM_PROJECTILE = type("item_projectile");
     public static final ResourceKey<DamageType> NO_OXYGEN = type("no_oxygen");
+    public static final ResourceKey<DamageType> BLEEDING = type("bleeding");
 
     private static ResourceKey<DamageType> type(String id) {
         return ResourceKey.create(Registries.DAMAGE_TYPE, Codmod.id(id));
