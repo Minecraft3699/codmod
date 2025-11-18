@@ -5,9 +5,8 @@ import com.mc3699.codmod.block.backrooms.CeilingLightBlockEntityRenderer;
 import com.mc3699.codmod.block.codNuke.CodNukeBlockEntityRenderer;
 import com.mc3699.codmod.block.graphicsMonitor.GraphicsMonitorBlockEntityRenderer;
 import com.mc3699.codmod.block.mantleKey.MantleKeyBlockEntityRender;
-import com.mc3699.codmod.block.oxygenDistributor.OxygenDistributorBlockEntity;
 import com.mc3699.codmod.block.oxygenDistributor.OxygenDistributorBlockEntityRenderer;
-import com.mc3699.codmod.client.particles.blood.BloodParticleProvider;
+import com.mc3699.codmod.client.particles.BloodParticle;
 import com.mc3699.codmod.entity.applicant.ApplicantEntityRenderer;
 import com.mc3699.codmod.entity.ariral.AriralEntityRenderer;
 import com.mc3699.codmod.entity.cod_almighty.CodAlmightyEntityRenderer;
@@ -33,9 +32,6 @@ import com.mc3699.codmod.entity.wisp.wispTypes.DistortedWispEntityRenderer;
 import com.mc3699.codmod.registry.CodBlockEntities;
 import com.mc3699.codmod.registry.CodEntities;
 import com.mc3699.codmod.registry.CodParticles;
-import dan200.computercraft.api.ForgeComputerCraftAPI;
-import dan200.computercraft.api.client.turtle.RegisterTurtleUpgradeModeller;
-import dan200.computercraft.impl.ComputerCraftAPIService;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -89,7 +85,7 @@ public class EntityRendererRegistration {
 
     @SubscribeEvent
     public static void registerParticles(RegisterParticleProvidersEvent event) {
-        event.registerSpriteSet(CodParticles.BLOOD_PARTICLE.get(), BloodParticleProvider::new);
+        event.registerSpriteSet(CodParticles.BLOOD_PARTICLE.get(), BloodParticle.Provider::new);
     }
 
 }

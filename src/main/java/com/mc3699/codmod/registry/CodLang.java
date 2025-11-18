@@ -9,6 +9,7 @@ public class CodLang {
         CodRegistrate.INSTANCE.addRawLang("chat.codmod.vay_threat", "<Ζεστός Χαλκός> I KNOW YOU SEE ME");
         CodRegistrate.INSTANCE.addRawLang("death.attack.bad_sun", "%1$s §4was dragged into the light");
         CodRegistrate.INSTANCE.addRawLang("death.attack.no_oxygen", "%1$s ran out of oxygen");
+        CodRegistrate.INSTANCE.addRawLang("death.attack.bleeding", "%1$s bled out");
         CodRegistrate.INSTANCE.addRawLang("death.attack.job_application", "%1$s was forced to get a job");
         CodRegistrate.INSTANCE.addRawLang("death.attack.cod_rod", "%1$s was ripped to shreds by a bunch of cod");
         CodRegistrate.INSTANCE.addRawLang("death.attack.tripmine", "%1$s was discombobulated by a Subspace Tripmine");
