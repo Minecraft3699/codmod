@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "codmod:block/green_public_static_void_small_tiles"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "codmod:spiral_lamp"
+  },
+  "result": {
+    "id": "minecraft:glowstone",
+    "count": 1
+  }
+}
