@@ -32,6 +32,7 @@ public class CodCreativeTabs {
                                         output.accept(CodItems.REAL_COD.get());
                                         output.accept(CodBlocks.RADAR.asItem());
                                         output.accept(CodBlocks.UAV_CONTROLLER.asItem());
+                                        output.accept(CodBlocks.SERVER.asItem());
                                     }
                             )
                             .build()
