@@ -119,6 +119,18 @@ public class CodFoods {
                     0.6f, Optional.of(ItemStack.EMPTY), List.of()
             );
 
+    public static final FoodProperties SLIME_CAKE =
+            new FoodProperties(
+                    40, 40, true,
+                    1.0f, Optional.of(ItemStack.EMPTY), List.of()
+            );
+
+    public static final FoodProperties CHOCOLATE_CAKE =
+            new FoodProperties(
+                    40, 40, true,
+                    2.0f, Optional.of(ItemStack.EMPTY), List.of()
+            );
+
     public static final FoodProperties ROUND_MEAL =
             new FoodProperties.Builder()
                     .nutrition(1997)
