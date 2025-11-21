@@ -223,6 +223,13 @@ public class CodBlocks {
             .lang("§1Eyae Plushie")
             .register();
 
+    public static final BlockEntry<PlushieBlock> GUSTA_PLUSHIE = CodRegistrate.INSTANCE.block("gusta_plushie", PlushieBlock::new)
+            .initialProperties(() -> Blocks.WHITE_WOOL)
+            .properties(properties -> properties.noCollission().noOcclusion())
+            .simpleItem()
+            .lang("ThinGusta Plushie")
+            .register();
+
     public static final BlockEntry<Block> MOIST_CARPET = CodRegistrate.INSTANCE.block("moist_carpet", Block::new)
             .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.YELLOW_WOOL))
             .simpleItem()
@@ -319,6 +326,120 @@ public class CodBlocks {
             .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE))
             .lang("Public Static Void")
             .simpleItem()
+            .register();
+
+    public static final BlockEntry<Block> PUBLIC_STATIC_VOID_SMALL_TILES_BLOCK = CodRegistrate.INSTANCE.block("public_static_void_small_tiles", Block::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE))
+            .lang("Public Static Void Small Tiles")
+            .simpleItem()
+            .register();
+
+    public static final BlockEntry<Block> PUBLIC_STATIC_VOID_TILES_BLOCK = CodRegistrate.INSTANCE.block("public_static_void_tiles", Block::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE))
+            .lang("Public Static Void Tiles")
+            .simpleItem()
+            .register();
+
+    public static final BlockEntry<Block> PUBLIC_STATIC_VOID_DRIVE_BLOCK = CodRegistrate.INSTANCE.block("public_static_void_drive", Block::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE))
+            .lang("Public Static Void Drive")
+            .simpleItem()
+            .register();
+
+    public static final BlockEntry<Block> PUBLIC_STATIC_VOID_KEYPAD_BLOCK = CodRegistrate.INSTANCE.block("public_static_void_keypad", Block::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE))
+            .lang("Public Static Void Keypad")
+            .simpleItem()
+            .register();
+
+    public static final BlockEntry<Block> RED_PUBLIC_STATIC_VOID_BLOCK = CodRegistrate.INSTANCE.block("red_public_static_void", Block::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE))
+            .lang("Red Public Static Void")
+            .simpleItem()
+            .register();
+
+    public static final BlockEntry<Block> RED_PUBLIC_STATIC_VOID_SMALL_TILES_BLOCK = CodRegistrate.INSTANCE.block("red_public_static_void_small_tiles", Block::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE))
+            .lang("Red Public Static Void Small Tiles")
+            .simpleItem()
+            .register();
+
+    public static final BlockEntry<Block> RED_PUBLIC_STATIC_VOID_TILES_BLOCK = CodRegistrate.INSTANCE.block("red_public_static_void_tiles", Block::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE))
+            .lang("Red Public Static Void Tiles")
+            .simpleItem()
+            .register();
+
+    public static final BlockEntry<Block> RED_PUBLIC_STATIC_VOID_EYE = CodRegistrate.INSTANCE.block("red_public_static_void_eye", Block::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE))
+            .lang("Red Public Static Void Eye")
+            .simpleItem()
+            .register();
+
+    public static final BlockEntry<Block> RED_PUBLIC_STATIC_VOID_TILES_LOGO = CodRegistrate.INSTANCE.block("red_public_static_void_logo", Block::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE))
+            .lang("Red Public Static Void Logo")
+            .simpleItem()
+            .register();
+
+    public static final BlockEntry<Block> PURPLE_PUBLIC_STATIC_VOID_BLOCK = CodRegistrate.INSTANCE.block("purple_public_static_void", Block::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE))
+            .lang("Purple Public Static Void")
+            .simpleItem()
+            .register();
+
+    public static final BlockEntry<Block> PURPLE_PUBLIC_STATIC_VOID_SMALL_TILES_BLOCK = CodRegistrate.INSTANCE.block("purple_public_static_void_small_tiles", Block::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE))
+            .lang("Purple Public Static Void Small Tiles")
+            .simpleItem()
+            .register();
+
+    public static final BlockEntry<Block> PURPLE_PUBLIC_STATIC_VOID_TILES_BLOCK = CodRegistrate.INSTANCE.block("purple_public_static_void_tiles", Block::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE))
+            .lang("Purple Public Static Void Tiles")
+            .simpleItem()
+            .register();
+
+    public static final BlockEntry<Block> BLUE_PUBLIC_STATIC_VOID_BLOCK = CodRegistrate.INSTANCE.block("blue_public_static_void", Block::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE))
+            .lang("Blue Public Static Void")
+            .simpleItem()
+            .register();
+
+    public static final BlockEntry<Block> BLUE_PUBLIC_STATIC_VOID_SMALL_TILES_BLOCK = CodRegistrate.INSTANCE.block("blue_public_static_void_small_tiles", Block::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE))
+            .lang("Blue Public Static Void Small Tiles")
+            .simpleItem()
+            .register();
+
+    public static final BlockEntry<Block> BLUE_PUBLIC_STATIC_VOID_TILES_BLOCK = CodRegistrate.INSTANCE.block("blue_public_static_void_tiles", Block::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE))
+            .lang("Blue Public Static Void Tiles")
+            .simpleItem()
+            .register();
+
+    public static final BlockEntry<Block> GREEN_PUBLIC_STATIC_VOID_BLOCK = CodRegistrate.INSTANCE.block("green_public_static_void", Block::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE))
+            .lang("Green Public Static Void")
+            .simpleItem()
+            .register();
+
+    public static final BlockEntry<Block> GREEN_PUBLIC_STATIC_VOID_SMALL_TILES_BLOCK = CodRegistrate.INSTANCE.block("green_public_static_void_small_tiles", Block::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE))
+            .lang("Green Public Static Void Small Tiles")
+            .simpleItem()
+            .register();
+
+    public static final BlockEntry<Block> GREEN_PUBLIC_STATIC_VOID_TILES_BLOCK = CodRegistrate.INSTANCE.block("green_public_static_void_tiles", Block::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE))
+            .lang("Green Public Static Void Tiles")
+            .simpleItem()
+            .register();
+
+    public static final BlockEntry<Block> SPIRAL_LAMP = CodRegistrate.INSTANCE.block("spiral_lamp", Block::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.GLOWSTONE))
+            .simpleItem()
+            .lang("Pink Spiral Lamp")
             .register();
 
     public static final BlockEntry<StairBlock> PUBLIC_STATIC_VOID_STAIRS = CodRegistrate.INSTANCE.
