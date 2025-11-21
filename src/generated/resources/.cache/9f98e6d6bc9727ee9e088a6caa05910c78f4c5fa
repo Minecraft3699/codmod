@@ -1,4 +1,4 @@
-// 1.21.1	2025-11-21T04:08:00.12725649	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
+// 1.21.1	2025-11-21T22:00:36.667169182	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
 e71fb77fc3ce99c6fb5b8f5a3105a1f58d7355d0 assets/codmod/blockstates/ancient_plushie.json
 c4642b0c685192cf5d5d07b6893cc7333a63d1da assets/codmod/blockstates/blade_plushie.json
 d05194c582b9b611842dbfea105e133ad43fa109 assets/codmod/blockstates/blood_generator.json
@@ -64,8 +64,8 @@ abcf062fd5decca251b2d4e623edb9daa7dec02a assets/codmod/blockstates/threshold_por
 62981c818b0e56157d81e30ba4c84e88a03edeb3 assets/codmod/blockstates/triangulator.json
 f062903ff298b3585d7b47250018da45c0293850 assets/codmod/blockstates/ugly_wallpaper.json
 064fe3376b3c1cf85c49ff1eca7371979390528b assets/codmod/blockstates/zetos_plushie.json
-062b3918e407cc272f87b6ea49632ef60f11ec8e assets/codmod/lang/en_ud.json
-dd897b70689ce38f74e06f97194a1eae049dcc18 assets/codmod/lang/en_us.json
+2dfee7c5cf0e14d1c828436dd3b4a0b5d837c233 assets/codmod/lang/en_ud.json
+689f85ee2ead91c7fc9dfd848a173e2a48f6a3d5 assets/codmod/lang/en_us.json
 646809a9d5f50abc7f271a084374ef921b101e4c assets/codmod/models/block/ancient_plushie.json
 e2cf401ffd25a21c829b15e577a98dc35dd12dd6 assets/codmod/models/block/blade_plushie.json
 00a371cf6cad513002db2b62c28d1395e6cb8829 assets/codmod/models/block/blood_generator.json
@@ -259,6 +259,7 @@ f621a041cbacf60a9da9041eab2e3d3b73c1501e assets/codmod/models/item/spaghetti_str
 ad24f3b7217d9e86fc6410f2edfc18396bf60d4d assets/codmod/models/item/sperving_bearing.json
 d8cb19b81996c45dd670100a959f7d3a5acbecc1 assets/codmod/models/item/spiral_lamp.json
 858220b3fd00572e370b53084f0aa440e0b2f48f assets/codmod/models/item/subspace_tripmine.json
+14ce1c4febe45bfd0caf156428daaf8096da2c68 assets/codmod/models/item/tears_of_blood.json
 feaa3a18d60e1dd893b4f35c6cb30737ff373850 assets/codmod/models/item/teleported_bread.json
 b7d592e721c04a998eaa2c954ef21e172af26478 assets/codmod/models/item/teleporter.json
 743ea49a48fb815c866334b7c7c7e4df0a9c6656 assets/codmod/models/item/terra_plushie.json
