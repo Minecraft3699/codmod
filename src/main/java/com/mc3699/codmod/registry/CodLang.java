@@ -48,5 +48,7 @@ public class CodLang {
         CodRegistrate.INSTANCE.addRawLang("item.codmod.pizza", "Pizza");
         CodRegistrate.INSTANCE.addRawLang("item.codmod.taco", "Taco");
         CodRegistrate.INSTANCE.addRawLang("item.codmod.tomato", "Tomato");
+        CodRegistrate.INSTANCE.addRawLang("item.codmod.slime_cake", "Consular Cake Slice");
+        CodRegistrate.INSTANCE.addRawLang("item.codmod.chocolate_cake", "Chocolate Ice Cream Cake Slice");
     }
 }
