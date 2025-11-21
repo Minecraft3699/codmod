@@ -53,7 +53,7 @@ public class Codmod {
         CodBlockEntities.register(modEventBus);
         CodMobEffects.register(modEventBus);
         CodSounds.register();
-        //CodCreativeTabs.register(modEventBus);
+        CodCreativeTabs.register(modEventBus);
         CodLang.register();
         CodPeripheralUpgradeTypes.register(modEventBus);
         EvilCodDwellerEntity.register(modEventBus);
