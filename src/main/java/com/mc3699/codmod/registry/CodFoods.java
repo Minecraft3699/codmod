@@ -131,6 +131,8 @@ public class CodFoods {
                     2.0f, Optional.of(ItemStack.EMPTY), List.of()
             );
 
+
+
     public static final FoodProperties ROUND_MEAL =
             new FoodProperties.Builder()
                     .nutrition(1997)
@@ -139,5 +141,27 @@ public class CodFoods {
                     .effect(new MobEffectInstance(MobEffects.SATURATION, 600, 255), 1)
                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 600, 255), 1)
                     .effect(new MobEffectInstance(MobEffects.ABSORPTION, 600, 255), 1)
+                    .build();
+
+    public static final FoodProperties GOLDEN_COD =
+            new FoodProperties.Builder()
+                    .nutrition(5)
+                    .saturationModifier(3)
+                    .alwaysEdible()
+                    .effect(new MobEffectInstance(MobEffects.ABSORPTION, 1800, 0), 1)
+                    .effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 2700, 0), 1)
+                    .effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1800,0), 1)
+                    .build();
+
+    public static final FoodProperties ENCHANTED_GOLDEN_COD =
+            new FoodProperties.Builder()
+                    .nutrition(5)
+                    .saturationModifier(3)
+                    .alwaysEdible()
+                    .effect(new MobEffectInstance(MobEffects.ABSORPTION, 1800, 1), 1)
+                    .effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 2700, 1), 1)
+                    .effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1800,0), 1)
+                    .effect(new MobEffectInstance(MobEffects.HEAL, 200, 0), 1)
+                    .effect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 1800, 2), 1)
                     .build();
 }

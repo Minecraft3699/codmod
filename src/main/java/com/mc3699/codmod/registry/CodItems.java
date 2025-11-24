@@ -591,6 +591,17 @@ public class CodItems {
             .lang("V1 Shovel")
             .register();
 
+    public static final ItemEntry<GoldenCodItem> GOLDEN_COD = CodRegistrate.INSTANCE.item
+            ("golden_cod", GoldenCodItem::new)
+            .properties(properties -> properties)
+            .lang("Golden Cod")
+            .register();
+
+    public static final ItemEntry<EnchantedGoldenCodItem> ENCHANTED_GOLDEN_COD = CodRegistrate.INSTANCE.item
+            ("enchanted_gold_cod", EnchantedGoldenCodItem::new)
+            .properties(properties -> properties)
+            .lang("Enchanted Golden Cod")
+            .register();
     // VOTV Foods
 
     public static final Supplier<Item> BURGER = ITEMS.register(
