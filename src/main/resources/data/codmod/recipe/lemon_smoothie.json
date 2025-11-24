@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "item": "minecraft:snowball"
+    },
+    {
+      "item": "codmod:lemon"
+    },
+    {
+      "item": "codmod:lemon"
+    }
+  ],
+  "result": {
+    "id": "codmod:lemon_smoothie",
+    "count": 1
+  }
+}
