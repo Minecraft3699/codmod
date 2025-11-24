@@ -20,7 +20,7 @@ import java.util.Random;
 
 public class CodKnifeItem extends SwordItem {
     public CodKnifeItem(Properties properties) {
-        super(Tiers.NETHERITE, properties.attributes(SwordItem.createAttributes(Tiers.NETHERITE, 100, 10)));
+        super(Tiers.NETHERITE, properties.attributes(SwordItem.createAttributes(Tiers.NETHERITE, 1.7f, -2.4f)));
     }
 
     @Override

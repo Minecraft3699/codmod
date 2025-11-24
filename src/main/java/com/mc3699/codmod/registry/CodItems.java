@@ -257,6 +257,11 @@ public class CodItems {
             .lang("Cod Knife")
             .register();
 
+    public static final ItemEntry<TearsOfBloodItem> TEARS_OF_BLOOD = CodRegistrate.INSTANCE.item("tears_of_blood",TearsOfBloodItem::new)
+            .properties(properties -> properties)
+            .lang("Tears Of Blood")
+            .register();
+
     public static final ItemEntry<CircuitBombItem> CIRCUIT_BOMB = CodRegistrate.INSTANCE.item("circuit_bomb",CircuitBombItem::new)
             .properties(properties -> properties)
             .lang("Circuit Bomb")
