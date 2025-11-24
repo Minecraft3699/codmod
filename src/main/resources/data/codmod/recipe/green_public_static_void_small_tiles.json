@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "tag": "codmod:green_public_static_void"
+  },
+  "result": {
+    "id": "codmod:green_public_static_void_small_tiles",
+    "count": 1
+  }
+}

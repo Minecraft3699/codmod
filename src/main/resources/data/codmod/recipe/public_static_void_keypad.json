@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "codmod:public_static_void"
+  },
+  "result": {
+    "id": "codmod:public_static_void_keypad",
+    "count": 1
+  }
+}
