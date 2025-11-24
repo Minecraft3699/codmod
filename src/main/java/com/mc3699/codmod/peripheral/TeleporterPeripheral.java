@@ -149,16 +149,20 @@ public class TeleporterPeripheral implements IPeripheral {
             List<ServerPlayer> playerList = serverLevel.getServer().getPlayerList().getPlayers();
             for(ServerPlayer player : playerList)
             {
-                Vec3 teleportPos = blockEntity.getBlockPos().above().getBottomCenter();
-                Vec3 playerPos = player.getPosition(0);
 
-                serverLevel.playSound(null, player.getBlockPosBelowThatAffectsMyMovement(), SoundEvents.PLAYER_TELEPORT, SoundSource.MASTER);
-                serverLevel.sendParticles(ParticleTypes.END_ROD, playerPos.x, playerPos.y+1, playerPos.z, 100, 0,0.5,0, 0.05);
+                if(player.getName().getString().equals(name)) {
+                    Vec3 teleportPos = blockEntity.getBlockPos().above().getBottomCenter();
+                    Vec3 playerPos = player.getPosition(0);
 
-                player.teleportTo(serverLevel, teleportPos.x(), teleportPos.y(), teleportPos.z(), RelativeMovement.ALL, player.getYRot(), player.getXRot());
+                    serverLevel.playSound(null, player.getBlockPosBelowThatAffectsMyMovement(), SoundEvents.PLAYER_TELEPORT, SoundSource.MASTER);
+                    serverLevel.sendParticles(ParticleTypes.END_ROD, playerPos.x, playerPos.y+1, playerPos.z, 100, 0,0.5,0, 0.05);
 
-                serverLevel.playSound(null, player.getBlockPosBelowThatAffectsMyMovement(), SoundEvents.PLAYER_TELEPORT, SoundSource.MASTER);
-                serverLevel.sendParticles(ParticleTypes.END_ROD, teleportPos.x, teleportPos.y, teleportPos.z, 50, 0,0.5,0, 0.1);
+                    player.teleportTo(serverLevel, teleportPos.x(), teleportPos.y(), teleportPos.z(), RelativeMovement.ALL, player.getYRot(), player.getXRot());
+
+                    serverLevel.playSound(null, player.getBlockPosBelowThatAffectsMyMovement(), SoundEvents.PLAYER_TELEPORT, SoundSource.MASTER);
+                    serverLevel.sendParticles(ParticleTypes.END_ROD, teleportPos.x, teleportPos.y, teleportPos.z, 50, 0,0.5,0, 0.1);
+                }
+
             }
         }
     }

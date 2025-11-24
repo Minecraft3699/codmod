@@ -56,7 +56,7 @@ public class Codmod {
         CodCreativeTabs.register(modEventBus);
         CodLang.register();
         CodPeripheralUpgradeTypes.register(modEventBus);
-        EvilCodDwellerEntity.register(modEventBus);
+        CodChunkGenerators.register(modEventBus);
         CodTurtleUpgrades.register(modEventBus);
         CodRecipeSerializers.register(modEventBus);
         //CodFluidTypes.register(modEventBus);

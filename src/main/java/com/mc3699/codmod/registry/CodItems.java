@@ -594,21 +594,25 @@ public class CodItems {
     public static final ItemEntry<VOnePickaxeItem> V1_PICKAXE = CodRegistrate.INSTANCE.item
             ("v1_pickaxe", VOnePickaxeItem::new)
             .lang("V1 Pickaxe")
+            .model((ctx, prov) -> prov.handheld(ctx))
             .register();
 
     public static final ItemEntry<VOneAxeItem> V1_AXE = CodRegistrate.INSTANCE.item
                     ("v1_axe", VOneAxeItem::new)
             .lang("V1 Axe")
+            .model((ctx, prov) -> prov.handheld(ctx))
             .register();
 
     public static final ItemEntry<VOneHoeItem> V1_HOE = CodRegistrate.INSTANCE.item
                 ("v1_hoe", VOneHoeItem::new)
             .lang("V1 Hoe")
+            .model((ctx, prov) -> prov.handheld(ctx))
             .register();
 
     public static final ItemEntry<VOneShovelItem> V1_SHOVEL = CodRegistrate.INSTANCE.item
                     ("v1_shovel", VOneShovelItem::new)
             .lang("V1 Shovel")
+            .model((ctx, prov) -> prov.handheld(ctx))
             .register();
 
     public static final ItemEntry<GoldenCodItem> GOLDEN_COD = CodRegistrate.INSTANCE.item
