@@ -3,10 +3,10 @@
   "textures": {
     "up": "codmod:block/server-back",
     "down": "codmod:block/server-back",
-    "north": "codmod:block/server-bottom-front",
+    "north": "codmod:block/server_block",
     "south": "codmod:block/server-back",
-    "east": "codmod:block/server-bottom-side",
-    "west": "codmod:block/server-bottom-side",
+    "east": "codmod:block/server-side",
+    "west": "codmod:block/server-side",
     "particle": "codmod:block/server_block"
   }
 }

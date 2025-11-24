@@ -1,24 +1,43 @@
 {
   "variants": {
+    "online=true,vertical_position=single,facing=north": {"model": "codmod:block/top_server_block"},
+    "online=true,vertical_position=single,facing=east": {"model": "codmod:block/top_server_block", "y": 90},
+    "online=true,vertical_position=single,facing=south": {"model": "codmod:block/top_server_block", "y": 180},
+    "online=true,vertical_position=single,facing=west": {"model": "codmod:block/top_server_block", "y": 270},
 
-    "online=true,is_top=false,facing=north": {"model": "codmod:block/bottom_server_block"},
-    "online=true,is_top=false,facing=east": {"model": "codmod:block/bottom_server_block", "y": 90},
-    "online=true,is_top=false,facing=south": {"model": "codmod:block/bottom_server_block", "y": 180},
-    "online=true,is_top=false,facing=west": {"model": "codmod:block/bottom_server_block", "y": 270},
+    "online=true,vertical_position=bottom,facing=north": {"model": "codmod:block/bottom_server_block"},
+    "online=true,vertical_position=bottom,facing=east": {"model": "codmod:block/bottom_server_block", "y": 90},
+    "online=true,vertical_position=bottom,facing=south": {"model": "codmod:block/bottom_server_block", "y": 180},
+    "online=true,vertical_position=bottom,facing=west": {"model": "codmod:block/bottom_server_block", "y": 270},
 
-    "online=true,is_top=true,facing=north": {"model": "codmod:block/top_server_block"},
-    "online=true,is_top=true,facing=east": {"model": "codmod:block/top_server_block", "y": 90},
-    "online=true,is_top=true,facing=south": {"model": "codmod:block/top_server_block", "y": 180},
-    "online=true,is_top=true,facing=west": {"model": "codmod:block/top_server_block", "y": 270},
+    "online=true,vertical_position=middle,facing=north": {"model": "codmod:block/server_middle"},
+    "online=true,vertical_position=middle,facing=east": {"model": "codmod:block/server_middle", "y": 90},
+    "online=true,vertical_position=middle,facing=south": {"model": "codmod:block/server_middle", "y": 180},
+    "online=true,vertical_position=middle,facing=west": {"model": "codmod:block/server_middle", "y": 270},
 
-    "online=false,is_top=false,facing=north": {"model": "codmod:block/offline_bottom_server_block"},
-    "online=false,is_top=false,facing=east": {"model": "codmod:block/offline_bottom_server_block", "y": 90},
-    "online=false,is_top=false,facing=south": {"model": "codmod:block/offline_bottom_server_block", "y": 180},
-    "online=false,is_top=false,facing=west": {"model": "codmod:block/offline_bottom_server_block", "y": 270},
+    "online=true,vertical_position=top,facing=north": {"model": "codmod:block/top_server_block"},
+    "online=true,vertical_position=top,facing=east": {"model": "codmod:block/top_server_block", "y": 90},
+    "online=true,vertical_position=top,facing=south": {"model": "codmod:block/top_server_block", "y": 180},
+    "online=true,vertical_position=top,facing=west": {"model": "codmod:block/top_server_block", "y": 270},
 
-    "online=false,is_top=true,facing=north": {"model": "codmod:block/offline_top_server_block"},
-    "online=false,is_top=true,facing=east": {"model": "codmod:block/offline_top_server_block", "y": 90},
-    "online=false,is_top=true,facing=south": {"model": "codmod:block/offline_top_server_block", "y": 180},
-    "online=false,is_top=true,facing=west": {"model": "codmod:block/offline_top_server_block", "y": 270}
+    "online=false,vertical_position=single,facing=north": {"model": "codmod:block/offline_top_server_block"},
+    "online=false,vertical_position=single,facing=east": {"model": "codmod:block/offline_top_server_block", "y": 90},
+    "online=false,vertical_position=single,facing=south": {"model": "codmod:block/offline_top_server_block", "y": 180},
+    "online=false,vertical_position=single,facing=west": {"model": "codmod:block/offline_top_server_block", "y": 270},
+
+    "online=false,vertical_position=bottom,facing=north": {"model": "codmod:block/offline_bottom_server_block"},
+    "online=false,vertical_position=bottom,facing=east": {"model": "codmod:block/offline_bottom_server_block", "y": 90},
+    "online=false,vertical_position=bottom,facing=south": {"model": "codmod:block/offline_bottom_server_block", "y": 180},
+    "online=false,vertical_position=bottom,facing=west": {"model": "codmod:block/offline_bottom_server_block", "y": 270},
+
+    "online=false,vertical_position=middle,facing=north": {"model": "codmod:block/offline_server_middle"},
+    "online=false,vertical_position=middle,facing=east": {"model": "codmod:block/offline_server_middle", "y": 90},
+    "online=false,vertical_position=middle,facing=south": {"model": "codmod:block/offline_server_middle", "y": 180},
+    "online=false,vertical_position=middle,facing=west": {"model": "codmod:block/offline_server_middle", "y": 270},
+
+    "online=false,vertical_position=top,facing=north": {"model": "codmod:block/offline_top_server_block"},
+    "online=false,vertical_position=top,facing=east": {"model": "codmod:block/offline_top_server_block", "y": 90},
+    "online=false,vertical_position=top,facing=south": {"model": "codmod:block/offline_top_server_block", "y": 180},
+    "online=false,vertical_position=top,facing=west": {"model": "codmod:block/offline_top_server_block", "y": 270}
   }
 }
