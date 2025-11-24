@@ -8,9 +8,12 @@ import com.mc3699.codmod.item.environmentScanner.EnvironmentScannerItem;
 import com.mc3699.codmod.item.hubModule.HubModuleItem;
 import com.mc3699.codmod.item.inventoryModule.InventoryModuleItem;
 import com.mc3699.codmod.item.marksmanRevolver.MarksmanRevolverItem;
+import com.mc3699.codmod.item.starstruckSpear.StarstruckSpearItem;
 import com.mc3699.codmod.item.transponder.TransponderItem;
 import com.tterrag.registrate.util.entry.ItemEntry;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.food.Foods;
@@ -18,6 +21,7 @@ import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import java.util.List;
 import java.util.function.Supplier;
 
 import static com.mc3699.codmod.registry.CodBlocks.BLOCKS;
@@ -116,7 +120,10 @@ public class CodItems {
             .lang("Comically Large Resistor")
             .register();
 
-
+    public static final ItemEntry<StarstruckSpearItem> STARSTRUCK_SPEAR = CodRegistrate.INSTANCE.item("starstruck_spear", StarstruckSpearItem::new)
+            .properties(properties -> properties)
+                    .lang("Starstruck Spear")
+                    .register();
 
     public static final ItemEntry<ShrimpSniperItem> SHRIMP_SNIPER = CodRegistrate.INSTANCE.item(
                     "shrimp_sniper",
@@ -148,6 +155,14 @@ public class CodItems {
             )
             .properties(properties -> properties)
             .lang("Hub Module")
+            .register();
+
+    public static final ItemEntry<UmbralReaverItem> UMBRAL_REAVER = CodRegistrate.INSTANCE.item(
+            "umbral_reaver",
+            UmbralReaverItem::new
+    )
+            .properties(properties -> properties)
+            .lang("Umbral Reaver")
             .register();
 
     public static final ItemEntry<InventoryModuleItem> INVENTORY_MODULE = CodRegistrate.INSTANCE.item(
@@ -596,6 +611,17 @@ public class CodItems {
             .lang("V1 Shovel")
             .register();
 
+    public static final ItemEntry<GoldenCodItem> GOLDEN_COD = CodRegistrate.INSTANCE.item
+            ("golden_cod", GoldenCodItem::new)
+            .properties(properties -> properties)
+            .lang("Golden Cod")
+            .register();
+
+    public static final ItemEntry<EnchantedGoldenCodItem> ENCHANTED_GOLDEN_COD = CodRegistrate.INSTANCE.item
+            ("enchanted_gold_cod", EnchantedGoldenCodItem::new)
+            .properties(properties -> properties)
+            .lang("Enchanted Golden Cod")
+            .register();
     // VOTV Foods
 
     public static final Supplier<Item> BURGER = ITEMS.register(
@@ -682,6 +708,48 @@ public class CodItems {
             "tomato",
             () -> new Item(new Item.Properties().food(CodFoods.TOMATO))
     );
+
+    public static final Supplier<Item> LEMON_SMOOTHIE = ITEMS.register("lemon_smoothie",
+            () -> new CodDrinks(new Item.Properties().food(CodFoods.LEMON_SMOOTHIE)) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.literal("Yummy dig fast!").withStyle(ChatFormatting.YELLOW));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            }
+    );
+
+    public static final Supplier<Item> ORANGE_SMOOTHIE = ITEMS.register("orange_smoothie",
+            () -> new CodDrinks(new Item.Properties().food(CodFoods.ORANGE_SMOOTHIE)) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.literal("Yummy regenerates!").withStyle(ChatFormatting.GOLD));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            }
+    );
+
+    public static final Supplier<Item> MANGO_SMOOTHIE = ITEMS.register("mango_smoothie",
+            () -> new CodDrinks(new Item.Properties().food(CodFoods.MANGO_SMOOTHIE)) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.literal("上天在对你微笑！Good fortune!").withStyle(ChatFormatting.GOLD));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            }
+    );
+
+    public static final Supplier<Item> BANANA_SMOOTHIE = ITEMS.register("banana_smoothie",
+            () -> new CodDrinks(new Item.Properties().food(CodFoods.BANANA_SMOOTHIE)) {
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.literal("So saturating!").withStyle(ChatFormatting.YELLOW));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            }
+    );
+
+
 
     static {
         BLOCKS.getEntries().forEach(blockHolder -> {

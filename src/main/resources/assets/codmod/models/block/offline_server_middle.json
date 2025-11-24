@@ -3,7 +3,7 @@
   "textures": {
     "up": "codmod:block/server-back",
     "down": "codmod:block/server-back",
-    "north": "codmod:block/server-top-front-offline",
+    "north": "codmod:block/server_block_offline",
     "south": "codmod:block/server-back",
     "east": "codmod:block/server-side",
     "west": "codmod:block/server-side",

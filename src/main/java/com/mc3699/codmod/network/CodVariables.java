@@ -71,6 +71,8 @@ public class CodVariables {
                 clone.grabz = original.grabz;
                 clone.godhasleftus = original.godhasleftus;
                 clone.whereisgod = original.whereisgod;
+                clone.isDashing = original.isDashing;
+                clone.dashTicksRemaining = original.dashTicksRemaining;
             }
             event.getEntity().setData(PLAYER_VARIABLES, clone);
         }
@@ -87,6 +89,8 @@ public class CodVariables {
         public double grabz = 0;
         public String godhasleftus = "\"\"";
         public String whereisgod = "\"\"";
+        public boolean isDashing = false;
+        public int dashTicksRemaining = 30;
 
         @Override
         public CompoundTag serializeNBT(HolderLookup.Provider lookupProvider) {
@@ -101,6 +105,8 @@ public class CodVariables {
             nbt.putDouble("grabz", grabz);
             nbt.putString("godhasleftus", godhasleftus);
             nbt.putString("whereisgod", whereisgod);
+            nbt.putBoolean("isDashing", isDashing);
+            nbt.putInt("dashTicksRemaining", dashTicksRemaining);
             return nbt;
         }
 
@@ -116,6 +122,8 @@ public class CodVariables {
             grabz = nbt.getDouble("grabz");
             godhasleftus = nbt.getString("godhasleftus");
             whereisgod = nbt.getString("whereisgod");
+            isDashing = nbt.getBoolean("isDashing");
+            dashTicksRemaining = nbt.getInt("dashTicksRemaining");
         }
 
         public void syncPlayerVariables(Entity entity) {

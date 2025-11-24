@@ -6,6 +6,7 @@
     "north": "codmod:block/server-bottom-front-offline",
     "south": "codmod:block/server-back",
     "east": "codmod:block/server-bottom-side",
-    "west": "codmod:block/server-bottom-side"
+    "west": "codmod:block/server-bottom-side",
+    "particle": "codmod:block/server_block_offline"
   }
 }

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "item": "minecraft:snowball"
+    },
+    {
+      "item": "codmod:banana"
+    },
+    {
+      "item": "codmod:banana"
+    }
+  ],
+  "result": {
+    "id": "codmod:banana_smoothie",
+    "count": 1
+  }
+}

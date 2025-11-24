@@ -3,7 +3,9 @@ package com.mc3699.codmod.registry;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 
 import java.util.List;
 import java.util.Optional;
@@ -119,6 +121,43 @@ public class CodFoods {
                     0.6f, Optional.of(ItemStack.EMPTY), List.of()
             );
 
+    public static final FoodProperties LEMON_SMOOTHIE =
+            new FoodProperties(4, 4f,
+                    true,2.2f,
+                    Optional.of(Items.GLASS_BOTTLE.getDefaultInstance()),
+                    List.of(new FoodProperties.PossibleEffect(
+                            () -> new MobEffectInstance(MobEffects.DIG_SPEED, 1200 , 0), 1.0f
+                    ))
+            );
+
+    public static final FoodProperties MANGO_SMOOTHIE =
+            new FoodProperties(4, 4f,
+                    true,2.2f,
+                    Optional.of(Items.GLASS_BOTTLE.getDefaultInstance()),
+                    List.of(new FoodProperties.PossibleEffect(
+                            () -> new MobEffectInstance(MobEffects.LUCK, 900, 0), 1.0f
+                    ))
+            );
+
+    public static final FoodProperties ORANGE_SMOOTHIE =
+            new FoodProperties(4, 4f,
+                    true,2.2f,
+                    Optional.of(Items.GLASS_BOTTLE.getDefaultInstance()),
+                    List.of(new FoodProperties.PossibleEffect(
+                            () -> new MobEffectInstance(MobEffects.REGENERATION, 100, 1), 1.0f
+                    ))
+            );
+
+    public static final FoodProperties BANANA_SMOOTHIE =
+            new FoodProperties(4, 4f,
+                    true,2.2f,
+                    Optional.of(Items.GLASS_BOTTLE.getDefaultInstance()),
+                    List.of(new FoodProperties.PossibleEffect(
+                            () -> new MobEffectInstance(MobEffects.SATURATION, 5, 0), 1.0f
+                    ))
+            );
+
+
     public static final FoodProperties SLIME_CAKE =
             new FoodProperties(
                     40, 40, true,
@@ -131,6 +170,8 @@ public class CodFoods {
                     2.0f, Optional.of(ItemStack.EMPTY), List.of()
             );
 
+
+
     public static final FoodProperties ROUND_MEAL =
             new FoodProperties.Builder()
                     .nutrition(1997)
@@ -139,5 +180,27 @@ public class CodFoods {
                     .effect(new MobEffectInstance(MobEffects.SATURATION, 600, 255), 1)
                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 600, 255), 1)
                     .effect(new MobEffectInstance(MobEffects.ABSORPTION, 600, 255), 1)
+                    .build();
+
+    public static final FoodProperties GOLDEN_COD =
+            new FoodProperties.Builder()
+                    .nutrition(5)
+                    .saturationModifier(3)
+                    .alwaysEdible()
+                    .effect(new MobEffectInstance(MobEffects.ABSORPTION, 1800, 0), 1)
+                    .effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 2700, 0), 1)
+                    .effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1800,0), 1)
+                    .build();
+
+    public static final FoodProperties ENCHANTED_GOLDEN_COD =
+            new FoodProperties.Builder()
+                    .nutrition(5)
+                    .saturationModifier(3)
+                    .alwaysEdible()
+                    .effect(new MobEffectInstance(MobEffects.ABSORPTION, 1800, 1), 1)
+                    .effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 2700, 1), 1)
+                    .effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1800,0), 1)
+                    .effect(new MobEffectInstance(MobEffects.HEAL, 200, 0), 1)
+                    .effect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 1800, 2), 1)
                     .build();
 }

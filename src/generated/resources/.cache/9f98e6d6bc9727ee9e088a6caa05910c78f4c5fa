@@ -1,4 +1,4 @@
-// 1.21.1	2025-11-21T22:00:36.667169182	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
+// 1.21.1	2025-11-23T21:56:54.4082104	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
 e71fb77fc3ce99c6fb5b8f5a3105a1f58d7355d0 assets/codmod/blockstates/ancient_plushie.json
 c4642b0c685192cf5d5d07b6893cc7333a63d1da assets/codmod/blockstates/blade_plushie.json
 d05194c582b9b611842dbfea105e133ad43fa109 assets/codmod/blockstates/blood_generator.json
@@ -24,11 +24,11 @@ e99e899b2d720d188e2f78715950a1839acbcc03 assets/codmod/blockstates/eyae_plushie.
 bd9c2e449f53b9da38a82160f373a61b4e552b52 assets/codmod/blockstates/firelight_plushie.json
 51e77a6ded5075a958d7ecd60535a56201bd1f9b assets/codmod/blockstates/garreth_plushie.json
 ba8ab8fe71b3174d5aa1d1ab1eaf7cd5f05c01e2 assets/codmod/blockstates/graphics_monitor.json
-33d614e406c3659bf4d53c3ee7e214727a26ecfd assets/codmod/blockstates/inki_plushie.json
 7e98ed286a8515997616c77d83276390349f21f4 assets/codmod/blockstates/green_public_static_void.json
 ea1b6a030aede57061caf405e1198bc9b56d8c86 assets/codmod/blockstates/green_public_static_void_small_tiles.json
 4a95efaf82a749d3e2b0cc4b200cd2511cb6380c assets/codmod/blockstates/green_public_static_void_tiles.json
 697c07afe783284138e15dd4f941b678d7b97e58 assets/codmod/blockstates/gusta_plushie.json
+33d614e406c3659bf4d53c3ee7e214727a26ecfd assets/codmod/blockstates/inki_plushie.json
 1ede865beb891ab505e7fed8f41ac45b019f9936 assets/codmod/blockstates/iron_mantle.json
 a47a4694c6c5a76af3601f66a55ee611c1a043ff assets/codmod/blockstates/lv_cable.json
 abd1a05e68848bf5558e5e9cda3e46bbf762b4e4 assets/codmod/blockstates/moist_carpet.json
@@ -69,8 +69,8 @@ abcf062fd5decca251b2d4e623edb9daa7dec02a assets/codmod/blockstates/threshold_por
 62981c818b0e56157d81e30ba4c84e88a03edeb3 assets/codmod/blockstates/triangulator.json
 f062903ff298b3585d7b47250018da45c0293850 assets/codmod/blockstates/ugly_wallpaper.json
 064fe3376b3c1cf85c49ff1eca7371979390528b assets/codmod/blockstates/zetos_plushie.json
-2dfee7c5cf0e14d1c828436dd3b4a0b5d837c233 assets/codmod/lang/en_ud.json
-689f85ee2ead91c7fc9dfd848a173e2a48f6a3d5 assets/codmod/lang/en_us.json
+5ef775cd45c62d6de00b223cedd3398c3a2d663f assets/codmod/lang/en_ud.json
+5b6c256ee4eb651f039f2899422aefbb7c390567 assets/codmod/lang/en_us.json
 646809a9d5f50abc7f271a084374ef921b101e4c assets/codmod/models/block/ancient_plushie.json
 e2cf401ffd25a21c829b15e577a98dc35dd12dd6 assets/codmod/models/block/blade_plushie.json
 00a371cf6cad513002db2b62c28d1395e6cb8829 assets/codmod/models/block/blood_generator.json
@@ -99,11 +99,11 @@ aaf8a6e73b8a3771dfd68569b4e9ad6a04ccfb3a assets/codmod/models/block/entropy_shal
 7ba39718dd877c27853c07c49d7a2a8c7bf1a03f assets/codmod/models/block/firelight_plushie.json
 307eaa0aa1dd413b90f73509a9fbabe7517d7bad assets/codmod/models/block/garreth_plushie.json
 72994c0dcf8917dbe755b5c71b86e048806140f6 assets/codmod/models/block/graphics_monitor.json
-6ae7f4c48642161af43a2f9cf7b85e9c2fba6135 assets/codmod/models/block/inki_plushie.json
 ec120a93fee478ec558368706584d0cc6f6a0ebb assets/codmod/models/block/green_public_static_void.json
 ded96dff8e53d000564c608121c4d6570f486642 assets/codmod/models/block/green_public_static_void_small_tiles.json
 a758625e8725b9f304313e46653f251214d79901 assets/codmod/models/block/green_public_static_void_tiles.json
 df2cb03d1b3d17fcc6a4065d209ff7d03a9d0b78 assets/codmod/models/block/gusta_plushie.json
+6ae7f4c48642161af43a2f9cf7b85e9c2fba6135 assets/codmod/models/block/inki_plushie.json
 7c4de1f5f69b5d90d48fbb545d6d5facf3677f0e assets/codmod/models/block/iron_mantle.json
 a5c7e2db49511871b54a83f1509677e1ed1c83e6 assets/codmod/models/block/lv_cable.json
 9f6c413f95555e578435943ec5a0cfaa16d6777f assets/codmod/models/block/moist_carpet.json
@@ -187,6 +187,7 @@ f3566f941ee7bdab935a38b07d676b8f65493829 assets/codmod/models/item/current_meter
 f1b3c66d29cebf851e9441cadda7f351377e6d05 assets/codmod/models/item/disconnector.json
 36d27b90214d170903ea5b8fb6911937b5d33dcf assets/codmod/models/item/donut.json
 04abd3d7f1df01580929b34f09f1a3fcf4a594df assets/codmod/models/item/drive.json
+9655de7e182bd89a4dcb08248783445553e8264d assets/codmod/models/item/enchanted_gold_cod.json
 5080ac7a56309a0b80fd950a62d0407a119fea97 assets/codmod/models/item/entropy_basalt.json
 4ac89ed31014134a2382bd39c2b80975ab7e6e9b assets/codmod/models/item/entropy_sand.json
 131afbf904045a2a387c879ca85fc6dee9526a9f assets/codmod/models/item/entropy_shale.json
@@ -196,6 +197,7 @@ df20e421a77c0e561a8965501ff0ed0c17fd3a1a assets/codmod/models/item/ethos_gun.jso
 12209c8f4d2d5528ced3b43d94c486b4f28fcc46 assets/codmod/models/item/firelight_plushie.json
 e9d8fa5d88835bc59ec969428cf3510ab76ead14 assets/codmod/models/item/fractured_ark.json
 af4c109feabd8b2520a6b76b4dd2c2d2f13fd2c4 assets/codmod/models/item/garreth_plushie.json
+bf491ab3be3e77ea939fa01fc9f09d43b70225da assets/codmod/models/item/golden_cod.json
 c790e5b11c7205a92f4066135b7d6385aaaf14cb assets/codmod/models/item/graphics_monitor.json
 ddbe3a78d09518def7481cfafb2315b7f36c9d83 assets/codmod/models/item/green.json
 33a56ae26ee70d70d02032ed74bd90224bf1a72d assets/codmod/models/item/green_public_static_void.json
@@ -318,11 +320,11 @@ ab2bb8def4dfc7088c2805116f41fd7ae7f41726 data/codmod/loot_table/blocks/entropy_s
 277363f2bf7d18b9d01bece149c4205b85d310d3 data/codmod/loot_table/blocks/firelight_plushie.json
 c895f540cd974b7d66d495c84c365378e444ee46 data/codmod/loot_table/blocks/garreth_plushie.json
 ce44d96bde0627939b34adaca5950c1384e52d62 data/codmod/loot_table/blocks/graphics_monitor.json
-64e26c95760d8f0301010c6076108b6293fb6bf5 data/codmod/loot_table/blocks/inki_plushie.json
 db8edded19360759eedc5b01bbf271977c9e57a2 data/codmod/loot_table/blocks/green_public_static_void.json
 d72c1e69577a10a6e22fc4d71190b28f11af2f58 data/codmod/loot_table/blocks/green_public_static_void_small_tiles.json
 f5b59360e81eee2e99aabb9f2a6d8210248e41f1 data/codmod/loot_table/blocks/green_public_static_void_tiles.json
 85dc496222d9cad03480dadd65de2b0cf0b940ad data/codmod/loot_table/blocks/gusta_plushie.json
+64e26c95760d8f0301010c6076108b6293fb6bf5 data/codmod/loot_table/blocks/inki_plushie.json
 8dff5257a968abc556a556b33bafd8162eda0ca2 data/codmod/loot_table/blocks/iron_mantle.json
 b20ad25fe48c99aa6e47ded38236b1ec872f6873 data/codmod/loot_table/blocks/lv_cable.json
 4cc5a3e2512c85ff87184597ae4e77dc8df0f2d2 data/codmod/loot_table/blocks/moist_carpet.json
