@@ -32,6 +32,7 @@ public class CodLang {
         CodRegistrate.INSTANCE.addRawLang("item.codmod.umbral_reaver", "Umbral Reaver");
         CodRegistrate.INSTANCE.addRawLang("effect.codmod.insanity", "Insanity");
         CodRegistrate.INSTANCE.addRawLang("effect.codmod.bleeding", "Bleeding");
+        CodRegistrate.INSTANCE.addRawLang("block.codmod.server", "Server");
 
         // VOTV Foods
         CodRegistrate.INSTANCE.addRawLang("item.codmod.baguette", "Baguette");
@@ -55,5 +56,7 @@ public class CodLang {
         CodRegistrate.INSTANCE.addRawLang("item.codmod.orange_smoothie", "Orange Smoothie");
         CodRegistrate.INSTANCE.addRawLang("item.codmod.lemon_smoothie", "Lemon Smoothie");
         CodRegistrate.INSTANCE.addRawLang("item.codmod.mango_smoothie", "Mango Smoothie");
+        CodRegistrate.INSTANCE.addRawLang("item.codmod.slime_cake", "Consular Cake Slice");
+        CodRegistrate.INSTANCE.addRawLang("item.codmod.chocolate_cake", "Chocolate Ice Cream Cake Slice");
     }
 }

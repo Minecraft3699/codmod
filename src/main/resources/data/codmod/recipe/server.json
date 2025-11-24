@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ICI",
+    "ICI",
+    "ICI"
+  ],
+  "key": {
+    "C": {
+      "item": "computercraft:cable"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "id": "codmod:server",
+    "count": 1
+  }
+}

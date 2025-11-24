@@ -88,6 +88,27 @@ public class CodBlocks {
             .simpleItem()
             .register();
 
+    public static final BlockEntry<Block> CHOCOLATE_CAKE_BLOCK = CodRegistrate.INSTANCE.block("chocolate_cake_block", Block::new)
+            .initialProperties(() -> Blocks.WHITE_WOOL)
+            .properties(properties -> properties.noCollission().noOcclusion())
+            .lang("Chocolate Ice Cream Cake")
+            .simpleItem()
+            .register();
+
+    public static final BlockEntry<Block> CONSULAR_CAKE_BLOCK = CodRegistrate.INSTANCE.block("consular_cake_block", Block::new)
+            .initialProperties(() -> Blocks.WHITE_WOOL)
+            .properties(properties -> properties.noCollission().noOcclusion())
+            .lang("Slime Cake")
+            .simpleItem()
+            .register();
+
+    public static final BlockEntry<Block> PRESENT = CodRegistrate.INSTANCE.block("present", Block::new)
+            .initialProperties(() -> Blocks.WHITE_WOOL)
+            .properties(BlockBehaviour.Properties::noOcclusion)
+            .lang("Present")
+            .simpleItem()
+            .register();
+
     public static final BlockEntry<Block> COMPACTEDGLASS1 = CodRegistrate.INSTANCE.block("compactedglass1", Block::new)
             .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS))
             .simpleItem()
@@ -109,6 +130,20 @@ public class CodBlocks {
             .properties(properties -> properties.noCollission().noOcclusion())
             .simpleItem()
             .lang("Garreth Plushie of stupidity.")
+            .register();
+
+    public static final BlockEntry<PlushieBlock> CONSULAR_PLUSHIE = CodRegistrate.INSTANCE.block("consular_plushie", PlushieBlock::new)
+            .initialProperties(() -> Blocks.WHITE_WOOL)
+            .properties(properties -> properties.noCollission().noOcclusion())
+            .simpleItem()
+            .lang("Consular Plush")
+            .register();
+
+    public static final BlockEntry<PlushieBlock> INKI_PLUSHIE = CodRegistrate.INSTANCE.block("inki_plushie", PlushieBlock::new)
+            .initialProperties(() -> Blocks.WHITE_WOOL)
+            .properties(properties -> properties.noCollission().noOcclusion())
+            .simpleItem()
+            .lang("Inki Plush")
             .register();
 
     public static final BlockEntry<PlushieBlock> ANCIENT_PLUSHIE = CodRegistrate.INSTANCE.block("ancient_plushie", PlushieBlock::new)
@@ -186,6 +221,13 @@ public class CodBlocks {
             .properties(properties -> properties.noCollission().noOcclusion())
             .simpleItem()
             .lang("§1Eyae Plushie")
+            .register();
+
+    public static final BlockEntry<PlushieBlock> GUSTA_PLUSHIE = CodRegistrate.INSTANCE.block("gusta_plushie", PlushieBlock::new)
+            .initialProperties(() -> Blocks.WHITE_WOOL)
+            .properties(properties -> properties.noCollission().noOcclusion())
+            .simpleItem()
+            .lang("ThinGusta Plushie")
             .register();
 
     public static final BlockEntry<Block> MOIST_CARPET = CodRegistrate.INSTANCE.block("moist_carpet", Block::new)

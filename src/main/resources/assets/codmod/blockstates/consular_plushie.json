@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "codmod:block/consular_plushie" },
+    "facing=east": { "model": "codmod:block/consular_plushie", "y": 90 },
+    "facing=south": { "model": "codmod:block/consular_plushie", "y": 180 },
+    "facing=west": { "model": "codmod:block/consular_plushie", "y": 270 }
+  }
+}

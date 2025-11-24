@@ -80,6 +80,16 @@ public class CodItems {
                             .build()))
     );
 
+    public static final Supplier<Item> SLIME_CAKE = ITEMS.register(
+            "slime_cake",
+            () -> new Item(new Item.Properties().food(CodFoods.SLIME_CAKE))
+    );
+
+    public static final Supplier<Item> CHOCOLATE_CAKE = ITEMS.register(
+            "chocolate_cake",
+            () -> new Item(new Item.Properties().food(CodFoods.CHOCOLATE_CAKE))
+    );
+
     public static final Supplier<Item> UAV = ITEMS.register("uav", () -> new Item(new Item.Properties()));
 
     public static final Supplier<Item> DETECTOR = ITEMS.register("detector", () -> new Item(new Item.Properties()));
