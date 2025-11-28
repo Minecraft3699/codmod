@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 8.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "codmod:slime_cake"
+        }
+      ]
+    }
+  ],
+  "random_sequence": "codmod:blocks/consular_cake_block"
+}
