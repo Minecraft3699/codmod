@@ -157,6 +157,9 @@ public class CodItems {
             .lang("Hub Module")
             .register();
 
+
+    /*
+
     public static final ItemEntry<UmbralReaverItem> UMBRAL_REAVER = CodRegistrate.INSTANCE.item(
             "umbral_reaver",
             UmbralReaverItem::new
@@ -164,6 +167,9 @@ public class CodItems {
             .properties(properties -> properties)
             .lang("Umbral Reaver")
             .register();
+
+
+     */
 
     public static final ItemEntry<InventoryModuleItem> INVENTORY_MODULE = CodRegistrate.INSTANCE.item(
                     "inventory_module",

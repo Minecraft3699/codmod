@@ -1,0 +1,10 @@
+{
+  "type": "codmod:city",
+  "generator": {
+    "type": "codmod:cityscape_generator",
+    "biome_source": {
+      "type": "fixed",
+      "biome": "minecraft:the_void"
+    }
+  }
+}
