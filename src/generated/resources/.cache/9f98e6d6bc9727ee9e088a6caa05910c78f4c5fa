@@ -1,4 +1,4 @@
-// 1.21.1	2025-11-29T12:14:39.779250221	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
+// 1.21.1	2025-11-30T11:00:28.881211577	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
 11df08fc690db92516c0ea7c97d4c71f542154b5 assets/codmod/blockstates/amborella_plushie.json
 e71fb77fc3ce99c6fb5b8f5a3105a1f58d7355d0 assets/codmod/blockstates/ancient_plushie.json
 c4642b0c685192cf5d5d07b6893cc7333a63d1da assets/codmod/blockstates/blade_plushie.json
@@ -71,8 +71,8 @@ abcf062fd5decca251b2d4e623edb9daa7dec02a assets/codmod/blockstates/threshold_por
 f062903ff298b3585d7b47250018da45c0293850 assets/codmod/blockstates/ugly_wallpaper.json
 522a693904a1162a099576a5775e6ce326e66a27 assets/codmod/blockstates/xyzen_plushie.json
 064fe3376b3c1cf85c49ff1eca7371979390528b assets/codmod/blockstates/zetos_plushie.json
-92353ffd5b77f74116f28c125fa39a9fcc3770c8 assets/codmod/lang/en_ud.json
-fdb9994e60ef7da19d9d7c3967cf4cd9d48c41dd assets/codmod/lang/en_us.json
+61bb7b5f7470f396c9f9385de138d7e8b38dd4d6 assets/codmod/lang/en_ud.json
+ac913c0e83e7c4435b353f2d8e8f20f3bb80716f assets/codmod/lang/en_us.json
 db9b85a3fd099973d7ef1c692e313e556236d722 assets/codmod/models/block/amborella_plushie.json
 646809a9d5f50abc7f271a084374ef921b101e4c assets/codmod/models/block/ancient_plushie.json
 e2cf401ffd25a21c829b15e577a98dc35dd12dd6 assets/codmod/models/block/blade_plushie.json
@@ -292,6 +292,7 @@ b7d592e721c04a998eaa2c954ef21e172af26478 assets/codmod/models/item/teleporter.js
 d24bb2999bea2c5d5a2a9b7d3a25d1eb05125162 assets/codmod/models/item/transponder.json
 76e3e1a0f7b5ff66e292a496c3dcec6e0ccd8e12 assets/codmod/models/item/triangulator.json
 675747199a65a032a596a5d6df5ea652cd851e78 assets/codmod/models/item/ugly_wallpaper.json
+b1ea7c19bc5775d5d5196b2c71b026ec244b12d2 assets/codmod/models/item/umbral_reaver.json
 d93ee97054e38a0ac800ed10a04906ef33d38324 assets/codmod/models/item/unilateral_phase_detractor.json
 f0750ed95e7eefba63c8d992abcfa744ab7d834c assets/codmod/models/item/v1_axe.json
 83b5e8d63bdf2039acb198d5a0751843fbfda242 assets/codmod/models/item/v1_hoe.json

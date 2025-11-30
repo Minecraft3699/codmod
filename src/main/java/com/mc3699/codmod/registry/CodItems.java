@@ -158,7 +158,6 @@ public class CodItems {
             .register();
 
 
-    /*
 
     public static final ItemEntry<UmbralReaverItem> UMBRAL_REAVER = CodRegistrate.INSTANCE.item(
             "umbral_reaver",
@@ -169,7 +168,6 @@ public class CodItems {
             .register();
 
 
-     */
 
     public static final ItemEntry<InventoryModuleItem> INVENTORY_MODULE = CodRegistrate.INSTANCE.item(
                     "inventory_module",
