@@ -8,6 +8,7 @@ import net.minecraft.server.level.WorldGenRegion;
 import net.minecraft.world.level.LevelHeightAccessor;
 import net.minecraft.world.level.NoiseColumn;
 import net.minecraft.world.level.StructureManager;
+import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.biome.BiomeManager;
 import net.minecraft.world.level.biome.BiomeSource;
 import net.minecraft.world.level.block.state.BlockState;
@@ -44,12 +45,16 @@ public class CityGenerator extends ChunkGenerator {
     @Override
     public void buildSurface(WorldGenRegion worldGenRegion, StructureManager structureManager, RandomState randomState, ChunkAccess chunkAccess) {
         BuildingGen.placeRoads(worldGenRegion, chunkAccess);
-        BuildingGen.placeBuildings(worldGenRegion, chunkAccess);
     }
 
     @Override
     public void spawnOriginalMobs(WorldGenRegion worldGenRegion) {
 
+    }
+
+    @Override
+    public void applyBiomeDecoration(WorldGenLevel level, ChunkAccess chunk, StructureManager structureManager) {
+        BuildingGen.placeBuildings(level, chunk);
     }
 
     @Override

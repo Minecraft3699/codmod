@@ -2,9 +2,11 @@ package com.mc3699.codmod.dimension.backrooms;
 
 import com.mc3699.codmod.registry.CodBlocks;
 import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.WorldGenRegion;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.ChunkPos;
+import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.ChunkAccess;
@@ -53,7 +55,7 @@ public class BRGenUtil {
             for (int y = minY; y <= maxY; y++) {
                 for (int z = minZ; z <= maxZ; z++) {
                     BlockPos pos = new BlockPos(x, y, z);
-                    if(worldGenRegion.getRandom().nextFloat() <= chance) {
+                    if (worldGenRegion.getRandom().nextFloat() <= chance) {
                         chunk.setBlockState(pos, state, true);
                     }
                 }
@@ -115,8 +117,29 @@ public class BRGenUtil {
             fillArea(chunk, startX, floorLevel + 1, startZ, startX + wallThickness, ceilingLevel - 1, startZ + length, wallState);
             fillArea(chunk, startX, ceilingLevel + 1, startZ, startX + wallThickness, ceilingLevel + extensionOffset, startZ + length, extensionState);
         }
-
     }
+
+    public static void generateBuildingInteriorWalls(ChunkAccess chunk, int floorLevel, int ceilingLevel, BlockState wallState) {
+        int interiorMin = 2;
+        int interiorMax = 13;
+
+        int startX = random.nextInt(interiorMin, interiorMax + 1);
+        int startZ = random.nextInt(interiorMin, interiorMax + 1);
+        int maxLength = interiorMax - interiorMin;
+        int length = random.nextInt(2, maxLength + 1);
+        int wallThickness = 1;
+
+        if (random.nextBoolean()) {
+            int endX = Math.min(startX + length, interiorMax);
+            int endZ = Math.min(startZ + wallThickness - 1, interiorMax);
+            BRGenUtil.fillArea(chunk, startX, floorLevel + 1, startZ, endX, ceilingLevel - 1, endZ, wallState);
+        } else {
+            int endX = Math.min(startX + wallThickness - 1, interiorMax);
+            int endZ = Math.min(startZ + length, interiorMax);
+            BRGenUtil.fillArea(chunk, startX, floorLevel + 1, startZ, endX, ceilingLevel - 1, endZ, wallState);
+        }
+    }
+
 
     public static boolean isChunkInNoise(ChunkAccess chunk, PerlinNoise noise, double threshold) {
         double scale = 0.1;
@@ -143,6 +166,17 @@ public class BRGenUtil {
             StructureTemplate template = structureTemplate.get();
             StructurePlaceSettings placeSettings = new StructurePlaceSettings().setRandom(random).setIgnoreEntities(true);
             template.placeInWorld(world, startPos, startPos.offset(structureInfo.offset()), placeSettings, random, 2);
+        }
+    }
+
+    public static void placeBuildingFloor(ResourceLocation structure, WorldGenLevel world, BlockPos startPos) {
+        StructureTemplateManager templateManager = world.getLevel().getStructureManager();
+        Optional<StructureTemplate> structureTemplate = templateManager.get(structure);
+
+        if (structureTemplate.isPresent()) {
+            StructureTemplate template = structureTemplate.get();
+            StructurePlaceSettings placeSettings = new StructurePlaceSettings().setRandom(world.getRandom()).setIgnoreEntities(true);
+            template.placeInWorld(world, startPos, startPos, placeSettings, world.getRandom(), 2);
         }
     }
 
