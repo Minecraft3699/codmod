@@ -23,7 +23,7 @@ public class CodTiers {
             0.0f, // not used
             10,
             20,
-            () -> Ingredient.of(Tags.Items.GEMS_DIAMOND)
+            () -> Ingredient.of(CodItems.FOLLY)
     );
 
     public static final Tier HARD_DRIVE_HAMMER = new SimpleTier(

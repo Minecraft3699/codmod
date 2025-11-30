@@ -244,6 +244,13 @@ public class CodBlocks {
             .lang("Xyzen Plushie")
             .register();
 
+    public static final BlockEntry<PlushieBlock> NAHBRO_PLUSHIE = CodRegistrate.INSTANCE.block("nahbro_plushie", PlushieBlock::new)
+            .initialProperties(() -> Blocks.WHITE_WOOL)
+            .properties(properties -> properties.noCollission().noOcclusion())
+            .simpleItem()
+            .lang("NahBro Plushie")
+            .register();
+
     public static final BlockEntry<Block> MOIST_CARPET = CodRegistrate.INSTANCE.block("moist_carpet", Block::new)
             .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.YELLOW_WOOL))
             .simpleItem()

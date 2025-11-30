@@ -632,6 +632,31 @@ public class CodItems {
             .properties(properties -> properties)
             .lang("Enchanted Golden Cod")
             .register();
+
+    public static final ItemEntry<Item> FOLLY = CodRegistrate.INSTANCE.item("folly", Item::new)
+            .properties(properties -> properties)
+            .lang("Folly Red Crystal")
+            .register();
+
+    public static final ItemEntry<Item> CHOCOLATE_PARFAIT = CodRegistrate.INSTANCE.item("chocolate_parfait", Item::new)
+            .properties(properties -> properties.food(CodFoods.CHOCOLATE_PARFAIT))
+            .lang("Chocolate Parfait")
+            .register();
+
+    public static final ItemEntry<Item> CHEESECAKE_PARFAIT = CodRegistrate.INSTANCE.item("cheesecake_parfait", Item::new)
+            .properties(properties -> properties.food(CodFoods.CHEESECAKE_PARFAIT))
+            .lang("Cheesecake Parfait")
+            .register();
+
+    public static final ItemEntry<Item> COD_PARFAIT = CodRegistrate.INSTANCE.item("cod_parfait", Item::new)
+            .properties(properties -> properties.food(CodFoods.COD_PARFAIT))
+            .lang("Cod Parfait")
+            .register();
+
+    public static final ItemEntry<Item> STRAWBERRY_PARFAIT = CodRegistrate.INSTANCE.item("strawberry_parfait", Item::new)
+            .properties(properties -> properties.food(CodFoods.STRAWBERRY_PARFAIT))
+            .lang("Strawberry Parfait")
+            .register();
     // VOTV Foods
 
     public static final Supplier<Item> BURGER = ITEMS.register(

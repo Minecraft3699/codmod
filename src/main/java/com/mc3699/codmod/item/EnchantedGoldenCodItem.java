@@ -25,7 +25,7 @@ public class EnchantedGoldenCodItem extends Item {
                 .effect(new MobEffectInstance(MobEffects.ABSORPTION, 1800, 1), 1)
                 .effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 2700, 1), 1)
                 .effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1800,0), 1)
-                .effect(new MobEffectInstance(MobEffects.HEAL, 200, 0), 1)
+                .effect(new MobEffectInstance(MobEffects.HEAL, 1, 4), 1)
                 .effect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 1800, 2), 1)
                 .build();
     }
