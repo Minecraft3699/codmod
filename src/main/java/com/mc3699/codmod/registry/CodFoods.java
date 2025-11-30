@@ -170,6 +170,27 @@ public class CodFoods {
                     2.0f, Optional.of(ItemStack.EMPTY), List.of()
             );
 
+    public static final FoodProperties CHOCOLATE_PARFAIT =
+            new FoodProperties(
+                    7, 7, false,
+                    2f, Optional.of(ItemStack.EMPTY), List.of()
+            );
+    public static final FoodProperties CHEESECAKE_PARFAIT =
+            new FoodProperties(
+                    7, 7, false,
+                    2f, Optional.of(ItemStack.EMPTY), List.of()
+            );
+    public static final FoodProperties COD_PARFAIT =
+            new FoodProperties(
+                    7, 7, false,
+                    2f, Optional.of(ItemStack.EMPTY), List.of()
+            );
+    public static final FoodProperties STRAWBERRY_PARFAIT =
+            new FoodProperties(
+                    7, 7, false,
+                    2f, Optional.of(ItemStack.EMPTY), List.of()
+            );
+
 
 
     public static final FoodProperties ROUND_MEAL =
