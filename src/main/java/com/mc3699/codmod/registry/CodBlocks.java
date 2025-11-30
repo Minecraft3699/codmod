@@ -230,6 +230,20 @@ public class CodBlocks {
             .lang("ThinGusta Plushie")
             .register();
 
+    public static final BlockEntry<PlushieBlock> AMBORELLA_PLUSHIE = CodRegistrate.INSTANCE.block("amborella_plushie", PlushieBlock::new)
+            .initialProperties(() -> Blocks.WHITE_WOOL)
+            .properties(properties -> properties.noCollission().noOcclusion())
+            .simpleItem()
+            .lang("Amborella Plushie")
+            .register();
+
+    public static final BlockEntry<PlushieBlock> XYZEN_PLUSHIE = CodRegistrate.INSTANCE.block("xyzen_plushie", PlushieBlock::new)
+            .initialProperties(() -> Blocks.WHITE_WOOL)
+            .properties(properties -> properties.noCollission().noOcclusion())
+            .simpleItem()
+            .lang("Xyzen Plushie")
+            .register();
+
     public static final BlockEntry<Block> MOIST_CARPET = CodRegistrate.INSTANCE.block("moist_carpet", Block::new)
             .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.YELLOW_WOOL))
             .simpleItem()
