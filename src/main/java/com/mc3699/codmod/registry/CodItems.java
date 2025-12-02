@@ -263,6 +263,12 @@ public class CodItems {
             .lang("Cod Knife")
             .register();
 
+    public static final ItemEntry<CleaverBladeItem> CLEAVERBLADE = CodRegistrate.INSTANCE.item("cleaverblade",CleaverBladeItem::new)
+            .properties(properties -> properties)
+            .model((ctx, prov) -> prov.withExistingParent(ctx.getName(), prov.modLoc("item/" + ctx.getName())))
+            .lang("Cleaverblade")
+            .register();
+
     public static final ItemEntry<TearsOfBloodItem> TEARS_OF_BLOOD = CodRegistrate.INSTANCE.item("tears_of_blood",TearsOfBloodItem::new)
             .properties(properties -> properties)
             .lang("Tears Of Blood")
@@ -718,6 +724,8 @@ public class CodItems {
             "tomato",
             () -> new Item(new Item.Properties().food(CodFoods.TOMATO))
     );
+
+
 
     public static final Supplier<Item> LEMON_SMOOTHIE = ITEMS.register("lemon_smoothie",
             () -> new CodDrinks(new Item.Properties().food(CodFoods.LEMON_SMOOTHIE)) {
