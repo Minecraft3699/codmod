@@ -1,4 +1,4 @@
-// 1.21.1	2025-12-01T19:34:20.1698869	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
+// 1.21.1	2025-12-04T19:35:20.5215221	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
 11df08fc690db92516c0ea7c97d4c71f542154b5 assets/codmod/blockstates/amborella_plushie.json
 e71fb77fc3ce99c6fb5b8f5a3105a1f58d7355d0 assets/codmod/blockstates/ancient_plushie.json
 c4642b0c685192cf5d5d07b6893cc7333a63d1da assets/codmod/blockstates/blade_plushie.json
@@ -73,8 +73,8 @@ abcf062fd5decca251b2d4e623edb9daa7dec02a assets/codmod/blockstates/threshold_por
 f062903ff298b3585d7b47250018da45c0293850 assets/codmod/blockstates/ugly_wallpaper.json
 522a693904a1162a099576a5775e6ce326e66a27 assets/codmod/blockstates/xyzen_plushie.json
 064fe3376b3c1cf85c49ff1eca7371979390528b assets/codmod/blockstates/zetos_plushie.json
-be6dea088ec4356a5be9f61670bad3da6376d266 assets/codmod/lang/en_ud.json
-83ab5f53b32c26e3fca32cad62b5b5c17219880f assets/codmod/lang/en_us.json
+8576bbea3f0ad19d762b8c0beae6ba313c2de793 assets/codmod/lang/en_ud.json
+ecc7278956dcf4d4bac36d249c8e8bea58b05888 assets/codmod/lang/en_us.json
 db9b85a3fd099973d7ef1c692e313e556236d722 assets/codmod/models/block/amborella_plushie.json
 646809a9d5f50abc7f271a084374ef921b101e4c assets/codmod/models/block/ancient_plushie.json
 e2cf401ffd25a21c829b15e577a98dc35dd12dd6 assets/codmod/models/block/blade_plushie.json
@@ -159,6 +159,7 @@ cdf5592df6b8c11ed2dde1d3472311ccd726572e assets/codmod/models/block/xyzen_plushi
 a15ed6afc7eb1f28fffd11abda357538b1994707 assets/codmod/models/item/amborella_plushie.json
 6e7f0233d24fb52164a2616679506ba15606bdde assets/codmod/models/item/amulite.json
 1bc2718c04663c734acba79137dae7d0975fb90b assets/codmod/models/item/ancient_plushie.json
+6bddf4148e49febed8ef1cd6178a0f7ecb9ca0dc assets/codmod/models/item/apple_fritter.json
 cd6976d7e6444479a445fa7d110144053def3e12 assets/codmod/models/item/ast_battle_axe.json
 8b9cbd354ac79a080eb5f89276688642392078ac assets/codmod/models/item/bagel.json
 12ba3e8b452c45f3ce94b5fae8f11ff6e086c77b assets/codmod/models/item/below_eternity.json

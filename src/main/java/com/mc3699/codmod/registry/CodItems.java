@@ -167,7 +167,12 @@ public class CodItems {
             .lang("Umbral Reaver")
             .register();
 
-
+    public static final ItemEntry<AppleFritterItem> APPLE_FRITTER = CodRegistrate.INSTANCE.item(
+            "apple_fritter", AppleFritterItem::new
+    )
+            .properties(properties -> properties)
+            .lang("Apple Fritter")
+            .register();
 
     public static final ItemEntry<InventoryModuleItem> INVENTORY_MODULE = CodRegistrate.INSTANCE.item(
                     "inventory_module",

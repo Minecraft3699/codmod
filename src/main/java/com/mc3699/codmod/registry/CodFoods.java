@@ -190,6 +190,11 @@ public class CodFoods {
                     7, 7, false,
                     2f, Optional.of(ItemStack.EMPTY), List.of()
             );
+    public static final FoodProperties APPLE_FRITTER =
+            new FoodProperties(
+                    5, 3, false,
+                    2f, Optional.of(ItemStack.EMPTY), List.of()
+            );
 
 
 
