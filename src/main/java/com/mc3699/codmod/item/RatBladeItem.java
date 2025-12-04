@@ -1,6 +1,7 @@
 package com.mc3699.codmod.item;
 
 import com.mc3699.codmod.registry.CodItems;
+import com.mc3699.codmod.registry.CodMobEffects;
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
@@ -55,12 +56,13 @@ public class RatBladeItem extends SwordItem {
     };
 
     public RatBladeItem(Properties properties) {
-        super(RATBLADE, properties.attributes(createAttributes(RATBLADE, 9, -1.4f)));
+        super(RATBLADE, properties.attributes(createAttributes(RATBLADE, 7.25f, -1.4f)));
     }
 
     @Override
     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        if (attacker instanceof Player player && !player.level().isClientSide) {
+        target.addEffect(new MobEffectInstance(CodMobEffects.BLEEDING, 80, 0));
+        if (attacker instanceof Player player && !player.level().isClientSide){
             CustomData customData = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY);
             CompoundTag tag = customData.copyTag();
 
@@ -68,8 +70,8 @@ public class RatBladeItem extends SwordItem {
             hitCount++;
 
             if (hitCount >= 6) {
-                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 0));
-                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 200, 0));
+                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 0, false, false));
+                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 200, 0, false, false));
                 hitCount = 0;
             }
 
@@ -88,7 +90,7 @@ public class RatBladeItem extends SwordItem {
         int hitCount = customData.copyTag().getInt("HitCount");
 
         tooltipComponents.add(Component.literal("§7Hits: §f" + hitCount + "§7/§f6 §6(squeek)"));
-        tooltipComponents.add(Component.literal("§76 hits = §bSpeed §rand §cStrength §7for 10s §6(squeek squeek)"));
+        tooltipComponents.add(Component.literal("§76 hits = §bSpeed §rand §cStrength §7for 10s §6(pip)"));
 
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }

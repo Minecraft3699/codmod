@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "AAA",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "codmod:cheese"
+    }
+  },
+  "result": {
+    "id": "codmod:cheese_block",
+    "count": 1
+  }
+}
