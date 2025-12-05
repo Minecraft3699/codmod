@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CCC",
+    "C C",
+    "CCC"
+  ],
+  "key": {
+    "C": {
+      "item": "codmod:chocolate_cake"
+    }
+  },
+  "result": {
+    "id": "codmod:chocolate_cake_block",
+    "count": 1
+  }
+}

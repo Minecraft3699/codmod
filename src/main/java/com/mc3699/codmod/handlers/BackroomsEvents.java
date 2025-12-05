@@ -33,6 +33,9 @@ public class BackroomsEvents {
     public static final ResourceKey<Level> BACKROOMS_DIM =
             ResourceKey.create(Registries.DIMENSION, ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "backrooms"));
 
+    public static final ResourceKey<Level> CITY_DIM =
+            ResourceKey.create(Registries.DIMENSION, ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "city"));
+
     private static Random random = new Random();
 
     @SubscribeEvent

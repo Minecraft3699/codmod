@@ -46,6 +46,7 @@ public class BackroomsStructures {
     public static final BackroomsStructureInfo PYRAMID = new BackroomsStructureInfo(
             ResourceLocation.fromNamespaceAndPath(Codmod.MOD_ID, "pyramid"), BlockPos.ZERO);
 
+
     public record BackroomsStructureInfo(ResourceLocation structure, BlockPos offset) {
     }
 

@@ -137,6 +137,12 @@
     ],
     "subtitle": "subtitles.codmod.saul"
   },
+  "scythe_slash": {
+    "sounds": [
+      "codmod:scythe_slash"
+    ],
+    "subtitle": "subtitles.codmod.scythe_slash"
+  },
   "transponder_alert": {
     "sounds": [
       "codmod:transponder_alert"

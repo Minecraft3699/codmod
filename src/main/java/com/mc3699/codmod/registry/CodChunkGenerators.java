@@ -2,6 +2,7 @@ package com.mc3699.codmod.registry;
 
 import com.mc3699.codmod.Codmod;
 import com.mc3699.codmod.dimension.backrooms.BackroomsGenerator;
+import com.mc3699.codmod.dimension.city.CityGenerator;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.chunk.ChunkGenerator;
@@ -15,6 +16,7 @@ public class CodChunkGenerators {
 
     public static void register(IEventBus eventBus) {
         CHUNK_GENERATORS.register("backrooms_generator", () -> BackroomsGenerator.CODEC);
+        CHUNK_GENERATORS.register("cityscape_generator", () -> CityGenerator.CODEC);
         CHUNK_GENERATORS.register(eventBus);
     }
 }

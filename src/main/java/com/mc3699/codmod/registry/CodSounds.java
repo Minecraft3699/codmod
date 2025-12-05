@@ -112,6 +112,9 @@ public class CodSounds {
     public static final RegistryEntry<SoundEvent, SoundEvent> TRIPMINE_ARMED = CodRegistrate.INSTANCE.sound("tripmine_armed")
             .simple(false)
             .register();
+    public static final RegistryEntry<SoundEvent, SoundEvent> SCYTHE_SLASH = CodRegistrate.INSTANCE.sound("scythe_slash")
+            .simple(false)
+            .register();
 
     public static void register() {
         // This method just exists so Java will load the class LOL
