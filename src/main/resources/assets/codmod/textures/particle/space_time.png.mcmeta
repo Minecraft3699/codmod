@@ -1,0 +1,6 @@
+{
+  "animation": {
+    "frametime": 2, // How long each frame lasts (ticks)
+    "frames": [0, 1, 2, 3]
+  }
+}

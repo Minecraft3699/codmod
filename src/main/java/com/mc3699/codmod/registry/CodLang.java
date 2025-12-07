@@ -29,6 +29,9 @@ public class CodLang {
         CodRegistrate.INSTANCE.addRawLang("item.codmod.realcod", "Real Cod");
         CodRegistrate.INSTANCE.addRawLang("block.codmod.stable_disruption", "Stabilized Disruption");
         CodRegistrate.INSTANCE.addRawLang("item.codmod.minicod", "Minicod");
+        CodRegistrate.INSTANCE.addRawLang("item.codmod.inert_seeds", "Inert Seeds");
+        CodRegistrate.INSTANCE.addRawLang("item.codmod.inert_dust", "Inert Dust");
+        CodRegistrate.INSTANCE.addRawLang("item.codmod.discord_fruit", "Discord Fruit");
         CodRegistrate.INSTANCE.addRawLang("effect.codmod.insanity", "Insanity");
         CodRegistrate.INSTANCE.addRawLang("effect.codmod.bleeding", "Bleeding");
 

@@ -38,6 +38,9 @@ public class CodDatagen {
         );
 
         generator.addProvider(event.includeServer(), new DatagenSausageProvider(packOutput, lookupProvider));
+
+        generator.addProvider(event.includeServer(), new DatagenBlockStateProvider(packOutput, existingFileHelper));
+        generator.addProvider(event.includeServer(), new DatagenRecipeProvider(packOutput, lookupProvider));
     }
 
 }
