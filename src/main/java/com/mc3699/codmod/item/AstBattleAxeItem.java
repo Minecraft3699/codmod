@@ -17,7 +17,7 @@ public class AstBattleAxeItem extends AxeItem {
     //assets by firelight, code/functionality by tekkitdooood
     public AstBattleAxeItem(Properties properties) {
         super(Tiers.NETHERITE, properties.attributes(AxeItem
-                        .createAttributes(Tiers.NETHERITE, 3f, -3.4f))
+                        .createAttributes(Tiers.NETHERITE, 6f, -3f))
                         .component(DataComponents.UNBREAKABLE, new Unbreakable(true))
                         .rarity(Rarity.RARE));
     }
