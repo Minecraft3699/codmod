@@ -2,6 +2,7 @@ package com.mc3699.codmod.registry;
 
 import com.mc3699.codmod.Codmod;
 import com.mc3699.codmod.item.*;
+import com.mc3699.codmod.item.codCannon.MaliciousCodCannonItem;
 import com.mc3699.codmod.item.commandModule.CommandModuleItem;
 import com.mc3699.codmod.item.designator.DesignatorItem;
 import com.mc3699.codmod.item.environmentScanner.EnvironmentScannerItem;
@@ -678,6 +679,13 @@ public class CodItems {
             .properties(properties -> properties.food(CodFoods.STRAWBERRY_PARFAIT))
             .lang("Strawberry Parfait")
             .register();
+
+    public static final ItemEntry<MaliciousCodCannonItem> MALICIOUS_CODCANNON = CodRegistrate.INSTANCE.item
+            ("malicious_codcannon", MaliciousCodCannonItem::new)
+            .properties(properties -> properties)
+            .lang("Malicious Codcannon")
+            .register();
+
     // VOTV Foods
 
     public static final Supplier<Item> BURGER = ITEMS.register(
@@ -806,8 +814,6 @@ public class CodItems {
                 }
             }
     );
-
-
 
     static {
         BLOCKS.getEntries().forEach(blockHolder -> {

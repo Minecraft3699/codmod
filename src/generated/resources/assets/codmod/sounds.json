@@ -143,6 +143,12 @@
     ],
     "subtitle": "subtitles.codmod.scythe_slash"
   },
+  "suppressed_shot": {
+    "sounds": [
+      "codmod:suppressed_shot"
+    ],
+    "subtitle": "subtitles.codmod.suppressed_shot"
+  },
   "transponder_alert": {
     "sounds": [
       "codmod:transponder_alert"

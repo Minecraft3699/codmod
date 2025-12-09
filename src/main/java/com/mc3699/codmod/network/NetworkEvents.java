@@ -1,11 +1,10 @@
 package com.mc3699.codmod.network;
 
 import com.mc3699.codmod.Codmod;
-import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
-import net.minecraft.server.level.ServerPlayer;
+import com.mc3699.codmod.item.codCannon.FireRailcannonPayload;
+import com.mc3699.codmod.handlers.beamStuff.RenderBeamPayload;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.network.PacketDistributor;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 
@@ -57,17 +56,17 @@ public class NetworkEvents {
                 OxygenClientPayload::handle
         );
 
-    }
+        registrar.playToServer(
+                FireRailcannonPayload.TYPE,
+                FireRailcannonPayload.CODEC,
+                FireRailcannonPayload::handle
+        );
 
-    public static void sendToServer(CustomPacketPayload payload) {
-        PacketDistributor.sendToServer(payload);
-    }
+        registrar.playToClient(
+                RenderBeamPayload.TYPE,
+                RenderBeamPayload.CODEC,
+                RenderBeamPayload::handle
+        );
 
-    public static void sendToClient(ServerPlayer player, CustomPacketPayload payload) {
-        PacketDistributor.sendToPlayer(player, payload);
-    }
-
-    public static void sendToAllClients(CustomPacketPayload payload) {
-        PacketDistributor.sendToAllPlayers(payload);
     }
 }

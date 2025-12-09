@@ -1,14 +1,11 @@
 package com.mc3699.codmod.item.marksmanRevolver;
 
 import com.mc3699.codmod.entity.MarksmanRevolverCoinEntity;
+import com.mc3699.codmod.handlers.CodScheduler;
+import com.mc3699.codmod.handlers.beamStuff.RenderBeamPayload;
 import com.mc3699.codmod.registry.CodEntities;
 import com.mc3699.codmod.registry.CodSounds;
-import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleOptions;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -19,11 +16,11 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.phys.*;
-import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
-
-import java.util.function.Consumer;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.EntityHitResult;
+import net.minecraft.world.phys.Vec3;
+import net.neoforged.neoforge.network.PacketDistributor;
 
 public class MarksmanRevolverItem extends Item {
     public MarksmanRevolverItem(Properties properties) {
@@ -32,92 +29,78 @@ public class MarksmanRevolverItem extends Item {
 
 
     //TODO FROM EYAE:PLEASE BALANCE THIS! ADD A COOLDOWN OR SM SHIT IDFK
+    //TODO FROM MC3699: PLEASE DONT PUT TODOs ON ADMIN ONLY ITEMS THAT DO NOT NEED THEM
     @Override
     public boolean onEntitySwing(ItemStack stack, LivingEntity entity) {
-        if(entity instanceof Player player && player.level() instanceof ServerLevel serverLevel)
-        {
+        if (entity instanceof Player player && player.level() instanceof ServerLevel serverLevel) {
             fireRaycast(serverLevel, player);
+            serverLevel.playSound(null, player.blockPosition(), CodSounds.SUPRESSED_GUNSHOT.value(), SoundSource.MASTER, 0.5f, 1.5f);
         }
         return false;
-    }
-
-    public static void spawnParticleLine(ServerLevel level, Vec3 from, Vec3 to, ParticleOptions particle, int steps) {
-        Vec3 delta = to.subtract(from);
-        for (int i = 0; i <= steps; i++) {
-            double t = i / (double) steps;
-            Vec3 point = from.add(delta.scale(t));
-            level.sendParticles(
-                    particle,
-                    point.x, point.y, point.z,
-                    1,
-                    0, 0, 0,
-                    0
-            );
-        }
     }
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand usedHand) {
 
-        Vec3 look = player.getLookAngle().scale(1.5);
+        Vec3 look = player.getLookAngle().scale(2);
         Vec3 coinSpawnPos = new Vec3(look.x, -0.5, look.z);
 
-        if(player.level() instanceof ServerLevel serverLevel)
-        {
-            MarksmanRevolverCoinEntity coinEntity = new MarksmanRevolverCoinEntity(CodEntities.MARKSMAN_COIN_ENTITY.get(), serverLevel);
-            coinEntity.setPos(player.getEyePosition().add(coinSpawnPos));
-            Vec3 launcVec = player.getLookAngle().scale(0.3);
-            coinEntity.setDeltaMovement(new Vec3(0,0.6,0).add(launcVec));
-            coinEntity.setOwner(player);
-            serverLevel.addFreshEntity(coinEntity);
-            serverLevel.playSound(null, player.blockPosition(), CodSounds.COIN.value(), SoundSource.MASTER, 1, 1);
+        if (player.level() instanceof ServerLevel serverLevel) {
+            // multi-fire logic soon(tm)
+            for(int i = 0; i < 1; i++) {
+                CodScheduler.schedule(i, () -> {
+                    MarksmanRevolverCoinEntity coinEntity = new MarksmanRevolverCoinEntity(CodEntities.MARKSMAN_COIN_ENTITY.get(), serverLevel);
+                    coinEntity.setPos(player.getEyePosition().add(coinSpawnPos));
+                    Vec3 forwardImpulse = player.getLookAngle().scale(0.6);
+                    Vec3 upwardImpulse = new Vec3(0, 0.6, 0);
+                    Vec3 inheritedVelocity = player.getDeltaMovement();
+                    coinEntity.setDeltaMovement(inheritedVelocity.add(forwardImpulse).add(upwardImpulse));
+                    coinEntity.setOwner(player);
+                    serverLevel.addFreshEntity(coinEntity);
+                    serverLevel.playSound(null, player.blockPosition(), CodSounds.COIN.value(), SoundSource.MASTER, 1, 1);
+                });
+            }
         }
 
         return super.use(level, player, usedHand);
     }
 
-    private void fireRaycast(ServerLevel serverLevel, Player player)
-    {
+    private void fireRaycast(ServerLevel serverLevel, Player player) {
         double maxRange = 250;
-        Vec3 start = player.getEyePosition(1.0F);
-        Vec3 angle = player.getLookAngle().scale(maxRange);
-        Vec3 end = start.add(angle.scale(maxRange));
+        Vec3 start = player.getEyePosition();
+        Vec3 look = player.getLookAngle();
+        Vec3 end = start.add(look.scale(maxRange));
 
-        BlockHitResult blockHitResult = serverLevel.clip(new ClipContext(
-                start,
-                angle,
-                ClipContext.Block.COLLIDER,
-                ClipContext.Fluid.NONE,
-                player
-        ));
+        BlockHitResult blockHit = serverLevel.clip(new ClipContext(start, end, ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, player));
 
-        spawnParticleLine(serverLevel, start.add(0,-0.25f,0), angle.scale(10), ParticleTypes.ELECTRIC_SPARK, 100);
+        AABB aabb = player.getBoundingBox().expandTowards(look.scale(maxRange)).inflate(1.0);
+        EntityHitResult entityHit = ProjectileUtil.getEntityHitResult(player, start, end, aabb, e -> e != player, maxRange * maxRange);
 
-        AABB hitZone = player.getBoundingBox().expandTowards(angle.scale(maxRange));
-        EntityHitResult hitResult = ProjectileUtil.getEntityHitResult(player, start, end, hitZone, (entity -> true), 1000000000);
+        Vec3 finalHitPos;
+        boolean hitEntity = false;
 
-        if (hitResult != null) {
-            spawnParticleLine(serverLevel, start.add(0, -0.25f, 0), hitResult.getLocation(), ParticleTypes.ELECTRIC_SPARK, 100);
+        if (entityHit != null) {
+            double entityDist = entityHit.getLocation().distanceToSqr(start);
+            double blockDist = blockHit.getLocation().distanceToSqr(start);
 
-
-        if (hitResult.getEntity() instanceof MarksmanRevolverCoinEntity coinEntity) {
-            coinEntity.hit(player);
+            if (entityDist < blockDist) {
+                hitEntity = true;
+                finalHitPos = entityHit.getLocation();
+            } else {
+                finalHitPos = blockHit.getLocation();
+            }
+        } else {
+            finalHitPos = blockHit.getLocation();
         }
 
+        PacketDistributor.sendToPlayersTrackingEntityAndSelf(player, new RenderBeamPayload(start.add(0, -0.25, 0), finalHitPos, 0.02f, 20, 0xFFFF00));
 
-            serverLevel.sendParticles(ParticleTypes.CRIT,
-                    (start.x + end.x) / 2,
-                    (start.y + end.y) / 2,
-                    (start.z + end.z) / 2,
-                    10,
-                    (end.x - start.x) / 2,
-                    (end.y - start.y) / 2,
-                    (end.z - start.z) / 2,
-                    0.1
-            );
-
-
-            hitResult.getEntity().hurt(serverLevel.damageSources().playerAttack(player), 5);
+        if (hitEntity && entityHit != null) {
+            if (entityHit.getEntity() instanceof MarksmanRevolverCoinEntity coin) {
+                coin.hit(player);
+            }
+            entityHit.getEntity().hurt(serverLevel.damageSources().playerAttack(player), 10);
         }
     }
+
 }

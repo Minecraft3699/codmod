@@ -76,6 +76,13 @@ public class CodSounds {
             .simple(false)
             .subtitle("Gunshot")
             .register();
+
+    public static final RegistryEntry<SoundEvent, SoundEvent> SUPRESSED_GUNSHOT = CodRegistrate.INSTANCE.sound("suppressed_shot")
+            .simple(false)
+            .subtitle("Suppressed Gunshot")
+            .register();
+
+
     public static final RegistryEntry<SoundEvent, SoundEvent> NULLFANGHIT = CodRegistrate.INSTANCE.sound("nullfanghit")
             .simple(false)
             .register();
