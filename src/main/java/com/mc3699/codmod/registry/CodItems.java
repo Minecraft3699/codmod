@@ -19,6 +19,8 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.List;
@@ -94,6 +96,15 @@ public class CodItems {
 
     public static final Supplier<Item> DETECTOR = ITEMS.register("detector", () -> new Item(new Item.Properties()));
 
+    public static final Supplier<Item> INERT_SEEDS = ITEMS.register("inert_seeds",
+            () -> new ItemNameBlockItem(CodBlocks.ENDER_CROP.get(), new Item.Properties()));
+
+    public static final Supplier<Item> INERT_DUST = ITEMS.register("inert_dust",
+            () -> new Item(new Item.Properties())
+    );
+
+    public static final Supplier<Item> DISCORD_FRUIT = ITEMS.register("discord_fruit",
+            () -> new DiscordFruitItem(new Item.Properties().food(CodFoods.DISCORD_FRUIT)));
 
     public static final Supplier<Item> BROKEN_DETECTOR = ITEMS.register(
             "broken_detector",
@@ -264,6 +275,7 @@ public class CodItems {
     public static final ItemEntry<CodKnifeItem> COD_KNIFE = CodRegistrate.INSTANCE.item("cod_knife",CodKnifeItem::new)
             .properties(properties -> properties)
             .lang("Cod Knife")
+            .tab(null)
             .register();
 
     public static final ItemEntry<TearsOfBloodItem> TEARS_OF_BLOOD = CodRegistrate.INSTANCE.item("tears_of_blood",TearsOfBloodItem::new)

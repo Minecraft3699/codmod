@@ -2,6 +2,8 @@ package com.mc3699.codmod.block;
 
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.Direction;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.Equipable;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
@@ -10,7 +12,7 @@ import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 
-public class PlushieBlock extends HorizontalDirectionalBlock {
+public class PlushieBlock extends HorizontalDirectionalBlock implements Equipable {
     public static final MapCodec<PlushieBlock> CODEC = simpleCodec(PlushieBlock::new);
     public PlushieBlock(Properties properties) {
         super(properties);
@@ -40,5 +42,10 @@ public class PlushieBlock extends HorizontalDirectionalBlock {
     @Override
     protected BlockState mirror(BlockState state, Mirror mirror) {
         return state.rotate(mirror.getRotation(state.getValue(FACING)));
+    }
+
+    @Override
+    public EquipmentSlot getEquipmentSlot() {
+        return EquipmentSlot.HEAD;
     }
 }

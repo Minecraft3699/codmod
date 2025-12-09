@@ -196,7 +196,11 @@ public class CodFoods {
                     2f, Optional.of(ItemStack.EMPTY), List.of()
             );
 
-
+    public static final FoodProperties DISCORD_FRUIT = new FoodProperties.Builder()
+            .nutrition(4)
+            .saturationModifier(0.5f)
+            .alwaysEdible()
+            .build();
 
     public static final FoodProperties ROUND_MEAL =
             new FoodProperties.Builder()

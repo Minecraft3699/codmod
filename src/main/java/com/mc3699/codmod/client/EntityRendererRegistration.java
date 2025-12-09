@@ -7,6 +7,7 @@ import com.mc3699.codmod.block.graphicsMonitor.GraphicsMonitorBlockEntityRendere
 import com.mc3699.codmod.block.mantleKey.MantleKeyBlockEntityRender;
 import com.mc3699.codmod.block.oxygenDistributor.OxygenDistributorBlockEntityRenderer;
 import com.mc3699.codmod.client.particles.BloodParticle;
+import com.mc3699.codmod.client.particles.SpaceTimeParticle;
 import com.mc3699.codmod.entity.applicant.ApplicantEntityRenderer;
 import com.mc3699.codmod.entity.ariral.AriralEntityRenderer;
 import com.mc3699.codmod.entity.cod_almighty.CodAlmightyEntityRenderer;
@@ -86,6 +87,7 @@ public class EntityRendererRegistration {
     @SubscribeEvent
     public static void registerParticles(RegisterParticleProvidersEvent event) {
         event.registerSpriteSet(CodParticles.BLOOD_PARTICLE.get(), BloodParticle.Provider::new);
+        event.registerSpriteSet(CodParticles.SPACE_TIME_PARTICLE.get(), SpaceTimeParticle.Provider::new);
     }
 
 }

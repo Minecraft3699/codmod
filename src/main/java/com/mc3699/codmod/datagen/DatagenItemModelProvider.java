@@ -14,6 +14,9 @@ public class DatagenItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         basicItem(CodItems.GIANNI.get());
+        basicItem(CodItems.INERT_DUST.get());
+        basicItem(CodItems.INERT_SEEDS.get());
+        basicItem(CodItems.DISCORD_FRUIT.get());
         handheldItem(CodItems.CIRCUITS_BANE.get());
 
         simpleBlockItem(CodBlocks.RADAR.get());

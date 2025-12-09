@@ -2,6 +2,7 @@ package com.mc3699.codmod.registry;
 
 import com.mc3699.codmod.Codmod;
 import com.mc3699.codmod.block.DellServerBlock;
+import com.mc3699.codmod.block.EnderCropBlock;
 import com.mc3699.codmod.block.backrooms.CeilingLightBlock;
 import com.mc3699.codmod.block.bloodGenerator.BloodGeneratorBlock;
 import com.mc3699.codmod.block.codNuke.CodNukeBlock;
@@ -27,12 +28,16 @@ import com.mc3699.codmod.block.PlushieBlock;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import com.tterrag.registrate.util.entry.FluidEntry;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
+
+import java.util.function.Supplier;
 
 public class CodBlocks {
 
@@ -46,6 +51,9 @@ public class CodBlocks {
     public static final DeferredBlock<Block> DELL_SERVER = BLOCKS.register(
             "dell_server", DellServerBlock::new
     );
+
+    public static final DeferredBlock<Block> ENDER_CROP = BLOCKS.register("ender_crop",
+            () -> new EnderCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BEETROOTS)));
 
     public static final DeferredBlock<Block> RADAR = BLOCKS.register("radar", RadarBlock::new);
 
@@ -576,6 +584,18 @@ public class CodBlocks {
             .simpleItem()
             .lang("Blood Generator")
             .register();
+
+
+
+    private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
+        DeferredBlock<T> toReturn = BLOCKS.register(name, block);
+        registerBlockItem(name, toReturn);
+        return toReturn;
+    }
+
+    private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {
+        CodItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+    }
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
