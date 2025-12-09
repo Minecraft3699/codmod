@@ -12,8 +12,7 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.ProjectileUtil;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
@@ -22,11 +21,11 @@ import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.network.PacketDistributor;
 
-public class MarksmanRevolverItem extends Item {
-    public MarksmanRevolverItem(Properties properties) {
-        super(properties);
-    }
+public class MarksmanRevolverItem extends SwordItem {
 
+    public MarksmanRevolverItem(Properties properties) {
+        super(Tiers.WOOD, properties);
+    }
 
     //TODO FROM EYAE:PLEASE BALANCE THIS! ADD A COOLDOWN OR SM SHIT IDFK
     //TODO FROM MC3699: PLEASE DONT PUT TODOs ON ADMIN ONLY ITEMS THAT DO NOT NEED THEM
@@ -51,7 +50,7 @@ public class MarksmanRevolverItem extends Item {
                 CodScheduler.schedule(i, () -> {
                     MarksmanRevolverCoinEntity coinEntity = new MarksmanRevolverCoinEntity(CodEntities.MARKSMAN_COIN_ENTITY.get(), serverLevel);
                     coinEntity.setPos(player.getEyePosition().add(coinSpawnPos));
-                    Vec3 forwardImpulse = player.getLookAngle().scale(0.6);
+                    Vec3 forwardImpulse = player.getLookAngle().scale(0.3);
                     Vec3 upwardImpulse = new Vec3(0, 0.6, 0);
                     Vec3 inheritedVelocity = player.getDeltaMovement();
                     coinEntity.setDeltaMovement(inheritedVelocity.add(forwardImpulse).add(upwardImpulse));

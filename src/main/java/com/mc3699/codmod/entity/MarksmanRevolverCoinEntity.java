@@ -35,7 +35,7 @@ public class MarksmanRevolverCoinEntity extends ItemProjectileEntity {
     private transient Set<UUID> chainHitSet = null;
 
     public MarksmanRevolverCoinEntity(EntityType<? extends ItemProjectileEntity> entityType, Level level) {
-        super(entityType, level, new ItemStack(Items.COD, 1), 4, 0, false);
+        super(entityType, level, new ItemStack(Items.COD, 1), 0, 0, false);
     }
 
     public void hit(Player player) {
