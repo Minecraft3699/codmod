@@ -11,6 +11,7 @@ e7cb80d710fab51bc6ace5b29bf5cf955a923adf assets/codmod/blockstates/ceiling_light
 13cdd03b5ecfcd79516580da336255a0d07abedc assets/codmod/blockstates/ceramic_slab.json
 ff8953df3757542ae04e01013407468eb77629f8 assets/codmod/blockstates/ceramic_stairs.json
 f2fdee44c05c49fbb57981b99079c788671e0edc assets/codmod/blockstates/ceramic_tile.json
+15ff26085f56d81da58656ad9fb226c307ed982a assets/codmod/blockstates/cheese_block.json
 302259f2301f3be45bc8d3e460ff25795ba0cf55 assets/codmod/blockstates/chocolate_cake_block.json
 8fb032203801a5e308bb68da2419095ba093c4d9 assets/codmod/blockstates/coal_generator.json
 6abd47b117930380653fc1c77722bcc77f5b83bc assets/codmod/blockstates/cod_block.json
@@ -89,6 +90,7 @@ a33ac3bce7ff86d30362c8f1f50bc3b06daf18b4 assets/codmod/models/block/ceramic_slab
 d51e8a73dce31f93c7eac8ff21466e8d53a933e3 assets/codmod/models/block/ceramic_stairs_inner.json
 fe409692cf1c3e9105e325675372af882652a1bd assets/codmod/models/block/ceramic_stairs_outer.json
 8f432b246e064bf88fe9d5f2dcfb5794cbc116e5 assets/codmod/models/block/ceramic_tile.json
+4814eda2360cfd04ff0f7201c235452bb8bbdabb assets/codmod/models/block/cheese_block.json
 22dbb969ed09978b674fe47dc322c23411468e54 assets/codmod/models/block/chocolate_cake_block.json
 1dc48ba94bb6c89b85f5f90face6b3ee6d901740 assets/codmod/models/block/coal_generator.json
 24bd76bdc035083fab23423ef889efe3f511310e assets/codmod/models/block/cod_block.json
@@ -157,6 +159,7 @@ cdf5592df6b8c11ed2dde1d3472311ccd726572e assets/codmod/models/block/xyzen_plushi
 a15ed6afc7eb1f28fffd11abda357538b1994707 assets/codmod/models/item/amborella_plushie.json
 6e7f0233d24fb52164a2616679506ba15606bdde assets/codmod/models/item/amulite.json
 1bc2718c04663c734acba79137dae7d0975fb90b assets/codmod/models/item/ancient_plushie.json
+6bddf4148e49febed8ef1cd6178a0f7ecb9ca0dc assets/codmod/models/item/apple_fritter.json
 cd6976d7e6444479a445fa7d110144053def3e12 assets/codmod/models/item/ast_battle_axe.json
 8b9cbd354ac79a080eb5f89276688642392078ac assets/codmod/models/item/bagel.json
 12ba3e8b452c45f3ce94b5fae8f11ff6e086c77b assets/codmod/models/item/below_eternity.json
@@ -173,6 +176,7 @@ bd93af15b35d9cd190040eccdd1e0d7edd72c934 assets/codmod/models/item/blue_public_s
 72d8bc0b46b7156333dd161f952434eab15ac239 assets/codmod/models/item/ceramic_stairs.json
 9bd7f4365d91fdf4487f04ba7ef2b2589772df6c assets/codmod/models/item/ceramic_tile.json
 8fbd09037654d74fe37eb831519d33d82bff04f8 assets/codmod/models/item/cheesecake_parfait.json
+8371812d9027f9f64d61b6821e1e6f38a6aa049b assets/codmod/models/item/cheese_block.json
 965cce2e97f5facb89eb8f6bb96462df4ce62f62 assets/codmod/models/item/chocolate_cake_block.json
 2d02e97d3a10b1ff9fdf45cfae2ced9d468d06c2 assets/codmod/models/item/chocolate_parfait.json
 488335f0103d1c24871d0198430d8a02c91c23d0 assets/codmod/models/item/circuits_bane.json
@@ -323,6 +327,7 @@ b0299ee3b2b07dc906703200fec9fed4aec21752 data/codmod/loot_table/blocks/ceiling_t
 07e309c191b022dccfc43c794558a787ee9eaa58 data/codmod/loot_table/blocks/ceramic_slab.json
 a6fab1a2305184326a2c2a6ae6052f4348f7f764 data/codmod/loot_table/blocks/ceramic_stairs.json
 b95552f02b610418250b4fe4816fb5fe80439962 data/codmod/loot_table/blocks/ceramic_tile.json
+d4b0fe7767599aa3af85b5a15f3feedaad138b4a data/codmod/loot_table/blocks/cheese_block.json
 665c21a4f7b6d7e3463f6fc36c7e6c381dea49f4 data/codmod/loot_table/blocks/chocolate_cake_block.json
 30a63605480737d08a40e22fc164e6f69da3d4f2 data/codmod/loot_table/blocks/coal_generator.json
 1f200e921be82345de87fe4e627a528cfb20ef48 data/codmod/loot_table/blocks/cod_block.json
