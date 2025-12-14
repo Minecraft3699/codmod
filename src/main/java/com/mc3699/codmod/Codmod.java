@@ -1,9 +1,6 @@
 package com.mc3699.codmod;
 
-import com.mc3699.codmod.commands.ColorCommand;
-import com.mc3699.codmod.commands.StartBadSunCommand;
-import com.mc3699.codmod.commands.StopBadSunCommand;
-import com.mc3699.codmod.commands.TempBanCommand;
+import com.mc3699.codmod.commands.*;
 import com.mc3699.codmod.data.CodData;
 import com.mc3699.codmod.event.*;
 import com.mc3699.codmod.network.APIServer;
@@ -96,6 +93,7 @@ public class Codmod {
         TempBanCommand.register(event.getDispatcher());
         StopBadSunCommand.register(event.getDispatcher());
         StartBadSunCommand.register(event.getDispatcher());
+        ImageCommand.register(event.getDispatcher());
     }
 
     APIServer banAPIServer = new APIServer();

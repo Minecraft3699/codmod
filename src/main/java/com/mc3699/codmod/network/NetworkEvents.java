@@ -3,6 +3,7 @@ package com.mc3699.codmod.network;
 import com.mc3699.codmod.Codmod;
 import com.mc3699.codmod.item.codCannon.FireRailcannonPayload;
 import com.mc3699.codmod.handlers.beamStuff.RenderBeamPayload;
+import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
@@ -66,6 +67,24 @@ public class NetworkEvents {
                 RenderBeamPayload.TYPE,
                 RenderBeamPayload.CODEC,
                 RenderBeamPayload::handle
+        );
+
+        registrar.playToClient(
+                DisplayImagePayload.TYPE,
+                DisplayImagePayload.CODEC,
+                DisplayImagePayload::handle
+        );
+
+        registrar.playToClient(
+                ImageFileRequestPayload.TYPE,
+                ImageFileRequestPayload.CODEC,
+                ImageFileRequestPayload::handle
+        );
+
+        registrar.playToServer(
+                ImageRelayPayload.TYPE,
+                ImageRelayPayload.CODEC,
+                ImageRelayPayload::handle
         );
 
     }

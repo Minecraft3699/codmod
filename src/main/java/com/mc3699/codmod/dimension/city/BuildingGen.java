@@ -36,7 +36,13 @@ public class BuildingGen {
     private static final List<ResourceLocation> FLOOR_POOL = List.of(
             floorStructure("floor_corrupt"),
             floorStructure("floor_storage_a1"),
-            floorStructure("floor_temptation")
+            floorStructure("floor_temptation"),
+            floorStructure("floor_conductor"),
+            floorStructure("floor_library"),
+            floorStructure("floor_lore"),
+            floorStructure("floor_paranoia"),
+            floorStructure("floor_pixel"),
+            floorStructure("floor_threshold")
     );
 
     public static void placeChest(WorldGenLevel serverLevel, int x, int y, int z, ResourceKey<LootTable> lootTable) {
@@ -177,8 +183,8 @@ public class BuildingGen {
                 ResourceLocation randomFloor = FLOOR_POOL.get(random.nextInt(0, FLOOR_POOL.size()));
                 BRGenUtil.placeBuildingFloor(randomFloor, region, worldStart);
             }
-            BlockState ladder = Blocks.LADDER.defaultBlockState().setValue(BlockStateProperties.HORIZONTAL_FACING, Direction.SOUTH);
-            BRGenUtil.fillArea(chunkAccess, minX + 5, floorY - 1, minZ, minX + 6, floorY + 3, minZ, ladder);
+            BlockState ladder = Blocks.LADDER.defaultBlockState().setValue(BlockStateProperties.HORIZONTAL_FACING, Direction.NORTH);
+            BRGenUtil.fillArea(chunkAccess, minX + 5, floorY - 1, minZ+11, minX + 6, floorY + 3, minZ+11, ladder);
         }
     }
 }
