@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "item": "minecraft:ender_pearl"
+    },
+    "W": {
+      "item": "minecraft:wheat_seeds"
+    }
+  },
+  "pattern": [
+    "WWW",
+    "WPW",
+    "WWW"
+  ],
+  "result": {
+    "count": 8,
+    "id": "codmod:inert_seeds"
+  }
+}

@@ -20,7 +20,7 @@ public class AppleFritterItem extends Item {
     public FoodProperties getFoodProperties(ItemStack stack, LivingEntity entity) {
         return new FoodProperties.Builder()
                 .nutrition(7)
-                .saturationModifier(3)
+                .saturationModifier(1.5f)
                 .build();
     }
 }
