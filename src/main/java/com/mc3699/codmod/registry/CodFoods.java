@@ -192,7 +192,7 @@ public class CodFoods {
             );
     public static final FoodProperties APPLE_FRITTER =
             new FoodProperties(
-                    5, 3, false,
+                    7, 1, false,
                     2f, Optional.of(ItemStack.EMPTY), List.of()
             );
 
@@ -214,8 +214,8 @@ public class CodFoods {
 
     public static final FoodProperties GOLDEN_COD =
             new FoodProperties.Builder()
-                    .nutrition(5)
-                    .saturationModifier(3)
+                    .nutrition(10)
+                    .saturationModifier(1.5f)
                     .alwaysEdible()
                     .effect(new MobEffectInstance(MobEffects.ABSORPTION, 1800, 0), 1)
                     .effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 2700, 0), 1)
@@ -224,8 +224,8 @@ public class CodFoods {
 
     public static final FoodProperties ENCHANTED_GOLDEN_COD =
             new FoodProperties.Builder()
-                    .nutrition(5)
-                    .saturationModifier(3)
+                    .nutrition(12)
+                    .saturationModifier(1.5f)
                     .alwaysEdible()
                     .effect(new MobEffectInstance(MobEffects.ABSORPTION, 1800, 1), 1)
                     .effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 2700, 1), 1)

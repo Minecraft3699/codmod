@@ -19,8 +19,8 @@ public class EnchantedGoldenCodItem extends Item {
     @Override
     public FoodProperties getFoodProperties(ItemStack stack, LivingEntity entity) {
         return new FoodProperties.Builder()
-                .nutrition(8)
-                .saturationModifier(4f)
+                .nutrition(12)
+                .saturationModifier(1.5f)
                 .alwaysEdible()
                 .effect(new MobEffectInstance(MobEffects.ABSORPTION, 1800, 1), 1)
                 .effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 2700, 1), 1)
