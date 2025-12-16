@@ -2,10 +2,10 @@ package com.mc3699.codmod.item;
 
 import com.mc3699.codmod.Codmod;
 import com.mc3699.codmod.registry.CodMobEffects;
+import com.mc3699.codmod.registry.CodParticles;
 import com.mc3699.codmod.registry.CodTiers;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -36,7 +36,7 @@ import org.joml.Vector3f;
 
 import java.util.List;
 
-public class ContinumSlicerItem extends SwordItem { //TODO FOR EYAE (ME) ADD PARTICLES WHEN GIVEN
+public class ContinumSlicerItem extends SwordItem {
     public ContinumSlicerItem(Properties properties) {
         super(CodTiers.CONTINUM_SLICER_TIER, properties);
     }
@@ -52,12 +52,7 @@ public class ContinumSlicerItem extends SwordItem { //TODO FOR EYAE (ME) ADD PAR
             player.getCooldowns().addCooldown(this, 40);
             player.getPersistentData().putBoolean("NoFall",true);
             serverLevel.sendParticles(
-                    new DustParticleOptions(new Vector3f(1.0F, 0.0F, 1.0F), 5.0F),
-                    player.getX() + 0.5, player.getY() + 0.5, player.getZ() + 0.5,
-                    8, // Count
-                    0.0, 1.0, 0.0, // Spread
-                    20.0 // Speed
-            );
+                    CodParticles.SPACE_TIME_PARTICLE.get(), player.getX() + 0.5, player.getY() + 0.5, player.getZ() + 0.5, 8, 0.0, 1.0, 0.0, 0.5 );
         }
         return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
     }

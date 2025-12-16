@@ -42,11 +42,16 @@ public class JohnGeometryEvent extends BaseEvent {
             var hinge = doorState.getValue(DoorBlock.HINGE);
             boolean open = doorState.getValue(DoorBlock.OPEN);
             BlockPos placePos = closestDoor.relative(facing, open ? (hinge == DoorHingeSide.LEFT ? 2 : -2) : -2);
-            level.setBlock(
-                    placePos,
-                    CodBlocks.JOHN_GEOMETRY.get().defaultBlockState().setValue(JohnGeometryBlock.FACING, facing),
-                    3
-            );
+
+            //lokey did this because fuckass john keeps consuming blocks
+            BlockState targetState = level.getBlockState(placePos);
+            if (targetState.isAir()) {
+                level.setBlock(
+                        placePos,
+                        CodBlocks.JOHN_GEOMETRY.get().defaultBlockState().setValue(JohnGeometryBlock.FACING, facing),
+                        3
+                );
+            }
         }
     }
 
