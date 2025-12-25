@@ -1,4 +1,4 @@
-// 1.21.1	2025-12-14T21:47:04.822234	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
+// 1.21.1	2025-12-25T14:56:31.4680256	Registrate Provider for codmod [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Advancements, Sound Definitions, Jukebox Songs, Custom Tags]
 11df08fc690db92516c0ea7c97d4c71f542154b5 assets/codmod/blockstates/amborella_plushie.json
 e71fb77fc3ce99c6fb5b8f5a3105a1f58d7355d0 assets/codmod/blockstates/ancient_plushie.json
 c4642b0c685192cf5d5d07b6893cc7333a63d1da assets/codmod/blockstates/blade_plushie.json
@@ -43,6 +43,7 @@ aa2593a140799670292b1022d9f1c87b62dc3a5d assets/codmod/blockstates/present.json
 26a4e6684c2852cd1b49fc1caf712e4fccdfe5bb assets/codmod/blockstates/public_static_void.json
 dbf95719a4d67f0dda7eb18e1e5b1280c544b06c assets/codmod/blockstates/public_static_void_drive.json
 f025cbad629a7cee5f3dd338cba7ad581c4c91cd assets/codmod/blockstates/public_static_void_keypad.json
+b203c34b3449730158def088ccd20138756f464f assets/codmod/blockstates/public_static_void_light.json
 92b90ea204cee4fbdf6891b45b246aa4731a6731 assets/codmod/blockstates/public_static_void_slab.json
 2f945027aea6b7906a85e8e570d81f48e0889501 assets/codmod/blockstates/public_static_void_small_tiles.json
 70291d4a10bdee59632f34ca0423ff6e927d62fb assets/codmod/blockstates/public_static_void_stairs.json
@@ -73,8 +74,8 @@ abcf062fd5decca251b2d4e623edb9daa7dec02a assets/codmod/blockstates/threshold_por
 f062903ff298b3585d7b47250018da45c0293850 assets/codmod/blockstates/ugly_wallpaper.json
 522a693904a1162a099576a5775e6ce326e66a27 assets/codmod/blockstates/xyzen_plushie.json
 064fe3376b3c1cf85c49ff1eca7371979390528b assets/codmod/blockstates/zetos_plushie.json
-504d772a3fd8fa0016d32e56cc616efcfb3a4035 assets/codmod/lang/en_ud.json
-321442d49ee96cd5ee648fc52904bbc94fd6eddb assets/codmod/lang/en_us.json
+53942b1cfb5226e2165a3e7e20feb84f8816a1bd assets/codmod/lang/en_ud.json
+38bfb69d88ad6a170e7c3ace666d39b018826b73 assets/codmod/lang/en_us.json
 db9b85a3fd099973d7ef1c692e313e556236d722 assets/codmod/models/block/amborella_plushie.json
 646809a9d5f50abc7f271a084374ef921b101e4c assets/codmod/models/block/ancient_plushie.json
 e2cf401ffd25a21c829b15e577a98dc35dd12dd6 assets/codmod/models/block/blade_plushie.json
@@ -122,6 +123,7 @@ d39ba04eff1b9231fff21acc53b04c158b380abd assets/codmod/models/block/nahbro_plush
 059ec95e9a7297242069f3bedc74a136a131001c assets/codmod/models/block/public_static_void.json
 dc75c1f67a974b1cfe1afcd870586c8ba1c9ccc1 assets/codmod/models/block/public_static_void_drive.json
 eedce35f9e27c0a34b0ed78f407f3da5e5d5b6b6 assets/codmod/models/block/public_static_void_keypad.json
+14b96d8e32d0525505263836757a689ecd85fa69 assets/codmod/models/block/public_static_void_light.json
 53b779ce83af8bb25e042a4da5db5743e1a5cf4f assets/codmod/models/block/public_static_void_slab.json
 944ace3a2ddcef35f095a31dc17d66559099f6cc assets/codmod/models/block/public_static_void_slab_top.json
 8749aae802c56805a9814f06500458e65d2cc2b4 assets/codmod/models/block/public_static_void_small_tiles.json
@@ -256,6 +258,7 @@ c9d0f2f21ca1272be5eb962b4a834a5e4f1561fc assets/codmod/models/item/psyche_gun.js
 733b0e2fe23248a60e7339e1c2bd4d1100d2dd2e assets/codmod/models/item/public_static_void.json
 b27851b8ff7c4d095e6be25e973e836077ed1efc assets/codmod/models/item/public_static_void_drive.json
 0a0c393ec6b1e8e0ff5fcb59859ee951a8237531 assets/codmod/models/item/public_static_void_keypad.json
+8d3623b5747b14585e4b97c210eb532e9c53e422 assets/codmod/models/item/public_static_void_light.json
 40c492dab9dbbf98113c5f95136f68d22698d079 assets/codmod/models/item/public_static_void_slab.json
 632f1af9a8e31e06a202caf9eb08db19b1c6fcc5 assets/codmod/models/item/public_static_void_small_tiles.json
 8073582aae3cc34d74ef540dcb3d3c35d8e7eb96 assets/codmod/models/item/public_static_void_stairs.json
@@ -361,6 +364,7 @@ ce4ad16b7280669f778bdee54e94f93a9f9fe72c data/codmod/loot_table/blocks/pinky_plu
 5abc75f6c131477ec18be6da5e6da99e1df050a5 data/codmod/loot_table/blocks/public_static_void.json
 2898b7a987b3dfa633dc5fd811d5d16fbaa04633 data/codmod/loot_table/blocks/public_static_void_drive.json
 b0fe49c0079f0c3d26eebc7ba0f4f4dfcb10d6a2 data/codmod/loot_table/blocks/public_static_void_keypad.json
+778b23d17931c30f66e7492fc5cd44de0e083fdd data/codmod/loot_table/blocks/public_static_void_light.json
 098c4abd3414881b8e463ac6d42853cf0f02c8ae data/codmod/loot_table/blocks/public_static_void_slab.json
 b5d10d6e17bfbaadc909bbcd784bfc8038664c87 data/codmod/loot_table/blocks/public_static_void_small_tiles.json
 70382f50fa8e54f15f000d701d6e82fe984ae16f data/codmod/loot_table/blocks/public_static_void_stairs.json
