@@ -27,6 +27,7 @@ import com.mc3699.codmod.technology.lowVoltageCable.LowVoltageCableBlock;
 import com.mc3699.codmod.block.PlushieBlock;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import com.tterrag.registrate.util.entry.FluidEntry;
+import dev.wendigodrip.thebrokenscript.registry.TBSBlocks;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -514,6 +515,12 @@ public class CodBlocks {
     public static final BlockEntry<Block> IRON_MANTLE = CodRegistrate.INSTANCE.block("iron_mantle", Block::new)
             .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.CRYING_OBSIDIAN))
             .lang("Iron Mantle")
+            .simpleItem()
+            .register();
+
+    public static final BlockEntry<Block> PUBLIC_STATIC_VOID_LIGHT = CodRegistrate.INSTANCE.block("public_static_void_light", Block::new)
+            .properties(properties -> BlockBehaviour.Properties.ofFullCopy(Blocks.GLOWSTONE))
+            .lang("Public Static Void Light")
             .simpleItem()
             .register();
 
